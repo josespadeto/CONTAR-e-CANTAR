@@ -316,10 +316,10 @@
                     </div>
                 </div>
                 <div class="article-content">
-                    <div class="article-meta">Em breve</div>
-                    <h3>Elis Regina: A Voz que Ardia</h3>
+                    <div class="article-meta">20 min de leitura</div>
+                    <h3>Elis Regina: A Revolução da Interpretação</h3>
                     <p>A trajetória da gaúcha que dominou o Brasil com intensidade antes dos 36 anos.</p>
-                    <span class="read-article">Aguardar →</span>
+                    <span class="read-article">Ler artigo →</span>
                 </div>
             </a>
 
@@ -330,30 +330,30 @@
         <div class="universes-container">
             <div class="universes-intro">
                 <h2>Universos da MPB</h2>
-                <p>Da Bossa Nova ao Pagode, do Tropicalismo ao Samba de raiz — a MPB nunca foi um gênero único, mas um país inteiro de sonoridades.</p>
+                <p>As melhores fontes nacionais e internacionais para mergulhar na Música Popular Brasileira. Livros, documentários, acervos, podcasts e referências acadêmicas curadas.</p>
             </div>
             <div class="universes-grid">
-                <a href="#" class="universe-card" id="uni-tropicalia" style="text-decoration:none; color:inherit;">
+                <a href="universos.html" class="universe-card" style="text-decoration:none; color:inherit;">
                     <div class="universe-content">
-                        <h3>Tropicália</h3>
-                        <p>Caetano Veloso • 1968</p>
-                        <span class="universe-link">Conhecer movimento →</span>
+                        <h3>🔍 Buscar Fontes</h3>
+                        <p>Acesse nossa curadoria completa de referências</p>
+                        <span class="universe-link">Explorar universos →</span>
                     </div>
                 </a>
-                <a href="#" class="universe-card" id="uni-cartola" style="text-decoration:none; color:inherit;">
+                <a href="universos.html" class="universe-card" style="text-decoration:none; color:inherit;">
                     <div class="universe-content">
-                        <h3>Cartola</h3>
-                        <p>Samba • 1908-1980</p>
-                        <span class="universe-link">Conhecer o gênio →</span>
+                        <h3>📚 Acervos & Bibliotecas</h3>
+                        <p>IMS, Biblioteca Nacional, Smithsonian e mais</p>
+                        <span class="universe-link">Ver acervos →</span>
                     </div>
                 </a>
-                <div class="universe-card">
+                <a href="universos.html" class="universe-card" style="text-decoration:none; color:inherit;">
                     <div class="universe-content">
-                        <h3>Elis Regina</h3>
-                        <p>MPB • 1945-1982</p>
-                        <span class="universe-link">Em breve →</span>
+                        <h3>🎓 Referências Acadêmicas</h3>
+                        <p>SciELO, Google Scholar, Oxford Music Online</p>
+                        <span class="universe-link">Ver estudos →</span>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -378,36 +378,20 @@
     <!-- ============================================ -->
     <!-- ÁREA DE GERENCIAMENTO DE LINKS DOS ARTIGOS -->
     <!-- ============================================ -->
-    <!-- 
-        COMO USAR:
-        Para ativar um artigo, basta mudar "em_breve" para o nome do arquivo.
-        Exemplo: de "em_breve" para "tropicalia.html"
-        
-        Quando um artigo estiver pronto, só precisa editar a linha correspondente abaixo.
-        Não precisa mexer no resto do código.
-    -->
     <script>
         // ==========================================
         // LISTA DE LINKS DOS ARTIGOS
         // ==========================================
-        // Edite apenas os valores entre aspas abaixo.
-        // Use "em_breve" quando o artigo ainda não existir.
-        // Use o nome do arquivo (ex: "tropicalia.html") quando estiver pronto.
-        
         const linksArtigos = {
-            tropicalia: "tropicalia.html",   // Tropicália - PRONTO
-            cartola: "cartola.html",         // Cartola - PRONTO
-           elis: "elis.html"                 // Elis Regina - PRONTO
+            tropicalia: "tropicalia.html",
+            cartola: "cartola.html",
+            elis: "elis.html"
         };
-        const linksUniversos = {
-    universos: "universos.html"
-};
         
         // ==========================================
         // NÃO PRECISA MEXER ABAIXO DESSA LINHA
         // ==========================================
         
-        // Atualiza os cards da Revista Cultural
         function atualizarCard(id, arquivo) {
             const card = document.getElementById(id);
             if (!card) return;
@@ -425,29 +409,9 @@
             }
         }
         
-        // Atualiza os cards da seção Universos
-        function atualizarUniverso(id, arquivo) {
-            const card = document.getElementById(id);
-            if (!card) return;
-            
-            if (arquivo === "em_breve") {
-                card.removeAttribute("href");
-                card.style.pointerEvents = "none";
-                card.style.cursor = "default";
-            } else {
-                card.setAttribute("href", arquivo);
-                card.style.pointerEvents = "auto";
-                card.style.cursor = "pointer";
-            }
-        }
-        
-        // Aplica todos os links
         atualizarCard("card-tropicalia", linksArtigos.tropicalia);
         atualizarCard("card-cartola", linksArtigos.cartola);
         atualizarCard("card-elis", linksArtigos.elis);
-        
-        atualizarUniverso("uni-tropicalia", linksArtigos.tropicalia);
-        atualizarUniverso("uni-cartola", linksArtigos.cartola);
     </script>
 
 </body>
