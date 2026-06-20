@@ -3,272 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CONTAR e CANTAR | Acervo Editorial da MPB</title>
+    <meta name="description" content="Acervo editorial da Música Popular Brasileira. Curadoria histórica por Rosane Maia.">
+    <title>Contando & Cantando | Acervo Editorial da MPB</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght=0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* =========================================
-           ESTILOS GLOBAIS - CONTAR e CANTAR
-           ========================================= */
-        :root {
-            --cor-preto: #0A0A0A;
-            --cor-branco: #FFFFFF;
-            --cor-cinza-claro: #F7F7F7;
-            --cor-cinza-medio: #888888;
-            --cor-dourado: #C9A961;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--cor-branco);
-            color: var(--cor-preto);
-            line-height: 1.6;
-        }
-
-        /* Menu / Header */
-        header {
-            border-bottom: 1px solid #EEEEEE;
-            position: sticky;
-            top: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(5px);
-            z-index: 1000;
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            text-decoration: none;
-            color: var(--cor-preto);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .logo span { color: var(--cor-dourado); }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--cor-preto);
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover { color: var(--cor-dourado); }
-
-        /* Hero Section */
-        .hero {
-            padding: 100px 20px;
-            text-align: center;
-            background-color: var(--cor-cinza-claro);
-        }
-
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 48px;
-            font-weight: 400;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-        }
-
-        .hero p {
-            font-size: 18px;
-            color: var(--cor-cinza-medio);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Seção Universos */
-        .universes { padding: 80px 20px; }
-        
-        .universes-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .universes h2 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 28px;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-        }
-
-        .universes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .universe-card {
-            background: var(--cor-cinza-claro);
-            padding: 40px;
-            text-decoration: none;
-            color: var(--cor-preto);
-            border: 1px solid transparent;
-            transition: all 0.3s ease;
-            display: block;
-        }
-
-        .universe-card:hover {
-            border-color: var(--cor-dourado);
-            background: var(--cor-branco);
-            transform: translateY(-5px);
-        }
-
-        .universe-content h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-
-        .universe-content p {
-            color: var(--cor-cinza-medio);
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .universe-link {
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--cor-dourado);
-        }
-
-        /* Newsletter */
-        .newsletter {
-            background-color: var(--cor-preto);
-            color: var(--cor-branco);
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .newsletter-content {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .newsletter h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
-
-        .newsletter p {
-            color: var(--cor-cinza-medio);
-            margin-bottom: 30px;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 10px;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            padding: 15px;
-            border: 1px solid #333;
-            background: #1A1A1A;
-            color: var(--cor-branco);
-            font-family: 'Inter', sans-serif;
-        }
-
-        .newsletter-form button {
-            background: var(--cor-branco);
-            color: var(--cor-preto);
-            border: none;
-            padding: 0 30px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .newsletter-form button:hover { background: var(--cor-dourado); }
-
-        /* Footer */
-        footer {
-            padding: 40px 20px;
-            text-align: center;
-            border-top: 1px solid #EEEEEE;
-            font-size: 14px;
-            color: var(--cor-cinza-medio);
-        }
-
-        @media (max-width: 768px) {
-            .header-container { flex-direction: column; gap: 20px; }
-            .hero h1 { font-size: 36px; }
-            .newsletter-form { flex-direction: column; }
-            .newsletter-form button { padding: 15px; }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <div class=\"header-container\">
+        <div class="header-container">
             <a href="index.html" class="logo">Contando <span>&</span> Cantando</a>
             <nav>
                 <ul>
                     <li><a href="index.html">Início</a></li>
-                    <li><a href="index.html#universos">Universos</a></li>
-                    <li><a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank">Instagram</a></li>
+                    <li><a href="revista-cultural.html">Revista</a></li>
+                    <li><a href="objetos-do-acervo.html">Acervo</a></li>
+                    <li><a href="#universos">Universos</a></li>
+                    <li class="nav-social">
+                        <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener">Instagram</a>
+                    </li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section class="hero">
-        <h1>O Acervo Histórico da Música Brasileira</h1>
-        <p>Histórias de bastidores, análises de composições e o resgate cultural dos movimentos que moldaram a nossa identidade musical.</p>
+    <section id="inicio" class="hero">
+        <div class="hero-eyebrow">Rosane Maia • Curadoria</div>
+        <h1>Acervo Editorial da MPB</h1>
+        <p class="hero-subtitle">O som da nossa memória.</p>
+        <div class="hero-buttons">
+            <a href="revista-cultural.html" class="btn">Explorar Acervo</a>
+            <a href="#newsletter" class="btn btn-outline">Assinar Newsletter</a>
+        </div>
+    </section>
+
+    <section id="sobre" class="manifesto">
+        <div class="manifesto-content">
+            <p>Contando & Cantando é um acervo editorial dedicado à preservação da memória afetiva da Música Popular Brasileira. O projeto nasce da ideia de que a MPB não pertence apenas aos discos, palcos ou arquivos históricos.</p>
+            <p>Ela vive também nas lembranças cotidianas: no rádio ligado durante a infância, na vitrola silenciosa guardada na sala, no violão encostado após uma madrugada de música, nas capas de vinil observadas como pequenas obras de arte.</p>
+            <p>Mais do que reunir artistas, álbuns e movimentos culturais, este espaço busca reconstruir atmosferas — travessias pela história emocional da música brasileira.</p>
+            <div class="manifesto-signature">— Rosane Maia, Curadora</div>
+        </div>
+    </section>
+
+    <section id="revista" class="section">
+        <div class="section-header">
+            <h2>Revista Cultural</h2>
+            <span>Artigos & Especiais</span>
+        </div>
+        <div class="articles-grid">
+            <article class="article-card">
+                <a href="tropicalia.html">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1514525253440-b393452e8d26?auto=format&fit=crop&w=800&q=80" alt="Tropicália">
+                        <span class="article-category">Movimento</span>
+                    </div>
+                    <div class="article-content">
+                        <div class="article-meta">12 min de leitura</div>
+                        <h3>A Revolução da Tropicália</h3>
+                        <p>Como Caetano, Gil e o grupo mudaram a música brasileira para sempre em 1967.</p>
+                        <span class="read-article">Ler artigo →</span>
+                    </div>
+                </a>
+            </article>
+            <article class="article-card">
+                <div class="article-image">
+                    <img src="https://images.unsplash.com/photo-1603048588665-791ca8aea617?auto=format&fit=crop&w=800&q=80" alt="Cartola">
+                    <span class="article-category">Biografia</span>
+                </div>
+                <div class="article-content">
+                    <div class="article-meta">8 min de leitura</div>
+                    <h3>Cartola: O Gênio do Samba</h3>
+                    <p>De lavador de carros a ícone nacional. A história completa do fundador da Mangueira.</p>
+                    <span class="read-article">Ler artigo →</span>
+                </div>
+            </article>
+            <article class="article-card">
+                <div class="article-image">
+                    <img src="https://images.unsplash.com/photo-1516280440614-6697288d5d38?auto=format&fit=crop&w=800&q=80" alt="Elis Regina">
+                    <span class="article-category">Análise</span>
+                </div>
+                <div class="article-content">
+                    <div class="article-meta">10 min de leitura</div>
+                    <h3>Elis Regina: A Voz que Ardia</h3>
+                    <p>A trajetória da gaúcha que dominou o Brasil com intensidade antes dos 36 anos.</p>
+                    <span class="read-article">Ler artigo →</span>
+                </div>
+            </article>
+        </div>
     </section>
 
     <section id="universos" class="universes">
         <div class="universes-container">
-            <h2>Universos Editoriais</h2>
+            <div class="universes-intro">
+                <h2>Universos da MPB</h2>
+                <p>Da Bossa Nova ao Pagode, do Tropicalismo ao Samba de raiz — a MPB nunca foi um gênero único, mas um país inteiro de sonoridades.</p>
+            </div>
             <div class="universes-grid">
                 <a href="tropicalia.html" class="universe-card">
+                    <div class="universe-image" style="background-image: url('https://images.unsplash.com/photo-1487180144351-b8472da7d491?auto=format&fit=crop&w=800&q=80')"></div>
                     <div class="universe-content">
-                        <h3>A Revolução da Tropicália</h3>
+                        <h3>Tropicália</h3>
                         <p>Caetano Veloso • 1968</p>
                         <span class="universe-link">Conhecer movimento →</span>
                     </div>
                 </a>
-                
-                <div class="universe-card">
+                <a href="chega-de-saudade.html" class="universe-card">
+                    <div class="universe-image" style="background-image: url('https://images.unsplash.com/photo-1511192336575-5a79af67a629?auto=format&fit=crop&w=800&q=80')"></div>
                     <div class="universe-content">
                         <h3>Bossa Nova</h3>
                         <p>João Gilberto • 1959</p>
-                        <span class="universe-link">Em breve →</span>
+                        <span class="universe-link">Ver álbum →</span>
                     </div>
-                </div>
-                
-                <div class="universe-card">
+                </a>
+                <a href="clube-da-esquina.html" class="universe-card">
+                    <div class="universe-image" style="background-image: url('https://images.unsplash.com/photo-1415886541506-6efc5e4b1786?auto=format&fit=crop&w=800&q=80')"></div>
                     <div class="universe-content">
                         <h3>Clube da Esquina</h3>
                         <p>Milton Nascimento • 1972</p>
-                        <span class="universe-link">Em breve →</span>
+                        <span class="universe-link">Ler especial →</span>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -286,7 +145,7 @@
 
     <footer>
         <div class="footer-content">
-            <p>CONTAR e CANTAR © 2026 • Curadoria histórica por Rosane Maia</p>
+            <p>Contando & Cantando © 2026 • Curadoria histórica por Rosane Maia</p>
         </div>
     </footer>
 
