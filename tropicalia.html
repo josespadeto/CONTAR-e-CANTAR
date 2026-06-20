@@ -3,32 +3,240 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Revolução da Tropicália | Contando & Cantando</title>
+    <title>A Revolução da Tropicália | CONTAR e CANTAR</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+
+    <style>
+        :root {
+            --cor-preto: #0A0A0A;
+            --cor-branco: #FFFFFF;
+            --cor-cinza-claro: #F7F7F7;
+            --cor-cinza-medio: #888888;
+            --cor-dourado: #C9A961;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cor-branco);
+            color: var(--cor-preto);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+
+        /* HEADER */
+        header {
+            padding: 1.5rem 5%;
+            position: sticky; top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem; font-weight: 700;
+            letter-spacing: -0.5px; text-transform: uppercase;
+        }
+        .logo span { color: var(--cor-dourado); }
+        nav ul { display: flex; list-style: none; gap: 2rem; align-items: center; }
+        nav a {
+            font-size: 0.85rem; font-weight: 500;
+            text-transform: uppercase; letter-spacing: 1px;
+            position: relative; padding-bottom: 4px;
+        }
+        nav a::after {
+            content: ''; position: absolute; bottom: 0; left: 0;
+            width: 0; height: 2px; background: var(--cor-dourado);
+            transition: width 0.3s ease;
+        }
+        nav a:hover::after { width: 100%; }
+
+        /* ARTICLE HERO */
+        .article-hero {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 6rem 5% 4rem;
+            text-align: center;
+        }
+        .article-category {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 2px;
+            color: var(--cor-dourado); margin-bottom: 1.5rem; display: block;
+        }
+        .article-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.1; margin-bottom: 2rem;
+            letter-spacing: -1px; font-weight: 700;
+        }
+        .article-subtitle {
+            font-size: 1.3rem; color: #333;
+            font-weight: 300; font-style: italic;
+            margin-bottom: 3rem; max-width: 700px;
+            margin-left: auto; margin-right: auto;
+            font-family: 'Playfair Display', serif;
+        }
+        .article-meta {
+            display: flex; justify-content: center; gap: 2rem;
+            font-size: 0.85rem; color: var(--cor-cinza-medio);
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+
+        /* CAPA EDITORIAL EM CSS PURO */
+        .editorial-cover {
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            height: 450px;
+            background: linear-gradient(135deg, #FF3300 0%, #C9A961 50%, #0A0A0A 100%);
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+        }
+        .cover-text {
+            text-align: center; color: #FFFFFF;
+            font-family: 'Playfair Display', serif;
+        }
+        .cover-year {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem; letter-spacing: 4px;
+            display: block; margin-bottom: 1rem; opacity: 0.9;
+        }
+        .cover-text h2 {
+            font-size: 4rem; margin: 0; line-height: 1;
+            letter-spacing: -2px; text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .cover-text p {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem; letter-spacing: 3px;
+            margin-top: 1rem; opacity: 0.9;
+        }
+
+        /* ARTICLE CONTENT */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 5% 6rem;
+        }
+        .article-intro {
+            font-size: 1.25rem; line-height: 1.9;
+            color: var(--cor-preto); margin-bottom: 3rem; font-weight: 400;
+        }
+        .article-container p {
+            font-size: 1.1rem; line-height: 1.8;
+            color: #333; margin-bottom: 2rem;
+        }
+        .article-container h2 {
+            font-size: 2rem; margin: 4rem 0 1.5rem;
+            color: var(--cor-preto); font-weight: 700;
+        }
+        .article-container h3 {
+            font-size: 1.5rem; margin: 3rem 0 1rem;
+            color: var(--cor-preto); font-weight: 600;
+        }
+        .pull-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem; font-style: italic;
+            line-height: 1.4; color: var(--cor-preto);
+            border-left: 4px solid var(--cor-dourado);
+            padding-left: 2rem; margin: 4rem 0;
+        }
+        .article-section {
+            margin: 3rem 0; padding: 2rem;
+            background: var(--cor-cinza-claro); border-radius: 8px;
+        }
+        .album-highlight {
+            display: flex; gap: 2rem; margin: 3rem 0;
+            padding: 2rem; background: var(--cor-cinza-claro);
+            border-radius: 8px; align-items: center;
+        }
+        .album-cover-css {
+            width: 200px; height: 200px;
+            background: #1a1a1a; border-radius: 4px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--cor-dourado);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem; font-weight: 700;
+            text-align: center; line-height: 1.2;
+            border: 2px solid var(--cor-dourado);
+        }
+        .album-info h4 { font-size: 1.3rem; margin-bottom: 1rem; }
+        .album-info p { font-size: 0.95rem; margin-bottom: 1rem; }
+        .artists-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr);
+            gap: 2rem; margin: 3rem 0;
+        }
+        .artist-card {
+            padding: 2rem; background: var(--cor-cinza-claro);
+            border-radius: 8px; border-top: 3px solid var(--cor-dourado);
+        }
+        .artist-card h4 { font-size: 1.2rem; margin-bottom: 0.8rem; }
+        .artist-card p { font-size: 0.95rem; margin-bottom: 0; }
+        .playlist-recommendation {
+            margin: 3rem 0; padding: 2rem;
+            background: var(--cor-cinza-claro); border-radius: 8px;
+        }
+        .playlist-recommendation h4 { font-size: 1.3rem; margin-bottom: 1.5rem; }
+        .playlist-recommendation ol { padding-left: 1.5rem; }
+        .playlist-recommendation li { font-size: 1rem; margin-bottom: 0.8rem; color: #333; }
+        .article-navigation {
+            display: flex; justify-content: space-between;
+            margin-top: 4rem; padding-top: 2rem;
+            border-top: 2px solid var(--cor-preto);
+        }
+        .nav-prev, .nav-next {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 1px;
+            color: var(--cor-dourado);
+        }
+        .nav-prev:hover, .nav-next:hover { color: var(--cor-preto); }
+
+        /* FOOTER */
+        footer { padding: 4rem 5%; background: var(--cor-cinza-claro); text-align: center; }
+        .footer-content { max-width: 1400px; margin: 0 auto; }
+        footer p {
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase; letter-spacing: 1px;
+            font-size: 0.8rem; color: var(--cor-cinza-medio);
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .article-hero .article-meta { flex-direction: column; gap: 0.5rem; }
+            .artists-grid { grid-template-columns: 1fr; }
+            .album-highlight { flex-direction: column; }
+            .editorial-cover { height: 300px; }
+            .cover-text h2 { font-size: 2.5rem; }
+        }
+    </style>
 </head>
 <body>
+
     <header>
-        <div class="header-container">
-            <a href="index.html" class="logo">Contando <span>&</span> Cantando</a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="revista-cultural.html">Revista</a></li>
-                    <li><a href="objetos-do-acervo.html">Acervo</a></li>
-                    <li><a href="index.html#universos">Universos</a></li>
-                </ul>
-            </nav>
-        </div>
+        <div class="logo">CONTAR <span>e</span> CANTAR</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#revista">Revista</a></li>
+                <li><a href="index.html#universos">Universos</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <article class="article-page">
+    <article>
         <div class="article-hero">
             <span class="article-category">Movimento • 1967-1968</span>
             <h1 class="article-title">A Revolução da Tropicália</h1>
-            <p class="article-subtitle">Como Caetano, Gil e o grupo transformaram a música brasileira para sempre.</p>
+            <p class="article-subtitle">Como Caetano, Gil e o grupo transformaram a música brasileira para sempre em 1967, entre o caos e a criatividade.</p>
             <div class="article-meta">
                 <span>Por Rosane Maia</span>
                 <span>•</span>
@@ -38,71 +246,164 @@
             </div>
         </div>
 
+        <div class="editorial-cover">
+            <div class="cover-text">
+                <span class="cover-year">1967</span>
+                <h2>TROPICÁLIA</h2>
+                <p>O CAOS CRIATIVO</p>
+            </div>
+        </div>
+
         <div class="article-container">
-            <div class="article-content">
-                <p class="article-intro">
-                    Quando Caetano Veloso subiu ao palco do Teatro Record em 21 de outubro de 1967, ninguém imaginava que aquela apresentação marcaria o início de uma revolução cultural. A guitarra elétrica nas mãos de um baiano desafiava tudo o que se entendia por MPB autêntica.
+            <p class="article-intro">
+                Quando Caetano Veloso subiu ao palco do Teatro Record em 21 de outubro de 1967 para apresentar "Alegria, Alegria", ninguém imaginava que aquela apresentação marcaria o início de uma revolução cultural. A guitarra elétrica nas mãos de um baiano, a mistura de bossa nova com rock psicodélico, a irreverência tropicalista — tudo isso desafiava o que se entendia por música brasileira autêntica.
+            </p>
+
+            <h2>O Contexto: Brasil em Ebulição</h2>
+            
+            <p>
+                O ano era 1967. O Brasil vivia sob a ditadura militar instaurada em 1964. A censura apertava o cerco, os artistas eram vigiados, e a cultura popular sofria repressão. Ao mesmo tempo, o mundo vivia a efervescência dos anos 60: Beatles, Rolling Stones, Jimi Hendrix, a contracultura hippie, a revolução sexual.
+            </p>
+
+            <p>
+                Na música brasileira, havia uma divisão clara. De um lado, a MPB "tradicional", representada por festivais de música e artistas como Elis Regina, Jair Rodrigues e Nara Leão. Do outro, a Jovem Guarda, com Roberto Carlos, Erasmo Carlos e Wanderléa, que cantava rock em português e era vista como "alienada" pela esquerda.
+            </p>
+
+            <div class="pull-quote">
+                "A Tropicália não foi apenas um movimento musical. Foi uma explosão cultural que misturou alta e baixa cultura, tradição e vanguarda, Brasil e mundo."
+            </div>
+
+            <h2>O Nascimento do Tropicalismo</h2>
+
+            <p>
+                No meio desse cenário polarizado, surgiram Caetano Veloso e Gilberto Gil. Dois baianos de 25 anos que chegavam a São Paulo com uma proposta radical: misturar tudo. Guitarra elétrica com violão de nylon. Rock com samba. Poesia concreta com letras populares. Vanguarda com tradição.
+            </p>
+
+            <p>
+                O estopim foi o III Festival da Música Popular Brasileira da TV Record. Caetano apresentou "Alegria, Alegria" e Gil apresentou "Domingo no Parque". Ambas as músicas foram vaiadas pelo público conservador, chocadas com as guitarras elétricas dos Mutantes (banda que os acompanhava). Mas ambas também foram celebradas pela juventude que via naquilo uma nova linguagem.
+            </p>
+
+            <div class="article-section">
+                <h3>"Alegria, Alegria" - A Canção Manifesto</h3>
+                <p>
+                    "Alegria, Alegria" era revolucionária em vários aspectos. A letra era um fluxo de consciência, uma colagem de imagens do cotidiano brasileiro misturadas com referências pop internacionais: "Caminhando contra o vento / Sem lenço, sem documento / No sol de quase dezembro / Eu vou".
                 </p>
+                <p>
+                    A música falava de Coca-Cola, de bombas atômicas, de guerrilha, de amor. Era uma radiografia do Brasil dos anos 60, acelerado, contraditório, moderno e arcaico ao mesmo tempo.
+                </p>
+            </div>
 
-                <!-- CAPA EM CSS PURO - NUNCA FICA EM BRANCO -->
-                <div class="editorial-cover tropicalia-cover">
-                    <div class="cover-text">
-                        <span class="cover-year">1967</span>
-                        <h2>TROPICÁLIA</h2>
-                        <p>O CAOS CRIATIVO</p>
-                    </div>
+            <div class="article-section">
+                <h3>"Domingo no Parque" - O Samba-Rock Baiano</h3>
+                <p>
+                    Gil levou ainda mais longe. "Domingo no Parque" contava uma história de amor e ciúme que terminava em tragédia, mas com uma levada dançante que misturava samba, rock e baião. Era a Bahia chegando a São Paulo com sotaque próprio.
+                </p>
+            </div>
+
+            <h2>O Álbum: "Tropicália ou Panis et Circensis"</h2>
+
+            <p>
+                Em 1968, saiu o álbum-manifesto do movimento: "Tropicália ou Panis et Circensis". Um disco conceitual que reunia Caetano, Gil, Os Mutantes, Nara Leão, Gal Costa, Tom Zé e Torquato Neto.
+            </p>
+
+            <div class="album-highlight">
+                <div class="album-cover-css">
+                    <span>PANIS<br>ET<br>CIRCENSIS</span>
                 </div>
-
-                <h2>O Contexto: Brasil em Ebulição</h2>
-                <p>O ano era 1967. O Brasil vivia sob a ditadura militar. A censura apertava o cerco, mas o mundo vivia a efervescência dos anos 60: Beatles, contracultura hippie e revolução sexual.</p>
-                
-                <div class="pull-quote">
-                    "A Tropicália não foi apenas um movimento musical. Foi uma explosão cultural que misturou alta e baixa cultura, tradição e vanguarda."
-                </div>
-
-                <h2>O Nascimento do Tropicalismo</h2>
-                <p>Surgiram Caetano e Gil com uma proposta radical: misturar tudo. Guitarra com violão. Rock com samba. O estopim foi o Festival da TV Record, onde "Alegria, Alegria" e "Domingo no Parque" chocaram o público conservador.</p>
-
-                <div class="album-highlight">
-                    <div class="album-cover-css">
-                        <span>PANIS<br>ET<br>CIRCENSIS</span>
-                    </div>
-                    <div class="album-info">
-                        <h4>Panis et Circensis (1968)</h4>
-                        <p><strong>Artistas:</strong> Caetano, Gil, Mutantes, Gal Costa<br><strong>Gênero:</strong> Tropicália / Rock Psicodélico</p>
-                    </div>
-                </div>
-
-                <h2>Os Protagonistas</h2>
-                <div class="artists-grid">
-                    <div class="artist-card"><h4>Caetano Veloso</h4><p>Líder intelectual e poeta provocador.</p></div>
-                    <div class="artist-card"><h4>Gilberto Gil</h4><p>Músico inovador que trouxe a guitarra elétrica.</p></div>
-                    <div class="artist-card"><h4>Os Mutantes</h4><p>Banda de rock psicodélico essencial.</p></div>
-                    <div class="artist-card"><h4>Gal Costa</h4><p>A voz que incorporou a liberdade do movimento.</p></div>
-                </div>
-
-                <div class="article-navigation">
-                    <a href="chega-de-saudade.html" class="nav-prev">← Bossa Nova</a>
-                    <a href="clube-da-esquina.html" class="nav-next">Clube da Esquina →</a>
+                <div class="album-info">
+                    <h4>Panis et Circensis (1968)</h4>
+                    <p><strong>Artistas:</strong> Vários artistas<br>
+                    <strong>Gênero:</strong> Tropicália, MPB, Rock Psicodélico<br>
+                    <strong>Produção:</strong> Rogério Duprat</p>
                 </div>
             </div>
 
-            <aside class="article-sidebar">
-                <div class="sidebar-box newsletter-box">
-                    <h4>Receba Mais Artigos</h4>
-                    <form class="newsletter-form">
-                        <input type="email" placeholder="Seu e-mail" required>
-                        <button type="submit">Assinar</button>
-                    </form>
+            <p>
+                O título em latim ("Pão e Circo") era uma referência à política de distração das massas do Império Romano. A capa mostrava os artistas segurando vegetais, numa referência irônica à pobreza e à fartura. Dentro, músicas como "Mamãe Coragem", "Enquanto Seu Lobo Não Vem", "Parque Industrial" e a faixa-título "Tropicália" de Caetano.
+            </p>
+
+            <h2>Os Protagonistas</h2>
+
+            <div class="artists-grid">
+                <div class="artist-card">
+                    <h4>Caetano Veloso</h4>
+                    <p>O líder intelectual do movimento. Poeta, compositor, provocador. Trouxe a vanguarda paulistana e a cultura pop para a MPB.</p>
                 </div>
-            </aside>
+                <div class="artist-card">
+                    <h4>Gilberto Gil</h4>
+                    <p>O músico inovador. Misturou rock, samba, baião e música africana. Trouxe a guitarra elétrica para o coração da MPB.</p>
+                </div>
+                <div class="artist-card">
+                    <h4>Os Mutantes</h4>
+                    <p>Rita Lee, Arnaldo Baptista e Sérgio Dias. A banda de rock psicodélico que deu som à revolução tropicalista.</p>
+                </div>
+                <div class="artist-card">
+                    <h4>Gal Costa</h4>
+                    <p>A voz do movimento. De intérprete de bossa nova a diva tropicalista, Gal incorporou a liberdade do movimento.</p>
+                </div>
+                <div class="artist-card">
+                    <h4>Tom Zé</h4>
+                    <p>O experimentalista. Levou a colagem sonora e a ironia ao extremo. Redescoberto décadas depois por David Byrne.</p>
+                </div>
+                <div class="artist-card">
+                    <h4>Torquato Neto</h4>
+                    <p>O poeta-letrista. Escreveu letras densas e poéticas. Morreu jovem, mas deixou legado fundamental.</p>
+                </div>
+            </div>
+
+            <h2>A Estética Tropicalista</h2>
+
+            <p>
+                A Tropicália não era só música. Era uma estética completa, influenciada pela arte conceitual de Hélio Oiticica (que criou a instalação "Tropicália"), pelo cinema novo de Glauber Rocha, pelo teatro de José Celso Martinez Corrêa.
+            </p>
+
+            <p>
+                Era o <strong>antropofagismo cultural</strong> de Oswald de Andrade levado às últimas consequências: devorar a cultura estrangeira e transformar em algo brasileiro. Rock vira samba-rock. Psicodelia vira tropicalismo. Pop vira MPB.
+            </p>
+
+            <div class="pull-quote">
+                "Seja marginal, seja herói" — frase que se tornou o lema não-oficial do movimento, sintetizando a ambiguidade entre rebeldia e celebração.
+            </div>
+
+            <h2>O Fim e o Legado</h2>
+
+            <p>
+                O movimento durou pouco. Em dezembro de 1968, foi decretado o AI-5, o ato institucional mais duro da ditadura. Caetano e Gil foram presos em fevereiro de 1969 e depois exilados em Londres.
+            </p>
+
+            <p>
+                Mas a Tropicália já havia mudado a MPB para sempre. Depois dela, nada foi como antes. A guitarra elétrica foi incorporada. A mistura de gêneros foi naturalizada. A irreverência tornou-se possível.
+            </p>
+
+            <p>
+                Artistas como Chico Buarque, Milton Nascimento, Djavan, Marisa Monte, Beck, David Byrne — todos foram influenciados direta ou indiretamente pela revolução tropicalista.
+            </p>
+
+            <h2>Para Ouvir Agora</h2>
+
+            <div class="playlist-recommendation">
+                <h4>5 Músicas Essenciais da Tropicália</h4>
+                <ol>
+                    <li><strong>Alegria, Alegria</strong> - Caetano Veloso (1967)</li>
+                    <li><strong>Domingo no Parque</strong> - Gilberto Gil (1967)</li>
+                    <li><strong>Tropicália</strong> - Caetano Veloso (1968)</li>
+                    <li><strong>Enquanto Seu Lobo Não Vem</strong> - Caetano Veloso (1968)</li>
+                    <li><strong>Divino, Maravilhoso</strong> - Gal Costa (1968)</li>
+                </ol>
+            </div>
+
+            <div class="article-navigation">
+                <a href="index.html" class="nav-prev">← Voltar para Início</a>
+                <a href="index.html#universos" class="nav-next">Ver Outros Universos →</a>
+            </div>
         </div>
     </article>
 
     <footer>
         <div class="footer-content">
-            <p>Contando & Cantando © 2026 • Curadoria por Rosane Maia</p>
+            <p>CONTAR e CANTAR © 2026 • Curadoria histórica por Rosane Maia</p>
         </div>
     </footer>
+
 </body>
 </html>
