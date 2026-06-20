@@ -1,0 +1,66 @@
+/* =========================================
+   ESTILOS GLOBAIS - CONTAR e CANTAR
+   ========================================= */
+:root {
+    --cor-preto: #0A0A0A;
+    --cor-branco: #FFFFFF;
+    --cor-cinza-claro: #F7F7F7;
+    --cor-cinza-medio: #888888;
+    --cor-dourado: #C9A961;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--cor-branco);
+    color: var(--cor-preto);
+    line-height: 1.7;
+}
+
+/* Cabeçalho / Menu */
+header {
+    border-bottom: 1px solid #EEEEEE;
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--cor-preto);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.logo span { color: var(--cor-dourado); }
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--cor-preto);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+nav a:hover { color: var(--cor-dourado); }
