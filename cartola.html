@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartola: O Gênio do Samba | CONTAR e CANTAR</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --cor-preto: #0A0A0A;
+            --cor-branco: #FFFFFF;
+            --cor-cinza-claro: #F7F7F7;
+            --cor-cinza-medio: #888888;
+            --cor-dourado: #C9A961;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cor-branco);
+            color: var(--cor-preto);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+
+        /* HEADER */
+        header {
+            padding: 1.5rem 5%;
+            position: sticky; top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem; font-weight: 700;
+            letter-spacing: -0.5px; text-transform: uppercase;
+        }
+        .logo span { color: var(--cor-dourado); }
+        nav ul { display: flex; list-style: none; gap: 2rem; align-items: center; }
+        nav a {
+            font-size: 0.85rem; font-weight: 500;
+            text-transform: uppercase; letter-spacing: 1px;
+            position: relative; padding-bottom: 4px;
+        }
+        nav a::after {
+            content: ''; position: absolute; bottom: 0; left: 0;
+            width: 0; height: 2px; background: var(--cor-dourado);
+            transition: width 0.3s ease;
+        }
+        nav a:hover::after { width: 100%; }
+
+        /* ARTICLE HERO */
+        .article-hero {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 6rem 5% 4rem;
+            text-align: center;
+        }
+        .article-category {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 2px;
+            color: var(--cor-dourado); margin-bottom: 1.5rem; display: block;
+        }
+        .article-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.1; margin-bottom: 2rem;
+            letter-spacing: -1px; font-weight: 700;
+        }
+        .article-subtitle {
+            font-size: 1.3rem; color: #333;
+            font-weight: 300; font-style: italic;
+            margin-bottom: 3rem; max-width: 700px;
+            margin-left: auto; margin-right: auto;
+            font-family: 'Playfair Display', serif;
+        }
+        .article-meta {
+            display: flex; justify-content: center; gap: 2rem;
+            font-size: 0.85rem; color: var(--cor-cinza-medio);
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+
+        /* CAPA EDITORIAL EM CSS PURO */
+        .editorial-cover {
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            height: 450px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 50%, #888888 100%);
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+        }
+        .cover-text {
+            text-align: center; color: #FFFFFF;
+            font-family: 'Playfair Display', serif;
+        }
+        .cover-year {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem; letter-spacing: 4px;
+            display: block; margin-bottom: 1rem; opacity: 0.9;
+        }
+        .cover-text h2 {
+            font-size: 4rem; margin: 0; line-height: 1;
+            letter-spacing: -2px; text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .cover-text p {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem; letter-spacing: 3px;
+            margin-top: 1rem; opacity: 0.9;
+        }
+
+        /* ARTICLE CONTENT */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 5% 6rem;
+        }
+        .article-intro {
+            font-size: 1.25rem; line-height: 1.9;
+            color: var(--cor-preto); margin-bottom: 3rem; font-weight: 400;
+        }
+        .article-container p {
+            font-size: 1.1rem; line-height: 1.8;
+            color: #333; margin-bottom: 2rem;
+        }
+        .article-container h2 {
+            font-size: 2rem; margin: 4rem 0 1.5rem;
+            color: var(--cor-preto); font-weight: 700;
+        }
+        .article-container h3 {
+            font-size: 1.5rem; margin: 3rem 0 1rem;
+            color: var(--cor-preto); font-weight: 600;
+        }
+        .pull-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem; font-style: italic;
+            line-height: 1.4; color: var(--cor-preto);
+            border-left: 4px solid var(--cor-dourado);
+            padding-left: 2rem; margin: 4rem 0;
+        }
+        .article-section {
+            margin: 3rem 0; padding: 2rem;
+            background: var(--cor-cinza-claro); border-radius: 8px;
+        }
+        
+        /* FONTES/REFERÊNCIAS */
+        .references {
+            margin-top: 6rem;
+            padding: 3rem 2rem;
+            background: var(--cor-cinza-claro);
+            border-top: 3px solid var(--cor-dourado);
+            border-radius: 8px;
+        }
+        .references h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--cor-preto);
+            font-weight: 700;
+        }
+        .references ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .references li {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+            color: #333;
+        }
+        .references li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--cor-dourado);
+            font-weight: bold;
+        }
+        .references .reference-type {
+            font-weight: 600;
+            color: var(--cor-preto);
+        }
+        
+        .album-highlight {
+            display: flex; gap: 2rem; margin: 3rem 0;
+            padding: 2rem; background: var(--cor-cinza-claro);
+            border-radius: 8px; align-items: center;
+        }
+        .album-cover-css {
+            width: 200px; height: 200px;
+            background: #1a1a1a; border-radius: 4px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--cor-dourado);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem; font-weight: 700;
+            text-align: center; line-height: 1.2;
+            border: 2px solid var(--cor-dourado);
+        }
+        .album-info h4 { font-size: 1.3rem; margin-bottom: 1rem; }
+        .album-info p { font-size: 0.95rem; margin-bottom: 1rem; }
+        
+        .timeline {
+            margin: 3rem 0;
+            padding-left: 2rem;
+            border-left: 3px solid var(--cor-dourado);
+        }
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.6rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--cor-dourado);
+            border-radius: 50%;
+        }
+        .timeline-year {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            color: var(--cor-dourado);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .timeline-content {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .compositions-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .composition-item {
+            padding: 1.5rem;
+            background: var(--cor-branco);
+            border-left: 3px solid var(--cor-dourado);
+            border-radius: 4px;
+        }
+        .composition-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--cor-preto);
+        }
+        .composition-item p {
+            font-size: 0.9rem;
+            color: var(--cor-cinza-medio);
+            margin-bottom: 0;
+            font-style: italic;
+        }
+        
+        .article-navigation {
+            display: flex; justify-content: space-between;
+            margin-top: 4rem; padding-top: 2rem;
+            border-top: 2px solid var(--cor-preto);
+        }
+        .nav-prev, .nav-next {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 1px;
+            color: var(--cor-dourado);
+        }
+        .nav-prev:hover, .nav-next:hover { color: var(--cor-preto); }
+
+        /* FOOTER */
+        footer { padding: 4rem 5%; background: var(--cor-cinza-claro); text-align: center; }
+        .footer-content { max-width: 1400px; margin: 0 auto; }
+        footer p {
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase; letter-spacing: 1px;
+            font-size: 0.8rem; color: var(--cor-cinza-medio);
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .article-hero .article-meta { flex-direction: column; gap: 0.5rem; }
+            .album-highlight { flex-direction: column; }
+            .editorial-cover { height: 300px; }
+            .cover-text h2 { font-size: 2.5rem; }
+            .compositions-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">CONTAR <span>e</span> CANTAR</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#revista">Revista</a></li>
+                <li><a href="index.html#universos">Universos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <article>
+        <div class="article-hero">
+            <span class="article-category">Biografia • 1908-1980</span>
+            <h1 class="article-title">Cartola: O Gênio do Samba</h1>
+            <p class="article-subtitle">De lavador de carros a ícone nacional. A história completa do fundador da Mangueira e um dos maiores compositores da música brasileira.</p>
+            <div class="article-meta">
+                <span>Por Rosane Maia</span>
+                <span>•</span>
+                <span>Junho 2026</span>
+                <span>•</span>
+                <span>18 min de leitura</span>
+            </div>
+        </div>
+
+        <div class="editorial-cover">
+            <div class="cover-text">
+                <span class="cover-year">1908-1980</span>
+                <h2>CARTOLA</h2>
+                <p>O GÊNIO DO SAMBA</p>
+            </div>
+        </div>
+
+        <div class="article-container">
+            <p class="article-intro">
+                Angenor de Oliveira, o Cartola, é uma das figuras mais emblemáticas da música popular brasileira. Fundador da Estação Primeira de Mangueira, compositor de clássicos imortais como "As Rosas Não Falam" e "O Mundo É um Moinho", sua trajetória é marcada pela humildade, resistência e uma sensibilidade poética ímpar. De lavador de carros a patrimônio cultural do Brasil, Cartola construiu uma obra que transcende gerações.
+            </p>
+
+            <h2>Infância e Juventude: As Origens do Gênio</h2>
+            
+            <p>
+                Nascido em 11 de outubro de 1908, no bairro do Catete, Rio de Janeiro, Angenor de Oliveira cresceu em um ambiente onde a música estava presente. Filho de Sebastião Joaquim de Oliveira e de Dona Deolinda, mudou-se ainda criança para o Morro da Mangueira, onde passaria a maior parte de sua vida.
+            </p>
+
+            <p>
+                O apelido "Cartola" surgiu na infância, quando ajudava o pai na construção de sua casa no morro. Sempre usando um chapéu-coco (cartola) para proteger a cabeça da cal que caía durante a obra, o apelido pegou e o acompanharia por toda a vida, tornando-se mais famoso que seu próprio nome de batismo.
+            </p>
+
+            <div class="pull-quote">
+                "O samba nasceu no morro, mas Cartola o levou para o coração do Brasil."
+            </div>
+
+            <h2>A Fundação da Mangueira</h2>
+
+            <p>
+                Em 1928, aos 20 anos, Cartola foi um dos fundadores da Estação Primeira de Mangueira, uma das escolas de samba mais tradicionais do Rio de Janeiro. Junto com Carlos Cachaça, Paulo da Portela e outros sambistas, Cartola ajudou a estruturar a escola e a elevar o samba de uma manifestação popular marginalizada a uma expressão cultural legítima.
+            </p>
+
+            <p>
+                Na Mangueira, Cartola não foi apenas compositor. Foi diretor de harmonia, enredista e um dos principais responsáveis pela estética visual e musical da escola. Sua visão artística ajudou a transformar o desfile das escolas de samba em um espetáculo que combina música, poesia e artes visuais.
+            </p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1908</div>
+                    <div class="timeline-content">Nascimento no Catete, Rio de Janeiro</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1928</div>
+                    <div class="timeline-content">Fundação da Estação Primeira de Mangueira</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1930-1940</div>
+                    <div class="timeline-content">Composição de clássicos do samba</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1950-1960</div>
+                    <div class="timeline-content">Período de esquecimento; trabalha como lavador de carros</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1974</div>
+                    <div class="timeline-content">Abertura do Zicartola; redescoberta pelo público</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1980</div>
+                    <div class="timeline-content">Falecimento aos 71 anos</div>
+                </div>
+            </div>
+
+            <h2>Os Anos Difíceis: O Lavador de Carros</h2>
+
+            <p>
+                Apesar de sua importância para o samba, Cartola viveu décadas de esquecimento e dificuldades financeiras. Entre os anos 1940 e 1960, o compositor trabalhou como lavador de carros em um posto de gasolina no bairro do Catumbi, no Rio de Janeiro. Durante esse período, continuou compondo, mas suas músicas eram pouco gravadas e menos conhecidas do grande público.
+            </p>
+
+            <p>
+                Foi nesse período difícil que Cartola conheceu e se casou com Dona Zica (Euzébia Silva de Oliveira), em 1963. Zica seria fundamental na redescoberta de Cartola e na preservação de seu legado. Juntos, abririam o Zicartola, restaurante e ponto de encontro de sambistas que marcaria o renascimento de Cartola.
+            </p>
+
+            <div class="article-section">
+                <h3>O Zicartola: O Renascimento</h3>
+                <p>
+                    Em 1963, Cartola e Dona Zica abriram o Zicartola, na Rua dos Inválidos, no centro do Rio. O restaurante rapidamente se tornou um ponto de encontro de sambistas, intelectuais, artistas e amantes do samba. Lá, Cartola voltou a cantar e compor, e sua obra começou a ser redescoberta por uma nova geração.
+                </p>
+                <p>
+                    O Zicartola funcionou até 1967 e foi fundamental para o resgate da memória do samba e para a valorização dos sambistas da "velha guarda". Foi ali que Cartola conheceu jovens músicos e produtores que o ajudariam a gravar seus primeiros discos solo.
+                </p>
+            </div>
+
+            <h2>Primeiros Discos e Reconhecimento Tardio</h2>
+
+            <p>
+                Apesar de compor desde os anos 1930, Cartola só gravou seu primeiro disco solo em 1974, aos 66 anos. O álbum "Cartola", lançado pela Marcus Pereira, foi um marco na história do samba e trouxe clássicos como "As Rosas Não Falam", "O Mundo É um Moinho" e "Cordas de Aço".
+            </p>
+
+            <div class="album-highlight">
+                <div class="album-cover-css">
+                    <span>CARTOLA<br>1974</span>
+                </div>
+                <div class="album-info">
+                    <h4>Cartola (1974)</h4>
+                    <p><strong>Gravadora:</strong> Marcus Pereira<br>
+                    <strong>Gênero:</strong> Samba<br>
+                    <strong>Produção:</strong> Marcus Pereira e Hermínio Bello de Carvalho</p>
+                </div>
+            </div>
+
+            <p>
+                Nos anos seguintes, Cartola gravou mais dois álbuns: "Cartola" (1976) e "Cartola" (1977), também conhecidos como "Cartola 2" e "Cartola 3". Esses discos consolidaram sua obra e o colocaram no panteão dos grandes compositores brasileiros, ao lado de Noel Rosa, Ataulfo Alves e Nelson Cavaquinho.
+            </p>
+
+            <h2>Principais Composições</h2>
+
+            <p>
+                Cartola compôs mais de 500 músicas ao longo de sua vida. Muitas delas se tornaram clássicos do samba e são regravadas até hoje. Abaixo, algumas de suas composições mais emblemáticas:
+            </p>
+
+            <div class="compositions-grid">
+                <div class="composition-item">
+                    <h4>As Rosas Não Falam (1964)</h4>
+                    <p>"Bate outra vez / Com esperanças o meu coração..."</p>
+                </div>
+                <div class="composition-item">
+                    <h4>O Mundo É um Moinho (1976)</h4>
+                    <p>"Ainda é cedo, amor / Mal começaste a conhecer a vida..."</p>
+                </div>
+                <div class="composition-item">
+                    <h4>Cordas de Aço (1974)</h4>
+                    <p>"Você passa e eu fico / Na solidão..."</p>
+                </div>
+                <div class="composition-item">
+                    <h4>Peito Vazio (1964)</h4>
+                    <p>"Quem nunca sentiu o vazio / De um peito abandonado..."</p>
+                </div>
+                <div class="composition-item">
+                    <h4>Alvorada (1958)</h4>
+                    <p>"O sol nascerá / E a Mangueira será..."</p>
+                </div>
+                <div class="composition-item">
+                    <h4>Quem Me Vê Sorrir (1964)</h4>
+                    <p>"Quem me vê sorrir / Não vê minhas lágrimas..."</p>
+                </div>
+            </div>
+
+            <h2>Legado e Importância Cultural</h2>
+
+            <p>
+                Cartola faleceu em 30 de novembro de 1980, aos 71 anos, no Rio de Janeiro. Sua morte foi lamentada por todo o Brasil, e seu legado permanece vivo até hoje. É considerado um dos maiores compositores de samba de todos os tempos, ao lado de Noel Rosa, Ataulfo Alves e Nelson Cavaquinho.
+            </p>
+
+            <p>
+                Sua obra é marcada pela poesia refinada, melodias sofisticadas e uma sensibilidade única para retratar o amor, a saudade e a condição humana. Músicas como "As Rosas Não Falam" e "O Mundo É um Moinho" são estudadas em universidades e regravadas por artistas de todos os gêneros musicais.
+            </p>
+
+            <div class="pull-quote">
+                "Cartola não foi apenas um sambista. Foi um poeta que usou o samba como linguagem para expressar a alma brasileira."
+            </div>
+
+            <h2>Homenagens Póstumas</h2>
+
+            <p>
+                Após sua morte, Cartola recebeu diversas homenagens:
+            </p>
+
+            <ul style="margin: 2rem 0; padding-left: 2rem; line-height: 2;">
+                <li><strong>1981:</strong> Lançamento do documentário "Cartola", de Carlos Diegues</li>
+                <li><strong>1995:</strong> Inauguração do Museu do Samba, no Rio de Janeiro, com acervo dedicado a Cartola</li>
+                <li><strong>2008:</strong> Centenário de nascimento comemorado com shows, exposições e lançamentos</li>
+                <li><strong>2016:</strong> Biografia "Cartola: Os Tempos Idos", de Ruy Castro</li>
+                <li><strong>2020:</strong> 40 anos de morte lembrados com documentários e reedições</li>
+            </ul>
+
+            <h2>O Samba de Cartola: Características Estéticas</h2>
+
+            <p>
+                O samba de Cartola se distingue por várias características que o tornam único:
+            </p>
+
+            <div class="article-section">
+                <h3>Poesia Refinada</h3>
+                <p>
+                    Cartola tinha uma formação literária autodidata, mas sua poesia rivaliza com a dos grandes poetas brasileiros. Suas letras são marcadas por metáforas elaboradas, rimas ricas e uma sensibilidade aguda para retratar sentimentos universais.
+                </p>
+            </div>
+
+            <div class="article-section">
+                <h3>Melodias Sofisticadas</h3>
+                <p>
+                    Suas melodias combinam simplicidade aparente com complexidade harmônica. Cartola dominava a arte de criar melodias memoráveis que se encaixam perfeitamente nas letras, criando uma unidade poético-musical rara.
+                </p>
+            </div>
+
+            <div class="article-section">
+                <h3>Temas Universais</h3>
+                <p>
+                    Amor, saudade, desilusão, esperança — Cartola explorou temas universais com uma profundidade que transcende o tempo e o espaço. Suas músicas falam diretamente ao coração, independentemente da geração ou contexto social.
+                </p>
+            </div>
+
+            <!-- SEÇÃO DE FONTES E REFERÊNCIAS -->
+            <div class="references">
+                <h3>Fontes e Referências Bibliográficas</h3>
+                <ul>
+                    <li>
+                        <span class="reference-type">Livro:</span> CASTRO, Ruy. <em>Cartola: Os Tempos Idos</em>. São Paulo: Companhia das Letras, 2016. 432p.
+                    </li>
+                    <li>
+                        <span class="reference-type">Livro:</span> MOURA, Roberto. <em>Tia Ciata e a Pequena África no Rio de Janeiro</em>. Rio de Janeiro: Funarte, 1995. 256p.
+                    </li>
+                    <li>
+                        <span class="reference-type">Livro:</span> SILVA, Marília T. Barboza da; FILHO, Arthur L. de Araújo. <em>Cartola: Vida e Obra</em>. Rio de Janeiro: Funarte, 1983. 198p.
+                    </li>
+                    <li>
+                        <span class="reference-type">Documentário:</span> DIEGUES, Carlos. <em>Cartola</em>. Rio de Janeiro: Embrafilme, 1981. 90 min.
+                    </li>
+                    <li>
+                        <span class="reference-type">Documentário:</span> SILVEIRA, Walter. <em>Cartola: 100 Anos</em>. Rio de Janeiro: TV Brasil, 2008. 52 min.
+                    </li>
+                    <li>
+                        <span class="reference-type">Acervo:</span> Museu do Samba - Estação Primeira de Mangueira. Rio de Janeiro. Acervo Cartola.
+                    </li>
+                    <li>
+                        <span class="reference-type">Artigo:</span> SANDRONI, Carlos. "Feitiço Decente: Transformações do Samba no Rio de Janeiro (1917-1933)". <em>Revista USP</em>, São Paulo, n. 56, p. 120-135, 2002.
+                    </li>
+                    <li>
+                        <span class="reference-type">Artigo:</span> PARANHOS, Adalberto. "Cartola: A Construção de um Mito". <em>Revista Brasileira de Ciências Sociais</em>, São Paulo, v. 18, n. 51, p. 45-62, 2003.
+                    </li>
+                    <li>
+                        <span class="reference-type">Acervo Digital:</span> Instituto Moreira Salles. "Cartola: Discografia Completa". Disponível em: <ims.com.br>. Acesso em: jun. 2026.
+                    </li>
+                    <li>
+                        <span class="reference-type">Entrevista:</span> ZICA, Dona (Euzébia Silva de Oliveira). "Memórias de Cartola". Entrevistador: Hermínio Bello de Carvalho. Rio de Janeiro, 1985. Acervo Museu do Samba.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="article-navigation">
+                <a href="tropicalia.html" class="nav-prev">← Tropicália</a>
+                <a href="index.html" class="nav-next">Voltar para Início →</a>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <div class="footer-content">
+            <p>CONTAR e CANTAR © 2026 • Curadoria histórica por Rosane Maia</p>
+        </div>
+    </footer>
+
+</body>
+</html>
