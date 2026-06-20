@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universos da MPB | CONTAR e CANTAR</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --cor-preto: #0A0A0A;
+            --cor-branco: #FFFFFF;
+            --cor-cinza-claro: #F7F7F7;
+            --cor-cinza-medio: #888888;
+            --cor-dourado: #C9A961;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cor-branco);
+            color: var(--cor-preto);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+
+        /* HEADER */
+        header {
+            padding: 1.5rem 5%;
+            position: sticky; top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem; font-weight: 700;
+            letter-spacing: -0.5px; text-transform: uppercase;
+        }
+        .logo span { color: var(--cor-dourado); }
+        nav ul { display: flex; list-style: none; gap: 2rem; align-items: center; }
+        nav a {
+            font-size: 0.85rem; font-weight: 500;
+            text-transform: uppercase; letter-spacing: 1px;
+            position: relative; padding-bottom: 4px;
+        }
+        nav a::after {
+            content: ''; position: absolute; bottom: 0; left: 0;
+            width: 0; height: 2px; background: var(--cor-dourado);
+            transition: width 0.3s ease;
+        }
+        nav a:hover::after { width: 100%; }
+
+        /* HERO */
+        .hero {
+            padding: 8rem 5% 4rem;
+            max-width: 1200px; margin: 0 auto; text-align: center;
+        }
+        .hero-eyebrow {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 3px;
+            color: var(--cor-dourado); margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.1; margin-bottom: 1.5rem;
+            font-weight: 700; letter-spacing: -2px;
+        }
+        .hero-subtitle {
+            font-size: 1.2rem; color: #333;
+            max-width: 700px; margin: 0 auto 3rem;
+            font-weight: 300; font-style: italic;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* BUSCA */
+        .search-container {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+        .search-input {
+            width: 100%;
+            padding: 1.2rem 1.5rem 1.2rem 3.5rem;
+            font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
+            border: 2px solid var(--cor-preto);
+            border-radius: 50px;
+            background: var(--cor-branco);
+            color: var(--cor-preto);
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        .search-input:focus {
+            border-color: var(--cor-dourado);
+            box-shadow: 0 0 0 4px rgba(201, 169, 97, 0.1);
+        }
+        .search-icon {
+            position: absolute;
+            left: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            color: var(--cor-cinza-medio);
+        }
+        .search-count {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--cor-cinza-medio);
+            margin-bottom: 2rem;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* FILTROS */
+        .filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            max-width: 1000px;
+            margin: 0 auto 4rem;
+            padding: 0 5%;
+        }
+        .filter-btn {
+            padding: 0.7rem 1.5rem;
+            background: transparent;
+            border: 1px solid var(--cor-preto);
+            border-radius: 50px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--cor-preto);
+        }
+        .filter-btn:hover {
+            background: var(--cor-preto);
+            color: var(--cor-branco);
+        }
+        .filter-btn.ativo {
+            background: var(--cor-preto);
+            color: var(--cor-branco);
+        }
+
+        /* GRID DE FONTES */
+        .fontes-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5% 6rem;
+        }
+        .fontes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        .fonte-card {
+            background: var(--cor-branco);
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .fonte-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            border-color: var(--cor-dourado);
+        }
+        .fonte-card.oculto {
+            display: none;
+        }
+        .fonte-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+        .fonte-categoria {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--cor-dourado);
+            padding: 0.3rem 0.8rem;
+            background: rgba(201, 169, 97, 0.1);
+            border-radius: 4px;
+        }
+        .fonte-pais {
+            font-size: 1.2rem;
+        }
+        .fonte-tipo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            color: var(--cor-cinza-medio);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+        .fonte-titulo {
+            font-size: 1.3rem;
+            line-height: 1.3;
+            margin-bottom: 0.8rem;
+            color: var(--cor-preto);
+            font-weight: 600;
+        }
+        .fonte-tema {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.75rem;
+            color: var(--cor-cinza-medio);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+        .fonte-descricao {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        .fonte-link {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--cor-dourado);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .fonte-link:hover {
+            gap: 1rem;
+            color: var(--cor-preto);
+        }
+
+        /* ESTADO VAZIO */
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            display: none;
+        }
+        .empty-state.visivel {
+            display: block;
+        }
+        .empty-state h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .empty-state p {
+            color: var(--cor-cinza-medio);
+        }
+
+        /* FOOTER */
+        footer { padding: 4rem 5%; background: var(--cor-cinza-claro); text-align: center; }
+        .footer-content { max-width: 1400px; margin: 0 auto; }
+        footer p {
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase; letter-spacing: 1px;
+            font-size: 0.8rem; color: var(--cor-cinza-medio);
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .hero { padding: 6rem 5% 3rem; }
+            .fontes-grid { grid-template-columns: 1fr; }
+            .filters { gap: 0.5rem; }
+            .filter-btn { padding: 0.6rem 1rem; font-size: 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">CONTAR <span>e</span> CANTAR</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#revista">Revista</a></li>
+                <li><a href="universos.html">Universos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-eyebrow">Curadoria de Fontes</div>
+        <h1>Universos da MPB</h1>
+        <p class="hero-subtitle">As melhores fontes nacionais e internacionais para mergulhar na Música Popular Brasileira. Livros, documentários, acervos, podcasts e referências acadêmicas.</p>
+        
+        <div class="search-container">
+            <span class="search-icon"></span>
+            <input type="text" class="search-input" id="busca" placeholder="Buscar por tema, artista, tipo de fonte...">
+        </div>
+        <div class="search-count" id="contador">Mostrando todas as fontes</div>
+    </section>
+
+    <div class="filters" id="filtros">
+        <button class="filter-btn ativo" data-filtro="todos">Todas</button>
+        <button class="filter-btn" data-filtro="tropicalia">Tropicália</button>
+        <button class="filter-btn" data-filtro="bossa">Bossa Nova</button>
+        <button class="filter-btn" data-filtro="samba">Samba</button>
+        <button class="filter-btn" data-filtro="mpb">MPB</button>
+        <button class="filter-btn" data-filtro="clube">Clube da Esquina</button>
+        <button class="filter-btn" data-filtro="geral">Geral</button>
+    </div>
+
+    <div class="fontes-container">
+        <div class="fontes-grid" id="gridFontes">
+
+            <!-- FONTES NACIONAIS -->
+            <div class="fonte-card" data-tema="geral" data-tipo="acervo">
+                <div class="fonte-header">
+                    <span class="fonte-categoria">Acervo</span>
+                    <span class="fonte-pais">🇷</span>
+                </div>
+                <div class="fonte-tipo">Instituição Cultural</div>
+                <h3 class="fonte-titulo">Instituto Moreira Salles</h3>
+                <div class="fonte-tema">Geral • MPB • Bossa Nova</div>
+                <p class="fonte-descricao">Um dos mais importantes acervos de música brasileira. Contém fotografias, manuscritos, gravações raras e documentos de artistas como Tom Jobim, Cartola e Chico Buarque.</p>
+                <a href="https://ims.com.br" target="_blank" rel="noopener" class="fonte-link">Acessar acervo →</a>
+            </div>
+
+            <div class="fonte-card" data-tema="geral" data-tipo="enciclopedia">
+                <div class="fonte-header">
+                    <span class="fonte-categoria">Enciclopédia</span>
+                    <span class="fonte-pais">🇧🇷</span>
+                </div>
+                <div class="fonte-tipo">Base de Dados</div>
+                <h3 class="fonte-titulo">Enciclopédia Itaú Cultural</h3>
+                <div class="fonte-tema">Geral • Todos os movimentos</div>
+                <p class="fonte-descricao">Enciclopédia digital gratuita com verbetes detalhados sobre artistas, movimentos, álbuns e conceitos da cultura brasileira. Referência acadêmica.</p>
+                <a href="https://enciclopedia.itaucultural.org.br" target="_blank" rel="noopener" class="fonte-link">Consultar verbetes →</a>
+            </div>
+
+            <div class="fonte-card" data-tema="geral" data-tipo="acervo">
+                <div class="fonte-header">
+                    <span class="fonte-categoria">Acervo</span>
+                    <span class="fonte-pais">🇧🇷</span>
+                </div>
+                <div class="fonte-tipo">Museu</div>
+                <h3 class="fonte-titulo">Museu da Imagem e do Som (MIS)</h3>
+                <div class="fonte-tema">Geral • Documentários • Entrevistas</div>
+                <p class="fonte-descricao">Acervo audiovisual com entrevistas históricas, documentários e registros sonoros de artistas brasileiros. Fundamental para pesquisadores.</p>
+                <a href="https://mis-sp.org.br" target="_blank" rel="noopener" class="fonte-link">Explorar acervo →</a>
+            </div>
+
+            <div class="fonte-card" data-tema="geral" data-tipo="biblioteca">
+                <div class="fonte-header">
+                    <span class="fonte-categoria">Biblioteca</span>
+                    <span class="fonte-pais">🇧🇷</span>
+                </div>
+                <div class="fonte-tipo">Hemeroteca Digital</div>
+                <h3 class="fonte-titulo">Biblioteca Nacional</h3>
+                <div class="fonte-tema">Geral • Jornais históricos</div>
+                <p class="fonte-descricao">Hemeroteca Digital com milhões de páginas de jornais e revistas brasileiros digitalizados. Essencial para pesquisar a cobertura da MPB em sua época.</p>
+                <a href="https://hemerotecadigital.bn.gov.br" target="_blank" rel="noopener" class="fonte-link">Pesquisar →</a>
+            </div>
+
+            <div class="fonte-card" data-tema="tropicalia" data-tipo="livro">
+                <div class="fonte-header">
+                    <span class="fonte-categoria">Livro</span>
+                    <span class="fonte-pais">🇧🇷</span>
+                </div>
+                <div class="fonte-tipo">Biografia / História</div>
+                <h3 class="fonte-titulo">Tropicália: Uma História</h3>
+                <div class="fonte-tema">Tropicália • Caetano • Gil</div>
+                <p class="fonte-descricao">De Carlos Calado. A biografia definitiva do movimento tropicalista, com depoimentos dos protagonistas e análise crítica detalhada.</p>
+                <a href="https://www.companhiadasletras.com.br" target="_blank" rel="noopener" class="fonte-link">Ver na editora →</a>
+            </div>
+
+            <div class="fonte-card" data-tema="bossa" data-tipo="livro">
+                <div class="fonte-header">
+                    <span class="fonte-categoria">Livro</span>
+                    <span class="fonte-pais">🇷</span>
+                </div>
+                <div class="fonte-tipo">História Cultural</div>
+                <h3 class="fonte-titulo">A Bossa Nova e a Bossa</h3>
+                <div class="fonte-tema">Bossa Nova • Jobim • João Gilberto</div>
+                <p class="fonte-descricao">De Ruy Castro. Narrativa envolvente sobre o surgimento da bossa nova no Rio dos anos 50, com foco em Copacabana e Ipanema.</p>
+                <a href="https://www.companhiadasletras.com.br" target="_blank" rel="noopener" class="fonte-link">Ver na editora →</a>
+            </div>
+
+            <div class="fonte-card" data-tema="samba" data-tipo="livro">
+                <div class="fonte-header">
+                    <span class="fonte-categoria">Livro</span>
+                    <span class="fonte-pais">🇧🇷</span>
+                </div>
+                <div class="fonte-tipo">Biografia</div>
+                <h3 class="fonte-titulo">Cartola: Os Tempos Idos</h3>
+                <div class="fonte-tema">Samba • Cartola • Mangueira</div>
+                <p class="fonte-descricao">De Ruy Castro. Biografia completa do fundador da Mangueira, com pesquisa extensa em arquivos e entrevistas com contemporâneos.</p>
+                <a href="https://www.companhiadasletras.com.br" target="_blank" rel="noopener" class="fonte-link">Ver na editora →</a>
+            </div>
+
+            <div class="fonte-card" data-tema="mpb" data-tipo="livro">
+                <div class="fonte-header">
+                    <span class="fonte-categoria">Livro</span>
+                    <span class="fonte-pais">🇧🇷</span>
+                </div>
+                <div class="fonte-tipo">Biografia</div>
+                <h3 class="fonte-titulo">Elis Regina: Biografia</h3>
+                <div class="fonte-tema">MPB • Elis Regina</div>
+                <p class="fonte-descricao">De Regina Echeverria. A biografia mais completa da cantora, com entrevistas exclusivas e análise de sua técnica vocal.</p>
+                <a href="https://www.globolivros.com.br" target="_blank" rel="noopener" class="fonte-link">Ver na editora →</a>
+            </div>
+
+            <div class="fonte-card" data-tema="clube" data-tipo="livro">
+                <div class="fonte-header">
+                    <span class="fonte-categoria">Livro</span>
+                    <span class="fonte-pais">🇧</span>
+                </div>
+                <div class="fonte-tipo">História Musical</div>
+                <h3 class="fonte-titulo">Clube da Esquina: Um Grupo de Compositores</h3>
+                <div class="fonte-tema">Clube da Esquina • Milton Nascimento</div>
+                <p class="fonte-descricao">De Jairo Severino e Márcio Nacif. Estudo detalhado sobre o movimento mineiro dos anos 70 e seus desdobramentos.</p>
+                <a href="https://www.becapublicacoes.com.br" target="_blank" rel="noopener" class="fonte-link">Ver na editora →</a>
+            </div>
+
+            <!-- FONTES INTERNACIONAIS -->
+            <div class="fonte-card" data-tema="geral" data-tipo="acervo">
+                <div class="fonte-header">
+                    <span class="fonte-categoria">Acervo</span>
+                    <span class="fonte-pais">🌍</span>
+                </div>
+                <div class="fonte-tipo">Instituição Americana</div>
+                <h3 class="fonte-titulo">Smithsonian Folkways</h3>
+                <div class="fonte-tema">Geral • Música Latino-Americana</div>
+                <p class="fonte-descricao">Selo da Smithsonian Institution dedicado à música tradicional e contemporânea do mundo. Acervo digital com gravações raras de MPB.</p>
+                <a href="https://folkways.si.edu" target="_blank" rel="noopener" class="fonte-link">Explorar →</a>
+            </div>
+
+            <div class="fonte-card" data-tema="geral" data-tipo="enciclopedia">
+                <div class="fonte-header">
+                    <span class="fonte-categoria">Enciclopédia</span>
+                    <span class="fonte-pais"></span>
+                </div>
+                <div class="fonte-tipo">Base Acadêmica</div>
+                <h3 class="fonte-titulo">Oxford Music Online</h3>
+                <div class="fonte-tema">Geral • Verbete acadêmico</div>
+                <p class="fonte-descricao">A maior enciclopédia de música do mundo. Verbete "Brazilian Popular Music" é referência acadêmica internacional sobre MPB.</p>
+                <a href="https://www.oxfordmusiconline.com" target="_blank" rel="noopener" class="fonte-link">Acessar (assinatura) →</a>
+            </div>
+
+            <div class="fonte-card" data-tema="geral" data-tipo="biblioteca">
+                <div class="fonte-header">
+                    <span class="fonte-categoria">Biblioteca</span>
+                    <span class="fonte-pais">🌍</span>
+                </div>
+                <div class="fonte-tipo">Acervo Nacional</div>
+                <h3 class="fonte-titulo">Library of Congress</h3>
+                <div class="fonte-tema">Geral • Gravações históricas</div>
+                <p class="fonte-descricao">A maior biblioteca do mundo possui acervo significativo de música brasileira, incluindo gravações históricas e partituras.</p>
+                <a href="https://www.loc.gov" target="_blank" rel="noopener" class="fonte-link">Pesquisar →</a>
+            </div>
+
+            <div class="fonte-card" data-tema="geral" data-tipo="revista">
+                <div class="fonte-header">
+                    <span class="fonte-categoria">Revista</span>
+                    <span class="fonte-pais">🌍</span>
+                </div>
+                <div class="fonte-tipo">Crítica Musical</div>
+                <h3 class="fonte-titulo">Pitchfork</h3>
+                <div class="fonte-tema">Geral • Resenhas internacionais</div>
+                <p class="fonte-descricao">Uma das revistas de música mais influentes do mundo. Seção "World Music" cobre lançamentos brasileiros com olhar internacional.</p>
+                <a href="https://pitchfork.com" target="_blank" rel="noopener" class="fonte-link">Ler →</a>
+            </div>
+
+            <div class="fonte-card" data-tema="geral" data-tipo="radio">
+                <div class="fonte-header">
+                    <span class="fonte-categoria">Rádio</span>
+                    <span class="fonte-pais">🌍</span>
+                </div>
+                <div class="fonte-tipo">Jornalismo Musical</div>
+                <h3 class="fonte-titulo">NPR Music</h3>
+                <div class="fonte-tema">Geral • Tiny Desk • Entrevistas</div>
+                <p class="fonte-descricao">Série Tiny Desk Concerts já recebeu artistas brasileiros como Silva, Anitta e Liniker. Excelente curadoria de música global.</p>
+                <a href="https://www.npr.org/sections/music" target="_blank" rel="noopener" class="fonte-link">Ouvir →</a>
+            </div>
+
+            <div class="fonte-card" data-tema="tropicalia" data-tipo="documentario">
+                <div class="fonte-header">
+                    <span class="fonte-categoria">Documentário</span>
+                    <span class="fonte-pais">🌍</span>
+                </div>
+                <div class="fonte-tipo">Filme</div>
+                <h3 class="fonte-titulo">Tropicália: A Brazilian Revolution in Sound</h3>
+                <div class="fonte-tema">Tropicália • Documentário internacional</div>
+                <p class="fonte-descricao">Documentário de 2012 dirigido por Marcelo Machado, com distribuição internacional. Apresenta o movimento para o público global.</p>
+                <a href="https://www.imdb.com/title/tt2278390" target="_blank" rel="noopener" class="fonte-link">Ver no IMDb →</a>
+            </div>
+
+            <div class="fonte-card" data-tema="bossa" data-tipo="livro">
+                <div class="fonte-header">
+                    <span class="fonte-categoria">Livro</span>
+                    <span class="fonte-pais">🌍</span>
+                </div>
+                <div class="fonte-tipo">Estudo Acadêmico</div>
+                <h3 class="fonte-titulo">The Brazilian Sound</h3>
+                <div class="fonte-tema">Bossa Nova • Samba • MPB</div>
+                <p class="fonte-descricao">De Chris McGowan e Ricardo Pessanha. Guia definitivo em inglês sobre a música brasileira, de choro ao funk.</p>
+                <a href="https://www.amazon.com" target="_blank" rel="noopener" class="fonte-link">Ver na Amazon →</a>
+            </div>
+
+            <!-- ACADEMICAS -->
+            <div class="fonte-card" data-tema="geral" data-tipo="academica">
+                <div class="fonte-header">
+                    <span class="fonte-categoria">Acadêmica</span>
+                    <span class="fonte-pais">🇧🇷</span>
+                </div>
+                <div class="fonte-tipo">Base Científica</div>
+                <h3 class="fonte-titulo">SciELO</h3>
+                <div class="fonte-tema">Geral • Artigos científicos</div>
+                <p class="fonte-descricao">Biblioteca digital de artigos científicos brasileiros. Centenas de estudos sobre MPB, música popular e cultura brasileira.</p>
+                <a href="https://scielo.org" target="_blank" rel="noopener" class="fonte-link">Pesquisar artigos →</a>
+            </div>
+
+            <div class="fonte-card" data-tema="geral" data-tipo="academica">
+                <div class="fonte-header">
+                    <span class="fonte-categoria">Acadêmica</span>
+                    <span class="fonte-pais">🌍</span>
+                </div>
+                <div class="fonte-tipo">Busca Científica</div>
+                <h3 class="fonte-titulo">Google Scholar</h3>
+                <div class="fonte-tema">Geral • Teses e dissertações</div>
+                <p class="fonte-descricao">Motor de busca de artigos acadêmicos. Excelente para encontrar teses e dissertações sobre MPB em universidades brasileiras e estrangeiras.</p>
+                <a href="https://scholar.google.com" target="_blank" rel="noopener" class="fonte-link">Pesquisar →</a>
+            </div>
+
+            <!-- AUDIOVISUAL -->
+            <div class="fonte-card" data-tema="geral" data-tipo="documentario">
+                <div class="fonte-header">
+                    <span class="fonte-categoria">Documentário</span>
+                    <span class="fonte-pais">🇧🇷</span>
+                </div>
+                <div class="fonte-tipo">Série</div>
+                <h3 class="fonte-titulo">Documentários da TV Brasil</h3>
+                <div class="fonte-tema">Geral • Série musical</div>
+                <p class="fonte-descricao">Canal público com vasta produção documental sobre música brasileira. Muitos disponíveis gratuitamente no YouTube oficial.</p>
+                <a href="https://www.youtube.com/@tvbrasil" target="_blank" rel="noopener" class="fonte-link">Assistir →</a>
+            </div>
+
+            <div class="fonte-card" data-tema="geral" data-tipo="podcast">
+                <div class="fonte-header">
+                    <span class="fonte-categoria">Podcast</span>
+                    <span class="fonte-pais">🇧🇷</span>
+                </div>
+                <div class="fonte-tipo">Áudio</div>
+                <h3 class="fonte-titulo">Discografia Comentada</h3>
+                <div class="fonte-tema">Geral • Análise de álbuns</div>
+                <p class="fonte-descricao">Podcast que analisa álbuns clássicos da música brasileira com profundidade. Excelente para quem quer ir além do superficial.</p>
+                <a href="https://www.discografiacomentada.com.br" target="_blank" rel="noopener" class="fonte-link">Ouvir →</a>
+            </div>
+
+            <div class="fonte-card" data-tema="geral" data-tipo="podcast">
+                <div class="fonte-header">
+                    <span class="fonte-categoria">Podcast</span>
+                    <span class="fonte-pais">🇷</span>
+                </div>
+                <div class="fonte-tipo">Áudio</div>
+                <h3 class="fonte-titulo">Música Matinal</h3>
+                <div class="fonte-tema">Geral • Curiosidades musicais</div>
+                <p class="fonte-descricao">Podcast diário com histórias e curiosidades da música brasileira. Formato curto e informativo.</p>
+                <a href="https://musicamatinal.com.br" target="_blank" rel="noopener" class="fonte-link">Ouvir →</a>
+            </div>
+
+        </div>
+
+        <div class="empty-state" id="estadoVazio">
+            <h3>Nenhuma fonte encontrada</h3>
+            <p>Tente outros termos de busca ou limpe os filtros.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>CONTAR e CANTAR © 2026 • Curadoria histórica por Rosane Maia</p>
+        </div>
+    </footer>
+
+    <script>
+        // BUSCA EM TEMPO REAL
+        const buscaInput = document.getElementById('busca');
+        const cards = document.querySelectorAll('.fonte-card');
+        const contador = document.getElementById('contador');
+        const estadoVazio = document.getElementById('estadoVazio');
+        const filtrosBtns = document.querySelectorAll('.filter-btn');
+        let filtroAtivo = 'todos';
+
+        function atualizarDisplay() {
+            const termo = buscaInput.value.toLowerCase().trim();
+            let visiveis = 0;
+
+            cards.forEach(card => {
+                const tema = card.getAttribute('data-tema');
+                const texto = card.textContent.toLowerCase();
+                
+                const matchBusca = termo === '' || texto.includes(termo);
+                const matchFiltro = filtroAtivo === 'todos' || tema === filtroAtivo;
+
+                if (matchBusca && matchFiltro) {
+                    card.classList.remove('oculto');
+                    visiveis++;
+                } else {
+                    card.classList.add('oculto');
+                }
+            });
+
+            // Atualiza contador
+            if (termo === '' && filtroAtivo === 'todos') {
+                contador.textContent = `Mostrando todas as ${cards.length} fontes`;
+            } else {
+                contador.textContent = `${visiveis} fonte${visiveis !== 1 ? 's' : ''} encontrada${visiveis !== 1 ? 's' : ''}`;
+            }
+
+            // Estado vazio
+            if (visiveis === 0) {
+                estadoVazio.classList.add('visivel');
+            } else {
+                estadoVazio.classList.remove('visivel');
+            }
+        }
+
+        buscaInput.addEventListener('input', atualizarDisplay);
+
+        // FILTROS POR TEMA
+        filtrosBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filtrosBtns.forEach(b => b.classList.remove('ativo'));
+                btn.classList.add('ativo');
+                filtroAtivo = btn.getAttribute('data-filtro');
+                atualizarDisplay();
+            });
+        });
+    </script>
+
+</body>
+</html>
