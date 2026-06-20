@@ -4,243 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Revolução da Tropicália | Contando & Cantando</title>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght=0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-    
-    <style>
-        /* =========================================
-           ESTILOS COMPARTILHADOS E DE LEITURA
-           ========================================= */
-        :root {
-            --cor-preto: #0A0A0A;
-            --cor-branco: #FFFFFF;
-            --cor-cinza-claro: #F7F7F7;
-            --cor-cinza-medio: #888888;
-            --cor-dourado: #C9A961;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--cor-branco);
-            color: var(--cor-preto);
-            line-height: 1.7;
-        }
-
-        /* Menu / Header */
-        header {
-            border-bottom: 1px solid #EEEEEE;
-            position: sticky;
-            top: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(5px);
-            z-index: 1000;
-        }
-
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            text-decoration: none;
-            color: var(--cor-preto);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .logo span { color: var(--cor-dourado); }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--cor-preto);
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover { color: var(--cor-dourado); }
-
-        /* Estrutura do Artigo */
-        .article-page {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        .article-hero {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .article-meta {
-            font-size: 14px;
-            color: var(--cor-cinza-medio);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .article-hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 42px;
-            font-weight: 600;
-            line-height: 1.2;
-            max-width: 800px;
-            margin: 0 auto 20px auto;
-        }
-
-        .article-layout {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 60px;
-        }
-
-        .article-body h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
-            margin: 40px 0 20px 0;
-        }
-
-        .article-body p {
-            font-size: 17px;
-            color: #333333;
-            margin-bottom: 25px;
-        }
-
-        /* Grid de Artistas */
-        .artists-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .artist-card {
-            background: var(--cor-cinza-claro);
-            padding: 20px;
-            border-left: 3px solid var(--cor-dourado);
-        }
-
-        .artist-card h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 16px;
-            margin-bottom: 5px;
-        }
-
-        .artist-card p {
-            font-size: 14px;
-            color: var(--cor-cinza-medio);
-            margin-bottom: 0;
-        }
-
-        /* Links de Navegação Inferior */
-        .article-navigation {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 1px solid #EEEEEE;
-        }
-
-        .article-navigation a {
-            text-decoration: none;
-            color: var(--cor-preto);
-            font-weight: 500;
-            font-size: 15px;
-            transition: color 0.3s ease;
-        }
-
-        .article-navigation a:hover { color: var(--cor-dourado); }
-
-        /* Sidebar lateral */
-        .article-sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .sidebar-box {
-            background: var(--cor-cinza-claro);
-            padding: 30px;
-        }
-
-        .sidebar-box h4 {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 16px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .newsletter-box .newsletter-form {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .newsletter-box input {
-            padding: 12px;
-            border: 1px solid #DDDDDD;
-            background: var(--cor-branco);
-        }
-
-        .newsletter-box button {
-            background: var(--cor-preto);
-            color: var(--cor-branco);
-            border: none;
-            padding: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-
-        .newsletter-box button:hover { background: var(--cor-dourado); }
-
-        /* Footer */
-        footer {
-            padding: 40px 20px;
-            text-align: center;
-            border-top: 1px solid #EEEEEE;
-            font-size: 14px;
-            color: var(--cor-cinza-medio);
-            margin-top: 80px;
-        }
-
-        @media (max-width: 768px) {
-            .header-container { flex-direction: column; gap: 20px; }
-            .article-layout { grid-template-columns: 1fr; gap: 40px; }
-            .article-hero h1 { font-size: 32px; }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <header>
         <div class="header-container">
             <a href="index.html" class="logo">Contando <span>&</span> Cantando</a>
             <nav>
                 <ul>
                     <li><a href="index.html">Início</a></li>
+                    <li><a href="revista-cultural.html">Revista</a></li>
+                    <li><a href="objetos-do-acervo.html">Acervo</a></li>
                     <li><a href="index.html#universos">Universos</a></li>
-                    <li><a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank">Instagram</a></li>
                 </ul>
             </nav>
         </div>
@@ -248,13 +26,52 @@
 
     <article class="article-page">
         <div class="article-hero">
-            <span class="article-meta">Movimentos Históricos • 1968</span>
-            <h1>A Revolução Estética da Tropicália</h1>
+            <span class="article-category">Movimento • 1967-1968</span>
+            <h1 class="article-title">A Revolução da Tropicália</h1>
+            <p class="article-subtitle">Como Caetano, Gil e o grupo transformaram a música brasileira para sempre.</p>
+            <div class="article-meta">
+                <span>Por Rosane Maia</span>
+                <span>•</span>
+                <span>Junho 2026</span>
+                <span>•</span>
+                <span>15 min de leitura</span>
+            </div>
         </div>
 
-        <div class="article-layout">
-            <div class="article-body">
-                <p>A Tropicália não foi apenas um movimento musical, mas uma verdadeira chacoalhada na cultura brasileira no final da década de 1960. Ao misturar guitarras elétricas com ritmos tradicionais, os tropicalistas romperam barreiras.</p>
+        <div class="article-container">
+            <div class="article-content">
+                <p class="article-intro">
+                    Quando Caetano Veloso subiu ao palco do Teatro Record em 21 de outubro de 1967, ninguém imaginava que aquela apresentação marcaria o início de uma revolução cultural. A guitarra elétrica nas mãos de um baiano desafiava tudo o que se entendia por MPB autêntica.
+                </p>
+
+                <!-- CAPA EM CSS PURO - NUNCA FICA EM BRANCO -->
+                <div class="editorial-cover tropicalia-cover">
+                    <div class="cover-text">
+                        <span class="cover-year">1967</span>
+                        <h2>TROPICÁLIA</h2>
+                        <p>O CAOS CRIATIVO</p>
+                    </div>
+                </div>
+
+                <h2>O Contexto: Brasil em Ebulição</h2>
+                <p>O ano era 1967. O Brasil vivia sob a ditadura militar. A censura apertava o cerco, mas o mundo vivia a efervescência dos anos 60: Beatles, contracultura hippie e revolução sexual.</p>
+                
+                <div class="pull-quote">
+                    "A Tropicália não foi apenas um movimento musical. Foi uma explosão cultural que misturou alta e baixa cultura, tradição e vanguarda."
+                </div>
+
+                <h2>O Nascimento do Tropicalismo</h2>
+                <p>Surgiram Caetano e Gil com uma proposta radical: misturar tudo. Guitarra com violão. Rock com samba. O estopim foi o Festival da TV Record, onde "Alegria, Alegria" e "Domingo no Parque" chocaram o público conservador.</p>
+
+                <div class="album-highlight">
+                    <div class="album-cover-css">
+                        <span>PANIS<br>ET<br>CIRCENSIS</span>
+                    </div>
+                    <div class="album-info">
+                        <h4>Panis et Circensis (1968)</h4>
+                        <p><strong>Artistas:</strong> Caetano, Gil, Mutantes, Gal Costa<br><strong>Gênero:</strong> Tropicália / Rock Psicodélico</p>
+                    </div>
+                </div>
 
                 <h2>Os Protagonistas</h2>
                 <div class="artists-grid">
@@ -265,8 +82,8 @@
                 </div>
 
                 <div class="article-navigation">
-                    <a href="#" class="nav-prev">← Bossa Nova (Em breve)</a>
-                    <a href="#" class="nav-next">Clube da Esquina (Em breve) →</a>
+                    <a href="chega-de-saudade.html" class="nav-prev">← Bossa Nova</a>
+                    <a href="clube-da-esquina.html" class="nav-next">Clube da Esquina →</a>
                 </div>
             </div>
 
