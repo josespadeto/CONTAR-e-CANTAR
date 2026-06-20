@@ -362,10 +362,26 @@
         <div class="newsletter-content">
             <h2>Receba os especiais por e-mail</h2>
             <p>Artigos, histórias e curadoria da MPB diretamente no seu e-mail. Sem algoritmos, sem pressa.</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="seu@email.com" required>
+            
+            <!-- FORMULÁRIO BUTTONDOWN ADAPTADO -->
+            <form 
+                action="https://buttondown.com/api/emails/embed-subscribe/spadeto" 
+                method="post" 
+                class="newsletter-form"
+                target="popupwindow"
+                onsubmit="window.open('https://buttondown.com/spadeto', 'popupwindow')"
+            >
+                <input 
+                    type="email" 
+                    name="email" 
+                    id="bd-email"
+                    placeholder="seu@email.com" 
+                    required
+                >
                 <button type="submit">Assinar →</button>
             </form>
+            <!-- FIM DO FORMULÁRIO -->
+            
         </div>
     </section>
 
