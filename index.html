@@ -136,6 +136,9 @@
             cursor: pointer;
         }
         .article-link:hover { transform: translateY(-8px); }
+        .article-link.ativo { cursor: pointer; }
+        .article-link.inativo { opacity: 0.7; cursor: default; }
+        .article-link.inativo:hover { transform: none; }
         
         .card-cover {
             height: 300px; width: 100%; position: relative; overflow: hidden;
@@ -169,7 +172,6 @@
             text-transform: uppercase; letter-spacing: 1px;
             display: inline-flex; align-items: center; gap: 0.5rem;
         }
-        .read-article:hover { gap: 1rem; color: var(--cor-dourado); }
 
         /* UNIVERSOS */
         .universes { background: var(--cor-cinza-claro); padding: 8rem 5%; }
@@ -270,8 +272,8 @@
         </div>
         <div class="articles-grid">
             
-            <!-- CARD TROPICÁLIA - LINK RELATIVO CORRETO -->
-            <a href="tropicalia.html" class="article-link">
+            <!-- CARD TROPICÁLIA -->
+            <a href="#" class="article-link" id="card-tropicalia">
                 <div class="card-cover cover-tropicalia">
                     <span class="article-category">Movimento</span>
                     <div class="card-cover-text">
@@ -287,8 +289,8 @@
                 </div>
             </a>
 
-            <!-- CARD CARTOLA - EM BREVE -->
-            <div class="article-link" style="cursor: default; opacity: 0.8;">
+            <!-- CARD CARTOLA -->
+            <a href="#" class="article-link" id="card-cartola">
                 <div class="card-cover cover-bossa">
                     <span class="article-category">Biografia</span>
                     <div class="card-cover-text">
@@ -297,15 +299,15 @@
                     </div>
                 </div>
                 <div class="article-content">
-                    <div class="article-meta">Em breve</div>
+                    <div class="article-meta">18 min de leitura</div>
                     <h3>Cartola: O Gênio do Samba</h3>
                     <p>De lavador de carros a ícone nacional. A história completa do fundador da Mangueira.</p>
-                    <span class="read-article">Aguardar →</span>
+                    <span class="read-article">Ler artigo →</span>
                 </div>
-            </div>
+            </a>
 
-            <!-- CARD ELIS - EM BREVE -->
-            <div class="article-link" style="cursor: default; opacity: 0.8;">
+            <!-- CARD ELIS -->
+            <a href="#" class="article-link" id="card-elis">
                 <div class="card-cover cover-clube">
                     <span class="article-category">Análise</span>
                     <div class="card-cover-text">
@@ -319,7 +321,7 @@
                     <p>A trajetória da gaúcha que dominou o Brasil com intensidade antes dos 36 anos.</p>
                     <span class="read-article">Aguardar →</span>
                 </div>
-            </div>
+            </a>
 
         </div>
     </section>
@@ -331,24 +333,24 @@
                 <p>Da Bossa Nova ao Pagode, do Tropicalismo ao Samba de raiz — a MPB nunca foi um gênero único, mas um país inteiro de sonoridades.</p>
             </div>
             <div class="universes-grid">
-                <a href="tropicalia.html" class="universe-card" style="text-decoration:none; color:inherit;">
+                <a href="#" class="universe-card" id="uni-tropicalia" style="text-decoration:none; color:inherit;">
                     <div class="universe-content">
                         <h3>Tropicália</h3>
                         <p>Caetano Veloso • 1968</p>
                         <span class="universe-link">Conhecer movimento →</span>
                     </div>
                 </a>
-                <div class="universe-card">
+                <a href="#" class="universe-card" id="uni-cartola" style="text-decoration:none; color:inherit;">
                     <div class="universe-content">
-                        <h3>Bossa Nova</h3>
-                        <p>João Gilberto • 1959</p>
-                        <span class="universe-link">Em breve →</span>
+                        <h3>Cartola</h3>
+                        <p>Samba • 1908-1980</p>
+                        <span class="universe-link">Conhecer o gênio →</span>
                     </div>
-                </div>
+                </a>
                 <div class="universe-card">
                     <div class="universe-content">
-                        <h3>Clube da Esquina</h3>
-                        <p>Milton Nascimento • 1972</p>
+                        <h3>Elis Regina</h3>
+                        <p>MPB • 1945-1982</p>
                         <span class="universe-link">Em breve →</span>
                     </div>
                 </div>
@@ -372,6 +374,78 @@
             <p>CONTAR e CANTAR © 2026 • Curadoria histórica por Rosane Maia</p>
         </div>
     </footer>
+
+    <!-- ============================================ -->
+    <!-- ÁREA DE GERENCIAMENTO DE LINKS DOS ARTIGOS -->
+    <!-- ============================================ -->
+    <!-- 
+        COMO USAR:
+        Para ativar um artigo, basta mudar "em_breve" para o nome do arquivo.
+        Exemplo: de "em_breve" para "tropicalia.html"
+        
+        Quando um artigo estiver pronto, só precisa editar a linha correspondente abaixo.
+        Não precisa mexer no resto do código.
+    -->
+    <script>
+        // ==========================================
+        // LISTA DE LINKS DOS ARTIGOS
+        // ==========================================
+        // Edite apenas os valores entre aspas abaixo.
+        // Use "em_breve" quando o artigo ainda não existir.
+        // Use o nome do arquivo (ex: "tropicalia.html") quando estiver pronto.
+        
+        const linksArtigos = {
+            tropicalia: "tropicalia.html",   // Tropicália - PRONTO
+            cartola: "cartola.html",         // Cartola - PRONTO
+            elis: "em_breve"                 // Elis Regina - EM BREVE
+        };
+        
+        // ==========================================
+        // NÃO PRECISA MEXER ABAIXO DESSA LINHA
+        // ==========================================
+        
+        // Atualiza os cards da Revista Cultural
+        function atualizarCard(id, arquivo) {
+            const card = document.getElementById(id);
+            if (!card) return;
+            
+            if (arquivo === "em_breve") {
+                card.classList.add("inativo");
+                card.classList.remove("ativo");
+                card.removeAttribute("href");
+                card.style.pointerEvents = "none";
+            } else {
+                card.classList.add("ativo");
+                card.classList.remove("inativo");
+                card.setAttribute("href", arquivo);
+                card.style.pointerEvents = "auto";
+            }
+        }
+        
+        // Atualiza os cards da seção Universos
+        function atualizarUniverso(id, arquivo) {
+            const card = document.getElementById(id);
+            if (!card) return;
+            
+            if (arquivo === "em_breve") {
+                card.removeAttribute("href");
+                card.style.pointerEvents = "none";
+                card.style.cursor = "default";
+            } else {
+                card.setAttribute("href", arquivo);
+                card.style.pointerEvents = "auto";
+                card.style.cursor = "pointer";
+            }
+        }
+        
+        // Aplica todos os links
+        atualizarCard("card-tropicalia", linksArtigos.tropicalia);
+        atualizarCard("card-cartola", linksArtigos.cartola);
+        atualizarCard("card-elis", linksArtigos.elis);
+        
+        atualizarUniverso("uni-tropicalia", linksArtigos.tropicalia);
+        atualizarUniverso("uni-cartola", linksArtigos.cartola);
+    </script>
 
 </body>
 </html>
