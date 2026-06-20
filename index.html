@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CONTAR e CANTAR | Acervo Editorial da MPB</title>
     
-    <!-- Fontes Google (Única dependência externa segura) -->
+    <!-- Fontes Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -130,12 +130,20 @@
             letter-spacing: 1px; color: var(--cor-cinza-medio);
         }
 
-        /* ARTIGOS GRID */
+        /* ARTIGOS GRID - LINKS CORRETOS */
         .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
-        .article-card { background: var(--cor-branco); transition: transform 0.3s ease; cursor: pointer; }
-        .article-card:hover { transform: translateY(-8px); }
         
-        /* CAPAS EM CSS PURO PARA OS CARDS (NUNCA QUEBRAM) */
+        .article-link {
+            display: block;
+            background: var(--cor-branco);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        .article-link:hover { transform: translateY(-8px); }
+        
+        /* CAPAS EM CSS PURO PARA OS CARDS */
         .card-cover {
             height: 300px; width: 100%; position: relative; overflow: hidden;
             display: flex; align-items: center; justify-content: center;
@@ -177,7 +185,12 @@
         .universes-intro h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
         .universes-intro p { font-size: 1.2rem; color: #333; font-weight: 300; }
         .universes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .universe-card { background: var(--cor-branco); overflow: hidden; transition: all 0.3s ease; }
+        .universe-card { 
+            background: var(--cor-branco); 
+            overflow: hidden; 
+            transition: all 0.3s ease; 
+            display: block; /* Garante que seja clicável se for link */
+        }
         .universe-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
         .universe-content { padding: 2rem; }
         .universe-content h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
@@ -269,7 +282,8 @@
         </div>
         <div class="articles-grid">
             
-            <article class="article-card">
+            <!-- CARD TROPICÁLIA - LINK CORRIGIDO -->
+            <a href="tropicalia.html" class="article-link">
                 <div class="card-cover cover-tropicalia">
                     <span class="article-category">Movimento</span>
                     <div class="card-cover-text">
@@ -278,14 +292,15 @@
                     </div>
                 </div>
                 <div class="article-content">
-                    <div class="article-meta">12 min de leitura</div>
+                    <div class="article-meta">15 min de leitura</div>
                     <h3>A Revolução da Tropicália</h3>
                     <p>Como Caetano, Gil e o grupo mudaram a música brasileira para sempre em 1967.</p>
                     <span class="read-article">Ler artigo →</span>
                 </div>
-            </article>
+            </a>
 
-            <article class="article-card">
+            <!-- CARD CARTOLA - EM BREVE -->
+            <div class="article-link" style="cursor: default; opacity: 0.8;">
                 <div class="card-cover cover-bossa">
                     <span class="article-category">Biografia</span>
                     <div class="card-cover-text">
@@ -294,14 +309,15 @@
                     </div>
                 </div>
                 <div class="article-content">
-                    <div class="article-meta">8 min de leitura</div>
+                    <div class="article-meta">Em breve</div>
                     <h3>Cartola: O Gênio do Samba</h3>
                     <p>De lavador de carros a ícone nacional. A história completa do fundador da Mangueira.</p>
-                    <span class="read-article">Ler artigo →</span>
+                    <span class="read-article">Aguardar →</span>
                 </div>
-            </article>
+            </div>
 
-            <article class="article-card">
+            <!-- CARD ELIS - EM BREVE -->
+            <div class="article-link" style="cursor: default; opacity: 0.8;">
                 <div class="card-cover cover-clube">
                     <span class="article-category">Análise</span>
                     <div class="card-cover-text">
@@ -310,12 +326,12 @@
                     </div>
                 </div>
                 <div class="article-content">
-                    <div class="article-meta">10 min de leitura</div>
+                    <div class="article-meta">Em breve</div>
                     <h3>Elis Regina: A Voz que Ardia</h3>
                     <p>A trajetória da gaúcha que dominou o Brasil com intensidade antes dos 36 anos.</p>
-                    <span class="read-article">Ler artigo →</span>
+                    <span class="read-article">Aguardar →</span>
                 </div>
-            </article>
+            </div>
 
         </div>
     </section>
@@ -327,25 +343,26 @@
                 <p>Da Bossa Nova ao Pagode, do Tropicalismo ao Samba de raiz — a MPB nunca foi um gênero único, mas um país inteiro de sonoridades.</p>
             </div>
             <div class="universes-grid">
-                <div class="universe-card">
+                <!-- LINK CORRIGIDO NA SEÇÃO UNIVERSOS TAMBÉM -->
+                <a href="tropicalia.html" class="universe-card" style="text-decoration:none; color:inherit;">
                     <div class="universe-content">
                         <h3>Tropicália</h3>
                         <p>Caetano Veloso • 1968</p>
                         <span class="universe-link">Conhecer movimento →</span>
                     </div>
-                </div>
+                </a>
                 <div class="universe-card">
                     <div class="universe-content">
                         <h3>Bossa Nova</h3>
                         <p>João Gilberto • 1959</p>
-                        <span class="universe-link">Ver álbum →</span>
+                        <span class="universe-link">Em breve →</span>
                     </div>
                 </div>
                 <div class="universe-card">
                     <div class="universe-content">
                         <h3>Clube da Esquina</h3>
                         <p>Milton Nascimento • 1972</p>
-                        <span class="universe-link">Ler especial →</span>
+                        <span class="universe-link">Em breve →</span>
                     </div>
                 </div>
             </div>
