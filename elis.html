@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elis Regina: A Revolução da Interpretação | CONTAR e CANTAR</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --cor-preto: #0A0A0A;
+            --cor-branco: #FFFFFF;
+            --cor-cinza-claro: #F7F7F7;
+            --cor-cinza-medio: #888888;
+            --cor-dourado: #C9A961;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cor-branco);
+            color: var(--cor-preto);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+
+        /* HEADER */
+        header {
+            padding: 1.5rem 5%;
+            position: sticky; top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem; font-weight: 700;
+            letter-spacing: -0.5px; text-transform: uppercase;
+        }
+        .logo span { color: var(--cor-dourado); }
+        nav ul { display: flex; list-style: none; gap: 2rem; align-items: center; }
+        nav a {
+            font-size: 0.85rem; font-weight: 500;
+            text-transform: uppercase; letter-spacing: 1px;
+            position: relative; padding-bottom: 4px;
+        }
+        nav a::after {
+            content: ''; position: absolute; bottom: 0; left: 0;
+            width: 0; height: 2px; background: var(--cor-dourado);
+            transition: width 0.3s ease;
+        }
+        nav a:hover::after { width: 100%; }
+
+        /* ARTICLE HERO */
+        .article-hero {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 6rem 5% 4rem;
+            text-align: center;
+        }
+        .article-category {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 2px;
+            color: var(--cor-dourado); margin-bottom: 1.5rem; display: block;
+        }
+        .article-title {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.1; margin-bottom: 2rem;
+            letter-spacing: -1px; font-weight: 700;
+        }
+        .article-subtitle {
+            font-size: 1.3rem; color: #333;
+            font-weight: 300; font-style: italic;
+            margin-bottom: 3rem; max-width: 700px;
+            margin-left: auto; margin-right: auto;
+            font-family: 'Playfair Display', serif;
+        }
+        .article-meta {
+            display: flex; justify-content: center; gap: 2rem;
+            font-size: 0.85rem; color: var(--cor-cinza-medio);
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+
+        /* CAPA EDITORIAL EM CSS PURO */
+        .editorial-cover {
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            height: 450px;
+            background: linear-gradient(135deg, #2c003e 0%, #512b58 50%, #000000 100%);
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+        }
+        .cover-text {
+            text-align: center; color: #FFFFFF;
+            font-family: 'Playfair Display', serif;
+        }
+        .cover-year {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem; letter-spacing: 4px;
+            display: block; margin-bottom: 1rem; opacity: 0.9;
+        }
+        .cover-text h2 {
+            font-size: 4rem; margin: 0; line-height: 1;
+            letter-spacing: -2px; text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .cover-text p {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem; letter-spacing: 3px;
+            margin-top: 1rem; opacity: 0.9;
+        }
+
+        /* ARTICLE CONTENT */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 5% 6rem;
+        }
+        .article-intro {
+            font-size: 1.25rem; line-height: 1.9;
+            color: var(--cor-preto); margin-bottom: 3rem; font-weight: 400;
+        }
+        .article-container p {
+            font-size: 1.1rem; line-height: 1.8;
+            color: #333; margin-bottom: 2rem;
+        }
+        .article-container h2 {
+            font-size: 2rem; margin: 4rem 0 1.5rem;
+            color: var(--cor-preto); font-weight: 700;
+        }
+        .article-container h3 {
+            font-size: 1.5rem; margin: 3rem 0 1rem;
+            color: var(--cor-preto); font-weight: 600;
+        }
+        .pull-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem; font-style: italic;
+            line-height: 1.4; color: var(--cor-preto);
+            border-left: 4px solid var(--cor-dourado);
+            padding-left: 2rem; margin: 4rem 0;
+        }
+        .article-section {
+            margin: 3rem 0; padding: 2rem;
+            background: var(--cor-cinza-claro); border-radius: 8px;
+        }
+        
+        /* FONTES/REFERÊNCIAS */
+        .references {
+            margin-top: 6rem;
+            padding: 3rem 2rem;
+            background: var(--cor-cinza-claro);
+            border-top: 3px solid var(--cor-dourado);
+            border-radius: 8px;
+        }
+        .references h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--cor-preto);
+            font-weight: 700;
+        }
+        .references ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .references li {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+            color: #333;
+        }
+        .references li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--cor-dourado);
+            font-weight: bold;
+        }
+        .references .reference-type {
+            font-weight: 600;
+            color: var(--cor-preto);
+        }
+        
+        .album-highlight {
+            display: flex; gap: 2rem; margin: 3rem 0;
+            padding: 2rem; background: var(--cor-cinza-claro);
+            border-radius: 8px; align-items: center;
+        }
+        .album-cover-css {
+            width: 200px; height: 200px;
+            background: #1a1a1a; border-radius: 4px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--cor-dourado);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem; font-weight: 700;
+            text-align: center; line-height: 1.2;
+            border: 2px solid var(--cor-dourado);
+        }
+        .album-info h4 { font-size: 1.3rem; margin-bottom: 1rem; }
+        .album-info p { font-size: 0.95rem; margin-bottom: 1rem; }
+        
+        .timeline {
+            margin: 3rem 0;
+            padding-left: 2rem;
+            border-left: 3px solid var(--cor-dourado);
+        }
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.6rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--cor-dourado);
+            border-radius: 50%;
+        }
+        .timeline-year {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            color: var(--cor-dourado);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .timeline-content {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .compositions-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .composition-item {
+            padding: 1.5rem;
+            background: var(--cor-branco);
+            border-left: 3px solid var(--cor-dourado);
+            border-radius: 4px;
+        }
+        .composition-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--cor-preto);
+        }
+        .composition-item p {
+            font-size: 0.9rem;
+            color: var(--cor-cinza-medio);
+            margin-bottom: 0;
+            font-style: italic;
+        }
+        
+        .article-navigation {
+            display: flex; justify-content: space-between;
+            margin-top: 4rem; padding-top: 2rem;
+            border-top: 2px solid var(--cor-preto);
+        }
+        .nav-prev, .nav-next {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 1px;
+            color: var(--cor-dourado);
+        }
+        .nav-prev:hover, .nav-next:hover { color: var(--cor-preto); }
+
+        /* FOOTER */
+        footer { padding: 4rem 5%; background: var(--cor-cinza-claro); text-align: center; }
+        .footer-content { max-width: 1400px; margin: 0 auto; }
+        footer p {
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase; letter-spacing: 1px;
+            font-size: 0.8rem; color: var(--cor-cinza-medio);
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .article-hero .article-meta { flex-direction: column; gap: 0.5rem; }
+            .album-highlight { flex-direction: column; }
+            .editorial-cover { height: 300px; }
+            .cover-text h2 { font-size: 2.5rem; }
+            .compositions-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">CONTAR <span>e</span> CANTAR</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#revista">Revista</a></li>
+                <li><a href="index.html#universos">Universos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <article>
+        <div class="article-hero">
+            <span class="article-category">Análise • 1945-1982</span>
+            <h1 class="article-title">Elis Regina: A Revolução da Interpretação</h1>
+            <p class="article-subtitle">De Porto Alegre para o mundo. A trajetória da cantora que elevou a MPB ao patamar da excelência técnica e redefiniu o ofício de interpretar no Brasil.</p>
+            <div class="article-meta">
+                <span>Por Rosane Maia</span>
+                <span>•</span>
+                <span>Junho 2026</span>
+                <span>•</span>
+                <span>20 min de leitura</span>
+            </div>
+        </div>
+
+        <div class="editorial-cover">
+            <div class="cover-text">
+                <span class="cover-year">1945-1982</span>
+                <h2>ELIS REGINA</h2>
+                <p>A FORÇA DA INTERPRETAÇÃO</p>
+            </div>
+        </div>
+
+        <div class="article-container">
+            <p class="article-intro">
+                Elis Regina Carvalho Costa não foi apenas uma cantora; foi uma arquiteta sonora. Em uma época em que o canto no Brasil muitas vezes se limitava à afinação e à presença de palco, Elis introduziu o conceito de direção musical aplicada à própria voz. Sua capacidade de frisar sílabas, brincar com o tempo rítmico (o "balanço") e extrair nuances dramáticas de cada acorde transformou a maneira como a música popular brasileira foi executada e consumida.
+            </p>
+
+            <h2>Origens e a Profissionalização Precoce</h2>
+            
+            <p>
+                Nascida em 17 de março de 1945, em Porto Alegre, Elis demonstrou uma maturidade vocal incomum para a idade. Aos 12 anos, já cantava profissionalmente na Rádio Farroupilha. Diferente de muitos artistas que amadureceram tardiamente, Elis construiu sua técnica desde a adolescência, desenvolvendo uma dicção impecável e uma extensão vocal que lhe permitia transitar entre o lirismo e a explosão dramática sem perder o controle técnico.
+            </p>
+
+            <div class="pull-quote">
+                "Elis não cantava a música; ela atuava a música. Cada frase era uma cena, cada respiro uma intenção."
+            </div>
+
+            <h2>A Conquista do Rio e os Festivais</h2>
+
+            <p>
+                A mudança para o Rio de Janeiro em 1965 marcou o início de sua hegemonia na MPB. No II Festival de Música Popular Brasileira da TV Record, Elis interpretou "Arrastão", de Edu Lobo e Gianfrancesco Guarnieri. A performance foi um divisor de águas: a cantora não apenas venceu o festival, mas estabeleceu um novo padrão de interpretação, onde a entrega emocional era sustentada por um rigor técnico absoluto.
+            </p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1945</div>
+                    <div class="timeline-content">Nascimento em Porto Alegre, RS.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1961</div>
+                    <div class="timeline-content">Estreia profissional na Rádio Farroupilha.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1965</div>
+                    <div class="timeline-content">Vitória no Festival da Record com "Arrastão". Mudança para o Rio de Janeiro.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1974</div>
+                    <div class="timeline-content">Gravação de "Elis & Tom" com Antônio Carlos Jobim.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1979</div>
+                    <div class="timeline-content">Gravação de "O Bêbado e a Equilibrista", hino da redemocratização.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1982</div>
+                    <div class="timeline-content">Falecimento em São Paulo, aos 36 anos.</div>
+                </div>
+            </div>
+
+            <h2>O Encontro com Jobim e a Sofisticação Harmônica</h2>
+
+            <p>
+                O ano de 1974 produziu o que a crítica especializada considera um dos álbuns mais importantes da história da música brasileira: <em>Elis & Tom</>. Ao lado de Antônio Carlos Jobim, César Camargo Mariano, Hélio Delmiro e Humberto Clayber, Elis registrou uma obra-prima da bossa nova e do jazz.
+            </p>
+
+            <div class="album-highlight">
+                <div class="album-cover-css">
+                    <span>ELIS &<br>TOM<br>1974</span>
+                </div>
+                <div class="album-info">
+                    <h4>Elis & Tom (1974)</h4>
+                    <p><strong>Gravadora:</strong> Philips/PolyGram<br>
+                    <strong>Gênero:</strong> MPB / Bossa Nova / Jazz<br>
+                    <strong>Produção:</strong> César Camargo Mariano e João Gilberto (participação especial)</p>
+                </div>
+            </div>
+
+            <p>
+                A faixa "Águas de Março" é um estudo técnico de como uma cantora pode conduzir uma banda. Elis alterna entre o canto falado e o melódico, respeita os silêncios de Jobim e utiliza a respiração como instrumento rítmico. Não é apenas um dueto; é uma aula de escuta ativa e interação musical.
+            </p>
+
+            <h2>A Fase César Camargo Mariano e o Rigor Cênico</h2>
+
+            <p>
+                A parceria com o pianista e arranjador César Camargo Mariano, iniciada no final dos anos 70, representou o ápice da sofisticação musical de Elis. Álbuns como <em>Falso Brilhante</em> (1976) e <em>Transversal do Tempo</em> (1978) apresentaram arranjos complexos, influências de jazz e uma exigência técnica que elevou o nível de toda a sua banda.
+            </p>
+
+            <p>
+                Elis era conhecida por sua liderança rigorosa nos ensaios. Ela não aceitava a mediocridade e exigia de seus músicos o mesmo comprometimento que ela dedicava à própria voz. Essa postura profissionalizou as relações de trabalho na MPB, transformando o "acompanhamento" em "direção musical coletiva".
+            </p>
+
+            <h2>Principais Interpretações e Legado Técnico</h2>
+
+            <p>
+                O repertório de Elis é vasto, mas certas gravações se destacam pela inovação técnica e impacto cultural:
+            </p>
+
+            <div class="compositions-grid">
+                <div class="composition-item">
+                    <h4>Águas de Março (1974)</h4>
+                    <p>Duetos com Jobim. Referência em frasing e interação rítmica.</p>
+                </div>
+                <div class="composition-item">
+                    <h4>Como Nossos Pais (1976)</h4>
+                    <p>Interpretação visceral de Belchior. Domínio da dinâmica vocal.</p>
+                </div>
+                <div class="composition-item">
+                    <h4>O Bêbado e a Equilibrista (1979)</h4>
+                    <p>Hino da Anistia. Construção dramática e controle de afinação em notas longas.</p>
+                </div>
+                <div class="composition-item">
+                    <h4>Maria, Maria (1976)</h4>
+                    <p>Parceria com Milton Nascimento. Exploração de timbres e fusão com o Clube da Esquina.</p>
+                </div>
+                <div class="composition-item">
+                    <h4>Arrastão (1965)</h4>
+                    <p>Marco inicial. Potência vocal e clareza diccional em andamento acelerado.</p>
+                </div>
+                <div class="composition-item">
+                    <h4>Me Deixas Louca (1974)</h4>
+                    <p>Versão em português de "You Don't Know What Love Is". Sofisticação jazzística.</p>
+                </div>
+            </div>
+
+            <h2>O Legado: A Cantora como Diretora</h2>
+
+            <p>
+                O maior legado técnico de Elis Regina foi a concepção do cantor como um diretor musical de sua própria obra. Ela não esperava que o arranjo fosse entregue pronto; ela participava ativamente da construção harmônica, sugerindo alterações de acorde e modulando a intensidade da banda conforme a narrativa da letra exigia.
+            </p>
+
+            <div class="pull-quote">
+                "A música popular brasileira ganhou, com Elis, a dimensão da alta performance técnica sem perder a visceralidade."
+            </div>
+
+            <p>
+                Sua influência é detectável em gerações posteriores, de Gal Costa a Marisa Monte, de Maria Bethânia a Adriana Calcanhotto. Todas, em maior ou menor grau, incorporaram a lição Elis: a de que a interpretação é tão importante quanto a composição, e que a voz é um instrumento de precisão cirúrgica.
+            </p>
+
+            <!-- SEÇÃO DE FONTES E REFERÊNCIAS -->
+            <div class="references">
+                <h3>Fontes e Referências Bibliográficas</h3>
+                <ul>
+                    <li>
+                        <span class="reference-type">Livro:</span> ECHEVERRIA, Regina. <em>Elis Regina: Biografia</em>. São Paulo: Globo, 2002. 384p.
+                    </li>
+                    <li>
+                        <span class="reference-type">Livro:</span> NAPOLITANO, Marcos. <em>História & Música: História cultural da música popular</em>. Belo Horizonte: Autêntica, 2002. 256p.
+                    </li>
+                    <li>
+                        <span class="reference-type">Livro:</span> WISNIK, José Miguel. <em>O Som e o Sentido: Uma outra história das músicas</em>. São Paulo: Cia das Letras, 1989. 288p.
+                    </li>
+                    <li>
+                        <span class="reference-type">Documentário:</span> SIMON, Carlos. <em>Elis Regina: Uma Mulher de Talento</em>. Porto Alegre: RBS TV, 1982. 60 min.
+                    </li>
+                    <li>
+                        <span class="reference-type">Documentário:</span> <em>Elis Regina: 30 Anos</em>. Rio de Janeiro: TV Globo, 2012. 90 min.
+                    </li>
+                    <li>
+                        <span class="reference-type">Artigo:</span> PARANHOS, Adalberto. "Elis Regina e a Construção da MPB". <em>Revista Brasileira de Ciências Sociais</em>, São Paulo, v. 20, n. 58, p. 112-128, 2005.
+                    </li>
+                    <li>
+                        <span class="reference-type">Acervo Digital:</span> Instituto Moreira Salles. "Elis Regina: Discografia e Acervo Sonoro". Disponível em: <ims.com.br>. Acesso em: jun. 2026.
+                    </li>
+                    <li>
+                        <span class="reference-type">Entrevista:</span> MARIANO, César Camargo. "A Direção Musical de Elis". Entrevistador: Ricardo Cravo Albin. Rio de Janeiro, 1998. Acervo do Museu da Imagem e do Som.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="article-navigation">
+                <a href="cartola.html" class="nav-prev">← Cartola</a>
+                <a href="index.html" class="nav-next">Voltar para Início →</a>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <div class="footer-content">
+            <p>CONTAR e CANTAR © 2026 • Curadoria histórica por Rosane Maia</p>
+        </div>
+    </footer>
+
+</body>
+</html>
