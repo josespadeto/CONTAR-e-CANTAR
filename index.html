@@ -4,7 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CONTAR e CANTAR | Acervo Editorial da MPB</title>
-    
+    <meta name="description" content="Acervo editorial dedicado à preservação da memória afetiva da Música Popular Brasileira. Artigos, biografias e curadoria histórica por Rosane Maia.">
+    <link rel="canonical" href="https://rmcontarecantar.art.br/">
+
+    <!-- Open Graph / compartilhamento em redes sociais -->
+    <meta property="og:title" content="CONTAR e CANTAR | Acervo Editorial da MPB">
+    <meta property="og:description" content="O som da nossa memória. Um acervo editorial dedicado à preservação da memória afetiva da Música Popular Brasileira.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rmcontarecantar.art.br/">
+    <meta property="og:locale" content="pt_BR">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -20,7 +29,7 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--cor-branco);
@@ -128,7 +137,7 @@
 
         /* ARTIGOS GRID */
         .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
-        
+
         .article-link {
             display: block;
             background: var(--cor-branco);
@@ -136,10 +145,13 @@
             cursor: pointer;
         }
         .article-link:hover { transform: translateY(-8px); }
-        .article-link.ativo { cursor: pointer; }
-        .article-link.inativo { opacity: 0.7; cursor: default; }
+        .article-link.inativo {
+            opacity: 0.7;
+            cursor: default;
+            pointer-events: none;
+        }
         .article-link.inativo:hover { transform: none; }
-        
+
         .card-cover {
             height: 300px; width: 100%; position: relative; overflow: hidden;
             display: flex; align-items: center; justify-content: center;
@@ -147,7 +159,7 @@
         .cover-tropicalia { background: linear-gradient(135deg, #FF3300 0%, #C9A961 50%, #0A0A0A 100%); }
         .cover-bossa { background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 50%, #888888 100%); }
         .cover-clube { background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 50%, #c4e0e5 100%); }
-        
+
         .card-cover-text {
             color: white; text-align: center; font-family: 'Playfair Display', serif;
             text-shadow: 0 2px 10px rgba(0,0,0,0.3);
@@ -210,6 +222,10 @@
             cursor: pointer; padding: 1.2rem 2rem; transition: color 0.3s ease;
         }
         .newsletter-form button:hover { color: var(--cor-dourado); }
+        .newsletter-aviso {
+            font-size: 0.8rem; color: rgba(255,255,255,0.4);
+            margin-top: 1rem; font-family: 'Space Grotesk', sans-serif;
+        }
 
         /* FOOTER */
         footer { padding: 4rem 5%; background: var(--cor-cinza-claro); text-align: center; }
@@ -240,8 +256,8 @@
             <ul>
                 <li><a href="#inicio">Início</a></li>
                 <li><a href="#revista">Revista</a></li>
-                <li><a href="#universos">Universos</a></li>
-                <li><a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank">Instagram</a></li>
+                <li><a href="universos.html">Universos</a></li>
+                <li><a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener">Instagram</a></li>
             </ul>
         </nav>
     </header>
@@ -271,9 +287,9 @@
             <span>Artigos & Especiais</span>
         </div>
         <div class="articles-grid">
-            
+
             <!-- CARD TROPICÁLIA -->
-            <a href="#" class="article-link" id="card-tropicalia">
+            <a href="tropicalia.html" class="article-link" id="card-tropicalia">
                 <div class="card-cover cover-tropicalia">
                     <span class="article-category">Movimento</span>
                     <div class="card-cover-text">
@@ -290,7 +306,7 @@
             </a>
 
             <!-- CARD CARTOLA -->
-            <a href="#" class="article-link" id="card-cartola">
+            <a href="cartola.html" class="article-link" id="card-cartola">
                 <div class="card-cover cover-bossa">
                     <span class="article-category">Biografia</span>
                     <div class="card-cover-text">
@@ -307,7 +323,7 @@
             </a>
 
             <!-- CARD ELIS -->
-            <a href="#" class="article-link" id="card-elis">
+            <a href="elis.html" class="article-link" id="card-elis">
                 <div class="card-cover cover-clube">
                     <span class="article-category">Análise</span>
                     <div class="card-cover-text">
@@ -333,21 +349,21 @@
                 <p>As melhores fontes nacionais e internacionais para mergulhar na Música Popular Brasileira. Livros, documentários, acervos, podcasts e referências acadêmicas curadas.</p>
             </div>
             <div class="universes-grid">
-                <a href="universos.html" class="universe-card" style="text-decoration:none; color:inherit;">
+                <a href="universos.html" class="universe-card">
                     <div class="universe-content">
                         <h3>🔍 Buscar Fontes</h3>
                         <p>Acesse nossa curadoria completa de referências</p>
                         <span class="universe-link">Explorar universos →</span>
                     </div>
                 </a>
-                <a href="universos.html" class="universe-card" style="text-decoration:none; color:inherit;">
+                <a href="universos.html" class="universe-card">
                     <div class="universe-content">
                         <h3>📚 Acervos & Bibliotecas</h3>
                         <p>IMS, Biblioteca Nacional, Smithsonian e mais</p>
                         <span class="universe-link">Ver acervos →</span>
                     </div>
                 </a>
-                <a href="universos.html" class="universe-card" style="text-decoration:none; color:inherit;">
+                <a href="universos.html" class="universe-card">
                     <div class="universe-content">
                         <h3>🎓 Referências Acadêmicas</h3>
                         <p>SciELO, Google Scholar, Oxford Music Online</p>
@@ -362,26 +378,29 @@
         <div class="newsletter-content">
             <h2>Receba os especiais por e-mail</h2>
             <p>Artigos, histórias e curadoria da MPB diretamente no seu e-mail. Sem algoritmos, sem pressa.</p>
-            
-            <!-- FORMULÁRIO BUTTONDOWN ADAPTADO -->
-            <form 
-                action="https://buttondown.com/api/emails/embed-subscribe/spadeto" 
-                method="post" 
+
+            <!-- FORMULÁRIO BUTTONDOWN: envio direto, sem popup.
+                 O método anterior (window.open + target=popupwindow) podia ser
+                 bloqueado silenciosamente por bloqueadores de pop-up, fazendo o
+                 e-mail ser enviado sem o usuário ver nenhuma confirmação.
+                 Agora o Buttondown redireciona a própria página para a
+                 confirmação, sem depender de pop-up. -->
+            <form
+                action="https://buttondown.com/api/emails/embed-subscribe/spadeto"
+                method="post"
                 class="newsletter-form"
-                target="popupwindow"
-                onsubmit="window.open('https://buttondown.com/spadeto', 'popupwindow')"
             >
-                <input 
-                    type="email" 
-                    name="email" 
+                <input
+                    type="email"
+                    name="email"
                     id="bd-email"
-                    placeholder="seu@email.com" 
+                    placeholder="seu@email.com"
                     required
                 >
                 <button type="submit">Assinar →</button>
             </form>
-            <!-- FIM DO FORMULÁRIO -->
-            
+            <p class="newsletter-aviso">Você será redirecionado para confirmar sua inscrição.</p>
+
         </div>
     </section>
 
@@ -390,45 +409,6 @@
             <p>CONTAR e CANTAR © 2026 • Curadoria histórica por Rosane Maia</p>
         </div>
     </footer>
-
-    <!-- ============================================ -->
-    <!-- ÁREA DE GERENCIAMENTO DE LINKS DOS ARTIGOS -->
-    <!-- ============================================ -->
-    <script>
-        // ==========================================
-        // LISTA DE LINKS DOS ARTIGOS
-        // ==========================================
-        const linksArtigos = {
-            tropicalia: "tropicalia.html",
-            cartola: "cartola.html",
-            elis: "elis.html"
-        };
-        
-        // ==========================================
-        // NÃO PRECISA MEXER ABAIXO DESSA LINHA
-        // ==========================================
-        
-        function atualizarCard(id, arquivo) {
-            const card = document.getElementById(id);
-            if (!card) return;
-            
-            if (arquivo === "em_breve") {
-                card.classList.add("inativo");
-                card.classList.remove("ativo");
-                card.removeAttribute("href");
-                card.style.pointerEvents = "none";
-            } else {
-                card.classList.add("ativo");
-                card.classList.remove("inativo");
-                card.setAttribute("href", arquivo);
-                card.style.pointerEvents = "auto";
-            }
-        }
-        
-        atualizarCard("card-tropicalia", linksArtigos.tropicalia);
-        atualizarCard("card-cartola", linksArtigos.cartola);
-        atualizarCard("card-elis", linksArtigos.elis);
-    </script>
 
 </body>
 </html>
