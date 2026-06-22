@@ -395,7 +395,7 @@
 
     .articles-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
     }
 
@@ -423,6 +423,7 @@
     .cover-tropicalia { background: linear-gradient(135deg, #FF3300 0%, #C9A961 52%, #0A0A0A 100%); }
     .cover-cartola { background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 54%, #b89b62 100%); }
     .cover-elis { background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 50%, #c4e0e5 100%); }
+    .cover-ditadura { background: linear-gradient(135deg, #1a1a1a 0%, #3a1f1f 52%, #0A0A0A 100%); }
 
     .article-category {
       position: absolute;
@@ -822,6 +823,22 @@
               <div class="article-meta">20 min de leitura</div>
               <h3>Elis Regina: A Revolução da Interpretação</h3>
               <p>A trajetória da gaúcha que dominou o Brasil com intensidade rara.</p>
+              <span class="gold-link">Ler artigo →</span>
+            </div>
+          </a>
+
+          <a href="ditadura-musica.html" class="article-card">
+            <div class="card-cover cover-ditadura">
+              <span class="article-category">História</span>
+              <div class="card-cover-text">
+                <h3>DITADURA E MÚSICA</h3>
+                <p>1964-1985</p>
+              </div>
+            </div>
+            <div class="article-content">
+              <div class="article-meta">22 min de leitura</div>
+              <h3>Cale-se ou Cante: A Música Brasileira Sob a Ditadura</h3>
+              <p>Como a censura tentou calar a MPB e como compositores brasileiros responderam com metáforas, coragem e canções.</p>
               <span class="gold-link">Ler artigo →</span>
             </div>
           </a>
