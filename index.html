@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>CONTAR e CANTAR | MPB, Bossa Nova e História da Música Brasileira</title>
-  <meta name="description" content="Acervo editorial sobre MPB, Bossa Nova e história da música brasileira. Artigos, biografias, fontes e curadoria cultural por Rosane Maia.">
+  <meta name="description" content="Acervo editorial dedicado à memória da Música Popular Brasileira. Artigos, biografias, fontes, entrevistas e curadoria cultural por Rosane Maia.">
   <link rel="canonical" href="https://rmcontarecantar.art.br/">
 
   <meta property="og:title" content="CONTAR e CANTAR | Acervo Editorial da MPB">
@@ -31,10 +31,13 @@
     "name": "CONTAR e CANTAR",
     "url": "https://rmcontarecantar.art.br/",
     "description": "Acervo editorial dedicado à preservação da memória afetiva da Música Popular Brasileira.",
+    "inLanguage": "pt-BR",
     "publisher": {
       "@type": "Organization",
       "name": "CONTAR e CANTAR",
-      "sameAs": ["https://www.instagram.com/contandoecantandorosanemaia/"]
+      "sameAs": [
+        "https://www.instagram.com/contandoecantandorosanemaia/"
+      ]
     }
   }
   </script>
@@ -46,8 +49,10 @@
       --papel: #FAF8F3;
       --cinza-claro: #F7F7F7;
       --cinza-medio: #777777;
+      --cinza-texto: #333333;
       --dourado: #C9A961;
       --linha: rgba(0,0,0,0.08);
+      --sombra: 0 18px 45px rgba(0,0,0,0.08);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -61,8 +66,13 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.12; }
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.12;
+    }
+
     a { text-decoration: none; color: inherit; transition: all .25s ease; }
+    button, input, select { font-family: inherit; }
 
     header {
       padding: 1.35rem 5%;
@@ -90,7 +100,7 @@
     nav ul {
       display: flex;
       list-style: none;
-      gap: 1.5rem;
+      gap: 1.45rem;
       align-items: center;
     }
 
@@ -132,11 +142,13 @@
 
     .hero {
       padding: 8.5rem 5% 6.5rem;
-      max-width: 1280px;
-      margin: 0 auto;
       text-align: center;
-      background: radial-gradient(circle at top center, rgba(201,169,97,.12), transparent 32rem);
+      background:
+        radial-gradient(circle at top center, rgba(201,169,97,.14), transparent 34rem),
+        linear-gradient(180deg, #ffffff 0%, #ffffff 72%, #faf8f3 100%);
     }
+
+    .hero-inner { max-width: 1120px; margin: 0 auto; }
 
     .hero-eyebrow {
       font-family: 'Space Grotesk', sans-serif;
@@ -156,13 +168,13 @@
     }
 
     .hero-subtitle {
-      max-width: 760px;
+      max-width: 790px;
       margin: 0 auto 3rem;
       font-family: 'Playfair Display', serif;
       font-size: clamp(1.25rem, 2.4vw, 1.65rem);
       font-style: italic;
       font-weight: 400;
-      color: #333;
+      color: var(--cinza-texto);
     }
 
     .hero-buttons {
@@ -184,6 +196,8 @@
       font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
+      cursor: pointer;
+      background: transparent;
     }
 
     .btn-primary {
@@ -205,7 +219,7 @@
     }
 
     .manifesto-content {
-      max-width: 900px;
+      max-width: 920px;
       margin: 0 auto;
     }
 
@@ -225,118 +239,95 @@
       color: var(--dourado);
     }
 
-    .search-panel {
+    .research-panel {
       background: var(--branco);
       border-bottom: 1px solid var(--linha);
-      padding: 3.2rem 5%;
+      padding: 4rem 5%;
     }
 
-    .search-box {
-      max-width: 980px;
+    .research-box {
+      max-width: 1080px;
       margin: 0 auto;
       text-align: center;
     }
 
-    .search-box h2 {
+    .research-box h2 {
       font-size: clamp(2rem, 4vw, 3rem);
       margin-bottom: .8rem;
     }
 
-    .search-box p {
+    .research-box p {
+      max-width: 780px;
+      margin: 0 auto 1.8rem;
       color: #444;
-      margin-bottom: 1.5rem;
     }
 
-    .search-input-wrap {
-      display: flex;
+    .research-form {
+      display: grid;
+      grid-template-columns: 1fr 260px auto;
+      gap: .8rem;
+      align-items: stretch;
+      margin-bottom: 1.4rem;
+    }
+
+    #researchQuery,
+    #researchSource {
       border: 1px solid var(--linha);
-      border-radius: 999px;
-      overflow: hidden;
       background: var(--branco);
-      box-shadow: 0 15px 40px rgba(0,0,0,.04);
-    }
-
-    #siteSearch {
-      flex: 1;
-      border: 0;
-      padding: 1.1rem 1.4rem;
+      padding: 1rem 1.1rem;
       font-size: 1rem;
-      font-family: 'Inter', sans-serif;
+      box-shadow: 0 12px 34px rgba(0,0,0,.035);
     }
 
-    #siteSearch:focus { outline: none; }
-
-    .search-label {
-      padding: 1.1rem 1.4rem;
-      color: var(--dourado);
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: .78rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .quick-tags {
-      display: flex;
-      justify-content: center;
-      gap: .6rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
-    }
-
-    .quick-tags button {
-      border: 1px solid var(--linha);
-      background: var(--branco);
-      padding: .5rem .85rem;
+    #researchQuery {
       border-radius: 999px;
-      cursor: pointer;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: .7rem;
-      text-transform: uppercase;
-      letter-spacing: .8px;
+    }
+
+    #researchSource {
+      border-radius: 999px;
       color: #333;
     }
 
-    .quick-tags button:hover {
-      border-color: var(--dourado);
-      color: var(--dourado);
-    }
-
-    .results {
-      display: none;
-      margin-top: 1.3rem;
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: .9rem;
+      margin-top: 1.5rem;
       text-align: left;
-      border: 1px solid var(--linha);
-      border-radius: 18px;
-      overflow: hidden;
-      background: var(--branco);
-      box-shadow: 0 15px 40px rgba(0,0,0,.05);
     }
 
-    .result-item {
+    .source-card {
       display: block;
-      padding: 1rem 1.2rem;
-      border-bottom: 1px solid var(--linha);
+      border: 1px solid var(--linha);
+      background: var(--cinza-claro);
+      padding: 1rem;
+      min-height: 120px;
     }
 
-    .result-item:last-child { border-bottom: 0; }
-    .result-item:hover { background: var(--papel); }
-
-    .result-kicker {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: .68rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--dourado);
-      font-weight: 700;
-      margin-bottom: .15rem;
+    .source-card:hover {
+      background: var(--papel);
+      border-color: rgba(201,169,97,.55);
+      transform: translateY(-2px);
     }
 
-    .result-title { font-weight: 700; margin-bottom: .15rem; }
-    .result-desc { font-size: .9rem; color: #555; }
+    .source-card strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: .3rem;
+    }
 
-    .ecosystem { background: var(--cinza-claro); }
+    .source-card span {
+      display: block;
+      color: #555;
+      font-size: .88rem;
+    }
+
+    .research-note {
+      margin-top: 1.1rem;
+      font-size: .9rem;
+      color: var(--cinza-medio);
+    }
 
     .section-header {
       display: flex;
@@ -361,7 +352,9 @@
       font-weight: 700;
     }
 
-    .eco-grid, .articles-grid {
+    .ecosystem { background: var(--cinza-claro); }
+
+    .eco-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
@@ -398,6 +391,14 @@
       letter-spacing: 1px;
     }
 
+    .gold-link:hover { color: var(--preto); }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
     .article-card {
       display: block;
       background: var(--branco);
@@ -407,7 +408,7 @@
 
     .article-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 18px 45px rgba(0,0,0,.08);
+      box-shadow: var(--sombra);
     }
 
     .card-cover {
@@ -444,7 +445,10 @@
       padding: 2rem;
     }
 
-    .card-cover-text h3 { font-size: 2rem; margin-bottom: .3rem; }
+    .card-cover-text h3 {
+      font-size: 2rem;
+      margin-bottom: .3rem;
+    }
 
     .card-cover-text p {
       font-family: 'Space Grotesk', sans-serif;
@@ -475,26 +479,75 @@
       font-size: .95rem;
     }
 
-    .sources-note {
+    .universos-feature {
       background: var(--papel);
       border-top: 1px solid var(--linha);
       border-bottom: 1px solid var(--linha);
     }
 
-    .sources-note .container {
-      max-width: 900px;
-      text-align: center;
+    .universos-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 3rem;
+      align-items: center;
     }
 
-    .sources-note h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
+    .universos-feature h2 {
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
       margin-bottom: 1rem;
     }
 
-    .sources-note p {
+    .universos-feature p {
+      color: #333;
+      font-size: 1.05rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .mini-source-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .mini-source {
+      background: var(--branco);
+      border: 1px solid var(--linha);
+      padding: 1.2rem;
+    }
+
+    .mini-source strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: .35rem;
+    }
+
+    .mini-source span {
+      color: var(--cinza-medio);
+      font-size: .88rem;
+    }
+
+    .instagram-section { background: var(--branco); }
+
+    .instagram-card {
+      border: 1px solid var(--linha);
+      padding: clamp(2rem, 5vw, 4rem);
+      text-align: center;
+      background:
+        radial-gradient(circle at top left, rgba(201,169,97,.14), transparent 26rem),
+        var(--branco);
+    }
+
+    .instagram-card h2 {
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      margin-bottom: 1rem;
+    }
+
+    .instagram-card p {
+      max-width: 760px;
+      margin: 0 auto 2rem;
       color: #333;
       font-size: 1.08rem;
-      margin-bottom: 1.5rem;
     }
 
     .newsletter {
@@ -569,8 +622,17 @@
       font-weight: 700;
     }
 
-    @media (max-width: 960px) {
-      .eco-grid, .articles-grid { grid-template-columns: 1fr; }
+    @media (max-width: 980px) {
+      .eco-grid,
+      .articles-grid,
+      .universos-grid,
+      .source-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .research-form {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 760px) {
@@ -582,14 +644,7 @@
         flex-direction: column;
         align-items: flex-start;
       }
-      .search-input-wrap {
-        border-radius: 18px;
-        flex-direction: column;
-      }
-      .search-label {
-        text-align: left;
-        border-top: 1px solid var(--linha);
-      }
+      .mini-source-grid { grid-template-columns: 1fr; }
       .newsletter-form {
         flex-direction: column;
         border-bottom: none;
@@ -607,13 +662,14 @@
 
 <body>
   <header>
-    <a href="/" class="logo">CONTAR <span>e</span> CANTAR</a>
+    <a href="index.html" class="logo">CONTAR <span>e</span> CANTAR</a>
     <nav aria-label="Menu principal">
       <ul>
         <li><a href="#inicio">Início</a></li>
-        <li><a href="#busca">Busca</a></li>
+        <li><a href="#pesquisa">Pesquisa</a></li>
         <li><a href="#revista">Revista</a></li>
-        <li><a href="universos.html">Universos</a></li>
+        <li><a href="#universos">Universos</a></li>
+        <li><a href="#newsletter">Newsletter</a></li>
         <li><a class="nav-instagram" href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener">Instagram</a></li>
       </ul>
     </nav>
@@ -621,12 +677,16 @@
 
   <main>
     <section id="inicio" class="hero">
-      <div class="hero-eyebrow">Rosane Maia • Curadoria Cultural</div>
-      <h1>Acervo Editorial da MPB</h1>
-      <p class="hero-subtitle">O som da nossa memória. Histórias, artistas, discos e fontes para atravessar a música brasileira com cuidado e encanto.</p>
-      <div class="hero-buttons">
-        <a href="#revista" class="btn btn-primary">Explorar Acervo</a>
-        <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="btn">Seguir no Instagram</a>
+      <div class="hero-inner">
+        <div class="hero-eyebrow">Rosane Maia • Curadoria Cultural</div>
+        <h1>Acervo Editorial da MPB</h1>
+        <p class="hero-subtitle">O som da nossa memória. Histórias, artistas, discos, movimentos e fontes para atravessar a música brasileira com cuidado e encanto.</p>
+
+        <div class="hero-buttons">
+          <a href="#revista" class="btn btn-primary">Explorar Acervo</a>
+          <a href="universos.html" class="btn">Universos da MPB</a>
+          <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="btn">Seguir no Instagram</a>
+        </div>
       </div>
     </section>
 
@@ -638,25 +698,46 @@
       </div>
     </section>
 
-    <section id="busca" class="search-panel">
-      <div class="search-box">
-        <h2>Pesquisar no acervo</h2>
-        <p>Busque por artistas, movimentos, artigos e fontes. A busca está associada aos artigos já publicados: Tropicália, Cartola e Elis Regina.</p>
+    <section id="pesquisa" class="research-panel">
+      <div class="research-box">
+        <h2>Pesquisar em fontes confiáveis</h2>
+        <p>Digite um artista, movimento, disco, canção ou tema. A consulta abre caminhos de pesquisa em acervos, bibliotecas e bases reconhecidas. O site não tenta substituir as fontes: ele aponta para elas.</p>
 
-        <div class="search-input-wrap">
-          <input id="siteSearch" type="search" placeholder="Ex: Cartola, Mangueira, Elis, Tropicália, Caetano, Gil, IMS..." autocomplete="off">
-          <div class="search-label">Busca editorial</div>
+        <form class="research-form" id="researchForm">
+          <input id="researchQuery" type="search" placeholder="Ex: Nara Leão, Cartola, Bossa Nova, Tropicália, Clube da Esquina..." required>
+          <select id="researchSource" aria-label="Escolha a fonte de pesquisa">
+            <option value="universos">Buscar no Universos da MPB</option>
+            <option value="google-site">Buscar neste site</option>
+            <option value="ims">Instituto Moreira Salles</option>
+            <option value="itau">Enciclopédia Itaú Cultural</option>
+            <option value="bn">Biblioteca Nacional / Hemeroteca</option>
+            <option value="scielo">SciELO</option>
+            <option value="scholar">Google Scholar</option>
+            <option value="geral">Google com fontes culturais</option>
+          </select>
+          <button type="submit" class="btn btn-primary">Pesquisar</button>
+        </form>
+
+        <div class="source-grid">
+          <a class="source-card" href="universos.html">
+            <strong>Universos da MPB</strong>
+            <span>Curadoria interna de acervos, livros, documentários e referências.</span>
+          </a>
+          <a class="source-card" href="https://ims.com.br" target="_blank" rel="noopener">
+            <strong>IMS</strong>
+            <span>Acervo cultural brasileiro, música, fotografia e memória.</span>
+          </a>
+          <a class="source-card" href="https://enciclopedia.itaucultural.org.br" target="_blank" rel="noopener">
+            <strong>Itaú Cultural</strong>
+            <span>Verbetes sobre artistas, movimentos e cultura brasileira.</span>
+          </a>
+          <a class="source-card" href="https://hemerotecadigital.bn.gov.br" target="_blank" rel="noopener">
+            <strong>Hemeroteca</strong>
+            <span>Jornais, revistas e registros históricos digitalizados.</span>
+          </a>
         </div>
 
-        <div class="quick-tags">
-          <button type="button" data-search="Cartola">Cartola</button>
-          <button type="button" data-search="Elis Regina">Elis Regina</button>
-          <button type="button" data-search="Tropicália">Tropicália</button>
-          <button type="button" data-search="Fontes">Fontes</button>
-          <button type="button" data-search="Bossa Nova">Bossa Nova</button>
-        </div>
-
-        <div id="searchResults" class="results" aria-live="polite"></div>
+        <div class="research-note">Dica: para pesquisas históricas, experimente variações do nome, datas, discos e movimentos. Exemplo: “Elis Regina festivais 1965”.</div>
       </div>
     </section>
 
@@ -664,7 +745,7 @@
       <div class="container">
         <div class="section-header">
           <h2>O projeto em três espaços</h2>
-          <span>Presença digital</span>
+          <span>Site • Instagram • Newsletter</span>
         </div>
 
         <div class="eco-grid">
@@ -748,11 +829,45 @@
       </div>
     </section>
 
-    <section class="section sources-note">
+    <section id="universos" class="section universos-feature">
+      <div class="container universos-grid">
+        <div>
+          <div class="hero-eyebrow">Curadoria de fontes</div>
+          <h2>Universos da MPB</h2>
+          <p>A página de fontes reúne acervos, livros, documentários, podcasts, referências acadêmicas e instituições nacionais e internacionais para estudar a música brasileira com mais profundidade.</p>
+          <p>É o centro de pesquisa do projeto: uma porta para quem deseja ir além do artigo e encontrar caminhos confiáveis de investigação.</p>
+          <a href="universos.html" class="btn btn-primary">Explorar Universos</a>
+        </div>
+
+        <div class="mini-source-grid">
+          <a href="universos.html" class="mini-source">
+            <strong>Acervos</strong>
+            <span>IMS, MIS, Biblioteca Nacional e outras instituições.</span>
+          </a>
+          <a href="universos.html" class="mini-source">
+            <strong>Livros</strong>
+            <span>Biografias, estudos culturais e história da música.</span>
+          </a>
+          <a href="universos.html" class="mini-source">
+            <strong>Documentários</strong>
+            <span>Filmes, séries, entrevistas e registros audiovisuais.</span>
+          </a>
+          <a href="universos.html" class="mini-source">
+            <strong>Pesquisa</strong>
+            <span>SciELO, Google Scholar e referências acadêmicas.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section instagram-section">
       <div class="container">
-        <h2>Fontes e referências</h2>
-        <p>Os artigos podem reunir, ao final, referências bibliográficas, acervos, documentários, entrevistas e fontes de pesquisa. A busca aponta para os artigos e também para a página de fontes.</p>
-        <a href="universos.html" class="gold-link">Explorar universos da MPB →</a>
+        <div class="instagram-card">
+          <div class="hero-eyebrow">Contando e Cantando</div>
+          <h2>O acervo também vive no Instagram</h2>
+          <p>O perfil de Rosane Maia reúne publicações, vídeos, memórias, bastidores e histórias da música brasileira. O site organiza a parte permanente; o Instagram mantém o projeto em movimento diário.</p>
+          <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="btn btn-primary">Acompanhar no Instagram</a>
+        </div>
       </div>
     </section>
 
@@ -774,161 +889,57 @@
   </footer>
 
   <script>
-    const searchData = [
-      {
-        title: "A Revolução da Tropicália",
-        type: "Artigo principal",
-        desc: "Artigo sobre Tropicália, Caetano Veloso, Gilberto Gil, festivais, 1967-1968 e a virada estética da música brasileira.",
-        url: "tropicalia.html",
-        terms: "tropicalia tropicalismo caetano veloso gilberto gil gil gal costa os mutantes tom ze torquato neto capinam rogerio duprat alegria alegria domingo no parque festivais 1967 1968 movimento mpb contracultura"
-      },
-      {
-        title: "Cartola: O Gênio do Samba",
-        type: "Artigo principal",
-        desc: "Biografia de Cartola: Mangueira, samba, poesia, redescoberta artística e legado na música brasileira.",
-        url: "cartola.html",
-        terms: "cartola agenor de oliveira mangueira estação primeira de mangueira samba sambista poeta as rosas nao falam o mundo e um moinho alvorada verde que te quero rosa zica redescoberta biografia"
-      },
-      {
-        title: "Elis Regina: A Revolução da Interpretação",
-        type: "Artigo principal",
-        desc: "Especial sobre Elis Regina, interpretação, festivais, televisão, MPB e intensidade vocal.",
-        url: "elis.html",
-        terms: "elis regina elis voz interpretação interprete festivais arrastao fino da bossa mpb tom jobim elis e tom aguas de marco como nossos pais belchior o bebado e a equilibrista"
-      },
+    const form = document.getElementById("researchForm");
+    const input = document.getElementById("researchQuery");
+    const source = document.getElementById("researchSource");
 
-      {
-        title: "Fontes sobre Tropicália",
-        type: "Fontes relacionadas",
-        desc: "Caminho para referências, acervos, livros, documentários e estudos sobre Tropicália.",
-        url: "universos.html#tropicalia",
-        terms: "fontes tropicalia tropicalismo referencias livros documentarios estudos caetano gil mutantes"
-      },
-      {
-        title: "Fontes sobre Cartola e Samba",
-        type: "Fontes relacionadas",
-        desc: "Caminho para referências sobre Cartola, samba, Mangueira, acervos e memória musical brasileira.",
-        url: "universos.html#cartola",
-        terms: "fontes cartola samba mangueira referencias acervo discografia biografia"
-      },
-      {
-        title: "Fontes sobre Elis Regina",
-        type: "Fontes relacionadas",
-        desc: "Caminho para referências sobre Elis Regina, documentários, livros, acervos e registros audiovisuais.",
-        url: "universos.html#elis-regina",
-        terms: "fontes elis regina referencias documentarios livros acervos entrevistas"
-      },
-
-      {
-        title: "Universos da MPB",
-        type: "Página de fontes",
-        desc: "Acervos, bibliotecas, livros, documentários e referências acadêmicas para pesquisa em música brasileira.",
-        url: "universos.html",
-        terms: "universos mpb fontes referencias bibliografia acervos ims biblioteca nacional scielo google scholar documentarios livros pesquisa"
-      },
-      {
-        title: "Instituto Moreira Salles",
-        type: "Fonte / Acervo",
-        desc: "Referência para pesquisa em música, fotografia, literatura e cultura brasileira.",
-        url: "universos.html#ims",
-        terms: "ims instituto moreira salles fonte acervo musica brasileira fotografia literatura"
-      },
-      {
-        title: "Biblioteca Nacional",
-        type: "Fonte / Acervo",
-        desc: "Acervo fundamental para pesquisa histórica e cultural brasileira.",
-        url: "universos.html#biblioteca-nacional",
-        terms: "biblioteca nacional fonte acervo pesquisa brasil hemeroteca"
-      },
-      {
-        title: "Bossa Nova",
-        type: "Tema relacionado",
-        desc: "Caminho de pesquisa sobre João Gilberto, Tom Jobim, Nara Leão, Roberto Menescal e geração bossa-novista.",
-        url: "universos.html#bossa-nova",
-        terms: "bossa nova joao gilberto tom jobim nara leao roberto menescal carlos lyra wanda sa"
-      },
-      {
-        title: "Contando e Cantando no Instagram",
-        type: "Canal / Rede Social",
-        desc: "Publicações, vídeos, memórias e bastidores do projeto de Rosane Maia.",
-        url: "https://www.instagram.com/contandoecantandorosanemaia/",
-        terms: "instagram contando e cantando rosane maia canal videos entrevistas publicações"
-      }
-    ];
-
-    const input = document.getElementById("siteSearch");
-    const results = document.getElementById("searchResults");
-    const quickButtons = document.querySelectorAll("[data-search]");
-
-    function normalize(text) {
-      return text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    function encodedQuery() {
+      return encodeURIComponent(input.value.trim());
     }
 
-    function scoreItem(item, query) {
-      const q = normalize(query);
-      const title = normalize(item.title);
-      const type = normalize(item.type);
-      const desc = normalize(item.desc);
-      const terms = normalize(item.terms);
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
 
-      let score = 0;
-      if (title.includes(q)) score += 60;
-      if (type.includes(q)) score += 20;
-      if (desc.includes(q)) score += 15;
-      if (terms.includes(q)) score += 10;
+      const q = encodedQuery();
+      if (!q) return;
 
-      const words = q.split(/\s+/).filter(Boolean);
-      words.forEach(word => {
-        if (title.includes(word)) score += 10;
-        if (terms.includes(word)) score += 3;
-        if (desc.includes(word)) score += 2;
-      });
+      let url = "";
 
-      return score;
-    }
+      switch (source.value) {
+        case "universos":
+          url = "universos.html?busca=" + q;
+          break;
 
-    function search(query) {
-      const cleanQuery = query.trim();
+        case "google-site":
+          url = "https://www.google.com/search?q=" + encodeURIComponent("site:rmcontarecantar.art.br " + input.value.trim());
+          break;
 
-      if (cleanQuery.length < 2) {
-        results.style.display = "none";
-        results.innerHTML = "";
-        return;
+        case "ims":
+          url = "https://www.google.com/search?q=" + encodeURIComponent("site:ims.com.br " + input.value.trim());
+          break;
+
+        case "itau":
+          url = "https://www.google.com/search?q=" + encodeURIComponent("site:enciclopedia.itaucultural.org.br " + input.value.trim());
+          break;
+
+        case "bn":
+          url = "https://www.google.com/search?q=" + encodeURIComponent("site:hemerotecadigital.bn.gov.br " + input.value.trim());
+          break;
+
+        case "scielo":
+          url = "https://search.scielo.org/?q=" + q;
+          break;
+
+        case "scholar":
+          url = "https://scholar.google.com/scholar?q=" + q;
+          break;
+
+        case "geral":
+          url = "https://www.google.com/search?q=" + encodeURIComponent(input.value.trim() + " MPB música brasileira IMS Itaú Cultural Biblioteca Nacional SciELO");
+          break;
       }
 
-      const found = searchData
-        .map(item => ({ ...item, score: scoreItem(item, cleanQuery) }))
-        .filter(item => item.score > 0)
-        .sort((a, b) => b.score - a.score);
-
-      renderResults(found);
-    }
-
-    function renderResults(items) {
-      results.style.display = "block";
-
-      if (!items.length) {
-        results.innerHTML = '<div class="result-item"><div class="result-title">Nenhum resultado encontrado</div><div class="result-desc">Tente buscar por artista, movimento, fonte ou tema.</div></div>';
-        return;
-      }
-
-      results.innerHTML = items.map(item => `
-        <a class="result-item" href="${item.url}" ${item.url.startsWith("http") ? 'target="_blank" rel="noopener"' : ""}>
-          <div class="result-kicker">${item.type}</div>
-          <div class="result-title">${item.title}</div>
-          <div class="result-desc">${item.desc}</div>
-        </a>
-      `).join("");
-    }
-
-    input.addEventListener("input", () => search(input.value));
-
-    quickButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        input.value = button.dataset.search;
-        search(input.value);
-        input.focus();
-      });
+      window.open(url, "_blank", "noopener");
     });
   </script>
 </body>
