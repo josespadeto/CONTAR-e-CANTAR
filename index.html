@@ -1,414 +1,935 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CONTAR e CANTAR | Acervo Editorial da MPB</title>
-    <meta name="description" content="Acervo editorial dedicado à preservação da memória afetiva da Música Popular Brasileira. Artigos, biografias e curadoria histórica por Rosane Maia.">
-    <link rel="canonical" href="https://rmcontarecantar.art.br/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Open Graph / compartilhamento em redes sociais -->
-    <meta property="og:title" content="CONTAR e CANTAR | Acervo Editorial da MPB">
-    <meta property="og:description" content="O som da nossa memória. Um acervo editorial dedicado à preservação da memória afetiva da Música Popular Brasileira.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://rmcontarecantar.art.br/">
-    <meta property="og:locale" content="pt_BR">
+  <title>CONTAR e CANTAR | MPB, Bossa Nova e História da Música Brasileira</title>
+  <meta name="description" content="Acervo editorial sobre MPB, Bossa Nova e história da música brasileira. Artigos, biografias, fontes e curadoria cultural por Rosane Maia.">
+  <link rel="canonical" href="https://rmcontarecantar.art.br/">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <meta property="og:title" content="CONTAR e CANTAR | Acervo Editorial da MPB">
+  <meta property="og:description" content="O som da nossa memória. Artigos, biografias, fontes e curadoria sobre Música Popular Brasileira.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rmcontarecantar.art.br/">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:image" content="https://rmcontarecantar.art.br/og-image.jpg">
 
-    <style>
-        :root {
-            --cor-preto: #0A0A0A;
-            --cor-branco: #FFFFFF;
-            --cor-cinza-claro: #F7F7F7;
-            --cor-cinza-medio: #888888;
-            --cor-dourado: #C9A961;
-        }
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CONTAR e CANTAR | Acervo Editorial da MPB">
+  <meta name="twitter:description" content="Artigos, biografias, fontes e curadoria sobre Música Popular Brasileira.">
+  <meta name="twitter:image" content="https://rmcontarecantar.art.br/og-image.jpg">
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--cor-branco);
-            color: var(--cor-preto);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "CONTAR e CANTAR",
+    "url": "https://rmcontarecantar.art.br/",
+    "description": "Acervo editorial dedicado à preservação da memória afetiva da Música Popular Brasileira.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CONTAR e CANTAR",
+      "sameAs": ["https://www.instagram.com/contandoecantandorosanemaia/"]
+    }
+  }
+  </script>
 
-        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
-        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+  <style>
+    :root {
+      --preto: #0A0A0A;
+      --branco: #FFFFFF;
+      --papel: #FAF8F3;
+      --cinza-claro: #F7F7F7;
+      --cinza-medio: #777777;
+      --dourado: #C9A961;
+      --linha: rgba(0,0,0,0.08);
+    }
 
-        /* HEADER */
-        header {
-            padding: 1.5rem 5%;
-            position: sticky; top: 0;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            z-index: 100;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            display: flex; justify-content: space-between; align-items: center;
-        }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
-        .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.3rem; font-weight: 700;
-            letter-spacing: -0.5px; text-transform: uppercase;
-        }
-        .logo span { color: var(--cor-dourado); }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--branco);
+      color: var(--preto);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        nav ul { display: flex; list-style: none; gap: 2rem; align-items: center; }
-        nav a {
-            font-size: 0.85rem; font-weight: 500;
-            text-transform: uppercase; letter-spacing: 1px;
-            position: relative; padding-bottom: 4px;
-        }
-        nav a::after {
-            content: ''; position: absolute; bottom: 0; left: 0;
-            width: 0; height: 2px; background: var(--cor-dourado);
-            transition: width 0.3s ease;
-        }
-        nav a:hover::after { width: 100%; }
+    h1, h2, h3, h4 { font-family: 'Playfair Display', serif; line-height: 1.12; }
+    a { text-decoration: none; color: inherit; transition: all .25s ease; }
 
-        /* HERO SECTION */
-        .hero {
-            padding: 10rem 5% 8rem;
-            max-width: 1400px; margin: 0 auto; text-align: center;
-        }
-        .hero-eyebrow {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.8rem; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 3px;
-            color: var(--cor-dourado); margin-bottom: 2rem;
-        }
-        .hero h1 {
-            font-size: clamp(3rem, 7vw, 5.5rem);
-            line-height: 1.1; margin-bottom: 2rem;
-            font-weight: 700; letter-spacing: -2px;
-        }
-        .hero-subtitle {
-            font-size: 1.3rem; color: #333;
-            margin-bottom: 4rem; font-weight: 300;
-            font-style: italic; font-family: 'Playfair Display', serif;
-        }
-        .hero-buttons { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+    header {
+      padding: 1.35rem 5%;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--linha);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        /* BOTÕES */
-        .btn {
-            display: inline-block; padding: 1.1rem 2.8rem;
-            background: var(--cor-preto); color: var(--cor-branco);
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.8rem; font-weight: 500;
-            text-transform: uppercase; letter-spacing: 2px;
-            border: 1px solid var(--cor-preto); border-radius: 50px;
-            transition: all 0.4s ease;
-        }
-        .btn:hover { background: transparent; color: var(--cor-preto); transform: translateY(-2px); }
-        .btn-outline { background: transparent; color: var(--cor-preto); }
-        .btn-outline:hover { background: var(--cor-preto); color: var(--cor-branco); }
+    .logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+    }
 
-        /* MANIFESTO */
-        .manifesto { padding: 8rem 5%; background: var(--cor-cinza-claro); text-align: center; }
-        .manifesto-content { max-width: 900px; margin: 0 auto; }
-        .manifesto p {
-            font-size: 1.4rem; line-height: 1.8;
-            color: #333; font-weight: 300; margin-bottom: 2rem;
-        }
-        .manifesto-signature {
-            font-family: 'Playfair Display', serif;
-            font-style: italic; font-size: 1.1rem;
-            color: var(--cor-dourado); margin-top: 3rem;
-        }
+    .logo span { color: var(--dourado); }
 
-        /* SEÇÕES E GRIDS */
-        .section { padding: 8rem 5%; max-width: 1400px; margin: 0 auto; }
-        .section-header {
-            display: flex; justify-content: space-between; align-items: baseline;
-            margin-bottom: 4rem; padding-bottom: 1.5rem; border-bottom: 2px solid var(--cor-preto);
-        }
-        .section-header h2 { font-size: 2.5rem; font-weight: 700; }
-        .section-header span {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.85rem; text-transform: uppercase;
-            letter-spacing: 1px; color: var(--cor-cinza-medio);
-        }
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.5rem;
+      align-items: center;
+    }
 
-        /* ARTIGOS GRID */
-        .articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+    nav a {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      padding-bottom: 4px;
+    }
 
-        .article-link {
-            display: block;
-            background: var(--cor-branco);
-            transition: transform 0.3s ease;
-            cursor: pointer;
-        }
-        .article-link:hover { transform: translateY(-8px); }
-        .article-link.inativo {
-            opacity: 0.7;
-            cursor: default;
-            pointer-events: none;
-        }
-        .article-link.inativo:hover { transform: none; }
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--dourado);
+      transition: width .25s ease;
+    }
 
-        .card-cover {
-            height: 300px; width: 100%; position: relative; overflow: hidden;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .cover-tropicalia { background: linear-gradient(135deg, #FF3300 0%, #C9A961 50%, #0A0A0A 100%); }
-        .cover-bossa { background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 50%, #888888 100%); }
-        .cover-clube { background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 50%, #c4e0e5 100%); }
+    nav a:hover::after { width: 100%; }
 
-        .card-cover-text {
-            color: white; text-align: center; font-family: 'Playfair Display', serif;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-        .card-cover-text h3 { font-size: 2rem; margin: 0; }
-        .card-cover-text p { font-family: 'Space Grotesk'; font-size: 0.8rem; letter-spacing: 2px; opacity: 0.9; }
+    .nav-instagram {
+      border: 1px solid var(--preto);
+      padding: .65rem 1rem;
+      border-radius: 999px;
+    }
 
-        .article-category {
-            position: absolute; top: 1.5rem; left: 1.5rem;
-            background: var(--cor-branco); padding: 0.4rem 1rem;
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.7rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 1px;
-        }
-        .article-content { padding: 2rem; }
-        .article-meta { font-size: 0.8rem; color: var(--cor-cinza-medio); margin-bottom: 1rem; font-weight: 500; }
-        .article-content h3 { font-size: 1.6rem; margin-bottom: 1rem; line-height: 1.3; font-weight: 600; }
-        .article-content p { color: #333; margin-bottom: 1.5rem; font-size: 0.95rem; }
-        .read-article {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.85rem; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 1px;
-            display: inline-flex; align-items: center; gap: 0.5rem;
-        }
+    .nav-instagram::after { display: none; }
 
-        /* UNIVERSOS */
-        .universes { background: var(--cor-cinza-claro); padding: 8rem 5%; }
-        .universes-container { max-width: 1400px; margin: 0 auto; }
-        .universes-intro { text-align: center; max-width: 800px; margin: 0 auto 4rem; }
-        .universes-intro h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
-        .universes-intro p { font-size: 1.2rem; color: #333; font-weight: 300; }
-        .universes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .universe-card { background: var(--cor-branco); overflow: hidden; transition: all 0.3s ease; }
-        .universe-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
-        .universe-content { padding: 2rem; }
-        .universe-content h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
-        .universe-content p { color: var(--cor-cinza-medio); font-size: 0.9rem; margin-bottom: 1rem; }
-        .universe-link {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.85rem; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 1px; color: var(--cor-dourado);
-        }
+    .nav-instagram:hover {
+      background: var(--preto);
+      color: var(--branco);
+    }
 
-        /* NEWSLETTER */
-        .newsletter { padding: 8rem 5%; background: var(--cor-preto); color: var(--cor-branco); text-align: center; }
-        .newsletter-content { max-width: 700px; margin: 0 auto; }
-        .newsletter h2 { font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 1.5rem; font-weight: 700; }
-        .newsletter p { font-size: 1.2rem; color: rgba(255,255,255,0.7); margin-bottom: 3rem; font-weight: 300; }
-        .newsletter-form { max-width: 500px; margin: 0 auto; display: flex; border-bottom: 2px solid rgba(255,255,255,0.2); }
-        .newsletter-form input {
-            flex: 1; padding: 1.2rem 0; background: transparent; border: none;
-            color: var(--cor-branco); font-size: 1rem; font-family: 'Inter', sans-serif;
-        }
-        .newsletter-form input::placeholder { color: rgba(255,255,255,0.4); }
-        .newsletter-form input:focus { outline: none; }
-        .newsletter-form button {
-            background: transparent; border: none; color: var(--cor-branco);
-            font-family: 'Space Grotesk', sans-serif; font-size: 0.85rem;
-            font-weight: 600; text-transform: uppercase; letter-spacing: 1px;
-            cursor: pointer; padding: 1.2rem 2rem; transition: color 0.3s ease;
-        }
-        .newsletter-form button:hover { color: var(--cor-dourado); }
-        .newsletter-aviso {
-            font-size: 0.8rem; color: rgba(255,255,255,0.4);
-            margin-top: 1rem; font-family: 'Space Grotesk', sans-serif;
-        }
+    .hero {
+      padding: 8.5rem 5% 6.5rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      text-align: center;
+      background: radial-gradient(circle at top center, rgba(201,169,97,.12), transparent 32rem);
+    }
 
-        /* FOOTER */
-        footer { padding: 4rem 5%; background: var(--cor-cinza-claro); text-align: center; }
-        .footer-content { max-width: 1400px; margin: 0 auto; }
-        footer p {
-            font-family: 'Space Grotesk', sans-serif;
-            text-transform: uppercase; letter-spacing: 1px;
-            font-size: 0.8rem; color: var(--cor-cinza-medio);
-        }
+    .hero-eyebrow {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .78rem;
+      font-weight: 700;
+      color: var(--dourado);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 1.8rem;
+    }
 
-        /* RESPONSIVO */
-        @media (max-width: 1024px) { .articles-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 768px) {
-            nav ul { display: none; }
-            .articles-grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 2.5rem; }
-            .section-header { flex-direction: column; gap: 1rem; align-items: flex-start; }
-            .newsletter-form { flex-direction: column; border: none; }
-            .newsletter-form input { border-bottom: 1px solid rgba(255,255,255,0.2); margin-bottom: 1rem; }
-        }
-    </style>
+    .hero h1 {
+      max-width: 980px;
+      margin: 0 auto 1.8rem;
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      letter-spacing: -2px;
+    }
+
+    .hero-subtitle {
+      max-width: 760px;
+      margin: 0 auto 3rem;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.25rem, 2.4vw, 1.65rem);
+      font-style: italic;
+      font-weight: 400;
+      color: #333;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2rem;
+      border: 1px solid var(--preto);
+      border-radius: 999px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .btn-primary {
+      background: var(--preto);
+      color: var(--branco);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    }
+
+    .section { padding: 6rem 5%; }
+    .container { max-width: 1180px; margin: 0 auto; }
+
+    .manifesto {
+      background: var(--papel);
+      text-align: center;
+    }
+
+    .manifesto-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .manifesto p {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.35rem, 2.3vw, 1.95rem);
+      line-height: 1.6;
+      color: #222;
+      margin-bottom: 1.5rem;
+    }
+
+    .manifesto-signature {
+      margin-top: 2rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--dourado);
+    }
+
+    .search-panel {
+      background: var(--branco);
+      border-bottom: 1px solid var(--linha);
+      padding: 3.2rem 5%;
+    }
+
+    .search-box {
+      max-width: 980px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .search-box h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: .8rem;
+    }
+
+    .search-box p {
+      color: #444;
+      margin-bottom: 1.5rem;
+    }
+
+    .search-input-wrap {
+      display: flex;
+      border: 1px solid var(--linha);
+      border-radius: 999px;
+      overflow: hidden;
+      background: var(--branco);
+      box-shadow: 0 15px 40px rgba(0,0,0,.04);
+    }
+
+    #siteSearch {
+      flex: 1;
+      border: 0;
+      padding: 1.1rem 1.4rem;
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    #siteSearch:focus { outline: none; }
+
+    .search-label {
+      padding: 1.1rem 1.4rem;
+      color: var(--dourado);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .78rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .quick-tags {
+      display: flex;
+      justify-content: center;
+      gap: .6rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    .quick-tags button {
+      border: 1px solid var(--linha);
+      background: var(--branco);
+      padding: .5rem .85rem;
+      border-radius: 999px;
+      cursor: pointer;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      color: #333;
+    }
+
+    .quick-tags button:hover {
+      border-color: var(--dourado);
+      color: var(--dourado);
+    }
+
+    .results {
+      display: none;
+      margin-top: 1.3rem;
+      text-align: left;
+      border: 1px solid var(--linha);
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--branco);
+      box-shadow: 0 15px 40px rgba(0,0,0,.05);
+    }
+
+    .result-item {
+      display: block;
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid var(--linha);
+    }
+
+    .result-item:last-child { border-bottom: 0; }
+    .result-item:hover { background: var(--papel); }
+
+    .result-kicker {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--dourado);
+      font-weight: 700;
+      margin-bottom: .15rem;
+    }
+
+    .result-title { font-weight: 700; margin-bottom: .15rem; }
+    .result-desc { font-size: .9rem; color: #555; }
+
+    .ecosystem { background: var(--cinza-claro); }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 2px solid var(--preto);
+    }
+
+    .section-header h2 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+    }
+
+    .section-header span {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--cinza-medio);
+      font-weight: 700;
+    }
+
+    .eco-grid, .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .eco-card {
+      background: var(--branco);
+      border: 1px solid var(--linha);
+      padding: 2rem;
+      transition: .25s ease;
+    }
+
+    .eco-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 35px rgba(0,0,0,.07);
+    }
+
+    .eco-card h3 {
+      font-size: 1.55rem;
+      margin-bottom: .7rem;
+    }
+
+    .eco-card p {
+      color: #444;
+      margin-bottom: 1.2rem;
+    }
+
+    .gold-link {
+      color: var(--dourado);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .article-card {
+      display: block;
+      background: var(--branco);
+      transition: .25s ease;
+      border: 1px solid var(--linha);
+    }
+
+    .article-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 45px rgba(0,0,0,.08);
+    }
+
+    .card-cover {
+      height: 290px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cover-tropicalia { background: linear-gradient(135deg, #FF3300 0%, #C9A961 52%, #0A0A0A 100%); }
+    .cover-cartola { background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 54%, #b89b62 100%); }
+    .cover-elis { background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 50%, #c4e0e5 100%); }
+
+    .article-category {
+      position: absolute;
+      top: 1.2rem;
+      left: 1.2rem;
+      background: var(--branco);
+      padding: .35rem .85rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .card-cover-text {
+      color: var(--branco);
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      text-shadow: 0 2px 12px rgba(0,0,0,.28);
+      padding: 2rem;
+    }
+
+    .card-cover-text h3 { font-size: 2rem; margin-bottom: .3rem; }
+
+    .card-cover-text p {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .75rem;
+      letter-spacing: 2px;
+    }
+
+    .article-content { padding: 1.7rem; }
+
+    .article-meta {
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--cinza-medio);
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      margin-bottom: .85rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: .8rem;
+    }
+
+    .article-content p {
+      color: #444;
+      margin-bottom: 1.2rem;
+      font-size: .95rem;
+    }
+
+    .sources-note {
+      background: var(--papel);
+      border-top: 1px solid var(--linha);
+      border-bottom: 1px solid var(--linha);
+    }
+
+    .sources-note .container {
+      max-width: 900px;
+      text-align: center;
+    }
+
+    .sources-note h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
+
+    .sources-note p {
+      color: #333;
+      font-size: 1.08rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .newsletter {
+      background: var(--preto);
+      color: var(--branco);
+      text-align: center;
+    }
+
+    .newsletter-content {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .newsletter h2 {
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      margin-bottom: 1rem;
+    }
+
+    .newsletter p {
+      color: rgba(255,255,255,.72);
+      font-size: 1.1rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .newsletter-form {
+      max-width: 540px;
+      margin: 0 auto;
+      display: flex;
+      border-bottom: 2px solid rgba(255,255,255,.22);
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 1.1rem 0;
+      border: none;
+      background: transparent;
+      color: var(--branco);
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .newsletter-form input::placeholder { color: rgba(255,255,255,.45); }
+    .newsletter-form input:focus { outline: none; }
+
+    .newsletter-form button {
+      padding: 1.1rem 0 1.1rem 1.5rem;
+      border: none;
+      background: transparent;
+      color: var(--branco);
+      cursor: pointer;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .newsletter-form button:hover { color: var(--dourado); }
+
+    footer {
+      padding: 3rem 5%;
+      background: var(--cinza-claro);
+      text-align: center;
+    }
+
+    footer p {
+      font-family: 'Space Grotesk', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--cinza-medio);
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    @media (max-width: 960px) {
+      .eco-grid, .articles-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 760px) {
+      nav ul { display: none; }
+      header { padding: 1.1rem 5%; }
+      .hero { padding: 6rem 5% 5rem; }
+      .section { padding: 4.5rem 5%; }
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .search-input-wrap {
+        border-radius: 18px;
+        flex-direction: column;
+      }
+      .search-label {
+        text-align: left;
+        border-top: 1px solid var(--linha);
+      }
+      .newsletter-form {
+        flex-direction: column;
+        border-bottom: none;
+      }
+      .newsletter-form input {
+        border-bottom: 1px solid rgba(255,255,255,.22);
+      }
+      .newsletter-form button {
+        padding-left: 0;
+        text-align: left;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <header>
+    <a href="/" class="logo">CONTAR <span>e</span> CANTAR</a>
+    <nav aria-label="Menu principal">
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#busca">Busca</a></li>
+        <li><a href="#revista">Revista</a></li>
+        <li><a href="universos.html">Universos</a></li>
+        <li><a class="nav-instagram" href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <header>
-        <div class="logo">CONTAR <span>e</span> CANTAR</div>
-        <nav>
-            <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#revista">Revista</a></li>
-                <li><a href="universos.html">Universos</a></li>
-                <li><a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener">Instagram</a></li>
-            </ul>
-        </nav>
-    </header>
-
+  <main>
     <section id="inicio" class="hero">
-        <div class="hero-eyebrow">Rosane Maia • Curadoria</div>
-        <h1>Acervo Editorial da MPB</h1>
-        <p class="hero-subtitle">O som da nossa memória.</p>
-        <div class="hero-buttons">
-            <a href="#revista" class="btn">Explorar Acervo</a>
-            <a href="#newsletter" class="btn btn-outline">Assinar Newsletter</a>
-        </div>
+      <div class="hero-eyebrow">Rosane Maia • Curadoria Cultural</div>
+      <h1>Acervo Editorial da MPB</h1>
+      <p class="hero-subtitle">O som da nossa memória. Histórias, artistas, discos e fontes para atravessar a música brasileira com cuidado e encanto.</p>
+      <div class="hero-buttons">
+        <a href="#revista" class="btn btn-primary">Explorar Acervo</a>
+        <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="btn">Seguir no Instagram</a>
+      </div>
     </section>
 
-    <section class="manifesto">
-        <div class="manifesto-content">
-            <p>CONTAR e CANTAR é um acervo editorial dedicado à preservação da memória afetiva da Música Popular Brasileira. O projeto nasce da ideia de que a MPB não pertence apenas aos discos, palcos ou arquivos históricos.</p>
-            <p>Ela vive também nas lembranças cotidianas: no rádio ligado durante a infância, na vitrola silenciosa guardada na sala, no violão encostado após uma madrugada de música, nas capas de vinil observadas como pequenas obras de arte.</p>
-            <p>Mais do que reunir artistas, álbuns e movimentos culturais, este espaço busca reconstruir atmosferas — travessias pela história emocional da música brasileira.</p>
-            <div class="manifesto-signature">— Rosane Maia, Curadora</div>
+    <section class="manifesto section">
+      <div class="manifesto-content">
+        <p>CONTAR e CANTAR é um acervo editorial dedicado à preservação da memória afetiva da Música Popular Brasileira.</p>
+        <p>Mais do que reunir artistas, álbuns e movimentos culturais, este espaço busca reconstruir atmosferas: travessias pela história emocional da música brasileira.</p>
+        <div class="manifesto-signature">— Rosane Maia, Curadora</div>
+      </div>
+    </section>
+
+    <section id="busca" class="search-panel">
+      <div class="search-box">
+        <h2>Pesquisar no acervo</h2>
+        <p>Busque por artistas, movimentos, artigos e fontes. A busca está associada aos artigos já publicados: Tropicália, Cartola e Elis Regina.</p>
+
+        <div class="search-input-wrap">
+          <input id="siteSearch" type="search" placeholder="Ex: Cartola, Mangueira, Elis, Tropicália, Caetano, Gil, IMS..." autocomplete="off">
+          <div class="search-label">Busca editorial</div>
         </div>
+
+        <div class="quick-tags">
+          <button type="button" data-search="Cartola">Cartola</button>
+          <button type="button" data-search="Elis Regina">Elis Regina</button>
+          <button type="button" data-search="Tropicália">Tropicália</button>
+          <button type="button" data-search="Fontes">Fontes</button>
+          <button type="button" data-search="Bossa Nova">Bossa Nova</button>
+        </div>
+
+        <div id="searchResults" class="results" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="section ecosystem">
+      <div class="container">
+        <div class="section-header">
+          <h2>O projeto em três espaços</h2>
+          <span>Presença digital</span>
+        </div>
+
+        <div class="eco-grid">
+          <article class="eco-card">
+            <h3>🏛️ Site</h3>
+            <p>O espaço permanente do projeto: artigos, especiais, biografias e referências que ficam acessíveis fora das redes sociais.</p>
+            <a href="#revista" class="gold-link">Ver artigos →</a>
+          </article>
+
+          <article class="eco-card">
+            <h3>📱 Instagram</h3>
+            <p>O canal vivo do Contando e Cantando, com publicações, vídeos, histórias, entrevistas e contato direto com o público.</p>
+            <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="gold-link">Acompanhar →</a>
+          </article>
+
+          <article class="eco-card">
+            <h3>✉️ Newsletter</h3>
+            <p>Uma ponte direta com os leitores, sem depender de algoritmo, bloqueios repentinos ou instabilidades das plataformas.</p>
+            <a href="#newsletter" class="gold-link">Assinar →</a>
+          </article>
+        </div>
+      </div>
     </section>
 
     <section id="revista" class="section">
+      <div class="container">
         <div class="section-header">
-            <h2>Revista Cultural</h2>
-            <span>Artigos & Especiais</span>
+          <h2>Revista Cultural</h2>
+          <span>Artigos & Especiais</span>
         </div>
+
         <div class="articles-grid">
-
-            <!-- CARD TROPICÁLIA -->
-            <a href="tropicalia.html" class="article-link" id="card-tropicalia">
-                <div class="card-cover cover-tropicalia">
-                    <span class="article-category">Movimento</span>
-                    <div class="card-cover-text">
-                        <h3>TROPICÁLIA</h3>
-                        <p>1967-1968</p>
-                    </div>
-                </div>
-                <div class="article-content">
-                    <div class="article-meta">15 min de leitura</div>
-                    <h3>A Revolução da Tropicália</h3>
-                    <p>Como Caetano, Gil e o grupo mudaram a música brasileira para sempre em 1967.</p>
-                    <span class="read-article">Ler artigo →</span>
-                </div>
-            </a>
-
-            <!-- CARD CARTOLA -->
-            <a href="cartola.html" class="article-link" id="card-cartola">
-                <div class="card-cover cover-bossa">
-                    <span class="article-category">Biografia</span>
-                    <div class="card-cover-text">
-                        <h3>CARTOLA</h3>
-                        <p>O GÊNIO DO SAMBA</p>
-                    </div>
-                </div>
-                <div class="article-content">
-                    <div class="article-meta">18 min de leitura</div>
-                    <h3>Cartola: O Gênio do Samba</h3>
-                    <p>De lavador de carros a ícone nacional. A história completa do fundador da Mangueira.</p>
-                    <span class="read-article">Ler artigo →</span>
-                </div>
-            </a>
-
-            <!-- CARD ELIS -->
-            <a href="elis.html" class="article-link" id="card-elis">
-                <div class="card-cover cover-clube">
-                    <span class="article-category">Análise</span>
-                    <div class="card-cover-text">
-                        <h3>ELIS REGINA</h3>
-                        <p>A VOZ QUE ARDIA</p>
-                    </div>
-                </div>
-                <div class="article-content">
-                    <div class="article-meta">20 min de leitura</div>
-                    <h3>Elis Regina: A Revolução da Interpretação</h3>
-                    <p>A trajetória da gaúcha que dominou o Brasil com intensidade antes dos 36 anos.</p>
-                    <span class="read-article">Ler artigo →</span>
-                </div>
-            </a>
-
-        </div>
-    </section>
-
-    <section id="universos" class="universes">
-        <div class="universes-container">
-            <div class="universes-intro">
-                <h2>Universos da MPB</h2>
-                <p>As melhores fontes nacionais e internacionais para mergulhar na Música Popular Brasileira. Livros, documentários, acervos, podcasts e referências acadêmicas curadas.</p>
+          <a href="tropicalia.html" class="article-card">
+            <div class="card-cover cover-tropicalia">
+              <span class="article-category">Movimento</span>
+              <div class="card-cover-text">
+                <h3>TROPICÁLIA</h3>
+                <p>1967-1968</p>
+              </div>
             </div>
-            <div class="universes-grid">
-                <a href="universos.html" class="universe-card">
-                    <div class="universe-content">
-                        <h3>🔍 Buscar Fontes</h3>
-                        <p>Acesse nossa curadoria completa de referências</p>
-                        <span class="universe-link">Explorar universos →</span>
-                    </div>
-                </a>
-                <a href="universos.html" class="universe-card">
-                    <div class="universe-content">
-                        <h3>📚 Acervos & Bibliotecas</h3>
-                        <p>IMS, Biblioteca Nacional, Smithsonian e mais</p>
-                        <span class="universe-link">Ver acervos →</span>
-                    </div>
-                </a>
-                <a href="universos.html" class="universe-card">
-                    <div class="universe-content">
-                        <h3>🎓 Referências Acadêmicas</h3>
-                        <p>SciELO, Google Scholar, Oxford Music Online</p>
-                        <span class="universe-link">Ver estudos →</span>
-                    </div>
-                </a>
+            <div class="article-content">
+              <div class="article-meta">15 min de leitura</div>
+              <h3>A Revolução da Tropicália</h3>
+              <p>Como Caetano, Gil e uma geração mudaram a música brasileira para sempre.</p>
+              <span class="gold-link">Ler artigo →</span>
             </div>
+          </a>
+
+          <a href="cartola.html" class="article-card">
+            <div class="card-cover cover-cartola">
+              <span class="article-category">Biografia</span>
+              <div class="card-cover-text">
+                <h3>CARTOLA</h3>
+                <p>O GÊNIO DO SAMBA</p>
+              </div>
+            </div>
+            <div class="article-content">
+              <div class="article-meta">18 min de leitura</div>
+              <h3>Cartola: O Gênio do Samba</h3>
+              <p>De lavador de carros a ícone nacional. A história do fundador da Mangueira.</p>
+              <span class="gold-link">Ler artigo →</span>
+            </div>
+          </a>
+
+          <a href="elis.html" class="article-card">
+            <div class="card-cover cover-elis">
+              <span class="article-category">Análise</span>
+              <div class="card-cover-text">
+                <h3>ELIS REGINA</h3>
+                <p>A VOZ QUE ARDIA</p>
+              </div>
+            </div>
+            <div class="article-content">
+              <div class="article-meta">20 min de leitura</div>
+              <h3>Elis Regina: A Revolução da Interpretação</h3>
+              <p>A trajetória da gaúcha que dominou o Brasil com intensidade rara.</p>
+              <span class="gold-link">Ler artigo →</span>
+            </div>
+          </a>
         </div>
+      </div>
     </section>
 
-    <section id="newsletter" class="newsletter">
-        <div class="newsletter-content">
-            <h2>Receba os especiais por e-mail</h2>
-            <p>Artigos, histórias e curadoria da MPB diretamente no seu e-mail. Sem algoritmos, sem pressa.</p>
-
-            <!-- FORMULÁRIO BUTTONDOWN: envio direto, sem popup.
-                 O método anterior (window.open + target=popupwindow) podia ser
-                 bloqueado silenciosamente por bloqueadores de pop-up, fazendo o
-                 e-mail ser enviado sem o usuário ver nenhuma confirmação.
-                 Agora o Buttondown redireciona a própria página para a
-                 confirmação, sem depender de pop-up. -->
-            <form
-                action="https://buttondown.com/api/emails/embed-subscribe/spadeto"
-                method="post"
-                class="newsletter-form"
-            >
-                <input
-                    type="email"
-                    name="email"
-                    id="bd-email"
-                    placeholder="seu@email.com"
-                    required
-                >
-                <button type="submit">Assinar →</button>
-            </form>
-            <p class="newsletter-aviso">Você será redirecionado para confirmar sua inscrição.</p>
-
-        </div>
+    <section class="section sources-note">
+      <div class="container">
+        <h2>Fontes e referências</h2>
+        <p>Os artigos podem reunir, ao final, referências bibliográficas, acervos, documentários, entrevistas e fontes de pesquisa. A busca aponta para os artigos e também para a página de fontes.</p>
+        <a href="universos.html" class="gold-link">Explorar universos da MPB →</a>
+      </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <p>CONTAR e CANTAR © 2026 • Curadoria histórica por Rosane Maia</p>
-        </div>
-    </footer>
+    <section id="newsletter" class="section newsletter">
+      <div class="newsletter-content">
+        <h2>Receba os especiais por e-mail</h2>
+        <p>Artigos, histórias e curadoria da MPB diretamente no seu e-mail. Sem algoritmos, sem pressa.</p>
 
+        <form action="https://buttondown.com/api/emails/embed-subscribe/spadeto" method="post" class="newsletter-form">
+          <input type="email" name="email" id="bd-email" placeholder="seu@email.com" required>
+          <button type="submit">Assinar →</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>CONTAR e CANTAR © 2026 • Curadoria histórica por Rosane Maia</p>
+  </footer>
+
+  <script>
+    const searchData = [
+      {
+        title: "A Revolução da Tropicália",
+        type: "Artigo principal",
+        desc: "Artigo sobre Tropicália, Caetano Veloso, Gilberto Gil, festivais, 1967-1968 e a virada estética da música brasileira.",
+        url: "tropicalia.html",
+        terms: "tropicalia tropicalismo caetano veloso gilberto gil gil gal costa os mutantes tom ze torquato neto capinam rogerio duprat alegria alegria domingo no parque festivais 1967 1968 movimento mpb contracultura"
+      },
+      {
+        title: "Cartola: O Gênio do Samba",
+        type: "Artigo principal",
+        desc: "Biografia de Cartola: Mangueira, samba, poesia, redescoberta artística e legado na música brasileira.",
+        url: "cartola.html",
+        terms: "cartola agenor de oliveira mangueira estação primeira de mangueira samba sambista poeta as rosas nao falam o mundo e um moinho alvorada verde que te quero rosa zica redescoberta biografia"
+      },
+      {
+        title: "Elis Regina: A Revolução da Interpretação",
+        type: "Artigo principal",
+        desc: "Especial sobre Elis Regina, interpretação, festivais, televisão, MPB e intensidade vocal.",
+        url: "elis.html",
+        terms: "elis regina elis voz interpretação interprete festivais arrastao fino da bossa mpb tom jobim elis e tom aguas de marco como nossos pais belchior o bebado e a equilibrista"
+      },
+
+      {
+        title: "Fontes sobre Tropicália",
+        type: "Fontes relacionadas",
+        desc: "Caminho para referências, acervos, livros, documentários e estudos sobre Tropicália.",
+        url: "universos.html#tropicalia",
+        terms: "fontes tropicalia tropicalismo referencias livros documentarios estudos caetano gil mutantes"
+      },
+      {
+        title: "Fontes sobre Cartola e Samba",
+        type: "Fontes relacionadas",
+        desc: "Caminho para referências sobre Cartola, samba, Mangueira, acervos e memória musical brasileira.",
+        url: "universos.html#cartola",
+        terms: "fontes cartola samba mangueira referencias acervo discografia biografia"
+      },
+      {
+        title: "Fontes sobre Elis Regina",
+        type: "Fontes relacionadas",
+        desc: "Caminho para referências sobre Elis Regina, documentários, livros, acervos e registros audiovisuais.",
+        url: "universos.html#elis-regina",
+        terms: "fontes elis regina referencias documentarios livros acervos entrevistas"
+      },
+
+      {
+        title: "Universos da MPB",
+        type: "Página de fontes",
+        desc: "Acervos, bibliotecas, livros, documentários e referências acadêmicas para pesquisa em música brasileira.",
+        url: "universos.html",
+        terms: "universos mpb fontes referencias bibliografia acervos ims biblioteca nacional scielo google scholar documentarios livros pesquisa"
+      },
+      {
+        title: "Instituto Moreira Salles",
+        type: "Fonte / Acervo",
+        desc: "Referência para pesquisa em música, fotografia, literatura e cultura brasileira.",
+        url: "universos.html#ims",
+        terms: "ims instituto moreira salles fonte acervo musica brasileira fotografia literatura"
+      },
+      {
+        title: "Biblioteca Nacional",
+        type: "Fonte / Acervo",
+        desc: "Acervo fundamental para pesquisa histórica e cultural brasileira.",
+        url: "universos.html#biblioteca-nacional",
+        terms: "biblioteca nacional fonte acervo pesquisa brasil hemeroteca"
+      },
+      {
+        title: "Bossa Nova",
+        type: "Tema relacionado",
+        desc: "Caminho de pesquisa sobre João Gilberto, Tom Jobim, Nara Leão, Roberto Menescal e geração bossa-novista.",
+        url: "universos.html#bossa-nova",
+        terms: "bossa nova joao gilberto tom jobim nara leao roberto menescal carlos lyra wanda sa"
+      },
+      {
+        title: "Contando e Cantando no Instagram",
+        type: "Canal / Rede Social",
+        desc: "Publicações, vídeos, memórias e bastidores do projeto de Rosane Maia.",
+        url: "https://www.instagram.com/contandoecantandorosanemaia/",
+        terms: "instagram contando e cantando rosane maia canal videos entrevistas publicações"
+      }
+    ];
+
+    const input = document.getElementById("siteSearch");
+    const results = document.getElementById("searchResults");
+    const quickButtons = document.querySelectorAll("[data-search]");
+
+    function normalize(text) {
+      return text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    }
+
+    function scoreItem(item, query) {
+      const q = normalize(query);
+      const title = normalize(item.title);
+      const type = normalize(item.type);
+      const desc = normalize(item.desc);
+      const terms = normalize(item.terms);
+
+      let score = 0;
+      if (title.includes(q)) score += 60;
+      if (type.includes(q)) score += 20;
+      if (desc.includes(q)) score += 15;
+      if (terms.includes(q)) score += 10;
+
+      const words = q.split(/\s+/).filter(Boolean);
+      words.forEach(word => {
+        if (title.includes(word)) score += 10;
+        if (terms.includes(word)) score += 3;
+        if (desc.includes(word)) score += 2;
+      });
+
+      return score;
+    }
+
+    function search(query) {
+      const cleanQuery = query.trim();
+
+      if (cleanQuery.length < 2) {
+        results.style.display = "none";
+        results.innerHTML = "";
+        return;
+      }
+
+      const found = searchData
+        .map(item => ({ ...item, score: scoreItem(item, cleanQuery) }))
+        .filter(item => item.score > 0)
+        .sort((a, b) => b.score - a.score);
+
+      renderResults(found);
+    }
+
+    function renderResults(items) {
+      results.style.display = "block";
+
+      if (!items.length) {
+        results.innerHTML = '<div class="result-item"><div class="result-title">Nenhum resultado encontrado</div><div class="result-desc">Tente buscar por artista, movimento, fonte ou tema.</div></div>';
+        return;
+      }
+
+      results.innerHTML = items.map(item => `
+        <a class="result-item" href="${item.url}" ${item.url.startsWith("http") ? 'target="_blank" rel="noopener"' : ""}>
+          <div class="result-kicker">${item.type}</div>
+          <div class="result-title">${item.title}</div>
+          <div class="result-desc">${item.desc}</div>
+        </a>
+      `).join("");
+    }
+
+    input.addEventListener("input", () => search(input.value));
+
+    quickButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        input.value = button.dataset.search;
+        search(input.value);
+        input.focus();
+      });
+    });
+  </script>
 </body>
 </html>
