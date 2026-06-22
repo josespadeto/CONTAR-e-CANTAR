@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cale-se ou Cante: A Música Brasileira Sob a Ditadura | CONTAR e CANTAR</title>
+    <meta name="description" content="Entre 1964 e 1985, compositores brasileiros driblaram a censura com metáforas, pseudônimos e coragem. A história de como a MPB se tornou a maior arma de resistência cultural do país.">
+    <link rel="canonical" href="https://rmcontarecantar.art.br/ditadura-musica.html">
+
+    <meta property="og:title" content="Cale-se ou Cante: A Música Brasileira Sob a Ditadura">
+    <meta property="og:description" content="Como compositores como Chico Buarque, Caetano Veloso e Gilberto Gil enfrentaram a censura entre 1964 e 1985.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://rmcontarecantar.art.br/ditadura-musica.html">
+    <meta property="og:locale" content="pt_BR">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --cor-preto: #0A0A0A;
+            --cor-branco: #FFFFFF;
+            --cor-cinza-claro: #F7F7F7;
+            --cor-cinza-medio: #888888;
+            --cor-dourado: #C9A961;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--cor-branco);
+            color: var(--cor-preto);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+
+        /* HEADER */
+        header {
+            padding: 1.5rem 5%;
+            position: sticky; top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.3rem; font-weight: 700;
+            letter-spacing: -0.5px; text-transform: uppercase;
+        }
+        .logo span { color: var(--cor-dourado); }
+        nav ul { display: flex; list-style: none; gap: 2rem; align-items: center; }
+        nav a {
+            font-size: 0.85rem; font-weight: 500;
+            text-transform: uppercase; letter-spacing: 1px;
+            position: relative; padding-bottom: 4px;
+        }
+        nav a::after {
+            content: ''; position: absolute; bottom: 0; left: 0;
+            width: 0; height: 2px; background: var(--cor-dourado);
+            transition: width 0.3s ease;
+        }
+        nav a:hover::after { width: 100%; }
+
+        /* ARTICLE HERO */
+        .article-hero {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 6rem 5% 4rem;
+            text-align: center;
+        }
+        .article-category {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.8rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 2px;
+            color: var(--cor-dourado); margin-bottom: 1.5rem; display: block;
+        }
+        .article-title {
+            font-size: clamp(2.3rem, 6vw, 4.2rem);
+            line-height: 1.1; margin-bottom: 2rem;
+            letter-spacing: -1px; font-weight: 700;
+        }
+        .article-subtitle {
+            font-size: 1.3rem; color: #333;
+            font-weight: 300; font-style: italic;
+            margin-bottom: 3rem; max-width: 700px;
+            margin-left: auto; margin-right: auto;
+            font-family: 'Playfair Display', serif;
+        }
+        .article-meta {
+            display: flex; justify-content: center; gap: 2rem;
+            font-size: 0.85rem; color: var(--cor-cinza-medio);
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+
+        /* CAPA EDITORIAL EM CSS PURO */
+        .editorial-cover {
+            max-width: 900px;
+            margin: 0 auto 3rem;
+            height: 450px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #3a1f1f 50%, #0A0A0A 100%);
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            position: relative; overflow: hidden;
+        }
+        .cover-text {
+            text-align: center; color: #FFFFFF;
+            font-family: 'Playfair Display', serif;
+        }
+        .cover-year {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1rem; letter-spacing: 4px;
+            display: block; margin-bottom: 1rem; opacity: 0.9;
+        }
+        .cover-text h2 {
+            font-size: 3.4rem; margin: 0; line-height: 1;
+            letter-spacing: -1px; text-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .cover-text p {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.1rem; letter-spacing: 3px;
+            margin-top: 1rem; opacity: 0.9;
+        }
+
+        /* ARTICLE CONTENT */
+        .article-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 5% 6rem;
+        }
+        .article-intro {
+            font-size: 1.25rem; line-height: 1.9;
+            color: var(--cor-preto); margin-bottom: 3rem; font-weight: 400;
+        }
+        .article-container p {
+            font-size: 1.1rem; line-height: 1.8;
+            color: #333; margin-bottom: 2rem;
+        }
+        .article-container h2 {
+            font-size: 2rem; margin: 4rem 0 1.5rem;
+            color: var(--cor-preto); font-weight: 700;
+        }
+        .article-container h3 {
+            font-size: 1.5rem; margin: 3rem 0 1rem;
+            color: var(--cor-preto); font-weight: 600;
+        }
+        .pull-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem; font-style: italic;
+            line-height: 1.4; color: var(--cor-preto);
+            border-left: 4px solid var(--cor-dourado);
+            padding-left: 2rem; margin: 4rem 0;
+        }
+        .article-section {
+            margin: 3rem 0; padding: 2rem;
+            background: var(--cor-cinza-claro); border-radius: 8px;
+        }
+
+        .timeline {
+            margin: 3rem 0;
+            padding-left: 2rem;
+            border-left: 3px solid var(--cor-dourado);
+        }
+        .timeline-item {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.6rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--cor-dourado);
+            border-radius: 50%;
+        }
+        .timeline-year {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            color: var(--cor-dourado);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .timeline-content {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .censored-songs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .censored-song-item {
+            padding: 1.5rem;
+            background: var(--cor-branco);
+            border-left: 3px solid var(--cor-dourado);
+            border-radius: 4px;
+        }
+        .censored-song-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--cor-preto);
+        }
+        .censored-song-item p {
+            font-size: 0.9rem;
+            color: var(--cor-cinza-medio);
+            margin-bottom: 0;
+            font-style: italic;
+        }
+
+        /* FONTES/REFERÊNCIAS */
+        .references {
+            margin-top: 6rem;
+            padding: 3rem 2rem;
+            background: var(--cor-cinza-claro);
+            border-top: 3px solid var(--cor-dourado);
+            border-radius: 8px;
+        }
+        .references h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--cor-preto);
+            font-weight: 700;
+        }
+        .references ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .references li {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+            position: relative;
+            color: #333;
+        }
+        .references li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--cor-dourado);
+            font-weight: bold;
+        }
+        .references .reference-type {
+            font-weight: 600;
+            color: var(--cor-preto);
+        }
+
+        .article-navigation {
+            display: flex; justify-content: space-between;
+            margin-top: 4rem; padding-top: 2rem;
+            border-top: 2px solid var(--cor-preto);
+        }
+        .nav-prev, .nav-next {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.9rem; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 1px;
+            color: var(--cor-dourado);
+        }
+        .nav-prev:hover, .nav-next:hover { color: var(--cor-preto); }
+
+        /* FOOTER */
+        footer { padding: 4rem 5%; background: var(--cor-cinza-claro); text-align: center; }
+        .footer-content { max-width: 1400px; margin: 0 auto; }
+        footer p {
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase; letter-spacing: 1px;
+            font-size: 0.8rem; color: var(--cor-cinza-medio);
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            nav ul { display: none; }
+            .article-hero .article-meta { flex-direction: column; gap: 0.5rem; }
+            .editorial-cover { height: 300px; }
+            .cover-text h2 { font-size: 2.2rem; }
+            .censored-songs-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">CONTAR <span>e</span> CANTAR</div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#revista">Revista</a></li>
+                <li><a href="universos.html">Universos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <article>
+        <div class="article-hero">
+            <span class="article-category">História • 1964-1985</span>
+            <h1 class="article-title">Cale-se ou Cante: A Música Brasileira Sob a Ditadura</h1>
+            <p class="article-subtitle">Quando dizer a verdade virou crime, os compositores brasileiros aprenderam a dizê-la de outro jeito. A história de como a censura tentou silenciar a MPB — e como ela respondeu cantando mais alto.</p>
+            <div class="article-meta">
+                <span>Por Rosane Maia</span>
+                <span>•</span>
+                <span>Junho 2026</span>
+                <span>•</span>
+                <span>22 min de leitura</span>
+            </div>
+        </div>
+
+        <div class="editorial-cover">
+            <div class="cover-text">
+                <span class="cover-year">1964-1985</span>
+                <h2>CALE-SE OU CANTE</h2>
+                <p>A MÚSICA SOB VIGILÂNCIA</p>
+            </div>
+        </div>
+
+        <div class="article-container">
+            <p class="article-intro">
+                Existe uma palavra que rima com "cálice" em português, e todo censor da ditadura sabia disso. Quando Chico Buarque e Gilberto Gil entregaram a letra dessa canção ao departamento de censura, em maio de 1973, um funcionário anônimo escreveu a palavra "cale-se" três vezes na margem do parecer, ao lado do refrão. Não havia dúvida no que ele tinha entendido. O documento, hoje guardado no Arquivo Nacional, é talvez o retrato mais exato de como funcionou a relação entre a música popular brasileira e o regime militar: um jogo de gato e rato em que cada lado sabia exatamente o que o outro estava fazendo, e ninguém precisava fingir o contrário.
+            </p>
+
+            <h2>Um país sob escuta</h2>
+
+            <p>
+                A ditadura que tomou o poder em 1964 não inventou a censura musical brasileira — ela já existia, em formas mais brandas, desde os anos 1930, sempre em nome da "moral e dos bons costumes". O que o regime fez foi profissionalizar essa vigilância e lhe dar um nome: Divisão de Censura de Diversões Públicas, ou DCDP, ligada ao Ministério da Justiça. Toda letra de música, antes de chegar a uma gravadora, a um disco, a uma rádio, precisava passar pela mesa de um censor. Esse censor, frequentemente sem qualquer formação em música, literatura ou linguística, tinha o poder de aprovar, vetar ou exigir cortes numa canção — e fazia isso com base em critérios que misturavam moralismo religioso e paranoia política, na maior parte das vezes sem citar um motivo formal por escrito.
+            </p>
+
+            <p>
+                A virada decisiva aconteceu em dezembro de 1968, com o Ato Institucional nº 5. O AI-5 suspendeu garantias constitucionais, fechou o Congresso e abriu a fase mais dura da repressão, conhecida como Anos de Chumbo. A partir daí, a censura prévia deixou de ser um obstáculo ocasional e se tornou rotina absoluta. Não é exagero dizer que, dali em diante, cada compositor brasileiro relevante escrevia já calculando o que passaria e o que não passaria — uma autocensura silenciosa que se instalou antes mesmo da censura oficial abrir a boca.
+            </p>
+
+            <div class="pull-quote">
+                "A censura não tinha critério algum, e era justamente essa imprevisibilidade que a tornava tão eficaz. Ninguém sabia ao certo o que seria proibido — então todos aprenderam a se proteger antes de perguntar."
+            </div>
+
+            <h2>Os festivais como campo de batalha</h2>
+
+            <p>
+                Antes mesmo do AI-5, os festivais de música popular já funcionavam como uma espécie de termômetro nacional, e os militares sabiam disso. Transmitidos em rede para milhões de telespectadores, esses eventos misturavam competição musical com algo mais perigoso para um regime autoritário: a possibilidade de um público inteiro aplaudir, em massa e ao vivo, uma ideia que o governo preferia ver enterrada. Em 1966, "A Banda", de Chico Buarque, e "Disparada", de Geraldo Vandré e Théo de Barros, dividiram o primeiro lugar no festival da TV Record — duas canções de tom e intenção muito diferentes, uma lírica e nostálgica, outra abertamente política, mas que mostravam como o mesmo palco podia abrigar registros opostos de resistência.
+            </p>
+
+            <p>
+                Foi também num desses festivais, em 1968, que Gal Costa apresentou "Divino, Maravilhoso", parceria de Caetano Veloso e Gilberto Gil que terminou em terceiro lugar, poucos dias antes da prisão dos dois compositores. A canção, com seu refrão quase eufórico, carregava uma ambiguidade deliberada entre celebração e alerta — um recurso que se tornaria assinatura de toda uma geração de compositores tentando dizer duas coisas ao mesmo tempo, sabendo que apenas uma delas chegaria ao censor de forma legível. Os festivais, paradoxalmente, ofereciam abrigo: uma canção cantada diante de um estádio inteiro, já vitoriosa pelo aplauso popular, tornava-se politicamente mais cara de proibir depois do fato do que seria proibi-la antes.
+            </p>
+
+            <h2>O ano em que tudo mudou: 1968</h2>
+
+            <p>
+                Em outubro de 1968, dois meses antes do AI-5, Caetano Veloso, Gilberto Gil, Os Mutantes e Gal Costa fizeram uma temporada de shows na boate Sucata, no Rio de Janeiro. No palco, exibiram um desenho do artista plástico Hélio Oiticica com a frase que se tornaria símbolo do movimento tropicalista: "seja marginal, seja herói". Um jornalista da TV Record relatou que os artistas teriam ridicularizado o hino nacional durante a apresentação — uma acusação nunca totalmente esclarecida, mas que bastou. Em 27 de dezembro de 1968, exatas duas semanas depois do AI-5, oficiais do Exército foram até a casa de Caetano em São Paulo e levaram os dois músicos, já com a cabeça raspada, para o Rio de Janeiro.
+            </p>
+
+            <p>
+                Eles ficaram cerca de dois meses presos — parte do tempo em solitárias, sem saber exatamente de que estavam sendo acusados. O prontuário de Caetano, hoje disponível para consulta pública, registra a expressão "subversão e incitamento à desordem". Quando finalmente foram soltos, em fevereiro de 1969, não voltaram para casa: foram mandados para prisão domiciliar em Salvador, impedidos de trabalhar, de se apresentar, de dar entrevistas. Em julho daquele ano, fizeram dois shows de despedida no Teatro Castro Alves — batizados de Barra 69 — para arrecadar dinheiro para a viagem que os tiraria do país. Embarcaram para Londres ainda em julho. Só voltariam ao Brasil no início de 1972.
+            </p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">1964</div>
+                    <div class="timeline-content">Golpe militar. Início do regime que duraria 21 anos.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1966</div>
+                    <div class="timeline-content">"A Banda", de Chico Buarque, e "Disparada", de Geraldo Vandré e Théo de Barros, dividem o 1º lugar no Festival de MPB da TV Record.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1968</div>
+                    <div class="timeline-content">AI-5, em dezembro. Censura prévia se torna sistemática. Caetano e Gil são presos no dia 27.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1969</div>
+                    <div class="timeline-content">Caetano e Gil partem para o exílio em Londres, após meses de prisão domiciliar em Salvador.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1972</div>
+                    <div class="timeline-content">Caetano e Gil retornam ao Brasil.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1973</div>
+                    <div class="timeline-content">"Cálice", de Chico Buarque e Gilberto Gil, é censurada antes mesmo de ser tocada em público.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1979</div>
+                    <div class="timeline-content">Lei da Anistia. Revogação formal do AI-5.</div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">1985</div>
+                    <div class="timeline-content">Fim da ditadura militar.</div>
+                </div>
+            </div>
+
+            <h2>O cálice e o silêncio</h2>
+
+            <p>
+                Se existe uma canção que resume essa história inteira, é "Cálice". A composição nasceu de um encontro quase acidental: na Semana Santa de 1973, a gravadora Phonogram pediu a Gilberto Gil e Chico Buarque que escrevessem uma música juntos para apresentar no festival Phono 73, marcado para maio daquele ano no Anhembi, em São Paulo. Gil começou sozinho, em casa, na Sexta-feira da Paixão, pensando na frase de Jesus no momento da agonia: "Pai, afasta de mim esse cálice". No sábado seguinte, levou a ideia ao apartamento de Chico, de frente para a Lagoa Rodrigo de Freitas — citada depois na letra — e os dois terminaram a canção juntos. Foi Chico quem notou, na hora, o jogo de palavras entre "cálice" e "cale-se".
+            </p>
+
+            <p>
+                A canção nunca teve chance. Foi enviada à censura antes do show e vetada em poucos dias — o parecer, com a anotação manuscrita "cale-se" repetida três vezes na margem, está hoje preservado no acervo do Arquivo Nacional. Ainda assim, Chico e Gil subiram ao palco do Anhembi em 11 de maio de 1973 e tentaram cantar a música mesmo proibida, usando trechos fragmentados e sons sem sentido aparente para tentar escapar pela forma, já que não podiam pelo conteúdo. Não deu certo: a polícia federal entrou no palco e os técnicos da gravadora foram desligando os microfones, um a um, até que a apresentação parou. "Cálice" só chegaria a um disco cinco anos depois, em 1978, na voz de Chico e Milton Nascimento — Gil, em processo de troca de gravadora na época, nunca chegou a gravá-la oficialmente em estúdio.
+            </p>
+
+            <div class="article-section">
+                <h3>A arte da metáfora como sobrevivência</h3>
+                <p>
+                    O que "Cálice" deixou como legado, além da própria canção, foi um método. Diante de uma censura que examinava cada palavra à procura de sentido oculto, os compositores brasileiros se tornaram, por necessidade, mestres da ambiguidade. Chico Buarque levou isso a um extremo quase cômico: chegou a assinar composições com o pseudônimo "Julinho da Adelaide" só para que a censura, ao reconhecer seu nome verdadeiro, não vetasse automaticamente uma letra antes mesmo de lê-la com atenção.
+                </p>
+                <p>
+                    "Apesar de Você", também de Chico, é outro caso emblemático: vendeu cerca de cem mil cópias em uma única semana antes que o regime percebesse a real dimensão da crítica disfarçada de samba de amor e ordenasse o recolhimento das cópias ainda em loja. A canção fala, na superfície, de um relacionamento autoritário. Era, evidentemente, sobre outra coisa.
+                </p>
+            </div>
+
+            <h2>O artista mais censurado que o Brasil quase esqueceu</h2>
+
+            <p>
+                Se Chico, Caetano e Gil se tornaram símbolos da resistência musical à ditadura — e merecidamente —, há um nome que poucas pessoas fora de um círculo de estudiosos da MPB ainda reconhecem hoje, apesar de ter pago o preço mais alto de todos: Taiguara. Nascido no Uruguai e naturalizado brasileiro, Taiguara teve 68 composições censuradas entre as décadas de 1960 e 1970 — mais do que qualquer outro artista brasileiro no período. Uma delas, "O Medo", de 1973, foi vetada apesar de usar uma metáfora tão elaborada ("seus morcegos de metal cospem fogo sobre seus filhos") que seria necessário um leitor bastante treinado para decifrá-la — e ainda assim o censor a entendeu, e a baniu.
+            </p>
+
+            <p>
+                A perseguição sistemática a Taiguara teve um efeito que a censura, por si só, talvez não tivesse conseguido: o apagamento gradual de sua presença na memória musical do país. Diferente de Caetano e Gil, que voltaram do exílio para retomar carreiras internacionais e prestígio crescente, Taiguara nunca recuperou plenamente o espaço que ocupava antes de se tornar alvo prioritário da repressão. É um recordatório incômodo de que a censura não tratou todos os seus alvos da mesma forma — e de que a memória cultural de um país também pode ser, ela mesma, uma forma involuntária de censura tardia.
+            </p>
+
+            <h2>Os números atrás da história</h2>
+
+            <p>
+                É tentador pensar a censura musical como uma sucessão de episódios dramáticos — prisões, exílios, microfones desligados ao vivo. Mas a pesquisa acadêmica sobre o período revela algo mais perturbador: a censura não era exceção, era rotina administrativa, com estatística própria. Levantamentos feitos a partir dos arquivos da própria DCDP mostram 159 letras musicais censuradas em um único ano da década de 1970, 198 em 1976, e um salto para 458 em 1980 — já no início do processo de abertura política, quando a história costuma contar que a repressão estaria diminuindo. Os números sugerem o contrário: a máquina da censura, uma vez montada, não desacelerou sozinha. Ela precisou ser desmontada por decisão política, o que só viria a acontecer com a Lei da Anistia, em 1979, e a extinção formal do AI-5 a partir de janeiro daquele mesmo ano.
+            </p>
+
+            <div class="censored-songs-grid">
+                <div class="censored-song-item">
+                    <h4>Cálice (1973)</h4>
+                    <p>Chico Buarque e Gilberto Gil. Vetada antes de ser tocada; lançada só em 1978.</p>
+                </div>
+                <div class="censored-song-item">
+                    <h4>Apesar de Você (1970)</h4>
+                    <p>Chico Buarque. Vendida em massa antes do recolhimento forçado das cópias.</p>
+                </div>
+                <div class="censored-song-item">
+                    <h4>O Medo (1973)</h4>
+                    <p>Taiguara. Censurada mesmo sob metáfora elaborada.</p>
+                </div>
+                <div class="censored-song-item">
+                    <h4>Divino, Maravilhoso (1968)</h4>
+                    <p>Caetano Veloso e Gilberto Gil. Apresentada por Gal Costa pouco antes da prisão dos compositores.</p>
+                </div>
+            </div>
+
+            <h2>O que sobrou, e o que isso ainda significa</h2>
+
+            <p>
+                Passados mais de quarenta anos do fim da ditadura, há algo curiosamente vivo nessas canções censuradas: elas não envelheceram como peças de museu, protegidas por vidro e legenda explicativa. "Cálice" ainda é cantada em praças e shows como hino contra qualquer tentativa de calar alguém, em qualquer época. Em 2025, mais de cinquenta anos depois de ter sido vetada, Gilberto Gil e Chico Buarque voltaram a cantá-la juntos no Rio de Janeiro, diante de um público que reagiu gritando "sem anistia" — um lembrete de que a canção nunca parou de servir a propósitos que ultrapassam o momento histórico específico em que nasceu.
+            </p>
+
+            <p>
+                Talvez essa seja a resposta mais honesta sobre o que a ditadura conseguiu, e o que não conseguiu, em relação à música popular brasileira. Conseguiu prender, exilar, vetar, atrasar lançamentos, cortar microfones no meio de um show. Não conseguiu fazer essas canções pararem de significar alguma coisa. Não conseguiu, no fim, calar coisa nenhuma — apenas ensinou uma geração inteira de compositores a dizer o que precisava ser dito de um jeito que ainda hoje continuamos decifrando, linha por linha, com o mesmo fascínio de um censor de plantão tentando entender o que, exatamente, aquela palavra estava escondendo.
+            </p>
+
+            <h2>Uma gramática que sobreviveu ao regime</h2>
+
+            <p>
+                O mais curioso é que essa linguagem cifrada, nascida da necessidade pura de sobrevivência, não desapareceu com o fim da censura prévia em 1979 e da própria ditadura em 1985. Ela se incorporou ao vocabulário estético da MPB de um jeito quase genético, atravessando para compositores que nem viveram diretamente aquele período de repressão mais dura. A ideia de que uma canção de amor pode, ao mesmo tempo, ser sobre política — ou de que uma frase aparentemente inofensiva pode carregar uma segunda camada de sentido para quem souber procurar — tornou-se um traço de identidade da canção brasileira, distinguível em compositores de gerações bem posteriores que talvez nunca tenham precisado, de fato, escapar de um censor.
+            </p>
+
+            <p>
+                Há também uma lição mais desconfortável nessa história, que vale a pena carregar para além da nostalgia ou da indignação fácil: a censura raramente se anuncia como censura. Ela costuma se vestir de zelo moral, de proteção à família, de defesa de valores — exatamente como fez a DCDP ao longo de duas décadas. Entender como esse mecanismo funcionou, com seus censores sem formação específica, seus critérios inconstantes e sua burocracia disfarçada de neutralidade, talvez seja a forma mais útil de reconhecer, no presente, os ecos de uma lógica parecida, sob outro nome, em outro contexto. As canções sobreviveram. A pergunta que elas deixam em aberto é se aprendemos, de fato, a reconhecer o cálice antes que ele volte a ser servido.
+            </p>
+
+            <!-- SEÇÃO DE FONTES E REFERÊNCIAS -->
+            <div class="references">
+                <h3>Fontes e Referências Bibliográficas</h3>
+                <ul>
+                    <li>
+                        <span class="reference-type">Artigo Acadêmico:</span> CAROCHA, Maika Lois. "A Censura Musical Durante o Regime Militar (1964-1985)". <em>História: Questões & Debates</em>, Curitiba, n. 44, p. 189-211, 2006. Editora UFPR.
+                    </li>
+                    <li>
+                        <span class="reference-type">Dissertação:</span> CAROCHA, Maika Lois. <em>Pelos Versos das Canções: Um Estudo Sobre o Funcionamento da Censura Musical Durante a Ditadura Militar Brasileira</em>. Rio de Janeiro: UFRJ/PPGHIS, 2007.
+                    </li>
+                    <li>
+                        <span class="reference-type">Livro:</span> NAPOLITANO, Marcos. <em>1964: História do Regime Militar Brasileiro</em>. São Paulo: Contexto, 2014.
+                    </li>
+                    <li>
+                        <span class="reference-type">Livro:</span> MOBY, Alberto. <em>Sinal Fechado: A Música Popular Brasileira Sob Censura (1937-45/1969-85)</em>. Rio de Janeiro: Obra Aberta, 1995.
+                    </li>
+                    <li>
+                        <span class="reference-type">Documentário:</span> TERRA, Renato; CALIL, Ricardo. <em>Narciso em Férias</em>. Rio de Janeiro, 2021. 92 min.
+                    </li>
+                    <li>
+                        <span class="reference-type">Acervo:</span> Arquivo Nacional. "Letra da Composição 'Cálice', de Gilberto Gil e Chico Buarque, Censurada em Maio de 1973". Disponível em: <a href="https://www.gov.br/memoriasreveladas/" target="_blank" rel="noopener">gov.br/memoriasreveladas</a>. Acesso em: jun. 2026.
+                    </li>
+                    <li>
+                        <span class="reference-type">Acervo:</span> Memórias Reveladas. "Prisão de Caetano e Gil". Disponível em: <a href="https://www.gov.br/memoriasreveladas/pt-br/centrais-de-conteudo/destaques/prisao-de-caetano-e-gil" target="_blank" rel="noopener">gov.br/memoriasreveladas</a>. Acesso em: jun. 2026.
+                    </li>
+                    <li>
+                        <span class="reference-type">Acervo Digital:</span> Instituto Gilberto Gil. "Cárcere e Exílio de Gil". Disponível em: <a href="https://artsandculture.google.com/story/gil-prison-and-exile-instituto-gilberto-gil/ZgWB2EJIc5zTLQ" target="_blank" rel="noopener">artsandculture.google.com</a>. Acesso em: jun. 2026.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="article-navigation">
+                <a href="tropicalia.html" class="nav-prev">← Tropicália</a>
+                <a href="index.html" class="nav-next">Voltar para Início →</a>
+            </div>
+        </div>
+    </article>
+
+    <footer>
+        <div class="footer-content">
+            <p>CONTAR e CANTAR © 2026 • Curadoria histórica por Rosane Maia</p>
+        </div>
+    </footer>
+
+</body>
+</html>
