@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>CONTAR e CANTAR | Histórias da Música Brasileira por Rosane Maia</title>
-  <meta name="description" content="CONTAR e CANTAR reúne histórias da música brasileira, MPB, Bossa Nova, artistas, canções, movimentos culturais e fontes de pesquisa com curadoria de Rosane Maia.">
+  <meta name="description" content="CONTAR e CANTAR reúne histórias da música brasileira, MPB, Bossa Nova, artistas, canções, movimentos culturais, vídeos e fontes de pesquisa com curadoria de Rosane Maia.">
   <link rel="canonical" href="https://rmcontarecantar.art.br/">
 
   <meta property="og:title" content="CONTAR e CANTAR | Histórias da Música Brasileira">
-  <meta property="og:description" content="Histórias da música brasileira por Rosane Maia. Artistas, canções, movimentos culturais, memória e fontes de pesquisa.">
+  <meta property="og:description" content="Histórias da música brasileira por Rosane Maia. Revista cultural, fontes de pesquisa, vídeos, entrevistas e memória musical.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rmcontarecantar.art.br/">
   <meta property="og:locale" content="pt_BR">
@@ -30,7 +30,7 @@
     "@type": "WebSite",
     "name": "CONTAR e CANTAR",
     "url": "https://rmcontarecantar.art.br/",
-    "description": "Histórias da música brasileira, MPB, Bossa Nova, artistas, canções, movimentos culturais e fontes de pesquisa com curadoria de Rosane Maia.",
+    "description": "Histórias da música brasileira, MPB, Bossa Nova, artigos, vídeos, entrevistas e fontes de pesquisa com curadoria de Rosane Maia.",
     "inLanguage": "pt-BR",
     "publisher": {
       "@type": "Organization",
@@ -356,7 +356,7 @@
 
     .eco-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
     }
 
@@ -528,6 +528,97 @@
       font-size: .88rem;
     }
 
+
+    .youtube-section {
+      background: var(--preto);
+      color: var(--branco);
+    }
+
+    .youtube-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .youtube-section .hero-eyebrow {
+      color: var(--dourado);
+    }
+
+    .youtube-section h2 {
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      margin-bottom: 1rem;
+    }
+
+    .youtube-section p {
+      color: rgba(255,255,255,.74);
+      font-size: 1.08rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .youtube-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .youtube-stat {
+      border: 1px solid rgba(255,255,255,.16);
+      padding: 1.1rem;
+      background: rgba(255,255,255,.04);
+    }
+
+    .youtube-stat strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem;
+      color: var(--branco);
+    }
+
+    .youtube-stat span {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,.55);
+    }
+
+    .youtube-card {
+      border: 1px solid rgba(255,255,255,.16);
+      padding: 2rem;
+      background:
+        radial-gradient(circle at top left, rgba(201,169,97,.18), transparent 24rem),
+        rgba(255,255,255,.04);
+    }
+
+    .youtube-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: .8rem;
+    }
+
+    .youtube-card ul {
+      list-style: none;
+      margin: 1.5rem 0 0;
+      padding: 0;
+    }
+
+    .youtube-card li {
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding: .9rem 0;
+      color: rgba(255,255,255,.72);
+    }
+
+    .youtube-card li:first-child {
+      border-top: 0;
+    }
+
+    .btn-light {
+      background: var(--branco);
+      color: var(--preto);
+      border-color: var(--branco);
+    }
+
     .instagram-section { background: var(--branco); }
 
     .instagram-card {
@@ -627,7 +718,12 @@
       .eco-grid,
       .articles-grid,
       .universos-grid,
-      .source-grid {
+      .source-grid,
+      .youtube-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .youtube-stats {
         grid-template-columns: 1fr;
       }
 
@@ -670,6 +766,7 @@
         <li><a href="#pesquisa">Pesquisa</a></li>
         <li><a href="#revista">Revista</a></li>
         <li><a href="#universos">Universos</a></li>
+        <li><a href="#youtube">YouTube</a></li>
         <li><a href="#newsletter">Newsletter</a></li>
         <li><a class="nav-instagram" href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener">Instagram</a></li>
       </ul>
@@ -681,12 +778,13 @@
       <div class="hero-inner">
         <div class="hero-eyebrow">Por Rosane Maia</div>
         <h1>CONTAR e CANTAR</h1>
-        <p class="hero-subtitle">Histórias da Música Brasileira. Artistas, canções, discos, movimentos e fontes para atravessar a memória musical do Brasil com cuidado e encanto.</p>
+        <p class="hero-subtitle">Histórias da Música Brasileira. Artistas, canções, discos, movimentos, entrevistas e fontes para atravessar a memória musical do Brasil com cuidado e encanto.</p>
 
         <div class="hero-buttons">
           <a href="#revista" class="btn btn-primary">Explorar Acervo</a>
           <a href="universos.html" class="btn">Universos da MPB</a>
-          <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="btn">Seguir no Instagram</a>
+          <a href="https://www.youtube.com/@rosanemaia4419" target="_blank" rel="noopener" class="btn">YouTube</a>
+          <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="btn">Instagram</a>
         </div>
       </div>
     </section>
@@ -745,8 +843,8 @@
     <section class="section ecosystem">
       <div class="container">
         <div class="section-header">
-          <h2>O projeto em três espaços</h2>
-          <span>Site • Instagram • Newsletter</span>
+          <h2>O projeto em quatro espaços</h2>
+          <span>Site • Universos • YouTube • Instagram</span>
         </div>
 
         <div class="eco-grid">
@@ -760,6 +858,12 @@
             <h3>📱 Instagram</h3>
             <p>O canal vivo do Contando e Cantando, com publicações, vídeos, histórias, entrevistas e contato direto com o público.</p>
             <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="gold-link">Acompanhar →</a>
+          </article>
+
+          <article class="eco-card">
+            <h3>🎬 YouTube</h3>
+            <p>O acervo audiovisual do projeto: entrevistas, registros, documentários e encontros com personagens da música brasileira.</p>
+            <a href="https://www.youtube.com/@rosanemaia4419" target="_blank" rel="noopener" class="gold-link">Explorar canal →</a>
           </article>
 
           <article class="eco-card">
@@ -877,12 +981,50 @@
       </div>
     </section>
 
+
+    <section id="youtube" class="section youtube-section">
+      <div class="container youtube-grid">
+        <div>
+          <div class="hero-eyebrow">Acervo audiovisual</div>
+          <h2>CONTAR e CANTAR no YouTube</h2>
+          <p>O canal reúne entrevistas, registros, documentários e histórias da música brasileira em formato audiovisual. É o espaço de profundidade do projeto, onde a memória ganha voz, presença e tempo.</p>
+          <p>Enquanto o site organiza a parte permanente e editorial, o YouTube amplia a experiência com encontros, depoimentos e conteúdos em vídeo conduzidos por Rosane Maia.</p>
+          <a href="https://www.youtube.com/@rosanemaia4419" target="_blank" rel="noopener" class="btn btn-light">Visitar canal no YouTube</a>
+
+          <div class="youtube-stats">
+            <div class="youtube-stat">
+              <strong>13,6 mil</strong>
+              <span>inscritos</span>
+            </div>
+            <div class="youtube-stat">
+              <strong>125</strong>
+              <span>vídeos</span>
+            </div>
+            <div class="youtube-stat">
+              <strong>MPB</strong>
+              <span>memória audiovisual</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="youtube-card">
+          <h3>O que encontrar no canal</h3>
+          <p>Entrevistas e conteúdos audiovisuais que complementam a Revista Cultural e os Universos da MPB.</p>
+          <ul>
+            <li>Entrevistas com artistas, pesquisadores e personagens da música brasileira.</li>
+            <li>Especiais sobre MPB, Bossa Nova, samba, compositores e intérpretes.</li>
+            <li>Registros que ajudam a preservar a memória oral e afetiva da música brasileira.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section class="section instagram-section">
       <div class="container">
         <div class="instagram-card">
           <div class="hero-eyebrow">Contando e Cantando</div>
           <h2>O acervo também vive no Instagram</h2>
-          <p>O perfil de Rosane Maia reúne publicações, vídeos, memórias, bastidores e histórias da música brasileira. O site organiza a parte permanente; o Instagram mantém o projeto em movimento diário.</p>
+          <p>O perfil de Rosane Maia reúne publicações, vídeos curtos, memórias, bastidores e histórias da música brasileira. O site organiza a parte permanente; o Instagram mantém o projeto em movimento diário.</p>
           <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="btn btn-primary">Acompanhar no Instagram</a>
         </div>
       </div>
