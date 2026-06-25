@@ -623,6 +623,37 @@
       flex-wrap: wrap;
     }
 
+
+    .research-options {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: .6rem;
+      margin: 1rem 0 1.4rem;
+    }
+
+    .research-option {
+      border: 1px solid var(--linha);
+      background: var(--cinza-claro);
+      color: #333;
+      border-radius: 999px;
+      padding: .65rem 1rem;
+      cursor: pointer;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: .2s ease;
+    }
+
+    .research-option:hover,
+    .research-option.active {
+      background: var(--preto);
+      color: var(--branco);
+      border-color: var(--preto);
+    }
+
     .source-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -1211,46 +1242,30 @@
     <section id="pesquisa" class="research-panel">
       <div class="research-box">
         <h2>Centro de Pesquisa da Música Brasileira</h2>
-        <p>Estamos construindo uma ferramenta de pesquisa mais profunda para artistas, movimentos, discos, canções, entrevistas e fontes da música brasileira.</p>
+        <p>Pesquise artistas, movimentos, discos, canções e temas usando o Google com foco no CONTAR e CANTAR e em fontes culturais confiáveis.</p>
 
-        <div class="research-dev-box">
-          <div class="hero-eyebrow">Em desenvolvimento</div>
-          <h3>Uma busca especializada para a memória da MPB</h3>
-          <p>
-            Este recurso está sendo preparado para oferecer dossiês iniciais, conteúdos internos, relações entre artistas,
-            caminhos de investigação e acesso organizado a fontes confiáveis. Preferimos publicar a ferramenta apenas
-            quando ela alcançar um padrão realmente útil para pesquisadores, estudantes, jornalistas, músicos e leitores.
-          </p>
+        <form class="research-form" id="researchForm" autocomplete="off">
+          <input id="researchQuery" type="search" placeholder="Ex: Chico César, Nara Leão, Cartola, Bossa Nova, Tropicália..." required>
+          <button type="submit" class="btn btn-primary">Pesquisar</button>
+        </form>
 
-          <div class="dev-grid">
-            <div>
-              <strong>O que virá</strong>
-              <span>Dossiês por artista, movimento, disco, canção e período histórico.</span>
-            </div>
-            <div>
-              <strong>Fontes confiáveis</strong>
-              <span>IMS, Itaú Cultural, Biblioteca Nacional, Cravo Albin, SciELO, Google Scholar e outras bases.</span>
-            </div>
-            <div>
-              <strong>Acervo próprio</strong>
-              <span>Integração futura com entrevistas, vídeos, fotos e materiais do projeto CONTAR e CANTAR.</span>
-            </div>
-          </div>
-
-          <div class="dev-actions">
-            <a href="universos.html" class="btn btn-primary">Explorar Universos da MPB</a>
-            <a href="#revista" class="btn">Ver Revista Cultural</a>
-          </div>
+        <div class="research-options" aria-label="Tipos de pesquisa">
+          <button type="button" class="research-option active" data-mode="site">No CONTAR e CANTAR</button>
+          <button type="button" class="research-option" data-mode="fontes">Em fontes culturais</button>
+          <button type="button" class="research-option" data-mode="academico">No Google Acadêmico</button>
+          <button type="button" class="research-option" data-mode="youtube">No YouTube</button>
         </div>
+
+        <div class="research-note">Dica: use nomes completos e palavras de contexto. Exemplo: “Chico César Mama África”, “Nara Leão Show Opinião” ou “Cartola Mangueira”.</div>
 
         <div class="source-grid">
           <a class="source-card" href="universos.html">
             <strong>Universos da MPB</strong>
             <span>Curadoria interna de acervos, livros, documentários e referências.</span>
           </a>
-          <a class="source-card" href="https://ims.com.br" target="_blank" rel="noopener">
-            <strong>IMS</strong>
-            <span>Acervo cultural brasileiro, música, fotografia e memória.</span>
+          <a class="source-card" href="https://dicionariompb.com.br" target="_blank" rel="noopener">
+            <strong>Cravo Albin</strong>
+            <span>Dicionário especializado em música popular brasileira.</span>
           </a>
           <a class="source-card" href="https://enciclopedia.itaucultural.org.br" target="_blank" rel="noopener">
             <strong>Itaú Cultural</strong>
@@ -1501,6 +1516,55 @@
   <footer>
     <p>CONTAR e CANTAR © 2026 • Histórias da Música Brasileira por Rosane Maia</p>
   </footer>
+
+
+  <script>
+    const researchForm = document.getElementById("researchForm");
+    const researchInput = document.getElementById("researchQuery");
+    const researchButtons = document.querySelectorAll(".research-option");
+    let researchMode = "site";
+
+    researchButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        researchButtons.forEach(item => item.classList.remove("active"));
+        button.classList.add("active");
+        researchMode = button.dataset.mode;
+        researchInput.focus();
+      });
+    });
+
+    if (researchForm) {
+      researchForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const query = researchInput.value.trim();
+        if (!query) return;
+
+        let url = "";
+
+        if (researchMode === "site") {
+          url = "https://www.google.com/search?q=" + encodeURIComponent("site:rmcontarecantar.art.br " + query);
+        }
+
+        if (researchMode === "fontes") {
+          url = "https://www.google.com/search?q=" + encodeURIComponent(
+            query + " música brasileira MPB " +
+            "(site:dicionariompb.com.br OR site:enciclopedia.itaucultural.org.br OR site:ims.com.br OR site:hemerotecadigital.bn.gov.br OR site:bn.gov.br)"
+          );
+        }
+
+        if (researchMode === "academico") {
+          url = "https://scholar.google.com/scholar?q=" + encodeURIComponent(query + " música brasileira MPB");
+        }
+
+        if (researchMode === "youtube") {
+          url = "https://www.youtube.com/results?search_query=" + encodeURIComponent(query + " música brasileira MPB entrevista documentário");
+        }
+
+        window.open(url, "_blank", "noopener");
+      });
+    }
+  </script>
 
   <script>
     const newsletterForm = document.getElementById("newsletterForm");
