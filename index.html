@@ -276,7 +276,7 @@
       grid-template-columns: 1fr auto;
       gap: .8rem;
       align-items: stretch;
-      margin-bottom: 1.4rem;
+      margin-bottom: 1rem;
     }
 
     #researchQuery {
@@ -288,49 +288,152 @@
       border-radius: 999px;
     }
 
+    .quick-searches {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin: 0 auto 1.5rem;
+    }
+
+    .quick-searches button {
+      border: 1px solid var(--linha);
+      background: var(--cinza-claro);
+      border-radius: 999px;
+      padding: .55rem .85rem;
+      color: #333;
+      cursor: pointer;
+      font-size: .85rem;
+      transition: .2s ease;
+    }
+
+    .quick-searches button:hover {
+      background: var(--papel);
+      border-color: rgba(201,169,97,.65);
+      transform: translateY(-1px);
+    }
+
     .research-results {
       display: none;
       margin: 1.5rem 0 2rem;
       text-align: left;
       border: 1px solid var(--linha);
-      border-radius: 18px;
+      border-radius: 22px;
       background: var(--branco);
-      box-shadow: 0 15px 40px rgba(0,0,0,.05);
+      box-shadow: 0 18px 50px rgba(0,0,0,.06);
       overflow: hidden;
     }
 
-    .research-results.active {
-      display: block;
-    }
+    .research-results.active { display: block; }
 
-    .results-header {
-      padding: 1.2rem 1.4rem;
-      background: var(--papel);
+    .results-hero {
+      padding: 1.6rem;
+      background:
+        radial-gradient(circle at top left, rgba(201,169,97,.16), transparent 22rem),
+        var(--papel);
       border-bottom: 1px solid var(--linha);
     }
 
-    .results-header strong {
-      display: block;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      margin-bottom: .25rem;
+    .results-hero .label {
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--dourado);
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      font-weight: 700;
+      font-size: .72rem;
+      margin-bottom: .45rem;
     }
 
-    .results-header span {
-      color: #555;
-      font-size: .92rem;
+    .results-hero h3 {
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      margin-bottom: .6rem;
     }
+
+    .results-hero p {
+      color: #333;
+      max-width: 900px;
+      margin: 0;
+    }
+
+    .research-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .research-column {
+      padding: 1.4rem;
+      border-right: 1px solid var(--linha);
+    }
+
+    .research-column:last-child { border-right: 0; }
 
     .result-group {
-      padding: 1.2rem 1.4rem;
-      border-bottom: 1px solid var(--linha);
+      margin-bottom: 1.5rem;
     }
 
-    .result-group:last-child {
-      border-bottom: 0;
+    .result-group:last-child { margin-bottom: 0; }
+
+    .result-group h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--dourado);
+      margin-bottom: .75rem;
     }
 
-    .result-group h3 {
+    .result-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .result-list li {
+      padding: .75rem 0;
+      border-top: 1px solid rgba(0,0,0,.06);
+    }
+
+    .result-list li:first-child { border-top: 0; }
+
+    .result-list strong {
+      display: block;
+      font-size: 1rem;
+      color: var(--preto);
+      margin-bottom: .2rem;
+    }
+
+    .result-list span {
+      display: block;
+      color: #555;
+      font-size: .9rem;
+    }
+
+    .result-list a:hover strong { color: var(--dourado); }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    .chip {
+      display: inline-flex;
+      border: 1px solid var(--linha);
+      background: var(--cinza-claro);
+      color: #333;
+      border-radius: 999px;
+      padding: .45rem .7rem;
+      font-size: .86rem;
+    }
+
+    .research-actions {
+      padding: 1.3rem 1.4rem;
+      background: #fff;
+      border-top: 1px solid var(--linha);
+    }
+
+    .research-actions h4 {
       font-family: 'Space Grotesk', sans-serif;
       font-size: .78rem;
       text-transform: uppercase;
@@ -339,30 +442,45 @@
       margin-bottom: .8rem;
     }
 
-    .result-link {
-      display: block;
-      padding: .75rem 0;
-      border-top: 1px solid rgba(0,0,0,.06);
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .8rem;
     }
 
-    .result-link:first-of-type {
-      border-top: 0;
+    .action-card {
+      display: block;
+      border: 1px solid var(--linha);
+      padding: 1rem;
+      background: var(--cinza-claro);
+      min-height: 108px;
     }
 
-    .result-link strong {
-      display: block;
-      font-size: 1rem;
-      margin-bottom: .15rem;
+    .action-card:hover {
+      background: var(--papel);
+      border-color: rgba(201,169,97,.65);
+      transform: translateY(-2px);
     }
 
-    .result-link span {
+    .action-card strong {
       display: block;
-      font-size: .9rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.08rem;
+      margin-bottom: .25rem;
+    }
+
+    .action-card span {
+      display: block;
       color: #555;
+      font-size: .86rem;
     }
 
-    .result-link:hover strong {
-      color: var(--dourado);
+    .research-disclaimer {
+      padding: 1rem 1.4rem;
+      background: var(--papel);
+      border-top: 1px solid var(--linha);
+      color: #555;
+      font-size: .9rem;
     }
 
     .source-grid {
@@ -804,8 +922,19 @@
         grid-template-columns: 1fr;
       }
 
-      .research-form {
+      .research-form,
+      .research-columns,
+      .action-grid {
         grid-template-columns: 1fr;
+      }
+
+      .research-column {
+        border-right: 0;
+        border-bottom: 1px solid var(--linha);
+      }
+
+      .research-column:last-child {
+        border-bottom: 0;
       }
     }
 
@@ -877,12 +1006,21 @@
     <section id="pesquisa" class="research-panel">
       <div class="research-box">
         <h2>Centro de Pesquisa da Música Brasileira</h2>
-        <p>Digite um artista, movimento, disco, canção ou tema. O site mostra conteúdos internos quando existirem e, ao mesmo tempo, abre caminhos de pesquisa em fontes confiáveis.</p>
+        <p>Digite um artista, movimento, disco, canção ou tema. O sistema organiza um dossiê inicial, mostra conteúdos internos quando existirem e abre caminhos de pesquisa em acervos, bibliotecas e bases reconhecidas.</p>
 
         <form class="research-form" id="researchForm">
-          <input id="researchQuery" type="search" placeholder="Ex: Cartola, Elis Regina, Tropicália, Xico Chaves, Bossa Nova..." required>
+          <input id="researchQuery" type="search" placeholder="Ex: Nara Leão, Cartola, Menescal, Tropicália, Bossa Nova, Ditadura..." required>
           <button type="submit" class="btn btn-primary">Pesquisar</button>
         </form>
+
+        <div class="quick-searches" aria-label="Pesquisas sugeridas">
+          <button type="button" data-query="Nara Leão">Nara Leão</button>
+          <button type="button" data-query="Cartola">Cartola</button>
+          <button type="button" data-query="Elis Regina">Elis Regina</button>
+          <button type="button" data-query="Tropicália">Tropicália</button>
+          <button type="button" data-query="Roberto Menescal">Menescal</button>
+          <button type="button" data-query="Xico Chaves">Xico Chaves</button>
+        </div>
 
         <div id="researchResults" class="research-results" aria-live="polite"></div>
 
@@ -905,7 +1043,7 @@
           </a>
         </div>
 
-        <div class="research-note">Dica: se não houver artigo interno sobre o tema, use os caminhos externos gerados automaticamente. Para pesquisas históricas, tente variações do nome, datas, discos e movimentos.</div>
+        <div class="research-note">Dica: os resultados não substituem pesquisa histórica. Eles funcionam como mapa de partida, reunindo caminhos internos, fontes primárias, acervos, imprensa e produção acadêmica.</div>
       </div>
     </section>
 
@@ -1120,54 +1258,249 @@
     const form = document.getElementById("researchForm");
     const input = document.getElementById("researchQuery");
     const resultsBox = document.getElementById("researchResults");
+    const quickButtons = document.querySelectorAll(".quick-searches button");
 
-    const internalContent = [
+    const researchProfiles = [
       {
-        title: "Cartola: O Gênio do Samba",
-        type: "Artigo da Revista Cultural",
-        description: "Biografia editorial sobre Cartola, Mangueira, samba, poesia e legado cultural.",
-        url: "cartola.html",
-        terms: "cartola agenor de oliveira mangueira samba sambista poeta as rosas nao falam o mundo e um moinho verde que te quero rosa"
+        id: "nara-leao",
+        title: "Nara Leão",
+        aliases: ["nara", "nara leao", "nara leão"],
+        type: "Artista • Bossa Nova • MPB",
+        summary: "Cantora fundamental da música brasileira, associada à Bossa Nova, ao Show Opinião e a uma trajetória que atravessa lirismo, crítica social e repertórios diversos.",
+        internal: [
+          {
+            title: "Universos da MPB",
+            url: "universos.html",
+            description: "Use a curadoria de fontes para aprofundar pesquisas sobre Bossa Nova, MPB, livros, documentários e acervos."
+          },
+          {
+            title: "A Revolução da Tropicália",
+            url: "tropicalia.html",
+            description: "Contexto de transformações culturais que ajuda a compreender a MPB pós-Bossa Nova."
+          },
+          {
+            title: "Cale-se ou Cante: A Música Brasileira Sob a Ditadura",
+            url: "ditadura-musica.html",
+            description: "Contexto histórico para artistas que atravessaram censura, engajamento e repertórios de resistência."
+          }
+        ],
+        related: ["Bossa Nova", "Roberto Menescal", "Carlos Lyra", "Ronaldo Bôscoli", "João Gilberto", "Show Opinião", "MPB", "Vinicius de Moraes"],
+        paths: [
+          "Biografia e formação artística",
+          "Relação com a Bossa Nova",
+          "Show Opinião e repertório político",
+          "Discografia e fases musicais",
+          "Depoimentos, entrevistas e acervos audiovisuais"
+        ],
+        terms: "nara leao nara leão bossa nova opinião show opiniao carlos lyra roberto menescal ronaldo boscoli joao gilberto mpb"
       },
       {
-        title: "Elis Regina: A Revolução da Interpretação",
-        type: "Artigo da Revista Cultural",
-        description: "Especial sobre Elis Regina, festivais, interpretação, MPB e intensidade vocal.",
-        url: "elis.html",
-        terms: "elis regina festivais arrastao fino da bossa tom jobim elis e tom aguas de marco como nossos pais"
+        id: "cartola",
+        title: "Cartola",
+        aliases: ["cartola", "agenor", "agenor de oliveira"],
+        type: "Artista • Samba • Mangueira",
+        summary: "Compositor, cantor e poeta do samba brasileiro. Fundador da Estação Primeira de Mangueira, tornou-se referência maior da canção popular urbana.",
+        internal: [
+          {
+            title: "Cartola: O Gênio do Samba",
+            url: "cartola.html",
+            description: "Artigo completo da Revista Cultural sobre vida, obra, Mangueira e legado de Cartola."
+          },
+          {
+            title: "Universos da MPB",
+            url: "universos.html",
+            description: "Fontes para aprofundar pesquisas sobre samba, biografias e acervos musicais."
+          }
+        ],
+        related: ["Mangueira", "Samba", "Nelson Cavaquinho", "Dona Zica", "Paulinho da Viola", "O Mundo é um Moinho", "As Rosas Não Falam"],
+        paths: [
+          "Biografia e Mangueira",
+          "Análise das canções",
+          "Discografia",
+          "Samba urbano e memória popular",
+          "Registros em jornais e acervos"
+        ],
+        terms: "cartola agenor de oliveira mangueira samba dona zica nelson cavaquinho as rosas nao falam o mundo e um moinho"
       },
       {
-        title: "A Revolução da Tropicália",
-        type: "Artigo da Revista Cultural",
-        description: "Artigo sobre Tropicália, tropicalismo, Caetano Veloso, Gilberto Gil, Mutantes e cultura brasileira.",
-        url: "tropicalia.html",
-        terms: "tropicalia tropicalismo caetano veloso gilberto gil gal costa os mutantes tom ze torquato neto 1967 1968"
+        id: "elis-regina",
+        title: "Elis Regina",
+        aliases: ["elis", "elis regina"],
+        type: "Artista • MPB • Intérprete",
+        summary: "Uma das maiores intérpretes da música brasileira, marcada por intensidade cênica, rigor musical e presença decisiva nos festivais e na televisão.",
+        internal: [
+          {
+            title: "Elis Regina: A Revolução da Interpretação",
+            url: "elis.html",
+            description: "Artigo da Revista Cultural sobre a trajetória, a voz e a força interpretativa de Elis."
+          },
+          {
+            title: "Cale-se ou Cante",
+            url: "ditadura-musica.html",
+            description: "Contexto histórico da MPB durante a ditadura militar."
+          }
+        ],
+        related: ["Festivais", "Tom Jobim", "Elis & Tom", "Arrastão", "Fino da Bossa", "Milton Nascimento", "Belchior"],
+        paths: [
+          "Festivais e televisão",
+          "Parcerias e repertório",
+          "Elis & Tom",
+          "Interpretação vocal",
+          "Recepção crítica e memória"
+        ],
+        terms: "elis regina festivais arrastao fino da bossa elis e tom aguas de marco tom jobim belchior como nossos pais"
       },
       {
-        title: "Cale-se ou Cante: A Música Brasileira Sob a Ditadura",
-        type: "Artigo da Revista Cultural",
-        description: "Especial sobre censura, MPB, resistência cultural, Chico Buarque, Gil, Caetano e outros artistas.",
-        url: "ditadura-musica.html",
-        terms: "ditadura musica censura mpb chico buarque gilberto gil caetano veloso resistencia exilio militares 1964 1985"
+        id: "tropicalia",
+        title: "Tropicália",
+        aliases: ["tropicalia", "tropicália", "tropicalismo"],
+        type: "Movimento • Contracultura • MPB",
+        summary: "Movimento de ruptura estética que tensionou música, artes visuais, televisão, poesia, cultura pop e política no Brasil do fim dos anos 1960.",
+        internal: [
+          {
+            title: "A Revolução da Tropicália",
+            url: "tropicalia.html",
+            description: "Artigo completo sobre a Tropicália, seus artistas, contexto e legado."
+          },
+          {
+            title: "Cale-se ou Cante",
+            url: "ditadura-musica.html",
+            description: "Contexto da censura e repressão que marcou parte da trajetória tropicalista."
+          }
+        ],
+        related: ["Caetano Veloso", "Gilberto Gil", "Gal Costa", "Os Mutantes", "Tom Zé", "Torquato Neto", "Rogério Duprat"],
+        paths: [
+          "Contexto histórico de 1967-1968",
+          "Discos e manifestos",
+          "Televisão e festivais",
+          "Exílio, censura e legado",
+          "Relação com artes visuais e poesia"
+        ],
+        terms: "tropicalia tropicalismo caetano gil gilberto gil gal costa mutantes tom ze torquato neto rogerio duprat"
       },
       {
-        title: "Universos da MPB",
-        type: "Página de fontes",
-        description: "Curadoria de acervos, livros, documentários, referências acadêmicas e instituições culturais.",
-        url: "universos.html",
-        terms: "fontes pesquisa acervos livros documentarios ims itau cultural biblioteca nacional scielo google scholar mpb bossa nova samba choro"
+        id: "roberto-menescal",
+        title: "Roberto Menescal",
+        aliases: ["menescal", "roberto menescal"],
+        type: "Artista • Bossa Nova • Violão",
+        summary: "Violonista, compositor, produtor e personagem central da Bossa Nova. Sua obra e seus depoimentos ajudam a iluminar a formação moderna da canção brasileira.",
+        internal: [
+          {
+            title: "Universos da MPB",
+            url: "universos.html",
+            description: "Caminhos de pesquisa para Bossa Nova, acervos, livros, documentários e entrevistas."
+          }
+        ],
+        related: ["Bossa Nova", "Nara Leão", "Carlos Lyra", "Ronaldo Bôscoli", "Wanda Sá", "O Barquinho", "João Gilberto"],
+        paths: [
+          "Bossa Nova e modernização da canção",
+          "Parcerias e repertório",
+          "Produção musical",
+          "Depoimentos e memória oral",
+          "Relação com Nara Leão e Wanda Sá"
+        ],
+        terms: "roberto menescal menescal bossa nova o barquinho nara leao wanda sa carlos lyra ronaldo boscoli"
       },
       {
-        title: "Xico Chaves: Arte, Poesia e Resistência Cultural no Brasil",
-        type: "Artigo em preparação/publicação",
-        description: "Artigo sobre Xico Chaves, Banquete dos Mendigos, Jards Macalé, poesia visual e artes plásticas.",
-        url: "xico-chaves.html",
-        terms: "xico chaves chico xaves jards macale banquete dos mendigos direitos humanos mam rio affonso eduardo reidy poesia visual artes plasticas"
+        id: "xico-chaves",
+        title: "Xico Chaves",
+        aliases: ["xico chaves", "chico xaves", "xico", "chico chaves"],
+        type: "Artista • Poesia • Artes Visuais",
+        summary: "Poeta, artista plástico, letrista e articulador cultural. Sua trajetória atravessa poesia visual, música, resistência cultural e experimentação material.",
+        internal: [
+          {
+            title: "Xico Chaves: Arte, Poesia e Resistência Cultural no Brasil",
+            url: "xico-chaves.html",
+            description: "Artigo da Revista Cultural sobre Xico Chaves, Banquete dos Mendigos e sua obra visual."
+          },
+          {
+            title: "Cale-se ou Cante",
+            url: "ditadura-musica.html",
+            description: "Contexto histórico da música brasileira sob a ditadura."
+          }
+        ],
+        related: ["Jards Macalé", "Banquete dos Mendigos", "MAM Rio", "Poesia Visual", "Direitos Humanos", "Rubens Gerchman"],
+        paths: [
+          "Banquete dos Mendigos",
+          "Poesia visual",
+          "Artes plásticas e pigmentos minerais",
+          "Parcerias musicais",
+          "Resistência cultural"
+        ],
+        terms: "xico chaves chico xaves jards macale banquete dos mendigos direitos humanos mam rio poesia visual artes plasticas"
+      },
+      {
+        id: "bossa-nova",
+        title: "Bossa Nova",
+        aliases: ["bossa", "bossa nova"],
+        type: "Movimento • Música Brasileira",
+        summary: "Movimento decisivo da música brasileira moderna, ligado a novas formas de cantar, tocar violão, harmonizar e projetar internacionalmente a canção brasileira.",
+        internal: [
+          {
+            title: "Universos da MPB",
+            url: "universos.html",
+            description: "Fontes para pesquisar Bossa Nova, artistas, livros, documentários e acervos."
+          },
+          {
+            title: "A Revolução da Tropicália",
+            url: "tropicalia.html",
+            description: "Artigo útil para compreender desdobramentos posteriores à Bossa Nova."
+          }
+        ],
+        related: ["João Gilberto", "Tom Jobim", "Vinicius de Moraes", "Nara Leão", "Roberto Menescal", "Carlos Lyra", "Wanda Sá"],
+        paths: [
+          "Origem e contexto urbano",
+          "Violão, canto e harmonia",
+          "Discos fundadores",
+          "Relação com jazz e modernidade",
+          "Recepção internacional"
+        ],
+        terms: "bossa nova joao gilberto tom jobim vinicius de moraes nara leao roberto menescal carlos lyra wanda sa"
+      },
+      {
+        id: "ditadura-musica",
+        title: "Ditadura e Música Brasileira",
+        aliases: ["ditadura", "censura", "musica na ditadura", "música na ditadura", "resistencia cultural"],
+        type: "Tema • História • MPB",
+        summary: "Campo essencial para compreender censura, metáfora, exílio, festivais, canção de protesto e estratégias de sobrevivência cultural entre 1964 e 1985.",
+        internal: [
+          {
+            title: "Cale-se ou Cante: A Música Brasileira Sob a Ditadura",
+            url: "ditadura-musica.html",
+            description: "Especial da Revista Cultural sobre MPB, censura e resistência."
+          },
+          {
+            title: "A Revolução da Tropicália",
+            url: "tropicalia.html",
+            description: "Movimento atravessado pela censura, exílio e transformação estética."
+          },
+          {
+            title: "Xico Chaves: Arte, Poesia e Resistência Cultural no Brasil",
+            url: "xico-chaves.html",
+            description: "Artigo relacionado ao Banquete dos Mendigos e direitos humanos."
+          }
+        ],
+        related: ["Chico Buarque", "Caetano Veloso", "Gilberto Gil", "Geraldo Vandré", "Elis Regina", "Jards Macalé", "Banquete dos Mendigos"],
+        paths: [
+          "Censura e DCDP",
+          "Festivais e televisão",
+          "Canção de protesto",
+          "Exílio e retorno",
+          "Imprensa, documentos e acervos"
+        ],
+        terms: "ditadura musica censura mpb resistencia cultural chico buarque caetano veloso gilberto gil geraldo vandre elis jards macale"
       }
     ];
 
+    const internalPages = [
+      { title: "Revista Cultural", url: "#revista", description: "Artigos e especiais publicados no CONTAR e CANTAR." },
+      { title: "Universos da MPB", url: "universos.html", description: "Fontes, acervos, livros, documentários e referências de pesquisa." },
+      { title: "YouTube de Rosane Maia", url: "https://www.youtube.com/@rosanemaia4419", description: "Entrevistas, vídeos e registros audiovisuais." },
+      { title: "Instagram Contando e Cantando", url: "https://www.instagram.com/contandoecantandorosanemaia/", description: "Publicações, vídeos curtos, memórias e bastidores." }
+    ];
+
     function normalizeText(text) {
-      return text
+      return (text || "")
         .toLowerCase()
         .normalize("NFD")
         .replace(/[\u0300-\u036f]/g, "");
@@ -1177,24 +1510,43 @@
       return encodeURIComponent(value.trim());
     }
 
-    function score(item, query) {
+    function getProfile(query) {
       const q = normalizeText(query);
-      const title = normalizeText(item.title);
-      const description = normalizeText(item.description);
-      const terms = normalizeText(item.terms);
-      let points = 0;
+      let best = null;
+      let bestScore = 0;
 
-      if (title.includes(q)) points += 80;
-      if (description.includes(q)) points += 25;
-      if (terms.includes(q)) points += 20;
+      researchProfiles.forEach(profile => {
+        let points = 0;
+        const haystack = normalizeText([
+          profile.title,
+          profile.type,
+          profile.summary,
+          profile.aliases.join(" "),
+          profile.related.join(" "),
+          profile.paths.join(" "),
+          profile.terms
+        ].join(" "));
 
-      q.split(/\s+/).filter(Boolean).forEach(word => {
-        if (title.includes(word)) points += 15;
-        if (terms.includes(word)) points += 5;
-        if (description.includes(word)) points += 3;
+        profile.aliases.forEach(alias => {
+          const a = normalizeText(alias);
+          if (q === a) points += 100;
+          if (a.includes(q) || q.includes(a)) points += 45;
+        });
+
+        if (normalizeText(profile.title).includes(q)) points += 65;
+        if (haystack.includes(q)) points += 25;
+
+        q.split(/\s+/).filter(Boolean).forEach(word => {
+          if (haystack.includes(word)) points += 6;
+        });
+
+        if (points > bestScore) {
+          bestScore = points;
+          best = profile;
+        }
       });
 
-      return points;
+      return bestScore >= 20 ? best : null;
     }
 
     function externalSources(query) {
@@ -1206,6 +1558,11 @@
           title: "Buscar neste site",
           description: "Pesquisa apenas dentro do CONTAR e CANTAR.",
           url: "https://www.google.com/search?q=" + encodeURIComponent("site:rmcontarecantar.art.br " + q)
+        },
+        {
+          title: "Dicionário Cravo Albin da MPB",
+          description: "Verbetes biográficos de artistas da música popular brasileira.",
+          url: "https://www.google.com/search?q=" + encodeURIComponent("site:dicionariompb.com.br " + q)
         },
         {
           title: "Instituto Moreira Salles",
@@ -1223,6 +1580,11 @@
           url: "https://www.google.com/search?q=" + encodeURIComponent("site:hemerotecadigital.bn.gov.br " + q)
         },
         {
+          title: "Biblioteca Nacional",
+          description: "Catálogos, acervos bibliográficos e registros históricos.",
+          url: "https://www.google.com/search?q=" + encodeURIComponent("site:bn.gov.br " + q)
+        },
+        {
           title: "SciELO",
           description: "Artigos acadêmicos e produção científica.",
           url: "https://search.scielo.org/?q=" + e
@@ -1233,6 +1595,21 @@
           url: "https://scholar.google.com/scholar?q=" + e
         },
         {
+          title: "YouTube",
+          description: "Entrevistas, apresentações, documentários e registros audiovisuais.",
+          url: "https://www.youtube.com/results?search_query=" + e + "+música+brasileira+MPB"
+        },
+        {
+          title: "Discogs",
+          description: "Discografias, edições, selos, anos de lançamento e créditos.",
+          url: "https://www.discogs.com/search/?q=" + e + "&type=all"
+        },
+        {
+          title: "Acervo O Globo",
+          description: "Reportagens, críticas e registros de imprensa.",
+          url: "https://www.google.com/search?q=" + encodeURIComponent("site:oglobo.globo.com " + q + " música")
+        },
+        {
           title: "Busca cultural ampliada",
           description: "Busca geral com foco em MPB, música brasileira e fontes culturais.",
           url: "https://www.google.com/search?q=" + encodeURIComponent(q + " MPB música brasileira IMS Itaú Cultural Biblioteca Nacional SciELO")
@@ -1240,50 +1617,99 @@
       ];
     }
 
-    function renderResults(query) {
-      const internal = internalContent
-        .map(item => ({ ...item, points: score(item, query) }))
-        .filter(item => item.points > 0)
-        .sort((a, b) => b.points - a.points);
+    function fallbackProfile(query) {
+      return {
+        title: query,
+        type: "Tema pesquisado",
+        summary: "Ainda não há um dossiê interno específico para este termo. Use os caminhos abaixo para iniciar uma pesquisa estruturada em acervos, imprensa, bases acadêmicas e fontes culturais.",
+        internal: [
+          { title: "Revista Cultural", url: "#revista", description: "Verifique se há artigos relacionados ao tema pesquisado." },
+          { title: "Universos da MPB", url: "universos.html", description: "Consulte a curadoria de fontes para aprofundamento." }
+        ],
+        related: ["MPB", "Música Brasileira", "Acervos", "Discografia", "Entrevistas", "Imprensa", "Pesquisa acadêmica"],
+        paths: [
+          "Buscar biografia e cronologia",
+          "Verificar discografia e obras principais",
+          "Pesquisar entrevistas e registros audiovisuais",
+          "Conferir jornais e revistas da época",
+          "Cruzar fontes acadêmicas e acervos institucionais"
+        ]
+      };
+    }
 
+    function renderList(items) {
+      return items.map(item => `
+        <li>
+          <a href="${item.url}" ${item.url.startsWith("http") ? 'target="_blank" rel="noopener"' : ""}>
+            <strong>${item.title}</strong>
+            <span>${item.description}</span>
+          </a>
+        </li>
+      `).join("");
+    }
+
+    function renderResults(query) {
+      const profile = getProfile(query) || fallbackProfile(query);
       const sources = externalSources(query);
 
       resultsBox.classList.add("active");
       resultsBox.innerHTML = `
-        <div class="results-header">
-          <strong>Resultados para “${query}”</strong>
-          <span>Conteúdos internos quando disponíveis e caminhos de pesquisa em fontes confiáveis.</span>
+        <div class="results-hero">
+          <div class="label">Dossiê inicial de pesquisa</div>
+          <h3>${profile.title}</h3>
+          <p><strong>${profile.type}</strong> — ${profile.summary}</p>
         </div>
 
-        <div class="result-group">
-          <h3>CONTAR e CANTAR</h3>
-          ${
-            internal.length
-              ? internal.map(item => `
-                <a class="result-link" href="${item.url}">
-                  <strong>${item.title}</strong>
-                  <span>${item.type} — ${item.description}</span>
-                </a>
-              `).join("")
-              : `
-                <div class="result-link">
-                  <strong>Nenhum artigo interno encontrado ainda</strong>
-                  <span>Use as fontes abaixo para pesquisar o tema. Esse resultado também ajuda a orientar novos artigos para a Revista Cultural.</span>
-                </div>
-              `
-          }
+        <div class="research-columns">
+          <div class="research-column">
+            <div class="result-group">
+              <h4>CONTAR e CANTAR</h4>
+              <ul class="result-list">
+                ${renderList(profile.internal)}
+              </ul>
+            </div>
+
+            <div class="result-group">
+              <h4>Artistas, temas e caminhos relacionados</h4>
+              <div class="chips">
+                ${profile.related.map(item => `<span class="chip">${item}</span>`).join("")}
+              </div>
+            </div>
+          </div>
+
+          <div class="research-column">
+            <div class="result-group">
+              <h4>Roteiro profissional de investigação</h4>
+              <ul class="result-list">
+                ${profile.paths.map(item => `
+                  <li>
+                    <strong>${item}</strong>
+                    <span>Use este eixo para aprofundar a pesquisa em fontes primárias, acervos, imprensa e bibliografia.</span>
+                  </li>
+                `).join("")}
+              </ul>
+            </div>
+          </div>
         </div>
 
-        <div class="result-group">
-          <h3>Fontes confiáveis para aprofundar</h3>
-          ${sources.map(item => `
-            <a class="result-link" href="${item.url}" target="_blank" rel="noopener">
-              <strong>${item.title}</strong>
-              <span>${item.description}</span>
-            </a>
-          `).join("")}
+        <div class="research-actions">
+          <h4>Fontes confiáveis para aprofundar</h4>
+          <div class="action-grid">
+            ${sources.map(item => `
+              <a class="action-card" href="${item.url}" target="_blank" rel="noopener">
+                <strong>${item.title}</strong>
+                <span>${item.description}</span>
+              </a>
+            `).join("")}
+          </div>
+        </div>
+
+        <div class="research-disclaimer">
+          Este painel organiza caminhos de pesquisa. Ele não substitui leitura crítica das fontes, conferência de datas, autoria, contexto e cruzamento documental.
         </div>
       `;
+
+      resultsBox.scrollIntoView({ behavior: "smooth", block: "start" });
     }
 
     form.addEventListener("submit", function(event) {
@@ -1291,6 +1717,13 @@
       const query = input.value.trim();
       if (!query) return;
       renderResults(query);
+    });
+
+    quickButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        input.value = button.dataset.query;
+        renderResults(button.dataset.query);
+      });
     });
   </script>
 </body>
