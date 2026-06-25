@@ -13,7 +13,7 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="5HOBT0HjrJKYt2TZONuto-IiiAeDpjm8k0O9fhrBskM" />
+  <meta name="google-site-verification" content="5HOBT0HjrJKYt2TZONuto-IiiAeDpjm8k0O9fhrBskM" />
   <title>CONTAR e CANTAR | Histórias da Música Brasileira por Rosane Maia</title>
   <meta name="description" content="CONTAR e CANTAR reúne histórias da música brasileira, MPB, Bossa Nova, artistas, canções, movimentos culturais, vídeos e fontes de pesquisa com curadoria de Rosane Maia.">
   <link rel="canonical" href="https://rmcontarecantar.art.br/">
@@ -273,28 +273,96 @@
 
     .research-form {
       display: grid;
-      grid-template-columns: 1fr 260px auto;
+      grid-template-columns: 1fr auto;
       gap: .8rem;
       align-items: stretch;
       margin-bottom: 1.4rem;
     }
 
-    #researchQuery,
-    #researchSource {
+    #researchQuery {
       border: 1px solid var(--linha);
       background: var(--branco);
       padding: 1rem 1.1rem;
       font-size: 1rem;
       box-shadow: 0 12px 34px rgba(0,0,0,.035);
-    }
-
-    #researchQuery {
       border-radius: 999px;
     }
 
-    #researchSource {
-      border-radius: 999px;
-      color: #333;
+    .research-results {
+      display: none;
+      margin: 1.5rem 0 2rem;
+      text-align: left;
+      border: 1px solid var(--linha);
+      border-radius: 18px;
+      background: var(--branco);
+      box-shadow: 0 15px 40px rgba(0,0,0,.05);
+      overflow: hidden;
+    }
+
+    .research-results.active {
+      display: block;
+    }
+
+    .results-header {
+      padding: 1.2rem 1.4rem;
+      background: var(--papel);
+      border-bottom: 1px solid var(--linha);
+    }
+
+    .results-header strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      margin-bottom: .25rem;
+    }
+
+    .results-header span {
+      color: #555;
+      font-size: .92rem;
+    }
+
+    .result-group {
+      padding: 1.2rem 1.4rem;
+      border-bottom: 1px solid var(--linha);
+    }
+
+    .result-group:last-child {
+      border-bottom: 0;
+    }
+
+    .result-group h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--dourado);
+      margin-bottom: .8rem;
+    }
+
+    .result-link {
+      display: block;
+      padding: .75rem 0;
+      border-top: 1px solid rgba(0,0,0,.06);
+    }
+
+    .result-link:first-of-type {
+      border-top: 0;
+    }
+
+    .result-link strong {
+      display: block;
+      font-size: 1rem;
+      margin-bottom: .15rem;
+    }
+
+    .result-link span {
+      display: block;
+      font-size: .9rem;
+      color: #555;
+    }
+
+    .result-link:hover strong {
+      color: var(--dourado);
     }
 
     .source-grid {
@@ -772,7 +840,7 @@
     <nav aria-label="Menu principal">
       <ul>
         <li><a href="#inicio">Início</a></li>
-        <li><a href="#pesquisa">Pesquisa</a></li>
+        <li><a href="#pesquisa">Centro de Pesquisa</a></li>
         <li><a href="#revista">Revista</a></li>
         <li><a href="#universos">Universos</a></li>
         <li><a href="#youtube">YouTube</a></li>
@@ -808,23 +876,15 @@
 
     <section id="pesquisa" class="research-panel">
       <div class="research-box">
-        <h2>Pesquisar em fontes confiáveis</h2>
-        <p>Digite um artista, movimento, disco, canção ou tema. A consulta abre caminhos de pesquisa em acervos, bibliotecas e bases reconhecidas. O site não tenta substituir as fontes: ele aponta para elas.</p>
+        <h2>Centro de Pesquisa da Música Brasileira</h2>
+        <p>Digite um artista, movimento, disco, canção ou tema. O site mostra conteúdos internos quando existirem e, ao mesmo tempo, abre caminhos de pesquisa em fontes confiáveis.</p>
 
         <form class="research-form" id="researchForm">
-          <input id="researchQuery" type="search" placeholder="Ex: Nara Leão, Cartola, Bossa Nova, Tropicália, Clube da Esquina..." required>
-          <select id="researchSource" aria-label="Escolha a fonte de pesquisa">
-            <option value="universos">Buscar no Universos da MPB</option>
-            <option value="google-site">Buscar neste site</option>
-            <option value="ims">Instituto Moreira Salles</option>
-            <option value="itau">Enciclopédia Itaú Cultural</option>
-            <option value="bn">Biblioteca Nacional / Hemeroteca</option>
-            <option value="scielo">SciELO</option>
-            <option value="scholar">Google Scholar</option>
-            <option value="geral">Google com fontes culturais</option>
-          </select>
+          <input id="researchQuery" type="search" placeholder="Ex: Cartola, Elis Regina, Tropicália, Xico Chaves, Bossa Nova..." required>
           <button type="submit" class="btn btn-primary">Pesquisar</button>
         </form>
+
+        <div id="researchResults" class="research-results" aria-live="polite"></div>
 
         <div class="source-grid">
           <a class="source-card" href="universos.html">
@@ -845,7 +905,7 @@
           </a>
         </div>
 
-        <div class="research-note">Dica: para pesquisas históricas, experimente variações do nome, datas, discos e movimentos. Exemplo: “Elis Regina festivais 1965”.</div>
+        <div class="research-note">Dica: se não houver artigo interno sobre o tema, use os caminhos externos gerados automaticamente. Para pesquisas históricas, tente variações do nome, datas, discos e movimentos.</div>
       </div>
     </section>
 
@@ -1059,55 +1119,178 @@
   <script>
     const form = document.getElementById("researchForm");
     const input = document.getElementById("researchQuery");
-    const source = document.getElementById("researchSource");
+    const resultsBox = document.getElementById("researchResults");
 
-    function encodedQuery() {
-      return encodeURIComponent(input.value.trim());
+    const internalContent = [
+      {
+        title: "Cartola: O Gênio do Samba",
+        type: "Artigo da Revista Cultural",
+        description: "Biografia editorial sobre Cartola, Mangueira, samba, poesia e legado cultural.",
+        url: "cartola.html",
+        terms: "cartola agenor de oliveira mangueira samba sambista poeta as rosas nao falam o mundo e um moinho verde que te quero rosa"
+      },
+      {
+        title: "Elis Regina: A Revolução da Interpretação",
+        type: "Artigo da Revista Cultural",
+        description: "Especial sobre Elis Regina, festivais, interpretação, MPB e intensidade vocal.",
+        url: "elis.html",
+        terms: "elis regina festivais arrastao fino da bossa tom jobim elis e tom aguas de marco como nossos pais"
+      },
+      {
+        title: "A Revolução da Tropicália",
+        type: "Artigo da Revista Cultural",
+        description: "Artigo sobre Tropicália, tropicalismo, Caetano Veloso, Gilberto Gil, Mutantes e cultura brasileira.",
+        url: "tropicalia.html",
+        terms: "tropicalia tropicalismo caetano veloso gilberto gil gal costa os mutantes tom ze torquato neto 1967 1968"
+      },
+      {
+        title: "Cale-se ou Cante: A Música Brasileira Sob a Ditadura",
+        type: "Artigo da Revista Cultural",
+        description: "Especial sobre censura, MPB, resistência cultural, Chico Buarque, Gil, Caetano e outros artistas.",
+        url: "ditadura-musica.html",
+        terms: "ditadura musica censura mpb chico buarque gilberto gil caetano veloso resistencia exilio militares 1964 1985"
+      },
+      {
+        title: "Universos da MPB",
+        type: "Página de fontes",
+        description: "Curadoria de acervos, livros, documentários, referências acadêmicas e instituições culturais.",
+        url: "universos.html",
+        terms: "fontes pesquisa acervos livros documentarios ims itau cultural biblioteca nacional scielo google scholar mpb bossa nova samba choro"
+      },
+      {
+        title: "Xico Chaves: Arte, Poesia e Resistência Cultural no Brasil",
+        type: "Artigo em preparação/publicação",
+        description: "Artigo sobre Xico Chaves, Banquete dos Mendigos, Jards Macalé, poesia visual e artes plásticas.",
+        url: "xico-chaves.html",
+        terms: "xico chaves chico xaves jards macale banquete dos mendigos direitos humanos mam rio affonso eduardo reidy poesia visual artes plasticas"
+      }
+    ];
+
+    function normalizeText(text) {
+      return text
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+    }
+
+    function encoded(value) {
+      return encodeURIComponent(value.trim());
+    }
+
+    function score(item, query) {
+      const q = normalizeText(query);
+      const title = normalizeText(item.title);
+      const description = normalizeText(item.description);
+      const terms = normalizeText(item.terms);
+      let points = 0;
+
+      if (title.includes(q)) points += 80;
+      if (description.includes(q)) points += 25;
+      if (terms.includes(q)) points += 20;
+
+      q.split(/\s+/).filter(Boolean).forEach(word => {
+        if (title.includes(word)) points += 15;
+        if (terms.includes(word)) points += 5;
+        if (description.includes(word)) points += 3;
+      });
+
+      return points;
+    }
+
+    function externalSources(query) {
+      const q = query.trim();
+      const e = encoded(q);
+
+      return [
+        {
+          title: "Buscar neste site",
+          description: "Pesquisa apenas dentro do CONTAR e CANTAR.",
+          url: "https://www.google.com/search?q=" + encodeURIComponent("site:rmcontarecantar.art.br " + q)
+        },
+        {
+          title: "Instituto Moreira Salles",
+          description: "Acervo cultural brasileiro, música, fotografia e memória.",
+          url: "https://www.google.com/search?q=" + encodeURIComponent("site:ims.com.br " + q)
+        },
+        {
+          title: "Enciclopédia Itaú Cultural",
+          description: "Verbetes sobre artistas, movimentos e cultura brasileira.",
+          url: "https://www.google.com/search?q=" + encodeURIComponent("site:enciclopedia.itaucultural.org.br " + q)
+        },
+        {
+          title: "Hemeroteca Digital Brasileira",
+          description: "Jornais, revistas e registros históricos digitalizados.",
+          url: "https://www.google.com/search?q=" + encodeURIComponent("site:hemerotecadigital.bn.gov.br " + q)
+        },
+        {
+          title: "SciELO",
+          description: "Artigos acadêmicos e produção científica.",
+          url: "https://search.scielo.org/?q=" + e
+        },
+        {
+          title: "Google Scholar",
+          description: "Teses, artigos, livros e trabalhos acadêmicos.",
+          url: "https://scholar.google.com/scholar?q=" + e
+        },
+        {
+          title: "Busca cultural ampliada",
+          description: "Busca geral com foco em MPB, música brasileira e fontes culturais.",
+          url: "https://www.google.com/search?q=" + encodeURIComponent(q + " MPB música brasileira IMS Itaú Cultural Biblioteca Nacional SciELO")
+        }
+      ];
+    }
+
+    function renderResults(query) {
+      const internal = internalContent
+        .map(item => ({ ...item, points: score(item, query) }))
+        .filter(item => item.points > 0)
+        .sort((a, b) => b.points - a.points);
+
+      const sources = externalSources(query);
+
+      resultsBox.classList.add("active");
+      resultsBox.innerHTML = `
+        <div class="results-header">
+          <strong>Resultados para “${query}”</strong>
+          <span>Conteúdos internos quando disponíveis e caminhos de pesquisa em fontes confiáveis.</span>
+        </div>
+
+        <div class="result-group">
+          <h3>CONTAR e CANTAR</h3>
+          ${
+            internal.length
+              ? internal.map(item => `
+                <a class="result-link" href="${item.url}">
+                  <strong>${item.title}</strong>
+                  <span>${item.type} — ${item.description}</span>
+                </a>
+              `).join("")
+              : `
+                <div class="result-link">
+                  <strong>Nenhum artigo interno encontrado ainda</strong>
+                  <span>Use as fontes abaixo para pesquisar o tema. Esse resultado também ajuda a orientar novos artigos para a Revista Cultural.</span>
+                </div>
+              `
+          }
+        </div>
+
+        <div class="result-group">
+          <h3>Fontes confiáveis para aprofundar</h3>
+          ${sources.map(item => `
+            <a class="result-link" href="${item.url}" target="_blank" rel="noopener">
+              <strong>${item.title}</strong>
+              <span>${item.description}</span>
+            </a>
+          `).join("")}
+        </div>
+      `;
     }
 
     form.addEventListener("submit", function(event) {
       event.preventDefault();
-
-      const q = encodedQuery();
-      if (!q) return;
-
-      let url = "";
-
-      switch (source.value) {
-        case "universos":
-          url = "universos.html?busca=" + q;
-          break;
-
-        case "google-site":
-          url = "https://www.google.com/search?q=" + encodeURIComponent("site:rmcontarecantar.art.br " + input.value.trim());
-          break;
-
-        case "ims":
-          url = "https://www.google.com/search?q=" + encodeURIComponent("site:ims.com.br " + input.value.trim());
-          break;
-
-        case "itau":
-          url = "https://www.google.com/search?q=" + encodeURIComponent("site:enciclopedia.itaucultural.org.br " + input.value.trim());
-          break;
-
-        case "bn":
-          url = "https://www.google.com/search?q=" + encodeURIComponent("site:hemerotecadigital.bn.gov.br " + input.value.trim());
-          break;
-
-        case "scielo":
-          url = "https://search.scielo.org/?q=" + q;
-          break;
-
-        case "scholar":
-          url = "https://scholar.google.com/scholar?q=" + q;
-          break;
-
-        case "geral":
-          url = "https://www.google.com/search?q=" + encodeURIComponent(input.value.trim() + " MPB música brasileira IMS Itaú Cultural Biblioteca Nacional SciELO");
-          break;
-      }
-
-      window.open(url, "_blank", "noopener");
+      const query = input.value.trim();
+      if (!query) return;
+      renderResults(query);
     });
   </script>
 </body>
