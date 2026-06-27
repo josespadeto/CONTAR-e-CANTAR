@@ -1193,19 +1193,6 @@
       display: block;
     }
 
-
-    .studio-download-area a {
-      display: block;
-      text-align: center;
-      background: linear-gradient(135deg, #22c55e, #14b8a6);
-      color: #051315;
-      padding: .85rem 1rem;
-      border-radius: 14px;
-      font-weight: 900;
-      text-decoration: none;
-      margin-top: .8rem;
-    }
-
     @media (max-width: 980px) {
       .eco-grid,
       .articles-grid,
@@ -1316,7 +1303,7 @@
       }
     }
   
-    /* === RM CONTENT STUDIO - ACESSO RESTRITO === */
+    /* === RM CONTENT STUDIO - INTEGRADO === */
     .admin-secret {
       color: inherit;
       text-decoration: none;
@@ -1334,7 +1321,7 @@
       display: none;
       position: fixed;
       inset: 0;
-      z-index: 9999;
+      z-index: 99999;
       background: rgba(0,0,0,.72);
       align-items: center;
       justify-content: center;
@@ -1650,6 +1637,18 @@
       padding: .9rem;
       min-height: 120px;
       color: #e5e7eb;
+      margin-top: .8rem;
+    }
+
+    .studio-download-area a {
+      display: block;
+      text-align: center;
+      background: linear-gradient(135deg, #22c55e, #14b8a6);
+      color: #051315;
+      padding: .85rem 1rem;
+      border-radius: 14px;
+      font-weight: 900;
+      text-decoration: none;
       margin-top: .8rem;
     }
 
@@ -2236,8 +2235,7 @@ Site oficial - https://..."></textarea>
 
 
   <script>
-    /* === RM CONTENT STUDIO - LOGIN E FUNCIONAMENTO === */
-    const RM_STUDIO_PASSWORD = "1234"; // Troque a senha aqui.
+    const RM_STUDIO_PASSWORD = "1234";
 
     const studioSecretLink = document.getElementById("studioSecretLink");
     const studioLoginModal = document.getElementById("studioLoginModal");
@@ -2490,6 +2488,35 @@ ${sources || "Nenhuma fonte informada."}`;
       }, Math.max(1000, (writeSeconds - 3) * 1000));
     }
 
+    function studioDownloadTXT() {
+      if (!studioFinalNarrative) studioGenerateNarrative();
+
+      const content =
+`RM CONTENT STUDIO - REELS MPB
+
+TEXTO DO REEL
+
+${studioFinalNarrative}
+
+LEGENDA DO POST
+
+${studioFinalCaption}
+
+AUDITORIA
+
+${document.getElementById("studioAudit").textContent}
+`;
+
+      const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+
+      a.href = url;
+      a.download = "reels-mpb-narrativa-factual.txt";
+      a.click();
+
+      URL.revokeObjectURL(url);
+    }
 
     function studioWrapTextForCanvas(ctx, text, maxWidth) {
       const words = String(text).split(/\s+/);
@@ -2637,6 +2664,7 @@ ${sources || "Nenhuma fonte informada."}`;
       recorder.onstop = () => {
         const blob = new Blob(chunks, { type: "video/webm" });
         const url = URL.createObjectURL(blob);
+        const area = document.getElementById("studioDownloadArea");
         area.innerHTML = `<a href="${url}" download="reel-contar-e-cantar.webm">⬇ Baixar vídeo WebM com texto</a>
         <div class="studio-notice">Arquivo gerado em WebM pelo navegador. Para Instagram, se necessário, converta para MP4 no CapCut, VLC, HandBrake ou FFmpeg.</div>`;
       };
@@ -2666,37 +2694,6 @@ ${sources || "Nenhuma fonte informada."}`;
       }
 
       loop();
-    }
-
-
-    function studioDownloadTXT() {
-      if (!studioFinalNarrative) studioGenerateNarrative();
-
-      const content =
-`RM CONTENT STUDIO - REELS MPB
-
-TEXTO DO REEL
-
-${studioFinalNarrative}
-
-LEGENDA DO POST
-
-${studioFinalCaption}
-
-AUDITORIA
-
-${document.getElementById("studioAudit").textContent}
-`;
-
-      const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-
-      a.href = url;
-      a.download = "reels-mpb-narrativa-factual.txt";
-      a.click();
-
-      URL.revokeObjectURL(url);
     }
   </script>
 
