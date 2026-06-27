@@ -1193,6 +1193,19 @@
       display: block;
     }
 
+
+    .studio-download-area a {
+      display: block;
+      text-align: center;
+      background: linear-gradient(135deg, #22c55e, #14b8a6);
+      color: #051315;
+      padding: .85rem 1rem;
+      border-radius: 14px;
+      font-weight: 900;
+      text-decoration: none;
+      margin-top: .8rem;
+    }
+
     @media (max-width: 980px) {
       .eco-grid,
       .articles-grid,
@@ -2078,6 +2091,8 @@ Site oficial - https://..."></textarea>
 
           <button class="studio-btn studio-btn-primary" type="button" onclick="studioPlayPreview()">▶ Ver texto escrevendo no vídeo</button>
           <button class="studio-btn studio-btn-green" type="button" onclick="studioDownloadTXT()">Baixar texto e fontes</button>
+          <button class="studio-btn studio-btn-gold" type="button" onclick="studioExportVideoWebM()">⬇ Baixar vídeo com texto</button>
+          <div class="studio-download-area" id="studioDownloadArea"></div>
 
           <div class="studio-notice">
             Esta versão roda dentro do próprio index.html. Ela não pesquisa sozinha na web: você cola dados e fontes, e ela monta o texto sem inventar.
@@ -2474,6 +2489,185 @@ ${sources || "Nenhuma fonte informada."}`;
         studioCtaBox.style.display = "block";
       }, Math.max(1000, (writeSeconds - 3) * 1000));
     }
+
+
+    function studioWrapTextForCanvas(ctx, text, maxWidth) {
+      const words = String(text).split(/\s+/);
+      const lines = [];
+      let line = "";
+
+      for (const word of words) {
+        const test = line ? line + " " + word : word;
+        if (ctx.measureText(test).width > maxWidth && line) {
+          lines.push(line);
+          line = word;
+        } else {
+          line = test;
+        }
+      }
+
+      if (line) lines.push(line);
+      return lines.slice(0, 8);
+    }
+
+    function studioRoundRect(ctx, x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.arcTo(x + w, y, x + w, y + h, r);
+      ctx.arcTo(x + w, y + h, x, y + h, r);
+      ctx.arcTo(x, y + h, x, y, r);
+      ctx.arcTo(x, y, x + w, y, r);
+      ctx.closePath();
+    }
+
+    function studioDrawExportFrame(canvas, ctx, text, showCta) {
+      ctx.fillStyle = "#000";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      if (studioVideo.readyState >= 2) {
+        const vw = studioVideo.videoWidth || 1080;
+        const vh = studioVideo.videoHeight || 1920;
+        const scale = Math.max(canvas.width / vw, canvas.height / vh);
+        const sw = canvas.width / scale;
+        const sh = canvas.height / scale;
+        const sx = (vw - sw) / 2;
+        const sy = (vh - sh) / 2;
+
+        try {
+          ctx.drawImage(studioVideo, sx, sy, sw, sh, 0, 0, canvas.width, canvas.height);
+        } catch (e) {
+          ctx.fillStyle = "#111827";
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+      }
+
+      const maxWidth = canvas.width * 0.82;
+      const fontSize = 48;
+      ctx.font = `800 ${fontSize}px Arial, sans-serif`;
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+
+      const lines = studioWrapTextForCanvas(ctx, text, maxWidth);
+      const lineHeight = 62;
+      const boxH = lines.length * lineHeight + 44;
+      const boxW = maxWidth + 70;
+      const x = canvas.width / 2 - boxW / 2;
+      const y = canvas.height - 430 - boxH / 2;
+
+      ctx.fillStyle = "rgba(0,0,0,.48)";
+      studioRoundRect(ctx, x, y, boxW, boxH, 30);
+      ctx.fill();
+
+      lines.forEach((line, i) => {
+        const ty = y + 34 + i * lineHeight + lineHeight / 2;
+        ctx.lineWidth = 8;
+        ctx.strokeStyle = "rgba(0,0,0,.9)";
+        ctx.strokeText(line, canvas.width / 2, ty);
+        ctx.fillStyle = "#fff";
+        ctx.fillText(line, canvas.width / 2, ty);
+      });
+
+      if (showCta) {
+        const cta = "Mais histórias da música brasileira: rmcontarecantar.art.br";
+        ctx.font = "900 38px Arial, sans-serif";
+        const ctaW = canvas.width * 0.82;
+        const ctaH = 86;
+        const ctaX = canvas.width / 2 - ctaW / 2;
+        const ctaY = canvas.height - 210;
+
+        ctx.fillStyle = "#fbbf24";
+        studioRoundRect(ctx, ctaX, ctaY, ctaW, ctaH, 24);
+        ctx.fill();
+
+        ctx.fillStyle = "#06111f";
+        ctx.fillText(cta, canvas.width / 2, ctaY + ctaH / 2);
+      }
+    }
+
+    async function studioExportVideoWebM() {
+      if (!studioFinalNarrative) studioGenerateNarrative();
+
+      if (!studioVideo.src) {
+        alert("Carregue um vídeo primeiro.");
+        return;
+      }
+
+      const area = document.getElementById("studioDownloadArea");
+      area.innerHTML = "<div class='studio-notice'>Gerando vídeo WebM no navegador. Aguarde até o vídeo terminar...</div>";
+
+      const exportCanvas = document.createElement("canvas");
+      exportCanvas.width = 1080;
+      exportCanvas.height = 1920;
+      const ctx = exportCanvas.getContext("2d");
+
+      if (!exportCanvas.captureStream || typeof MediaRecorder === "undefined") {
+        alert("Seu navegador não suporta exportação de vídeo por canvas.");
+        return;
+      }
+
+      const writeChoice = document.getElementById("studioWriteTime").value;
+      const duration = Math.floor(studioVideo.duration || 60);
+
+      let writeSeconds = writeChoice === "auto"
+        ? Math.min(60, Math.max(25, Math.floor(duration * 0.25)))
+        : Number(writeChoice);
+
+      writeSeconds = Math.min(writeSeconds, Math.max(10, duration - 3));
+
+      const stream = exportCanvas.captureStream(30);
+
+      try {
+        if (studioVideo.captureStream) {
+          const audioTracks = studioVideo.captureStream().getAudioTracks();
+          audioTracks.forEach(track => stream.addTrack(track));
+        }
+      } catch (e) {}
+
+      let mime = "video/webm;codecs=vp9";
+      if (!MediaRecorder.isTypeSupported(mime)) mime = "video/webm;codecs=vp8";
+      if (!MediaRecorder.isTypeSupported(mime)) mime = "video/webm";
+
+      const chunks = [];
+      const recorder = new MediaRecorder(stream, { mimeType: mime });
+
+      recorder.ondataavailable = event => {
+        if (event.data && event.data.size) chunks.push(event.data);
+      };
+
+      recorder.onstop = () => {
+        const blob = new Blob(chunks, { type: "video/webm" });
+        const url = URL.createObjectURL(blob);
+        area.innerHTML = `<a href="${url}" download="reel-contar-e-cantar.webm">⬇ Baixar vídeo WebM com texto</a>
+        <div class="studio-notice">Arquivo gerado em WebM pelo navegador. Para Instagram, se necessário, converta para MP4 no CapCut, VLC, HandBrake ou FFmpeg.</div>`;
+      };
+
+      studioVideo.currentTime = 0;
+      await studioVideo.play();
+
+      recorder.start();
+
+      function loop() {
+        const elapsed = studioVideo.currentTime || 0;
+        const totalChars = studioFinalNarrative.length;
+        const progress = Math.min(1, elapsed / writeSeconds);
+        const charsToShow = Math.floor(totalChars * progress);
+        const text = studioFinalNarrative.slice(0, charsToShow);
+        const showCta = elapsed >= Math.max(1, writeSeconds - 3);
+
+        studioDrawExportFrame(exportCanvas, ctx, text || " ", showCta);
+
+        if (studioVideo.ended || elapsed >= duration - 0.1) {
+          try { recorder.stop(); } catch (e) {}
+          studioVideo.pause();
+          return;
+        }
+
+        requestAnimationFrame(loop);
+      }
+
+      loop();
+    }
+
 
     function studioDownloadTXT() {
       if (!studioFinalNarrative) studioGenerateNarrative();
