@@ -87,7 +87,7 @@
       padding: 1.35rem 5%;
       position: sticky;
       top: 0;
-      z-index: 50;
+      z-index: 1000;
       background: rgba(255,255,255,0.97);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--linha);
@@ -1186,7 +1186,7 @@
       position: fixed;
       inset: 0;
       background: rgba(0,0,0,.28);
-      z-index: 55;
+      z-index: 900;
     }
 
     .mobile-backdrop.active {
@@ -1237,7 +1237,7 @@
         top: 76px;
         left: 5%;
         right: 5%;
-        z-index: 70;
+        z-index: 1100;
         display: none;
         background: var(--branco);
         border: 1px solid var(--linha);
@@ -1248,6 +1248,7 @@
 
       nav.active {
         display: block;
+        pointer-events: auto;
       }
 
       nav ul {
@@ -1719,7 +1720,9 @@
       });
 
       mainNav.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", closeMobileMenu);
+        link.addEventListener("click", () => {
+          setTimeout(closeMobileMenu, 120);
+        });
       });
 
       if (mobileBackdrop) {
