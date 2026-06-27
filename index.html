@@ -1302,6 +1302,356 @@
         text-align: left;
       }
     }
+  
+    /* === RM CONTENT STUDIO - ACESSO RESTRITO === */
+    .admin-secret {
+      color: inherit;
+      text-decoration: none;
+      cursor: default;
+    }
+
+    .admin-secret:hover,
+    .admin-secret:visited,
+    .admin-secret:active {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .studio-login-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0,0,0,.72);
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem;
+    }
+
+    .studio-login-modal.active {
+      display: flex;
+    }
+
+    .studio-login-card {
+      width: min(440px, 100%);
+      background: var(--branco);
+      border: 1px solid var(--linha);
+      box-shadow: 0 30px 90px rgba(0,0,0,.25);
+      padding: 2rem;
+      border-radius: 24px;
+      text-align: center;
+    }
+
+    .studio-login-card h2 {
+      font-size: 2rem;
+      margin-bottom: .6rem;
+    }
+
+    .studio-login-card p {
+      color: #555;
+      margin-bottom: 1.2rem;
+    }
+
+    .studio-login-card input {
+      width: 100%;
+      border: 1px solid var(--linha);
+      border-radius: 999px;
+      padding: 1rem 1.1rem;
+      margin-bottom: .8rem;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .studio-login-actions {
+      display: flex;
+      gap: .7rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .studio-error {
+      display: none;
+      color: #9f1239;
+      background: #fff1f2;
+      border: 1px solid #fecdd3;
+      padding: .7rem;
+      border-radius: 14px;
+      margin: .8rem 0;
+      font-size: .9rem;
+    }
+
+    body.studio-mode header,
+    body.studio-mode main,
+    body.studio-mode footer,
+    body.studio-mode .mobile-backdrop {
+      display: none !important;
+    }
+
+    .rm-studio {
+      display: none;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(34,211,238,.20), transparent 34rem),
+        radial-gradient(circle at top right, rgba(168,85,247,.18), transparent 34rem),
+        linear-gradient(135deg, #020617, #0f172a 48%, #111827);
+      color: #f8fafc;
+      padding: 1.2rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body.studio-mode .rm-studio {
+      display: block;
+    }
+
+    .studio-container {
+      width: min(1320px, 100%);
+      margin: 0 auto;
+    }
+
+    .studio-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .studio-brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+    }
+
+    .studio-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #22d3ee, #a855f7);
+      color: #fff;
+    }
+
+    .studio-actions {
+      display: flex;
+      gap: .6rem;
+      flex-wrap: wrap;
+    }
+
+    .studio-btn {
+      border: 1px solid rgba(255,255,255,.16);
+      color: #fff;
+      background: rgba(255,255,255,.10);
+      border-radius: 999px;
+      padding: .75rem 1rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .studio-btn-primary {
+      border: 0;
+      background: linear-gradient(135deg, #22d3ee, #a855f7);
+    }
+
+    .studio-btn-gold {
+      border: 0;
+      background: linear-gradient(135deg, #fbbf24, #f97316);
+      color: #111827;
+    }
+
+    .studio-btn-green {
+      border: 0;
+      background: linear-gradient(135deg, #22c55e, #14b8a6);
+      color: #051315;
+    }
+
+    .studio-hero {
+      text-align: center;
+      padding: 2.2rem 0 2rem;
+    }
+
+    .studio-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.3rem, 6vw, 4.6rem);
+      margin-bottom: .7rem;
+    }
+
+    .studio-hero p {
+      color: #cbd5e1;
+      max-width: 840px;
+      margin: 0 auto;
+      font-size: 1.03rem;
+      line-height: 1.7;
+    }
+
+    .studio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .studio-card {
+      background: rgba(255,255,255,.075);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 24px;
+      padding: 1.1rem;
+      box-shadow: 0 24px 70px rgba(0,0,0,.35);
+    }
+
+    .studio-card h2 {
+      font-size: 1.65rem;
+      margin-bottom: .8rem;
+      color: #fff;
+    }
+
+    .studio-field {
+      margin-bottom: .8rem;
+    }
+
+    .studio-field label {
+      display: block;
+      color: #e2e8f0;
+      font-weight: 700;
+      margin-bottom: .45rem;
+      font-size: .92rem;
+    }
+
+    .studio-field input,
+    .studio-field textarea,
+    .studio-field select {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(2,6,23,.65);
+      color: #fff;
+      border-radius: 16px;
+      padding: .9rem;
+      outline: none;
+    }
+
+    .studio-field textarea {
+      min-height: 120px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    .studio-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .8rem;
+    }
+
+    .studio-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .8rem;
+    }
+
+    .studio-notice {
+      margin-top: .8rem;
+      color: #fde68a;
+      background: rgba(245,158,11,.10);
+      border: 1px solid rgba(245,158,11,.25);
+      border-radius: 16px;
+      padding: .8rem;
+      line-height: 1.55;
+      font-size: .9rem;
+    }
+
+    .studio-ok {
+      color: #bbf7d0;
+      background: rgba(34,197,94,.10);
+      border-color: rgba(34,197,94,.25);
+    }
+
+    .studio-stage {
+      position: relative;
+      width: min(100%, 410px);
+      aspect-ratio: 9 / 16;
+      background: #000;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.14);
+      margin: 0 auto;
+    }
+
+    .studio-stage video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: #000;
+      display: block;
+    }
+
+    .studio-overlay-panel {
+      position: absolute;
+      left: 6%;
+      right: 6%;
+      bottom: 76px;
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .studio-text-box {
+      color: #fff;
+      font-size: clamp(1rem, 2.1vw, 1.65rem);
+      line-height: 1.28;
+      font-weight: 800;
+      text-shadow: 3px 3px 10px #000;
+      background: rgba(0,0,0,.42);
+      padding: 13px;
+      border-radius: 16px;
+      max-height: 47vh;
+      overflow: hidden;
+      white-space: pre-wrap;
+    }
+
+    .studio-cta-box {
+      display: none;
+      color: #06111f;
+      background: linear-gradient(135deg,#fbbf24,#f97316);
+      padding: 10px 12px;
+      border-radius: 14px;
+      font-weight: 900;
+      text-align: center;
+      box-shadow: 0 12px 25px rgba(0,0,0,.35);
+    }
+
+    .studio-result {
+      white-space: pre-wrap;
+      line-height: 1.7;
+      background: rgba(2,6,23,.65);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 18px;
+      padding: .9rem;
+      min-height: 120px;
+      color: #e5e7eb;
+      margin-top: .8rem;
+    }
+
+    @media (max-width: 980px) {
+      .studio-grid,
+      .studio-row,
+      .studio-row-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .studio-stage {
+        width: min(100%, 380px);
+      }
+    }
+
   </style>
 </head>
 
@@ -1628,8 +1978,142 @@
   </main>
 
   <footer>
-    <p>CONTAR e CANTAR © 2026 • Histórias da Música Brasileira por Rosane Maia</p>
+    <p>CONTAR e CANTAR © 2026 • Histórias da Música Brasileira por <a href="#" class="admin-secret" id="studioSecretLink">Rosane Maia</a></p>
   </footer>
+
+  <!-- RM CONTENT STUDIO - LOGIN OCULTO -->
+  <div class="studio-login-modal" id="studioLoginModal" aria-hidden="true">
+    <div class="studio-login-card">
+      <h2>RM Content Studio</h2>
+      <p>Área restrita de produção editorial do CONTAR e CANTAR.</p>
+      <input type="password" id="studioPassword" placeholder="Digite a senha" autocomplete="current-password">
+      <div class="studio-error" id="studioError">Senha incorreta.</div>
+      <div class="studio-login-actions">
+        <button class="btn btn-primary" type="button" onclick="studioCheckPassword()">Entrar</button>
+        <button class="btn" type="button" onclick="studioCloseLogin()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RM CONTENT STUDIO - ÁREA INTERNA -->
+  <section class="rm-studio" id="rmStudio">
+    <div class="studio-container">
+      <div class="studio-top">
+        <div class="studio-brand"><span class="studio-mark">RM</span><span>RM Content Studio</span></div>
+        <div class="studio-actions">
+          <button class="studio-btn" type="button" onclick="studioBackToSite()">Voltar ao site</button>
+          <button class="studio-btn" type="button" onclick="studioLogout()">Sair</button>
+        </div>
+      </div>
+
+      <div class="studio-hero">
+        <h1>Centro Editorial</h1>
+        <p>Ferramenta interna para criar Reels MPB com narrativa visual factual. O texto escreve nos primeiros segundos, permanece na tela e finaliza com chamada para o site oficial.</p>
+      </div>
+
+      <div class="studio-grid">
+        <div class="studio-card">
+          <h2>1. Vídeo e narrativa</h2>
+
+          <div class="studio-field">
+            <label>Vídeo</label>
+            <input type="file" id="studioVideoInput" accept="video/*">
+          </div>
+
+          <div class="studio-field">
+            <label>Artista, música ou tema</label>
+            <input id="studioArtist" placeholder="Ex: Rosane Maia, Cartola, Elis Regina">
+          </div>
+
+          <div class="studio-row">
+            <div class="studio-field">
+              <label>Tipo</label>
+              <select id="studioType">
+                <option>Artista</option>
+                <option>Canção</option>
+                <option>Compositor</option>
+                <option>Disco</option>
+                <option>Show</option>
+              </select>
+            </div>
+
+            <div class="studio-field">
+              <label>Texto termina em</label>
+              <select id="studioWriteTime">
+                <option value="30">30 segundos</option>
+                <option value="45">45 segundos</option>
+                <option value="60">60 segundos</option>
+                <option value="20">20 segundos</option>
+                <option value="auto">Automático</option>
+              </select>
+            </div>
+
+            <div class="studio-field">
+              <label>Tamanho</label>
+              <select id="studioTextSize">
+                <option value="medio">Médio</option>
+                <option value="curto">Curto</option>
+                <option value="longo">Longo</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="studio-field">
+            <label>Dossiê factual / dados confirmados</label>
+            <textarea id="studioFacts" placeholder="Cole aqui apenas dados confirmados: biografia, datas, obras, fontes, entrevistas, discografia, links."></textarea>
+          </div>
+
+          <div class="studio-field">
+            <label>Fontes consultadas</label>
+            <textarea id="studioSources" placeholder="Ex:
+Dicionário Cravo Albin - https://...
+Itaú Cultural - https://...
+Site oficial - https://..."></textarea>
+          </div>
+
+          <div class="studio-row-2">
+            <button class="studio-btn studio-btn-primary" type="button" onclick="studioAnalyzeSources()">Analisar base factual</button>
+            <button class="studio-btn studio-btn-gold" type="button" onclick="studioGenerateNarrative()">Gerar narrativa visual</button>
+          </div>
+
+          <button class="studio-btn studio-btn-primary" type="button" onclick="studioPlayPreview()">▶ Ver texto escrevendo no vídeo</button>
+          <button class="studio-btn studio-btn-green" type="button" onclick="studioDownloadTXT()">Baixar texto e fontes</button>
+
+          <div class="studio-notice">
+            Esta versão roda dentro do próprio index.html. Ela não pesquisa sozinha na web: você cola dados e fontes, e ela monta o texto sem inventar.
+          </div>
+        </div>
+
+        <div class="studio-card">
+          <h2>2. Prévia estilo Reels</h2>
+          <div class="studio-stage">
+            <video id="studioVideo" controls playsinline></video>
+            <div class="studio-overlay-panel">
+              <div class="studio-text-box" id="studioVisualText">A narrativa aparecerá aqui.</div>
+              <div class="studio-cta-box" id="studioCtaBox">Mais histórias da música brasileira: rmcontarecantar.art.br</div>
+            </div>
+          </div>
+
+          <div class="studio-notice studio-ok">
+            O vídeo continua como fundo. O texto escreve nos primeiros segundos e depois fica parado para leitura.
+          </div>
+        </div>
+      </div>
+
+      <div class="studio-grid" style="margin-top:1rem">
+        <div class="studio-card">
+          <h2>3. Texto final do Reel</h2>
+          <div id="studioFinalText" class="studio-result">O texto final aparecerá aqui.</div>
+        </div>
+
+        <div class="studio-card">
+          <h2>4. Auditoria factual e legenda</h2>
+          <div id="studioAudit" class="studio-result">A análise factual aparecerá aqui.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
 
   <script>
@@ -1732,6 +2216,293 @@
       document.addEventListener("keydown", event => {
         if (event.key === "Escape") closeMobileMenu();
       });
+    }
+  </script>
+
+
+  <script>
+    /* === RM CONTENT STUDIO - LOGIN E FUNCIONAMENTO === */
+    const RM_STUDIO_PASSWORD = "1234"; // Troque a senha aqui.
+
+    const studioSecretLink = document.getElementById("studioSecretLink");
+    const studioLoginModal = document.getElementById("studioLoginModal");
+    const studioPassword = document.getElementById("studioPassword");
+    const studioError = document.getElementById("studioError");
+
+    if (studioSecretLink) {
+      studioSecretLink.addEventListener("click", function(event) {
+        event.preventDefault();
+        studioOpenLogin();
+      });
+    }
+
+    function studioOpenLogin() {
+      if (sessionStorage.getItem("rm_studio_acesso") === "liberado") {
+        studioEnter();
+        return;
+      }
+
+      studioLoginModal.classList.add("active");
+      studioLoginModal.setAttribute("aria-hidden", "false");
+      studioPassword.value = "";
+      studioError.style.display = "none";
+      setTimeout(() => studioPassword.focus(), 80);
+    }
+
+    function studioCloseLogin() {
+      studioLoginModal.classList.remove("active");
+      studioLoginModal.setAttribute("aria-hidden", "true");
+    }
+
+    function studioCheckPassword() {
+      if (studioPassword.value === RM_STUDIO_PASSWORD) {
+        sessionStorage.setItem("rm_studio_acesso", "liberado");
+        studioCloseLogin();
+        studioEnter();
+      } else {
+        studioError.style.display = "block";
+        studioPassword.select();
+      }
+    }
+
+    if (studioPassword) {
+      studioPassword.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") studioCheckPassword();
+        if (event.key === "Escape") studioCloseLogin();
+      });
+    }
+
+    function studioEnter() {
+      document.body.classList.add("studio-mode");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function studioBackToSite() {
+      document.body.classList.remove("studio-mode");
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    }
+
+    function studioLogout() {
+      sessionStorage.removeItem("rm_studio_acesso");
+      document.body.classList.remove("studio-mode");
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    }
+
+    const studioVideo = document.getElementById("studioVideo");
+    const studioVisualText = document.getElementById("studioVisualText");
+    const studioCtaBox = document.getElementById("studioCtaBox");
+    const studioVideoInput = document.getElementById("studioVideoInput");
+
+    let studioFinalNarrative = "";
+    let studioFinalCaption = "";
+    let studioTypeTimer = null;
+    let studioCtaTimer = null;
+
+    if (studioVideoInput) {
+      studioVideoInput.addEventListener("change", event => {
+        const file = event.target.files[0];
+        if (!file) return;
+        studioVideo.src = URL.createObjectURL(file);
+        studioVideo.load();
+        studioVisualText.textContent = "Vídeo carregado. Agora gere a narrativa visual.";
+        studioCtaBox.style.display = "none";
+      });
+    }
+
+    function studioAnalyzeSources() {
+      const facts = document.getElementById("studioFacts").value.trim();
+      const sources = document.getElementById("studioSources").value.trim();
+      const sourceLines = sources.split(/\n+/).map(s => s.trim()).filter(Boolean);
+      const links = sourceLines.filter(s => /https?:\/\//i.test(s));
+      const hasStrong = /cravo|ita[uú] cultural|site oficial|discogs|ims|instituto moreira|gravadora|entrevista|acervo|hemeroteca|biblioteca nacional/i.test(sources);
+
+      const factualScore = Math.min(100,
+        (facts.length > 250 ? 35 : facts.length > 80 ? 20 : 5) +
+        (sourceLines.length >= 3 ? 30 : sourceLines.length ? 15 : 0) +
+        (links.length >= 2 ? 20 : links.length ? 10 : 0) +
+        (hasStrong ? 15 : 0)
+      );
+
+      const status = factualScore >= 70 ? "Boa base factual" : factualScore >= 40 ? "Base parcial" : "Base fraca";
+      const warning = factualScore >= 70
+        ? "Pode gerar, mas revise nomes, datas e obras antes de publicar."
+        : "Evite publicar como fato definitivo. Acrescente fontes mais fortes.";
+
+      document.getElementById("studioAudit").textContent =
+`AUDITORIA FACTUAL
+
+Status: ${status}
+Pontuação editorial: ${factualScore}/100
+
+Fontes listadas: ${sourceLines.length}
+Links detectados: ${links.length}
+Fonte forte detectada: ${hasStrong ? "sim" : "não"}
+
+Regra editorial:
+• Não inventar dados ausentes.
+• Evitar superlativos sem fonte.
+• Preferir texto curto e seguro.
+• Informar lacunas quando houver pouca fonte.
+
+Alerta:
+${warning}`;
+    }
+
+    function studioGenerateNarrative() {
+      studioAnalyzeSources();
+
+      const artist = document.getElementById("studioArtist").value.trim() || "Artista escolhido";
+      const facts = document.getElementById("studioFacts").value.trim();
+      const sources = document.getElementById("studioSources").value.trim();
+      const size = document.getElementById("studioTextSize").value;
+
+      const maxChars = size === "curto" ? 360 : size === "longo" ? 760 : 540;
+      const cta = `\n\nConheça mais histórias da música brasileira em rmcontarecantar.art.br`;
+
+      let core = "";
+
+      if (facts) {
+        core = studioBuildFromFacts(artist, facts, maxChars);
+      } else {
+        core = `${artist} é lembrado neste registro como parte da memória viva da música brasileira. Para uma homenagem factual, acrescente dados confirmados, fontes e referências antes da publicação.`;
+      }
+
+      studioFinalNarrative = (core + cta).trim();
+
+      studioFinalCaption =
+`Homenagem a ${artist}.
+
+Conteúdo preparado com base em pesquisa e revisão editorial.
+
+Mais histórias da música brasileira:
+rmcontarecantar.art.br
+
+#MPB #MusicaBrasileira #ContandoECantando #ReelsBrasil #CulturaBrasileira`;
+
+      document.getElementById("studioFinalText").textContent = studioFinalNarrative;
+
+      document.getElementById("studioAudit").textContent += `
+
+LEGENDA DO POST
+
+${studioFinalCaption}
+
+FONTES INFORMADAS
+
+${sources || "Nenhuma fonte informada."}`;
+
+      studioVisualText.textContent = studioFinalNarrative;
+      studioCtaBox.style.display = "block";
+    }
+
+    function studioBuildFromFacts(artist, facts, maxChars) {
+      const sentences = facts
+        .replace(/\s+/g, " ")
+        .split(/(?<=[.!?])\s+/)
+        .map(s => s.trim())
+        .filter(s => s.length > 20);
+
+      let selected = [];
+
+      for (const s of sentences) {
+        const clean = studioRemoveWeakClaims(s);
+        if ((selected.join(" ") + " " + clean).length <= maxChars) {
+          selected.push(clean);
+        }
+        if (selected.join(" ").length >= maxChars * .78) break;
+      }
+
+      if (!selected.length) {
+        selected = [`${artist} merece uma homenagem construída com cuidado, fonte e memória.`];
+      }
+
+      const opening = `${artist}: uma história da música brasileira contada com respeito aos fatos.`;
+      let body = selected.join(" ");
+
+      if (!body.toLowerCase().includes(artist.toLowerCase().split(" ")[0])) {
+        body = `${artist} ${body}`;
+      }
+
+      return `${opening}\n\n${body}`;
+    }
+
+    function studioRemoveWeakClaims(s) {
+      return s
+        .replace(/\bum dos maiores\b/gi, "um nome importante")
+        .replace(/\ba maior voz\b/gi, "uma voz reconhecida")
+        .replace(/\bgênio absoluto\b/gi, "artista de grande relevância")
+        .replace(/\binesquecível\b/gi, "marcante");
+    }
+
+    function studioPlayPreview() {
+      if (!studioFinalNarrative) studioGenerateNarrative();
+
+      clearInterval(studioTypeTimer);
+      clearTimeout(studioCtaTimer);
+
+      studioCtaBox.style.display = "none";
+      studioVisualText.textContent = "";
+
+      const writeChoice = document.getElementById("studioWriteTime").value;
+      const duration = Math.floor(studioVideo.duration || 60);
+
+      let writeSeconds = writeChoice === "auto"
+        ? Math.min(60, Math.max(25, Math.floor(duration * 0.25)))
+        : Number(writeChoice);
+
+      writeSeconds = Math.min(writeSeconds, Math.max(10, duration - 3));
+
+      studioVideo.currentTime = 0;
+      studioVideo.play();
+
+      let i = 0;
+      const chars = studioFinalNarrative.length;
+      const interval = Math.max(18, Math.floor((writeSeconds * 1000) / Math.max(chars, 1)));
+
+      studioTypeTimer = setInterval(() => {
+        i++;
+        studioVisualText.textContent = studioFinalNarrative.slice(0, i);
+
+        if (i >= chars) {
+          clearInterval(studioTypeTimer);
+          studioVisualText.textContent = studioFinalNarrative;
+          studioCtaBox.style.display = "block";
+        }
+      }, interval);
+
+      studioCtaTimer = setTimeout(() => {
+        studioCtaBox.style.display = "block";
+      }, Math.max(1000, (writeSeconds - 3) * 1000));
+    }
+
+    function studioDownloadTXT() {
+      if (!studioFinalNarrative) studioGenerateNarrative();
+
+      const content =
+`RM CONTENT STUDIO - REELS MPB
+
+TEXTO DO REEL
+
+${studioFinalNarrative}
+
+LEGENDA DO POST
+
+${studioFinalCaption}
+
+AUDITORIA
+
+${document.getElementById("studioAudit").textContent}
+`;
+
+      const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+
+      a.href = url;
+      a.download = "reels-mpb-narrativa-factual.txt";
+      a.click();
+
+      URL.revokeObjectURL(url);
     }
   </script>
 
