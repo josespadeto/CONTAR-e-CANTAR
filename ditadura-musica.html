@@ -277,9 +277,19 @@
             font-size: 0.8rem; color: var(--cor-cinza-medio);
         }
 
-        /* RESPONSIVO */
+        
+.mobile-menu-toggle{display:none;width:44px;height:44px;border:1px solid rgba(0,0,0,.08);border-radius:999px;background:#fff;align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer;z-index:1200}
+.mobile-menu-toggle span{width:18px;height:2px;background:#000;display:block}
+.mobile-backdrop{display:none;position:fixed;inset:0;background:rgba(0,0,0,.28);z-index:900}
+.mobile-backdrop.active{display:block}
+
+/* RESPONSIVO */
         @media (max-width: 768px) {
-            nav ul { display: none; }
+            .mobile-menu-toggle{display:inline-flex}
+            nav{position:fixed;top:76px;left:5%;right:5%;display:none;background:#fff;z-index:1100;border-radius:18px;padding:.8rem}
+            nav.active{display:block}
+            nav ul{display:flex;flex-direction:column;gap:0}
+            nav a{display:block;padding:1rem}
             .article-hero .article-meta { flex-direction: column; gap: 0.5rem; }
             .editorial-cover { height: 300px; }
             .cover-text h2 { font-size: 2.2rem; }
@@ -291,14 +301,16 @@
 
     <header>
         <div class="logo">CONTAR <span>e</span> CANTAR</div>
-        <nav>
+        <nav id="mainNav" aria-label="Menu principal">
             <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="index.html#revista">Revista</a></li>
-                <li><a href="universos.html">Universos</a></li>
+                <li><a href="/">Início</a></li>
+                <li><a href="/#revista">Revista</a></li>
+                <li><a href="universos.html">Universos</a></li><li><a href="/#youtube">YouTube</a></li><li><a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener">Instagram</a></li>
             </ul>
         </nav>
+        <button class="mobile-menu-toggle" type="button" aria-label="Menu" aria-controls="mainNav" aria-expanded="false"><span></span><span></span><span></span></button>
     </header>
+    <div class="mobile-backdrop" id="mobileBackdrop"></div>
 
     <article>
         <div class="article-hero">
@@ -514,6 +526,14 @@
             <p>CONTAR e CANTAR © 2026 • Curadoria histórica por Rosane Maia</p>
         </div>
     </footer>
+
+
+<script>
+const b=document.querySelector(".mobile-menu-toggle"),n=document.getElementById("mainNav"),bk=document.getElementById("mobileBackdrop");
+if(b&&n){b.onclick=()=>{let o=n.classList.toggle("active");b.setAttribute("aria-expanded",o);bk.classList.toggle("active",o)};
+bk.onclick=()=>{n.classList.remove("active");bk.classList.remove("active");b.setAttribute("aria-expanded","false")};
+n.querySelectorAll("a").forEach(a=>a.onclick=()=>setTimeout(()=>{n.classList.remove("active");bk.classList.remove("active");b.setAttribute("aria-expanded","false")},120));}
+</script>
 
 </body>
 </html>
