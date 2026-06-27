@@ -287,9 +287,111 @@
             font-size: 0.8rem; color: var(--cor-cinza-medio);
         }
 
+
+        .mobile-menu-toggle {
+            display: none;
+            width: 44px;
+            height: 44px;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 999px;
+            background: var(--cor-branco);
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 1200;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 18px;
+            height: 2px;
+            background: var(--cor-preto);
+            border-radius: 999px;
+            transition: 0.2s ease;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .mobile-backdrop {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.28);
+            z-index: 900;
+        }
+
+        .mobile-backdrop.active {
+            display: block;
+        }
+
         /* RESPONSIVO */
         @media (max-width: 768px) {
-            nav ul { display: none; }
+            header {
+                padding: 1.1rem 5%;
+            }
+
+            .mobile-menu-toggle {
+                display: inline-flex;
+            }
+
+            nav {
+                position: fixed;
+                top: 76px;
+                left: 5%;
+                right: 5%;
+                z-index: 1100;
+                display: none;
+                background: var(--cor-branco);
+                border: 1px solid rgba(0,0,0,0.08);
+                border-radius: 22px;
+                box-shadow: 0 22px 60px rgba(0,0,0,0.14);
+                padding: 0.8rem;
+            }
+
+            nav.active {
+                display: block;
+                pointer-events: auto;
+            }
+
+            nav ul {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                align-items: stretch;
+            }
+
+            nav li {
+                width: 100%;
+            }
+
+            nav a {
+                display: block;
+                width: 100%;
+                padding: 1rem;
+                border-radius: 14px;
+                font-size: 0.82rem;
+            }
+
+            nav a::after {
+                display: none;
+            }
+
+            nav a:hover {
+                background: var(--cor-cinza-claro);
+            }
+
             .article-hero .article-meta { flex-direction: column; gap: 0.5rem; }
             .album-highlight { flex-direction: column; }
             .editorial-cover { height: 300px; }
@@ -302,14 +404,24 @@
 
     <header>
         <div class="logo">CONTAR <span>e</span> CANTAR</div>
-        <nav>
+        <nav id="mainNav" aria-label="Menu principal">
             <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="index.html#revista">Revista</a></li>
-                <li><a href="index.html#universos">Universos</a></li>
+                <li><a href="/">Início</a></li>
+                <li><a href="/#revista">Revista</a></li>
+                <li><a href="/#universos">Universos</a></li>
+                <li><a href="/#youtube">YouTube</a></li>
+                <li><a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener">Instagram</a></li>
             </ul>
         </nav>
+
+        <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu" aria-controls="mainNav" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
+
+    <div class="mobile-backdrop" id="mobileBackdrop"></div>
 
     <article>
         <div class="article-hero">
@@ -558,7 +670,7 @@
 
             <div class="article-navigation">
                 <a href="tropicalia.html" class="nav-prev">← Tropicália</a>
-                <a href="index.html" class="nav-next">Voltar para Início →</a>
+                <a href="/" class="nav-next">Voltar para Início →</a>
             </div>
         </div>
     </article>
@@ -568,6 +680,44 @@
             <p>CONTAR e CANTAR © 2026 • Curadoria histórica por Rosane Maia</p>
         </div>
     </footer>
+
+
+    <script>
+        const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+        const mainNav = document.getElementById("mainNav");
+        const mobileBackdrop = document.getElementById("mobileBackdrop");
+
+        function closeMobileMenu() {
+            if (!mobileMenuToggle || !mainNav) return;
+            mobileMenuToggle.classList.remove("active");
+            mainNav.classList.remove("active");
+            mobileMenuToggle.setAttribute("aria-expanded", "false");
+            if (mobileBackdrop) mobileBackdrop.classList.remove("active");
+        }
+
+        if (mobileMenuToggle && mainNav) {
+            mobileMenuToggle.addEventListener("click", () => {
+                const isOpen = mainNav.classList.toggle("active");
+                mobileMenuToggle.classList.toggle("active", isOpen);
+                mobileMenuToggle.setAttribute("aria-expanded", String(isOpen));
+                if (mobileBackdrop) mobileBackdrop.classList.toggle("active", isOpen);
+            });
+
+            mainNav.querySelectorAll("a").forEach(link => {
+                link.addEventListener("click", () => {
+                    setTimeout(closeMobileMenu, 120);
+                });
+            });
+
+            if (mobileBackdrop) {
+                mobileBackdrop.addEventListener("click", closeMobileMenu);
+            }
+
+            document.addEventListener("keydown", event => {
+                if (event.key === "Escape") closeMobileMenu();
+            });
+        }
+    </script>
 
 </body>
 </html>
