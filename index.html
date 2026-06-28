@@ -2371,17 +2371,16 @@ ${warning}`;
       const size = document.getElementById("studioTextSize").value;
 
       const maxChars = size === "curto" ? 260 : size === "longo" ? 560 : 420;
-      const cta = ``;
 
       let core = "";
 
       if (facts) {
         core = studioBuildFromFacts(artist, facts, maxChars);
       } else {
-        core = artist && artist !== "Artista escolhido" ? `${artist} é lembrado neste registro como parte da memória viva da música brasileira. Para uma homenagem factual, acrescente dados confirmados, fontes e referências antes da publicação.` : `Para uma homenagem factual, acrescente dados confirmados, fontes e referências antes da publicação.`;
+        core = `${artist} é lembrado neste registro como parte da memória viva da música brasileira. Para uma homenagem factual, acrescente dados confirmados, fontes e referências antes da publicação.`;
       }
 
-      studioFinalNarrative = studioStripSiteFromMainText((core + cta).trim());
+      studioFinalNarrative = core.trim();
 
       studioFinalCaption =
 `Homenagem a ${artist}.
@@ -2410,15 +2409,6 @@ ${sources || "Nenhuma fonte informada."}`;
     }
 
 
-
-    function studioStripSiteFromMainText(text) {
-      return String(text || "")
-        .replace(/\n*\s*Conheça mais histórias da música brasileira em\s*rmcontarecantar\.art\.br\s*$/i, "")
-        .replace(/\n*\s*Mais histórias da música brasileira:\s*rmcontarecantar\.art\.br\s*$/i, "")
-        .trim();
-    }
-
-
     function studioCleanRawFacts(raw) {
       return String(raw || "")
         .replace(/\[[^\]]*\]/g, " ")
@@ -2444,8 +2434,6 @@ ${sources || "Nenhuma fonte informada."}`;
       return cut.trim();
     }
 
-
-
     function studioBuildFromFacts(artist, facts, maxChars) {
       const cleanFacts = studioCleanRawFacts(facts);
 
@@ -2468,23 +2456,12 @@ ${sources || "Nenhuma fonte informada."}`;
       let body = selected.join(" ");
 
       if (!body) {
-        body = artist && artist !== "Artista escolhido"
-          ? `${artist} merece uma homenagem construída com cuidado, fonte e memória.`
-          : `Esta homenagem merece ser construída com cuidado, fonte e memória.`;
+        body = `${artist} merece uma homenagem construída com cuidado, fonte e memória.`;
       }
 
       body = studioLimitTextForReel(body, maxChars);
 
-      const artistClean = String(artist || "").trim();
-      if (
-        artistClean &&
-        artistClean !== "Artista escolhido" &&
-        !body.toLowerCase().includes(artistClean.split(" ")[0].toLowerCase())
-      ) {
-        body = `${artistClean}. ${body}`;
-      }
-
-      return body;
+      return `${artist}: uma história da música brasileira contada com respeito aos fatos.\n\n${body}`;
     }
 
     function studioRemoveWeakClaims(s) {
@@ -2667,8 +2644,27 @@ ${document.getElementById("studioAudit").textContent}
         return;
       }
 
+      const exportBtn = document.querySelector('[onclick="studioExportVideoWebM()"]');
       const area = document.getElementById("studioDownloadArea");
-      area.innerHTML = "<div class='studio-notice'>Gerando vídeo WebM no navegador. Aguarde até o vídeo terminar...</div>";
+
+      // Garante que os metadados do vídeo (duração, dimensões) já foram carregados.
+      // Sem isso, studioVideo.duration pode vir como NaN e o loop de exportação
+      // nunca atinge a condição de parada, travando "para sempre".
+      try {
+        await studioWaitForVideoMetadata(studioVideo, 8000);
+      } catch (err) {
+        area.innerHTML = `<div class="studio-notice">Não foi possível ler os metadados do vídeo (duração/dimensões). Tente recarregar o arquivo de vídeo e clique novamente em "Baixar vídeo com texto".</div>`;
+        return;
+      }
+
+      const rawDuration = studioVideo.duration;
+      if (!isFinite(rawDuration) || rawDuration <= 0) {
+        area.innerHTML = `<div class="studio-notice">A duração do vídeo não pôde ser determinada. Tente outro arquivo de vídeo (formato MP4/WebM padrão).</div>`;
+        return;
+      }
+
+      area.innerHTML = "<div class='studio-notice' id='studioExportStatus'>Gerando vídeo WebM no navegador. Aguarde até o vídeo terminar...</div>";
+      if (exportBtn) exportBtn.disabled = true;
 
       const exportCanvas = document.createElement("canvas");
       exportCanvas.width = 1080;
@@ -2676,12 +2672,13 @@ ${document.getElementById("studioAudit").textContent}
       const ctx = exportCanvas.getContext("2d");
 
       if (!exportCanvas.captureStream || typeof MediaRecorder === "undefined") {
-        alert("Seu navegador não suporta exportação de vídeo por canvas.");
+        area.innerHTML = "<div class='studio-notice'>Seu navegador não suporta exportação de vídeo por canvas (captureStream/MediaRecorder ausentes). Tente em Chrome ou Edge atualizados.</div>";
+        if (exportBtn) exportBtn.disabled = false;
         return;
       }
 
       const writeChoice = document.getElementById("studioWriteTime").value;
-      const duration = Math.floor(studioVideo.duration || 60);
+      const duration = Math.floor(rawDuration);
 
       let writeSeconds = writeChoice === "auto"
         ? Math.min(60, Math.max(25, Math.floor(duration * 0.25)))
@@ -2696,7 +2693,9 @@ ${document.getElementById("studioAudit").textContent}
           const audioTracks = studioVideo.captureStream().getAudioTracks();
           audioTracks.forEach(track => stream.addTrack(track));
         }
-      } catch (e) {}
+      } catch (e) {
+        console.warn("Áudio do vídeo não pôde ser incluído na exportação:", e);
+      }
 
       let mime = "video/webm;codecs=vp9";
       if (!MediaRecorder.isTypeSupported(mime)) mime = "video/webm;codecs=vp8";
@@ -2705,24 +2704,76 @@ ${document.getElementById("studioAudit").textContent}
       const chunks = [];
       const recorder = new MediaRecorder(stream, { mimeType: mime });
 
+      // Trava de segurança: nunca deixa a gravação rodar indefinidamente.
+      // Tempo máximo = duração real do vídeo + 5s de margem.
+      const hardStopMs = (duration + 5) * 1000;
+      let finished = false;
+      let safetyTimer = null;
+      let rafId = null;
+
+      function finishExport(reason) {
+        if (finished) return;
+        finished = true;
+
+        if (rafId) cancelAnimationFrame(rafId);
+        if (safetyTimer) clearTimeout(safetyTimer);
+
+        try {
+          if (recorder.state !== "inactive") recorder.stop();
+        } catch (e) {
+          console.warn("Erro ao parar o gravador:", e);
+        }
+
+        try { studioVideo.pause(); } catch (e) {}
+
+        if (exportBtn) exportBtn.disabled = false;
+
+        const statusEl = document.getElementById("studioExportStatus");
+        if (statusEl && reason === "timeout") {
+          statusEl.textContent = "Tempo máximo atingido. Finalizando o vídeo gerado até aqui...";
+        }
+      }
+
       recorder.ondataavailable = event => {
         if (event.data && event.data.size) chunks.push(event.data);
       };
 
+      recorder.onerror = event => {
+        console.error("Erro no MediaRecorder:", event.error);
+        area.innerHTML = `<div class="studio-notice">Ocorreu um erro durante a gravação do vídeo: ${event.error ? event.error.message : "erro desconhecido"}. Tente novamente.</div>`;
+        finishExport("error");
+      };
+
       recorder.onstop = () => {
+        if (!chunks.length) {
+          area.innerHTML = "<div class='studio-notice'>Nenhum conteúdo foi gravado. Tente novamente — verifique se o vídeo carregou corretamente.</div>";
+          return;
+        }
+
         const blob = new Blob(chunks, { type: "video/webm" });
         const url = URL.createObjectURL(blob);
-        const area = document.getElementById("studioDownloadArea");
         area.innerHTML = `<a href="${url}" download="reel-contar-e-cantar.webm">⬇ Baixar vídeo WebM com texto</a>
         <div class="studio-notice">Arquivo gerado em WebM pelo navegador. Para Instagram, se necessário, converta para MP4 no CapCut, VLC, HandBrake ou FFmpeg.</div>`;
       };
 
       studioVideo.currentTime = 0;
-      await studioVideo.play();
+
+      try {
+        await studioVideo.play();
+      } catch (err) {
+        area.innerHTML = "<div class='studio-notice'>Não foi possível iniciar a reprodução do vídeo para exportação. Verifique se o vídeo carregou e tente novamente.</div>";
+        if (exportBtn) exportBtn.disabled = false;
+        return;
+      }
 
       recorder.start();
 
+      // Trava de segurança absoluta, independente do estado do vídeo/loop.
+      safetyTimer = setTimeout(() => finishExport("timeout"), hardStopMs);
+
       function loop() {
+        if (finished) return;
+
         const elapsed = studioVideo.currentTime || 0;
         const totalChars = studioFinalNarrative.length;
         const progress = Math.min(1, elapsed / writeSeconds);
@@ -2733,15 +2784,54 @@ ${document.getElementById("studioAudit").textContent}
         studioDrawExportFrame(exportCanvas, ctx, text || " ", showCta);
 
         if (studioVideo.ended || elapsed >= duration - 0.1) {
-          try { recorder.stop(); } catch (e) {}
-          studioVideo.pause();
+          finishExport("complete");
           return;
         }
 
-        requestAnimationFrame(loop);
+        rafId = requestAnimationFrame(loop);
       }
 
       loop();
+    }
+
+    // Aguarda os metadados do vídeo (duração, largura, altura) estarem disponíveis.
+    // Resolve imediatamente se já estiverem prontos; senão, espera o evento
+    // 'loadedmetadata' com um tempo limite para não travar a interface.
+    function studioWaitForVideoMetadata(videoEl, timeoutMs) {
+      return new Promise((resolve, reject) => {
+        if (videoEl.readyState >= 1 && isFinite(videoEl.duration) && videoEl.duration > 0) {
+          resolve();
+          return;
+        }
+
+        const onLoaded = () => {
+          cleanup();
+          if (isFinite(videoEl.duration) && videoEl.duration > 0) {
+            resolve();
+          } else {
+            reject(new Error("Duração inválida após loadedmetadata."));
+          }
+        };
+
+        const onError = () => {
+          cleanup();
+          reject(new Error("Erro ao carregar o vídeo."));
+        };
+
+        const timer = setTimeout(() => {
+          cleanup();
+          reject(new Error("Tempo limite esperando metadados do vídeo."));
+        }, timeoutMs);
+
+        function cleanup() {
+          clearTimeout(timer);
+          videoEl.removeEventListener("loadedmetadata", onLoaded);
+          videoEl.removeEventListener("error", onError);
+        }
+
+        videoEl.addEventListener("loadedmetadata", onLoaded);
+        videoEl.addEventListener("error", onError);
+      });
     }
   </script>
 
