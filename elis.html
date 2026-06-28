@@ -1,658 +1,2749 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elis Regina: A Revolução da Interpretação | CONTAR e CANTAR</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LFFVYB42R1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-    <style>
-        :root {
-            --cor-preto: #0A0A0A;
-            --cor-branco: #FFFFFF;
-            --cor-cinza-claro: #F7F7F7;
-            --cor-cinza-medio: #888888;
-            --cor-dourado: #C9A961;
-        }
+    gtag('config', 'G-LFFVYB42R1');
+  </script>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--cor-branco);
-            color: var(--cor-preto);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-        h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
-        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="5HOBT0HjrJKYt2TZONuto-IiiAeDpjm8k0O9fhrBskM" />
+  <title>CONTAR e CANTAR | Histórias da Música Brasileira por Rosane Maia</title>
+  <meta name="description" content="CONTAR e CANTAR reúne histórias da música brasileira, MPB, Bossa Nova, artistas, canções, movimentos culturais, vídeos e fontes de pesquisa com curadoria de Rosane Maia.">
+  <link rel="canonical" href="https://rmcontarecantar.art.br/">
 
-        /* HEADER */
-        header {
-            padding: 1.5rem 5%;
-            position: sticky; top: 0;
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(10px);
-            z-index: 100;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.3rem; font-weight: 700;
-            letter-spacing: -0.5px; text-transform: uppercase;
-        }
-        .logo span { color: var(--cor-dourado); }
-        nav ul { display: flex; list-style: none; gap: 2rem; align-items: center; }
-        nav a {
-            font-size: 0.85rem; font-weight: 500;
-            text-transform: uppercase; letter-spacing: 1px;
-            position: relative; padding-bottom: 4px;
-        }
-        nav a::after {
-            content: ''; position: absolute; bottom: 0; left: 0;
-            width: 0; height: 2px; background: var(--cor-dourado);
-            transition: width 0.3s ease;
-        }
-        nav a:hover::after { width: 100%; }
+  <meta property="og:title" content="CONTAR e CANTAR | Histórias da Música Brasileira">
+  <meta property="og:description" content="Histórias da música brasileira por Rosane Maia. Revista cultural, fontes de pesquisa, vídeos, entrevistas e memória musical.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://rmcontarecantar.art.br/">
+  <meta property="og:locale" content="pt_BR">
 
-        /* ARTICLE HERO */
-        .article-hero {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 6rem 5% 4rem;
-            text-align: center;
-        }
-        .article-category {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.8rem; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 2px;
-            color: var(--cor-dourado); margin-bottom: 1.5rem; display: block;
-        }
-        .article-title {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            line-height: 1.1; margin-bottom: 2rem;
-            letter-spacing: -1px; font-weight: 700;
-        }
-        .article-subtitle {
-            font-size: 1.3rem; color: #333;
-            font-weight: 300; font-style: italic;
-            margin-bottom: 3rem; max-width: 700px;
-            margin-left: auto; margin-right: auto;
-            font-family: 'Playfair Display', serif;
-        }
-        .article-meta {
-            display: flex; justify-content: center; gap: 2rem;
-            font-size: 0.85rem; color: var(--cor-cinza-medio);
-            text-transform: uppercase; letter-spacing: 1px;
-        }
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CONTAR e CANTAR | Histórias da Música Brasileira">
+  <meta name="twitter:description" content="Histórias da música brasileira por Rosane Maia.">
 
-        /* CAPA EDITORIAL EM CSS PURO */
-        .editorial-cover {
-            max-width: 900px;
-            margin: 0 auto 3rem;
-            height: 450px;
-            background: linear-gradient(135deg, #2c003e 0%, #512b58 50%, #000000 100%);
-            border-radius: 8px;
-            display: flex; align-items: center; justify-content: center;
-            position: relative; overflow: hidden;
-        }
-        .cover-text {
-            text-align: center; color: #FFFFFF;
-            font-family: 'Playfair Display', serif;
-        }
-        .cover-year {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1rem; letter-spacing: 4px;
-            display: block; margin-bottom: 1rem; opacity: 0.9;
-        }
-        .cover-text h2 {
-            font-size: 4rem; margin: 0; line-height: 1;
-            letter-spacing: -2px; text-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        }
-        .cover-text p {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.2rem; letter-spacing: 3px;
-            margin-top: 1rem; opacity: 0.9;
-        }
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-        /* ARTICLE CONTENT */
-        .article-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 2rem 5% 6rem;
-        }
-        .article-intro {
-            font-size: 1.25rem; line-height: 1.9;
-            color: var(--cor-preto); margin-bottom: 3rem; font-weight: 400;
-        }
-        .article-container p {
-            font-size: 1.1rem; line-height: 1.8;
-            color: #333; margin-bottom: 2rem;
-        }
-        .article-container h2 {
-            font-size: 2rem; margin: 4rem 0 1.5rem;
-            color: var(--cor-preto); font-weight: 700;
-        }
-        .article-container h3 {
-            font-size: 1.5rem; margin: 3rem 0 1rem;
-            color: var(--cor-preto); font-weight: 600;
-        }
-        .pull-quote {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem; font-style: italic;
-            line-height: 1.4; color: var(--cor-preto);
-            border-left: 4px solid var(--cor-dourado);
-            padding-left: 2rem; margin: 4rem 0;
-        }
-        .article-section {
-            margin: 3rem 0; padding: 2rem;
-            background: var(--cor-cinza-claro); border-radius: 8px;
-        }
-        
-        /* FONTES/REFERÊNCIAS */
-        .references {
-            margin-top: 6rem;
-            padding: 3rem 2rem;
-            background: var(--cor-cinza-claro);
-            border-top: 3px solid var(--cor-dourado);
-            border-radius: 8px;
-        }
-        .references h3 {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            color: var(--cor-preto);
-            font-weight: 700;
-        }
-        .references ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        .references li {
-            font-size: 0.95rem;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-            padding-left: 2rem;
-            position: relative;
-            color: #333;
-        }
-        .references li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: var(--cor-dourado);
-            font-weight: bold;
-        }
-        .references .reference-type {
-            font-weight: 600;
-            color: var(--cor-preto);
-        }
-        
-        .album-highlight {
-            display: flex; gap: 2rem; margin: 3rem 0;
-            padding: 2rem; background: var(--cor-cinza-claro);
-            border-radius: 8px; align-items: center;
-        }
-        .album-cover-css {
-            width: 200px; height: 200px;
-            background: #1a1a1a; border-radius: 4px;
-            display: flex; align-items: center; justify-content: center;
-            color: var(--cor-dourado);
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.2rem; font-weight: 700;
-            text-align: center; line-height: 1.2;
-            border: 2px solid var(--cor-dourado);
-        }
-        .album-info h4 { font-size: 1.3rem; margin-bottom: 1rem; }
-        .album-info p { font-size: 0.95rem; margin-bottom: 1rem; }
-        
-        .timeline {
-            margin: 3rem 0;
-            padding-left: 2rem;
-            border-left: 3px solid var(--cor-dourado);
-        }
-        .timeline-item {
-            margin-bottom: 2rem;
-            position: relative;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -2.6rem;
-            top: 0.5rem;
-            width: 12px;
-            height: 12px;
-            background: var(--cor-dourado);
-            border-radius: 50%;
-        }
-        .timeline-year {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            color: var(--cor-dourado);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-        }
-        .timeline-content {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #333;
-        }
-        
-        .compositions-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        .composition-item {
-            padding: 1.5rem;
-            background: var(--cor-branco);
-            border-left: 3px solid var(--cor-dourado);
-            border-radius: 4px;
-        }
-        .composition-item h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: var(--cor-preto);
-        }
-        .composition-item p {
-            font-size: 0.9rem;
-            color: var(--cor-cinza-medio);
-            margin-bottom: 0;
-            font-style: italic;
-        }
-        
-        .article-navigation {
-            display: flex; justify-content: space-between;
-            margin-top: 4rem; padding-top: 2rem;
-            border-top: 2px solid var(--cor-preto);
-        }
-        .nav-prev, .nav-next {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 0.9rem; font-weight: 600;
-            text-transform: uppercase; letter-spacing: 1px;
-            color: var(--cor-dourado);
-        }
-        .nav-prev:hover, .nav-next:hover { color: var(--cor-preto); }
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "CONTAR e CANTAR",
+    "url": "https://rmcontarecantar.art.br/",
+    "description": "Histórias da música brasileira, MPB, Bossa Nova, artigos, vídeos, entrevistas e fontes de pesquisa com curadoria de Rosane Maia.",
+    "inLanguage": "pt-BR",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CONTAR e CANTAR",
+      "sameAs": [
+        "https://www.instagram.com/contandoecantandorosanemaia/",
+        "https://www.youtube.com/@rosanemaia4419"
+      ]
+    }
+  }
+  </script>
 
-        /* FOOTER */
-        footer { padding: 4rem 5%; background: var(--cor-cinza-claro); text-align: center; }
-        .footer-content { max-width: 1400px; margin: 0 auto; }
-        footer p {
-            font-family: 'Space Grotesk', sans-serif;
-            text-transform: uppercase; letter-spacing: 1px;
-            font-size: 0.8rem; color: var(--cor-cinza-medio);
-        }
+  <style>
+    :root {
+      --preto: #0A0A0A;
+      --branco: #FFFFFF;
+      --papel: #FAF8F3;
+      --cinza-claro: #F7F7F7;
+      --cinza-medio: #777777;
+      --cinza-texto: #333333;
+      --dourado: #C9A961;
+      --linha: rgba(0,0,0,0.08);
+      --sombra: 0 18px 45px rgba(0,0,0,0.08);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--branco);
+      color: var(--preto);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.12;
+    }
+
+    a { text-decoration: none; color: inherit; transition: all .25s ease; }
+    button, input, select { font-family: inherit; }
+
+    header {
+      padding: 1.35rem 5%;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--linha);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+    }
+
+    .logo span { color: var(--dourado); }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 1.45rem;
+      align-items: center;
+    }
+
+    nav a {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .76rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      position: relative;
+      padding-bottom: 4px;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--dourado);
+      transition: width .25s ease;
+    }
+
+    nav a:hover::after { width: 100%; }
+
+    .nav-instagram {
+      border: 1px solid var(--preto);
+      padding: .65rem 1rem;
+      border-radius: 999px;
+    }
+
+    .nav-instagram::after { display: none; }
+
+    .nav-instagram:hover {
+      background: var(--preto);
+      color: var(--branco);
+    }
+
+    .hero {
+      padding: 8.5rem 5% 6.5rem;
+      text-align: center;
+      background:
+        radial-gradient(circle at top center, rgba(201,169,97,.14), transparent 34rem),
+        linear-gradient(180deg, #ffffff 0%, #ffffff 72%, #faf8f3 100%);
+    }
+
+    .hero-inner { max-width: 1120px; margin: 0 auto; }
+
+    .hero-eyebrow {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .78rem;
+      font-weight: 700;
+      color: var(--dourado);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 1.8rem;
+    }
+
+    .hero h1 {
+      max-width: 980px;
+      margin: 0 auto 1.8rem;
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      letter-spacing: -2px;
+    }
+
+    .hero-subtitle {
+      max-width: 790px;
+      margin: 0 auto 3rem;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.25rem, 2.4vw, 1.65rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--cinza-texto);
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem 2rem;
+      border: 1px solid var(--preto);
+      border-radius: 999px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      background: transparent;
+    }
+
+    .btn-primary {
+      background: var(--preto);
+      color: var(--branco);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0,0,0,.08);
+    }
+
+    .section { padding: 6rem 5%; }
+    .container { max-width: 1180px; margin: 0 auto; }
+
+    .manifesto {
+      background: var(--papel);
+      text-align: center;
+    }
+
+    .manifesto-content {
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .manifesto p {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.35rem, 2.3vw, 1.95rem);
+      line-height: 1.6;
+      color: #222;
+      margin-bottom: 1.5rem;
+    }
+
+    .manifesto-signature {
+      margin-top: 2rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--dourado);
+    }
+
+    .research-panel {
+      background: var(--branco);
+      border-bottom: 1px solid var(--linha);
+      padding: 4rem 5%;
+    }
+
+    .research-box {
+      max-width: 1080px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .research-box h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: .8rem;
+    }
+
+    .research-box p {
+      max-width: 780px;
+      margin: 0 auto 1.8rem;
+      color: #444;
+    }
+
+    .research-form {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: .8rem;
+      align-items: stretch;
+      margin-bottom: 1rem;
+    }
+
+    #researchQuery {
+      border: 1px solid var(--linha);
+      background: var(--branco);
+      padding: 1rem 1.1rem;
+      font-size: 1rem;
+      box-shadow: 0 12px 34px rgba(0,0,0,.035);
+      border-radius: 999px;
+    }
+
+    .quick-searches {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin: 0 auto 1.5rem;
+    }
+
+    .quick-searches button {
+      border: 1px solid var(--linha);
+      background: var(--cinza-claro);
+      border-radius: 999px;
+      padding: .55rem .85rem;
+      color: #333;
+      cursor: pointer;
+      font-size: .85rem;
+      transition: .2s ease;
+    }
+
+    .quick-searches button:hover {
+      background: var(--papel);
+      border-color: rgba(201,169,97,.65);
+      transform: translateY(-1px);
+    }
+
+    .research-results {
+      display: none;
+      margin: 1.5rem 0 2rem;
+      text-align: left;
+      border: 1px solid var(--linha);
+      border-radius: 22px;
+      background: var(--branco);
+      box-shadow: 0 18px 50px rgba(0,0,0,.06);
+      overflow: hidden;
+    }
+
+    .research-results.active { display: block; }
+
+    .results-hero {
+      padding: 1.6rem;
+      background:
+        radial-gradient(circle at top left, rgba(201,169,97,.16), transparent 22rem),
+        var(--papel);
+      border-bottom: 1px solid var(--linha);
+    }
+
+    .results-hero .label {
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--dourado);
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      font-weight: 700;
+      font-size: .72rem;
+      margin-bottom: .45rem;
+    }
+
+    .results-hero h3 {
+      font-size: clamp(1.7rem, 4vw, 2.4rem);
+      margin-bottom: .6rem;
+    }
+
+    .results-hero p {
+      color: #333;
+      max-width: 900px;
+      margin: 0;
+    }
+
+    .research-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .research-column {
+      padding: 1.4rem;
+      border-right: 1px solid var(--linha);
+    }
+
+    .research-column:last-child { border-right: 0; }
+
+    .result-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .result-group:last-child { margin-bottom: 0; }
+
+    .result-group h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--dourado);
+      margin-bottom: .75rem;
+    }
+
+    .result-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .result-list li {
+      padding: .75rem 0;
+      border-top: 1px solid rgba(0,0,0,.06);
+    }
+
+    .result-list li:first-child { border-top: 0; }
+
+    .result-list strong {
+      display: block;
+      font-size: 1rem;
+      color: var(--preto);
+      margin-bottom: .2rem;
+    }
+
+    .result-list span {
+      display: block;
+      color: #555;
+      font-size: .9rem;
+    }
+
+    .result-list a:hover strong { color: var(--dourado); }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    .chip {
+      display: inline-flex;
+      border: 1px solid var(--linha);
+      background: var(--cinza-claro);
+      color: #333;
+      border-radius: 999px;
+      padding: .45rem .7rem;
+      font-size: .86rem;
+    }
+
+    .research-actions {
+      padding: 1.3rem 1.4rem;
+      background: #fff;
+      border-top: 1px solid var(--linha);
+    }
+
+    .research-actions h4 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--dourado);
+      margin-bottom: .8rem;
+    }
+
+    .action-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .8rem;
+    }
+
+    .action-card {
+      display: block;
+      border: 1px solid var(--linha);
+      padding: 1rem;
+      background: var(--cinza-claro);
+      min-height: 108px;
+    }
+
+    .action-card:hover {
+      background: var(--papel);
+      border-color: rgba(201,169,97,.65);
+      transform: translateY(-2px);
+    }
+
+    .action-card strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.08rem;
+      margin-bottom: .25rem;
+    }
+
+    .action-card span {
+      display: block;
+      color: #555;
+      font-size: .86rem;
+    }
+
+    .research-disclaimer {
+      padding: 1rem 1.4rem;
+      background: var(--papel);
+      border-top: 1px solid var(--linha);
+      color: #555;
+      font-size: .9rem;
+    }
 
 
-        .mobile-menu-toggle {
-            display: none;
-            width: 44px;
-            height: 44px;
-            border: 1px solid rgba(0,0,0,0.08);
-            border-radius: 999px;
-            background: var(--cor-branco);
-            cursor: pointer;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: 5px;
-            z-index: 1200;
-        }
+    .search-shell {
+      position: relative;
+      width: 100%;
+    }
 
-        .mobile-menu-toggle span {
-            display: block;
-            width: 18px;
-            height: 2px;
-            background: var(--cor-preto);
-            border-radius: 999px;
-            transition: 0.2s ease;
-        }
+    .suggestions-panel {
+      display: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: calc(100% + .45rem);
+      background: var(--branco);
+      border: 1px solid var(--linha);
+      border-radius: 18px;
+      box-shadow: 0 18px 45px rgba(0,0,0,.10);
+      overflow: hidden;
+      z-index: 20;
+      text-align: left;
+    }
 
-        .mobile-menu-toggle.active span:nth-child(1) {
-            transform: translateY(7px) rotate(45deg);
-        }
+    .suggestions-panel.active { display: block; }
 
-        .mobile-menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
+    .suggestion-item {
+      width: 100%;
+      display: block;
+      border: 0;
+      background: var(--branco);
+      text-align: left;
+      padding: .95rem 1.1rem;
+      cursor: pointer;
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
 
-        .mobile-menu-toggle.active span:nth-child(3) {
-            transform: translateY(-7px) rotate(-45deg);
-        }
+    .suggestion-item:last-child { border-bottom: 0; }
 
-        .mobile-backdrop {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.28);
-            z-index: 900;
-        }
+    .suggestion-item:hover,
+    .suggestion-item:focus {
+      background: var(--papel);
+      outline: none;
+    }
 
-        .mobile-backdrop.active {
-            display: block;
-        }
+    .suggestion-item strong {
+      display: block;
+      font-size: .98rem;
+      color: var(--preto);
+      margin-bottom: .15rem;
+    }
 
-        /* RESPONSIVO */
-        @media (max-width: 768px) {
-            header {
-                padding: 1.1rem 5%;
-            }
+    .suggestion-item span {
+      display: block;
+      font-size: .84rem;
+      color: #555;
+    }
 
-            .mobile-menu-toggle {
-                display: inline-flex;
-            }
+    .suggestion-badge {
+      display: inline-flex;
+      margin-top: .35rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .65rem;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      color: var(--dourado);
+      font-weight: 700;
+    }
 
-            nav {
-                position: fixed;
-                top: 76px;
-                left: 5%;
-                right: 5%;
-                z-index: 1100;
-                display: none;
-                background: var(--cor-branco);
-                border: 1px solid rgba(0,0,0,0.08);
-                border-radius: 22px;
-                box-shadow: 0 22px 60px rgba(0,0,0,0.14);
-                padding: 0.8rem;
-            }
+    .research-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      justify-content: center;
+      margin: .4rem 0 1.4rem;
+      color: #555;
+      font-size: .86rem;
+    }
 
-            nav.active {
-                display: block;
-                pointer-events: auto;
-            }
+    .research-stats span {
+      background: var(--cinza-claro);
+      border: 1px solid var(--linha);
+      border-radius: 999px;
+      padding: .45rem .75rem;
+    }
 
-            nav ul {
-                display: flex;
-                flex-direction: column;
-                gap: 0;
-                align-items: stretch;
-            }
 
-            nav li {
-                width: 100%;
-            }
+    .research-dev-box {
+      max-width: 980px;
+      margin: 2rem auto 2rem;
+      padding: clamp(2rem, 4vw, 3rem);
+      border: 1px solid var(--linha);
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at top left, rgba(201,169,97,.16), transparent 24rem),
+        var(--papel);
+      text-align: left;
+      box-shadow: 0 18px 45px rgba(0,0,0,.06);
+    }
 
-            nav a {
-                display: block;
-                width: 100%;
-                padding: 1rem;
-                border-radius: 14px;
-                font-size: 0.82rem;
-            }
+    .research-dev-box h3 {
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      margin-bottom: 1rem;
+    }
 
-            nav a::after {
-                display: none;
-            }
+    .research-dev-box p {
+      max-width: 850px;
+      margin: 0 0 1.6rem;
+      color: #333;
+    }
 
-            nav a:hover {
-                background: var(--cor-cinza-claro);
-            }
+    .dev-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0 2rem;
+    }
 
-            .article-hero .article-meta { flex-direction: column; gap: 0.5rem; }
-            .album-highlight { flex-direction: column; }
-            .editorial-cover { height: 300px; }
-            .cover-text h2 { font-size: 2.5rem; }
-            .compositions-grid { grid-template-columns: 1fr; }
-        }
-    </style>
+    .dev-grid div {
+      background: var(--branco);
+      border: 1px solid var(--linha);
+      padding: 1.1rem;
+    }
+
+    .dev-grid strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: .35rem;
+    }
+
+    .dev-grid span {
+      display: block;
+      color: #555;
+      font-size: .9rem;
+    }
+
+    .dev-actions {
+      display: flex;
+      gap: .8rem;
+      flex-wrap: wrap;
+    }
+
+
+    .research-options {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: .6rem;
+      margin: 1rem 0 1.4rem;
+    }
+
+    .research-option {
+      border: 1px solid var(--linha);
+      background: var(--cinza-claro);
+      color: #333;
+      border-radius: 999px;
+      padding: .65rem 1rem;
+      cursor: pointer;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: .2s ease;
+    }
+
+    .research-option:hover,
+    .research-option.active {
+      background: var(--preto);
+      color: var(--branco);
+      border-color: var(--preto);
+    }
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: .9rem;
+      margin-top: 1.5rem;
+      text-align: left;
+    }
+
+    .source-card {
+      display: block;
+      border: 1px solid var(--linha);
+      background: var(--cinza-claro);
+      padding: 1rem;
+      min-height: 120px;
+    }
+
+    .source-card:hover {
+      background: var(--papel);
+      border-color: rgba(201,169,97,.55);
+      transform: translateY(-2px);
+    }
+
+    .source-card strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: .3rem;
+    }
+
+    .source-card span {
+      display: block;
+      color: #555;
+      font-size: .88rem;
+    }
+
+    .research-note {
+      margin-top: 1.1rem;
+      font-size: .9rem;
+      color: var(--cinza-medio);
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      padding-bottom: 1.2rem;
+      border-bottom: 2px solid var(--preto);
+    }
+
+    .section-header h2 {
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+    }
+
+    .section-header span {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--cinza-medio);
+      font-weight: 700;
+    }
+
+    .ecosystem { background: var(--cinza-claro); }
+
+    .eco-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .eco-card {
+      background: var(--branco);
+      border: 1px solid var(--linha);
+      padding: 2rem;
+      transition: .25s ease;
+    }
+
+    .eco-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 35px rgba(0,0,0,.07);
+    }
+
+    .eco-card h3 {
+      font-size: 1.55rem;
+      margin-bottom: .7rem;
+    }
+
+    .eco-card p {
+      color: #444;
+      margin-bottom: 1.2rem;
+    }
+
+    .gold-link {
+      color: var(--dourado);
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .gold-link:hover { color: var(--preto); }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .article-card {
+      display: block;
+      background: var(--branco);
+      transition: .25s ease;
+      border: 1px solid var(--linha);
+    }
+
+    .article-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--sombra);
+    }
+
+    .card-cover {
+      height: 290px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cover-tropicalia { background: linear-gradient(135deg, #FF3300 0%, #C9A961 52%, #0A0A0A 100%); }
+    .cover-cartola { background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 54%, #b89b62 100%); }
+    .cover-elis { background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 50%, #c4e0e5 100%); }
+    .cover-ditadura { background: linear-gradient(135deg, #1a1a1a 0%, #3a1f1f 52%, #0A0A0A 100%); }
+
+    .article-category {
+      position: absolute;
+      top: 1.2rem;
+      left: 1.2rem;
+      background: var(--branco);
+      padding: .35rem .85rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .card-cover-text {
+      color: var(--branco);
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      text-shadow: 0 2px 12px rgba(0,0,0,.28);
+      padding: 2rem;
+    }
+
+    .card-cover-text h3 {
+      font-size: 2rem;
+      margin-bottom: .3rem;
+    }
+
+    .card-cover-text p {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .75rem;
+      letter-spacing: 2px;
+    }
+
+    .article-content { padding: 1.7rem; }
+
+    .article-meta {
+      font-family: 'Space Grotesk', sans-serif;
+      color: var(--cinza-medio);
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 700;
+      margin-bottom: .85rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.5rem;
+      margin-bottom: .8rem;
+    }
+
+    .article-content p {
+      color: #444;
+      margin-bottom: 1.2rem;
+      font-size: .95rem;
+    }
+
+    .universos-feature {
+      background: var(--papel);
+      border-top: 1px solid var(--linha);
+      border-bottom: 1px solid var(--linha);
+    }
+
+    .universos-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .universos-feature h2 {
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      margin-bottom: 1rem;
+    }
+
+    .universos-feature p {
+      color: #333;
+      font-size: 1.05rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .mini-source-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .mini-source {
+      background: var(--branco);
+      border: 1px solid var(--linha);
+      padding: 1.2rem;
+    }
+
+    .mini-source strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: .35rem;
+    }
+
+    .mini-source span {
+      color: var(--cinza-medio);
+      font-size: .88rem;
+    }
+
+
+    .youtube-section {
+      background: var(--preto);
+      color: var(--branco);
+    }
+
+    .youtube-grid,
+      .instagram-preview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .youtube-section .hero-eyebrow {
+      color: var(--dourado);
+    }
+
+    .youtube-section h2 {
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      margin-bottom: 1rem;
+    }
+
+    .youtube-section p {
+      color: rgba(255,255,255,.74);
+      font-size: 1.08rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .youtube-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .youtube-stat {
+      border: 1px solid rgba(255,255,255,.16);
+      padding: 1.1rem;
+      background: rgba(255,255,255,.04);
+    }
+
+    .youtube-stat strong {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.55rem;
+      color: var(--branco);
+    }
+
+    .youtube-stat span {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,.55);
+    }
+
+    .youtube-card {
+      border: 1px solid rgba(255,255,255,.16);
+      padding: 2rem;
+      background:
+        radial-gradient(circle at top left, rgba(201,169,97,.18), transparent 24rem),
+        rgba(255,255,255,.04);
+    }
+
+    .youtube-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: .8rem;
+    }
+
+
+    .video-embed {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      margin: 1.5rem 0;
+    }
+
+    .video-embed iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .youtube-card ul {
+      list-style: none;
+      margin: 1.5rem 0 0;
+      padding: 0;
+    }
+
+    .youtube-card li {
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding: .9rem 0;
+      color: rgba(255,255,255,.72);
+    }
+
+    .youtube-card li:first-child {
+      border-top: 0;
+    }
+
+    .btn-light {
+      background: var(--branco);
+      color: var(--preto);
+      border-color: var(--branco);
+    }
+
+    .instagram-section { background: var(--branco); }
+
+    .instagram-card {
+      border: 1px solid var(--linha);
+      padding: clamp(2rem, 5vw, 4rem);
+      text-align: center;
+      background:
+        radial-gradient(circle at top left, rgba(201,169,97,.14), transparent 26rem),
+        var(--branco);
+    }
+
+    .instagram-card h2 {
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      margin-bottom: 1rem;
+    }
+
+
+    .instagram-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin: 2rem 0;
+      text-align: left;
+    }
+
+    .instagram-preview-card {
+      min-height: 160px;
+      padding: 1.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      border: 1px solid var(--linha);
+      background:
+        radial-gradient(circle at top left, rgba(201,169,97,.28), transparent 12rem),
+        linear-gradient(135deg, #0A0A0A 0%, #3a3024 55%, #C9A961 100%);
+      color: var(--branco);
+      overflow: hidden;
+    }
+
+    .instagram-preview-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--sombra);
+    }
+
+    .instagram-preview-card span {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .7rem;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: rgba(255,255,255,.72);
+      margin-bottom: .5rem;
+    }
+
+    .instagram-preview-card strong {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      line-height: 1.2;
+    }
+
+    .instagram-card p {
+      max-width: 760px;
+      margin: 0 auto 2rem;
+      color: #333;
+      font-size: 1.08rem;
+    }
+
+    .newsletter {
+      background: var(--preto);
+      color: var(--branco);
+      text-align: center;
+    }
+
+    .newsletter-content {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .newsletter h2 {
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      margin-bottom: 1rem;
+    }
+
+    .newsletter p {
+      color: rgba(255,255,255,.72);
+      font-size: 1.1rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .newsletter-form {
+      max-width: 540px;
+      margin: 0 auto;
+      display: flex;
+      border-bottom: 2px solid rgba(255,255,255,.22);
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 1.1rem 0;
+      border: none;
+      background: transparent;
+      color: var(--branco);
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .newsletter-form input::placeholder { color: rgba(255,255,255,.45); }
+    .newsletter-form input:focus { outline: none; }
+
+    .newsletter-form button {
+      padding: 1.1rem 0 1.1rem 1.5rem;
+      border: none;
+      background: transparent;
+      color: var(--branco);
+      cursor: pointer;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .newsletter-form button:hover { color: var(--dourado); }
+
+    footer {
+      padding: 3rem 5%;
+      background: var(--cinza-claro);
+      text-align: center;
+    }
+
+    footer p {
+      font-family: 'Space Grotesk', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--cinza-medio);
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+
+    .mobile-menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--linha);
+      border-radius: 999px;
+      background: var(--branco);
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+      z-index: 80;
+    }
+
+    .mobile-menu-toggle span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: var(--preto);
+      border-radius: 999px;
+      transition: .2s ease;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .mobile-menu-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .mobile-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.28);
+      z-index: 900;
+    }
+
+    .mobile-backdrop.active {
+      display: block;
+    }
+
+    @media (max-width: 980px) {
+      .eco-grid,
+      .articles-grid,
+      .universos-grid,
+      .source-grid,
+      .youtube-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .youtube-stats {
+        grid-template-columns: 1fr;
+      }
+
+      .research-form,
+      .research-columns,
+      .action-grid,
+      .dev-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .research-column {
+        border-right: 0;
+        border-bottom: 1px solid var(--linha);
+      }
+
+      .research-column:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    @media (max-width: 760px) {
+      header {
+        padding: 1.1rem 5%;
+      }
+
+      .mobile-menu-toggle {
+        display: inline-flex;
+      }
+
+      nav {
+        position: fixed;
+        top: 76px;
+        left: 5%;
+        right: 5%;
+        z-index: 1100;
+        display: none;
+        background: var(--branco);
+        border: 1px solid var(--linha);
+        border-radius: 22px;
+        box-shadow: 0 22px 60px rgba(0,0,0,.14);
+        padding: .8rem;
+      }
+
+      nav.active {
+        display: block;
+        pointer-events: auto;
+      }
+
+      nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        align-items: stretch;
+      }
+
+      nav li {
+        width: 100%;
+      }
+
+      nav a {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        border-radius: 14px;
+        font-size: .82rem;
+      }
+
+      nav a::after {
+        display: none;
+      }
+
+      nav a:hover {
+        background: var(--papel);
+      }
+
+      .nav-instagram {
+        border-radius: 14px;
+        text-align: center;
+        margin-top: .3rem;
+      }
+      .hero { padding: 6rem 5% 5rem; }
+      .section { padding: 4.5rem 5%; }
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .mini-source-grid { grid-template-columns: 1fr; }
+      .newsletter-form {
+        flex-direction: column;
+        border-bottom: none;
+      }
+      .newsletter-form input {
+        border-bottom: 1px solid rgba(255,255,255,.22);
+      }
+      .newsletter-form button {
+        padding-left: 0;
+        text-align: left;
+      }
+    }
+  
+    /* === RM CONTENT STUDIO - INTEGRADO === */
+    .admin-secret {
+      color: inherit;
+      text-decoration: none;
+      cursor: default;
+    }
+
+    .admin-secret:hover,
+    .admin-secret:visited,
+    .admin-secret:active {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .studio-login-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      background: rgba(0,0,0,.72);
+      align-items: center;
+      justify-content: center;
+      padding: 1.2rem;
+    }
+
+    .studio-login-modal.active {
+      display: flex;
+    }
+
+    .studio-login-card {
+      width: min(440px, 100%);
+      background: var(--branco);
+      border: 1px solid var(--linha);
+      box-shadow: 0 30px 90px rgba(0,0,0,.25);
+      padding: 2rem;
+      border-radius: 24px;
+      text-align: center;
+    }
+
+    .studio-login-card h2 {
+      font-size: 2rem;
+      margin-bottom: .6rem;
+    }
+
+    .studio-login-card p {
+      color: #555;
+      margin-bottom: 1.2rem;
+    }
+
+    .studio-login-card input {
+      width: 100%;
+      border: 1px solid var(--linha);
+      border-radius: 999px;
+      padding: 1rem 1.1rem;
+      margin-bottom: .8rem;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .studio-login-actions {
+      display: flex;
+      gap: .7rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .studio-error {
+      display: none;
+      color: #9f1239;
+      background: #fff1f2;
+      border: 1px solid #fecdd3;
+      padding: .7rem;
+      border-radius: 14px;
+      margin: .8rem 0;
+      font-size: .9rem;
+    }
+
+    body.studio-mode header,
+    body.studio-mode main,
+    body.studio-mode footer,
+    body.studio-mode .mobile-backdrop {
+      display: none !important;
+    }
+
+    .rm-studio {
+      display: none;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at top left, rgba(34,211,238,.20), transparent 34rem),
+        radial-gradient(circle at top right, rgba(168,85,247,.18), transparent 34rem),
+        linear-gradient(135deg, #020617, #0f172a 48%, #111827);
+      color: #f8fafc;
+      padding: 1.2rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body.studio-mode .rm-studio {
+      display: block;
+    }
+
+    .studio-container {
+      width: min(1320px, 100%);
+      margin: 0 auto;
+    }
+
+    .studio-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .studio-brand {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+    }
+
+    .studio-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #22d3ee, #a855f7);
+      color: #fff;
+    }
+
+    .studio-actions {
+      display: flex;
+      gap: .6rem;
+      flex-wrap: wrap;
+    }
+
+    .studio-btn {
+      border: 1px solid rgba(255,255,255,.16);
+      color: #fff;
+      background: rgba(255,255,255,.10);
+      border-radius: 999px;
+      padding: .75rem 1rem;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .studio-btn-primary {
+      border: 0;
+      background: linear-gradient(135deg, #22d3ee, #a855f7);
+    }
+
+    .studio-btn-gold {
+      border: 0;
+      background: linear-gradient(135deg, #fbbf24, #f97316);
+      color: #111827;
+    }
+
+    .studio-btn-green {
+      border: 0;
+      background: linear-gradient(135deg, #22c55e, #14b8a6);
+      color: #051315;
+    }
+
+    .studio-hero {
+      text-align: center;
+      padding: 2.2rem 0 2rem;
+    }
+
+    .studio-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.3rem, 6vw, 4.6rem);
+      margin-bottom: .7rem;
+    }
+
+    .studio-hero p {
+      color: #cbd5e1;
+      max-width: 840px;
+      margin: 0 auto;
+      font-size: 1.03rem;
+      line-height: 1.7;
+    }
+
+    .studio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .studio-card {
+      background: rgba(255,255,255,.075);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 24px;
+      padding: 1.1rem;
+      box-shadow: 0 24px 70px rgba(0,0,0,.35);
+    }
+
+    .studio-card h2 {
+      font-size: 1.65rem;
+      margin-bottom: .8rem;
+      color: #fff;
+    }
+
+    .studio-field {
+      margin-bottom: .8rem;
+    }
+
+    .studio-field label {
+      display: block;
+      color: #e2e8f0;
+      font-weight: 700;
+      margin-bottom: .45rem;
+      font-size: .92rem;
+    }
+
+    .studio-field input,
+    .studio-field textarea,
+    .studio-field select {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(2,6,23,.65);
+      color: #fff;
+      border-radius: 16px;
+      padding: .9rem;
+      outline: none;
+    }
+
+    .studio-field textarea {
+      min-height: 120px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    .studio-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .8rem;
+    }
+
+    .studio-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .8rem;
+    }
+
+    .studio-notice {
+      margin-top: .8rem;
+      color: #fde68a;
+      background: rgba(245,158,11,.10);
+      border: 1px solid rgba(245,158,11,.25);
+      border-radius: 16px;
+      padding: .8rem;
+      line-height: 1.55;
+      font-size: .9rem;
+    }
+
+    .studio-ok {
+      color: #bbf7d0;
+      background: rgba(34,197,94,.10);
+      border-color: rgba(34,197,94,.25);
+    }
+
+    .studio-stage {
+      position: relative;
+      width: min(100%, 410px);
+      aspect-ratio: 9 / 16;
+      background: #000;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.14);
+      margin: 0 auto;
+    }
+
+    .studio-stage video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background: #000;
+      display: block;
+    }
+
+    .studio-overlay-panel {
+      position: absolute;
+      left: 6%;
+      right: 6%;
+      bottom: 76px;
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .studio-text-box {
+      color: #fff;
+      font-size: clamp(.78rem, 1.25vw, 1.05rem);
+      line-height: 1.22;
+      font-weight: 800;
+      text-shadow: 2px 2px 8px #000;
+      background: rgba(0,0,0,.46);
+      padding: 12px;
+      border-radius: 16px;
+      max-height: 62vh;
+      overflow: hidden;
+      white-space: pre-wrap;
+    }
+
+    .studio-cta-box {
+      display: none;
+      color: #06111f;
+      background: linear-gradient(135deg,#fbbf24,#f97316);
+      padding: 8px 10px;
+      border-radius: 13px;
+      font-weight: 900;
+      text-align: center;
+      font-size: .78rem;
+      box-shadow: 0 12px 25px rgba(0,0,0,.35);
+    }
+
+    .studio-result {
+      white-space: pre-wrap;
+      line-height: 1.7;
+      background: rgba(2,6,23,.65);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 18px;
+      padding: .9rem;
+      min-height: 120px;
+      color: #e5e7eb;
+      margin-top: .8rem;
+    }
+
+    .studio-download-area a {
+      display: block;
+      text-align: center;
+      background: linear-gradient(135deg, #22c55e, #14b8a6);
+      color: #051315;
+      padding: .85rem 1rem;
+      border-radius: 14px;
+      font-weight: 900;
+      text-decoration: none;
+      margin-top: .8rem;
+    }
+
+    @media (max-width: 980px) {
+      .studio-grid,
+      .studio-row,
+      .studio-row-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .studio-stage {
+        width: min(100%, 380px);
+      }
+    }
+
+  </style>
 </head>
+
 <body>
+  <header>
+    <span class="logo">CONTAR <span>e</span> CANTAR</span>
+    <nav id="mainNav" aria-label="Menu principal">
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#pesquisa">Centro de Pesquisa</a></li>
+        <li><a href="#revista">Revista</a></li>
+        <li><a href="#universos">Universos</a></li>
+        <li><a href="#youtube">YouTube</a></li>
+        <li><a href="#newsletter">Newsletter</a></li>
+        <li><a class="nav-instagram" href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+    </nav>
 
-    <header>
-        <div class="logo">CONTAR <span>e</span> CANTAR</div>
-        <nav id="mainNav" aria-label="Menu principal">
-            <ul>
-                <li><a href="/">Início</a></li>
-                <li><a href="/#revista">Revista</a></li>
-                <li><a href="/#universos">Universos</a></li>
-                <li><a href="/#youtube">YouTube</a></li>
-                <li><a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener">Instagram</a></li>
-            </ul>
-        </nav>
+    <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu" aria-controls="mainNav" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
 
-        <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu" aria-controls="mainNav" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </header>
+  <div class="mobile-backdrop" id="mobileBackdrop"></div>
 
-    <div class="mobile-backdrop" id="mobileBackdrop"></div>
+  <main>
+    <section id="inicio" class="hero">
+      <div class="hero-inner">
+        <div class="hero-eyebrow">Por Rosane Maia</div>
+        <h1>CONTAR e CANTAR</h1>
+        <p class="hero-subtitle">Histórias da Música Brasileira. Artistas, canções, discos, movimentos, entrevistas e fontes para atravessar a memória musical do Brasil com cuidado e encanto.</p>
 
-    <article>
-        <div class="article-hero">
-            <span class="article-category">Análise • 1945-1982</span>
-            <h1 class="article-title">Elis Regina: A Revolução da Interpretação</h1>
-            <p class="article-subtitle">De Porto Alegre para o mundo. A trajetória da cantora que elevou a MPB ao patamar da excelência técnica e redefiniu o ofício de interpretar no Brasil.</p>
-            <div class="article-meta">
-                <span>Por Rosane Maia</span>
-                <span>•</span>
-                <span>Junho 2026</span>
-                <span>•</span>
-                <span>20 min de leitura</span>
-            </div>
+        <div class="hero-buttons">
+          <a href="#revista" class="btn btn-primary">Explorar Acervo</a>
+          <a href="universos.html" class="btn">Universos da MPB</a>
+          <a href="https://www.youtube.com/@rosanemaia4419" target="_blank" rel="noopener" class="btn">YouTube</a>
+          <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="btn">Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="manifesto section">
+      <div class="manifesto-content">
+        <p>CONTAR e CANTAR é um projeto dedicado às histórias da música brasileira: artistas, canções, encontros, movimentos e memórias que atravessam gerações.</p>
+        <p>Mais do que reunir artistas, álbuns e movimentos culturais, este espaço busca reconstruir atmosferas: travessias pela história emocional da música brasileira.</p>
+        <div class="manifesto-signature">— Histórias da Música Brasileira • por Rosane Maia</div>
+      </div>
+    </section>
+
+    <section id="pesquisa" class="research-panel">
+      <div class="research-box">
+        <h2>Centro de Pesquisa da Música Brasileira</h2>
+        <p>Pesquise artistas, movimentos, discos, canções e temas usando o Google com foco no CONTAR e CANTAR e em fontes culturais confiáveis.</p>
+
+        <form class="research-form" id="researchForm" autocomplete="off">
+          <input id="researchQuery" type="search" placeholder="Ex: Chico César, Nara Leão, Cartola, Bossa Nova, Tropicália..." required>
+          <button type="submit" class="btn btn-primary">Pesquisar</button>
+        </form>
+
+        <div class="research-options" aria-label="Tipos de pesquisa">
+          <button type="button" class="research-option active" data-mode="site">No CONTAR e CANTAR</button>
+          <button type="button" class="research-option" data-mode="fontes">Em fontes culturais</button>
+          <button type="button" class="research-option" data-mode="academico">No Google Acadêmico</button>
+          <button type="button" class="research-option" data-mode="youtube">No YouTube</button>
         </div>
 
-        <div class="editorial-cover">
-            <div class="cover-text">
-                <span class="cover-year">1945-1982</span>
-                <h2>ELIS REGINA</h2>
-                <p>A FORÇA DA INTERPRETAÇÃO</p>
-            </div>
+        <div class="research-note">Dica: use nomes completos e palavras de contexto. Exemplo: “Chico César Mama África”, “Nara Leão Show Opinião” ou “Cartola Mangueira”.</div>
+
+        <div class="source-grid">
+          <a class="source-card" href="universos.html">
+            <strong>Universos da MPB</strong>
+            <span>Curadoria interna de acervos, livros, documentários e referências.</span>
+          </a>
+          <a class="source-card" href="https://dicionariompb.com.br" target="_blank" rel="noopener">
+            <strong>Cravo Albin</strong>
+            <span>Dicionário especializado em música popular brasileira.</span>
+          </a>
+          <a class="source-card" href="https://enciclopedia.itaucultural.org.br" target="_blank" rel="noopener">
+            <strong>Itaú Cultural</strong>
+            <span>Verbetes sobre artistas, movimentos e cultura brasileira.</span>
+          </a>
+          <a class="source-card" href="https://hemerotecadigital.bn.gov.br" target="_blank" rel="noopener">
+            <strong>Hemeroteca</strong>
+            <span>Jornais, revistas e registros históricos digitalizados.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ecosystem">
+      <div class="container">
+        <div class="section-header">
+          <h2>O projeto em quatro espaços</h2>
+          <span>Site • Universos • YouTube • Instagram</span>
         </div>
 
-        <div class="article-container">
-            <p class="article-intro">
-                Elis Regina Carvalho Costa não foi apenas uma cantora; foi uma arquiteta sonora. Em uma época em que o canto no Brasil muitas vezes se limitava à afinação e à presença de palco, Elis introduziu o conceito de direção musical aplicada à própria voz. Sua capacidade de frisar sílabas, brincar com o tempo rítmico (o "balanço") e extrair nuances dramáticas de cada acorde transformou a maneira como a música popular brasileira foi executada e consumida.
-            </p>
+        <div class="eco-grid">
+          <article class="eco-card">
+            <h3>🏛️ Site</h3>
+            <p>O espaço permanente do projeto: artigos, especiais, biografias e referências que ficam acessíveis fora das redes sociais.</p>
+            <a href="#revista" class="gold-link">Ver artigos →</a>
+          </article>
 
-            <h2>Origens e a Profissionalização Precoce</h2>
-            
-            <p>
-                Nascida em 17 de março de 1945, em Porto Alegre, Elis demonstrou uma maturidade vocal incomum para a idade. Aos 12 anos, já cantava profissionalmente na Rádio Farroupilha. Diferente de muitos artistas que amadureceram tardiamente, Elis construiu sua técnica desde a adolescência, desenvolvendo uma dicção impecável e uma extensão vocal que lhe permitia transitar entre o lirismo e a explosão dramática sem perder o controle técnico.
-            </p>
+          <article class="eco-card">
+            <h3>📱 Instagram</h3>
+            <p>O canal vivo do Contando e Cantando, com publicações, vídeos, histórias, entrevistas e contato direto com o público.</p>
+            <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="gold-link">Acompanhar →</a>
+          </article>
 
-            <div class="pull-quote">
-                "Elis não cantava a música; ela atuava a música. Cada frase era uma cena, cada respiro uma intenção."
-            </div>
+          <article class="eco-card">
+            <h3>🎬 YouTube</h3>
+            <p>O acervo audiovisual do projeto: entrevistas, registros, documentários e encontros com personagens da música brasileira.</p>
+            <a href="https://www.youtube.com/@rosanemaia4419" target="_blank" rel="noopener" class="gold-link">Explorar canal →</a>
+          </article>
 
-            <h2>A Conquista do Rio e os Festivais</h2>
-
-            <p>
-                A mudança para o Rio de Janeiro em 1965 marcou o início de sua hegemonia na MPB. No II Festival de Música Popular Brasileira da TV Record, Elis interpretou "Arrastão", de Edu Lobo e Gianfrancesco Guarnieri. A performance foi um divisor de águas: a cantora não apenas venceu o festival, mas estabeleceu um novo padrão de interpretação, onde a entrega emocional era sustentada por um rigor técnico absoluto.
-            </p>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-year">1945</div>
-                    <div class="timeline-content">Nascimento em Porto Alegre, RS.</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">1961</div>
-                    <div class="timeline-content">Estreia profissional na Rádio Farroupilha.</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">1965</div>
-                    <div class="timeline-content">Vitória no Festival da Record com "Arrastão". Mudança para o Rio de Janeiro.</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">1974</div>
-                    <div class="timeline-content">Gravação de "Elis & Tom" com Antônio Carlos Jobim.</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">1979</div>
-                    <div class="timeline-content">Gravação de "O Bêbado e a Equilibrista", hino da redemocratização.</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-year">1982</div>
-                    <div class="timeline-content">Falecimento em São Paulo, aos 36 anos.</div>
-                </div>
-            </div>
-
-            <h2>O Encontro com Jobim e a Sofisticação Harmônica</h2>
-
-            <p>
-                O ano de 1974 produziu o que a crítica especializada considera um dos álbuns mais importantes da história da música brasileira: <em>Elis & Tom</>. Ao lado de Antônio Carlos Jobim, César Camargo Mariano, Hélio Delmiro e Humberto Clayber, Elis registrou uma obra-prima da bossa nova e do jazz.
-            </p>
-
-            <div class="album-highlight">
-                <div class="album-cover-css">
-                    <span>ELIS &<br>TOM<br>1974</span>
-                </div>
-                <div class="album-info">
-                    <h4>Elis & Tom (1974)</h4>
-                    <p><strong>Gravadora:</strong> Philips/PolyGram<br>
-                    <strong>Gênero:</strong> MPB / Bossa Nova / Jazz<br>
-                    <strong>Produção:</strong> César Camargo Mariano e João Gilberto (participação especial)</p>
-                </div>
-            </div>
-
-            <p>
-                A faixa "Águas de Março" é um estudo técnico de como uma cantora pode conduzir uma banda. Elis alterna entre o canto falado e o melódico, respeita os silêncios de Jobim e utiliza a respiração como instrumento rítmico. Não é apenas um dueto; é uma aula de escuta ativa e interação musical.
-            </p>
-
-            <h2>A Fase César Camargo Mariano e o Rigor Cênico</h2>
-
-            <p>
-                A parceria com o pianista e arranjador César Camargo Mariano, iniciada no final dos anos 70, representou o ápice da sofisticação musical de Elis. Álbuns como <em>Falso Brilhante</em> (1976) e <em>Transversal do Tempo</em> (1978) apresentaram arranjos complexos, influências de jazz e uma exigência técnica que elevou o nível de toda a sua banda.
-            </p>
-
-            <p>
-                Elis era conhecida por sua liderança rigorosa nos ensaios. Ela não aceitava a mediocridade e exigia de seus músicos o mesmo comprometimento que ela dedicava à própria voz. Essa postura profissionalizou as relações de trabalho na MPB, transformando o "acompanhamento" em "direção musical coletiva".
-            </p>
-
-            <h2>Principais Interpretações e Legado Técnico</h2>
-
-            <p>
-                O repertório de Elis é vasto, mas certas gravações se destacam pela inovação técnica e impacto cultural:
-            </p>
-
-            <div class="compositions-grid">
-                <div class="composition-item">
-                    <h4>Águas de Março (1974)</h4>
-                    <p>Duetos com Jobim. Referência em frasing e interação rítmica.</p>
-                </div>
-                <div class="composition-item">
-                    <h4>Como Nossos Pais (1976)</h4>
-                    <p>Interpretação visceral de Belchior. Domínio da dinâmica vocal.</p>
-                </div>
-                <div class="composition-item">
-                    <h4>O Bêbado e a Equilibrista (1979)</h4>
-                    <p>Hino da Anistia. Construção dramática e controle de afinação em notas longas.</p>
-                </div>
-                <div class="composition-item">
-                    <h4>Maria, Maria (1976)</h4>
-                    <p>Parceria com Milton Nascimento. Exploração de timbres e fusão com o Clube da Esquina.</p>
-                </div>
-                <div class="composition-item">
-                    <h4>Arrastão (1965)</h4>
-                    <p>Marco inicial. Potência vocal e clareza diccional em andamento acelerado.</p>
-                </div>
-                <div class="composition-item">
-                    <h4>Me Deixas Louca (1974)</h4>
-                    <p>Versão em português de "You Don't Know What Love Is". Sofisticação jazzística.</p>
-                </div>
-            </div>
-
-            <h2>O Legado: A Cantora como Diretora</h2>
-
-            <p>
-                O maior legado técnico de Elis Regina foi a concepção do cantor como um diretor musical de sua própria obra. Ela não esperava que o arranjo fosse entregue pronto; ela participava ativamente da construção harmônica, sugerindo alterações de acorde e modulando a intensidade da banda conforme a narrativa da letra exigia.
-            </p>
-
-            <div class="pull-quote">
-                "A música popular brasileira ganhou, com Elis, a dimensão da alta performance técnica sem perder a visceralidade."
-            </div>
-
-            <p>
-                Sua influência é detectável em gerações posteriores, de Gal Costa a Marisa Monte, de Maria Bethânia a Adriana Calcanhotto. Todas, em maior ou menor grau, incorporaram a lição Elis: a de que a interpretação é tão importante quanto a composição, e que a voz é um instrumento de precisão cirúrgica.
-            </p>
-
-            <!-- SEÇÃO DE FONTES E REFERÊNCIAS -->
-            <div class="references">
-                <h3>Fontes e Referências Bibliográficas</h3>
-                <ul>
-                    <li>
-                        <span class="reference-type">Livro:</span> ECHEVERRIA, Regina. <em>Elis Regina: Biografia</em>. São Paulo: Globo, 2002. 384p.
-                    </li>
-                    <li>
-                        <span class="reference-type">Livro:</span> NAPOLITANO, Marcos. <em>História & Música: História cultural da música popular</em>. Belo Horizonte: Autêntica, 2002. 256p.
-                    </li>
-                    <li>
-                        <span class="reference-type">Livro:</span> WISNIK, José Miguel. <em>O Som e o Sentido: Uma outra história das músicas</em>. São Paulo: Cia das Letras, 1989. 288p.
-                    </li>
-                    <li>
-                        <span class="reference-type">Documentário:</span> SIMON, Carlos. <em>Elis Regina: Uma Mulher de Talento</em>. Porto Alegre: RBS TV, 1982. 60 min.
-                    </li>
-                    <li>
-                        <span class="reference-type">Documentário:</span> <em>Elis Regina: 30 Anos</em>. Rio de Janeiro: TV Globo, 2012. 90 min.
-                    </li>
-                    <li>
-                        <span class="reference-type">Artigo:</span> PARANHOS, Adalberto. "Elis Regina e a Construção da MPB". <em>Revista Brasileira de Ciências Sociais</em>, São Paulo, v. 20, n. 58, p. 112-128, 2005.
-                    </li>
-                    <li>
-                        <span class="reference-type">Acervo Digital:</span> Instituto Moreira Salles. "Elis Regina: Discografia e Acervo Sonoro". Disponível em: <ims.com.br>. Acesso em: jun. 2026.
-                    </li>
-                    <li>
-                        <span class="reference-type">Entrevista:</span> MARIANO, César Camargo. "A Direção Musical de Elis". Entrevistador: Ricardo Cravo Albin. Rio de Janeiro, 1998. Acervo do Museu da Imagem e do Som.
-                    </li>
-                </ul>
-            </div>
-
-            <div class="article-navigation">
-                <a href="cartola.html" class="nav-prev">← Cartola</a>
-                <a href="/" class="nav-next">Voltar para Início →</a>
-            </div>
+          <article class="eco-card">
+            <h3>✉️ Newsletter</h3>
+            <p>Uma ponte direta com os leitores, sem depender de algoritmo, bloqueios repentinos ou instabilidades das plataformas.</p>
+            <a href="#newsletter" class="gold-link">Assinar →</a>
+          </article>
         </div>
-    </article>
+      </div>
+    </section>
 
-    <footer>
-        <div class="footer-content">
-            <p>CONTAR e CANTAR © 2026 • Curadoria histórica por Rosane Maia</p>
+    <section id="revista" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Revista Cultural</h2>
+          <span>Artigos & Especiais</span>
         </div>
-    </footer>
+
+        <div class="articles-grid">
+          <a href="tropicalia.html" class="article-card">
+            <div class="card-cover cover-tropicalia">
+              <span class="article-category">Movimento</span>
+              <div class="card-cover-text">
+                <h3>TROPICÁLIA</h3>
+                <p>1967-1968</p>
+              </div>
+            </div>
+            <div class="article-content">
+              <div class="article-meta">15 min de leitura</div>
+              <h3>A Revolução da Tropicália</h3>
+              <p>Como Caetano, Gil e uma geração mudaram a música brasileira para sempre.</p>
+              <span class="gold-link">Ler artigo →</span>
+            </div>
+          </a>
+
+          <a href="cartola.html" class="article-card">
+            <div class="card-cover cover-cartola">
+              <span class="article-category">Biografia</span>
+              <div class="card-cover-text">
+                <h3>CARTOLA</h3>
+                <p>O GÊNIO DO SAMBA</p>
+              </div>
+            </div>
+            <div class="article-content">
+              <div class="article-meta">18 min de leitura</div>
+              <h3>Cartola: O Gênio do Samba</h3>
+              <p>De lavador de carros a ícone nacional. A história do fundador da Mangueira.</p>
+              <span class="gold-link">Ler artigo →</span>
+            </div>
+          </a>
+
+          <a href="elis.html" class="article-card">
+            <div class="card-cover cover-elis">
+              <span class="article-category">Análise</span>
+              <div class="card-cover-text">
+                <h3>ELIS REGINA</h3>
+                <p>A VOZ QUE ARDIA</p>
+              </div>
+            </div>
+            <div class="article-content">
+              <div class="article-meta">20 min de leitura</div>
+              <h3>Elis Regina: A Revolução da Interpretação</h3>
+              <p>A trajetória da gaúcha que dominou o Brasil com intensidade rara.</p>
+              <span class="gold-link">Ler artigo →</span>
+            </div>
+          </a>
+
+          <a href="ditadura-musica.html" class="article-card">
+            <div class="card-cover cover-ditadura">
+              <span class="article-category">História</span>
+              <div class="card-cover-text">
+                <h3>DITADURA E MÚSICA</h3>
+                <p>1964-1985</p>
+              </div>
+            </div>
+            <div class="article-content">
+              <div class="article-meta">22 min de leitura</div>
+              <h3>Cale-se ou Cante: A Música Brasileira Sob a Ditadura</h3>
+              <p>Como a censura tentou calar a MPB e como compositores brasileiros responderam com metáforas, coragem e canções.</p>
+              <span class="gold-link">Ler artigo →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="universos" class="section universos-feature">
+      <div class="container universos-grid">
+        <div>
+          <div class="hero-eyebrow">Curadoria de fontes</div>
+          <h2>Universos da MPB</h2>
+          <p>A página de fontes reúne acervos, livros, documentários, podcasts, referências acadêmicas e instituições nacionais e internacionais para estudar a música brasileira com mais profundidade.</p>
+          <p>É o centro de pesquisa do projeto: uma porta para quem deseja ir além do artigo e encontrar caminhos confiáveis de investigação.</p>
+          <a href="universos.html" class="btn btn-primary">Explorar Universos</a>
+        </div>
+
+        <div class="mini-source-grid">
+          <a href="universos.html" class="mini-source">
+            <strong>Acervos</strong>
+            <span>IMS, MIS, Biblioteca Nacional e outras instituições.</span>
+          </a>
+          <a href="universos.html" class="mini-source">
+            <strong>Livros</strong>
+            <span>Biografias, estudos culturais e história da música.</span>
+          </a>
+          <a href="universos.html" class="mini-source">
+            <strong>Documentários</strong>
+            <span>Filmes, séries, entrevistas e registros audiovisuais.</span>
+          </a>
+          <a href="universos.html" class="mini-source">
+            <strong>Pesquisa</strong>
+            <span>SciELO, Google Scholar e referências acadêmicas.</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
 
-    <script>
-        const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
-        const mainNav = document.getElementById("mainNav");
-        const mobileBackdrop = document.getElementById("mobileBackdrop");
+    <section id="youtube" class="section youtube-section">
+      <div class="container youtube-grid">
+        <div>
+          <div class="hero-eyebrow">Acervo audiovisual</div>
+          <h2>CONTAR e CANTAR no YouTube</h2>
+          <p>O canal reúne entrevistas, registros, documentários e histórias da música brasileira em formato audiovisual. É o espaço de profundidade do projeto, onde a memória ganha voz, presença e tempo.</p>
+          <p>Enquanto o site organiza a parte permanente e editorial, o YouTube amplia a experiência com encontros, depoimentos e conteúdos em vídeo conduzidos por Rosane Maia.</p>
+          <a href="https://www.youtube.com/@rosanemaia4419" target="_blank" rel="noopener" class="btn btn-light">Visitar canal no YouTube</a>
 
-        function closeMobileMenu() {
-            if (!mobileMenuToggle || !mainNav) return;
-            mobileMenuToggle.classList.remove("active");
-            mainNav.classList.remove("active");
-            mobileMenuToggle.setAttribute("aria-expanded", "false");
-            if (mobileBackdrop) mobileBackdrop.classList.remove("active");
+          <div class="youtube-stats">
+            <div class="youtube-stat">
+              <strong>13,6 mil</strong>
+              <span>inscritos</span>
+            </div>
+            <div class="youtube-stat">
+              <strong>125</strong>
+              <span>vídeos</span>
+            </div>
+            <div class="youtube-stat">
+              <strong>MPB</strong>
+              <span>memória audiovisual</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="youtube-card">
+          <h3>Vídeo em destaque</h3>
+          <p>Uma amostra do acervo audiovisual do CONTAR e CANTAR, mantendo o visitante dentro do site antes de seguir para o canal.</p>
+
+          <div class="video-embed">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/-ZOQ3Rm_PDc"
+              title="30 anos sem Tom Jobim - Rosane Maia"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+
+          <ul>
+            <li>Entrevistas com artistas, pesquisadores e personagens da música brasileira.</li>
+            <li>Especiais sobre MPB, Bossa Nova, samba, compositores e intérpretes.</li>
+            <li>Registros que ajudam a preservar a memória oral e afetiva da música brasileira.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section instagram-section">
+      <div class="container">
+        <div class="instagram-card">
+          <div class="hero-eyebrow">Contando e Cantando</div>
+          <h2>O acervo também vive no Instagram</h2>
+          <p>O perfil de Rosane Maia reúne publicações, vídeos curtos, memórias, bastidores e histórias da música brasileira. O site organiza a parte permanente; o Instagram mantém o projeto em movimento diário.</p>
+
+          <div class="instagram-preview-grid" aria-label="Temas do acervo no Instagram">
+            <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="instagram-preview-card">
+              <span>MPB</span>
+              <strong>Histórias de artistas</strong>
+            </a>
+            <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="instagram-preview-card">
+              <span>Bossa Nova</span>
+              <strong>Memória e bastidores</strong>
+            </a>
+            <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="instagram-preview-card">
+              <span>Acervo</span>
+              <strong>Vídeos, fotos e registros</strong>
+            </a>
+            <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="instagram-preview-card">
+              <span>Reels</span>
+              <strong>Canções, encontros e homenagens</strong>
+            </a>
+          </div>
+
+          <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="btn btn-primary">Acompanhar no Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="newsletter" class="section newsletter">
+      <div class="newsletter-content">
+        <h2>Receba os especiais por e-mail</h2>
+        <p>Artigos, histórias e curadoria da MPB diretamente no seu e-mail. Sem algoritmos, sem pressa.</p>
+
+        <form action="https://buttondown.com/api/emails/embed-subscribe/spadeto" method="post" class="newsletter-form" id="newsletterForm" target="_blank">
+          <input type="email" name="email" id="bd-email" placeholder="seu@email.com" required>
+          <button type="submit">Assinar →</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>CONTAR e CANTAR © 2026 • Histórias da Música Brasileira por <a href="#" class="admin-secret" id="studioSecretLink">Rosane Maia</a></p>
+  </footer>
+
+  <!-- RM CONTENT STUDIO - LOGIN OCULTO -->
+  <div class="studio-login-modal" id="studioLoginModal" aria-hidden="true">
+    <div class="studio-login-card">
+      <h2>RM Content Studio</h2>
+      <p>Área restrita de produção editorial do CONTAR e CANTAR.</p>
+      <input type="password" id="studioPassword" placeholder="Digite a senha" autocomplete="current-password">
+      <div class="studio-error" id="studioError">Senha incorreta.</div>
+      <div class="studio-login-actions">
+        <button class="btn btn-primary" type="button" onclick="studioCheckPassword()">Entrar</button>
+        <button class="btn" type="button" onclick="studioCloseLogin()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- RM CONTENT STUDIO - ÁREA INTERNA -->
+  <section class="rm-studio" id="rmStudio">
+    <div class="studio-container">
+      <div class="studio-top">
+        <div class="studio-brand"><span class="studio-mark">RM</span><span>RM Content Studio</span></div>
+        <div class="studio-actions">
+          <button class="studio-btn" type="button" onclick="studioBackToSite()">Voltar ao site</button>
+          <button class="studio-btn" type="button" onclick="studioLogout()">Sair</button>
+        </div>
+      </div>
+
+      <div class="studio-hero">
+        <h1>Centro Editorial</h1>
+        <p>Ferramenta interna para criar Reels MPB com narrativa visual factual. O texto escreve nos primeiros segundos, permanece na tela e finaliza com chamada para o site oficial.</p>
+      </div>
+
+      <div class="studio-grid">
+        <div class="studio-card">
+          <h2>1. Vídeo e narrativa</h2>
+
+          <div class="studio-field">
+            <label>Vídeo</label>
+            <input type="file" id="studioVideoInput" accept="video/*">
+          </div>
+
+          <div class="studio-field">
+            <label>Artista, música ou tema</label>
+            <input id="studioArtist" placeholder="Ex: Rosane Maia, Cartola, Elis Regina">
+          </div>
+
+          <div class="studio-row">
+            <div class="studio-field">
+              <label>Tipo</label>
+              <select id="studioType">
+                <option>Artista</option>
+                <option>Canção</option>
+                <option>Compositor</option>
+                <option>Disco</option>
+                <option>Show</option>
+              </select>
+            </div>
+
+            <div class="studio-field">
+              <label>Texto termina em</label>
+              <select id="studioWriteTime">
+                <option value="30">30 segundos</option>
+                <option value="45">45 segundos</option>
+                <option value="60">60 segundos</option>
+                <option value="20">20 segundos</option>
+                <option value="auto">Automático</option>
+              </select>
+            </div>
+
+            <div class="studio-field">
+              <label>Tamanho</label>
+              <select id="studioTextSize">
+                <option value="medio">Médio</option>
+                <option value="curto">Curto</option>
+                <option value="longo">Longo</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="studio-field">
+            <label>Dossiê factual / dados confirmados</label>
+            <textarea id="studioFacts" placeholder="Cole aqui apenas dados confirmados: biografia, datas, obras, fontes, entrevistas, discografia, links."></textarea>
+          </div>
+
+          <div class="studio-field">
+            <label>Fontes consultadas</label>
+            <textarea id="studioSources" placeholder="Ex:
+Dicionário Cravo Albin - https://...
+Itaú Cultural - https://...
+Site oficial - https://..."></textarea>
+          </div>
+
+          <div class="studio-row-2">
+            <button class="studio-btn studio-btn-primary" type="button" onclick="studioAnalyzeSources()">Analisar base factual</button>
+            <button class="studio-btn studio-btn-gold" type="button" onclick="studioGenerateNarrative()">Gerar narrativa visual</button>
+          </div>
+
+          <button class="studio-btn studio-btn-primary" type="button" onclick="studioPlayPreview()">▶ Ver texto escrevendo no vídeo</button>
+          <button class="studio-btn studio-btn-green" type="button" onclick="studioDownloadTXT()">Baixar texto e fontes</button>
+          <button class="studio-btn studio-btn-gold" type="button" onclick="studioExportVideoWebM()">⬇ Baixar vídeo com texto</button>
+          <div class="studio-download-area" id="studioDownloadArea"></div>
+
+          <div class="studio-notice">
+            Esta versão roda dentro do próprio index.html. Ela não pesquisa sozinha na web: você cola dados e fontes, e ela monta o texto sem inventar.
+          </div>
+        </div>
+
+        <div class="studio-card">
+          <h2>2. Prévia estilo Reels</h2>
+          <div class="studio-stage">
+            <video id="studioVideo" controls playsinline></video>
+            <div class="studio-overlay-panel">
+              <div class="studio-text-box" id="studioVisualText">A narrativa aparecerá aqui.</div>
+              <div class="studio-cta-box" id="studioCtaBox">Mais histórias da música brasileira: rmcontarecantar.art.br</div>
+            </div>
+          </div>
+
+          <div class="studio-notice studio-ok">
+            O vídeo continua como fundo. O texto escreve nos primeiros segundos e depois fica parado para leitura.
+          </div>
+        </div>
+      </div>
+
+      <div class="studio-grid" style="margin-top:1rem">
+        <div class="studio-card">
+          <h2>3. Texto final do Reel</h2>
+          <div id="studioFinalText" class="studio-result">O texto final aparecerá aqui.</div>
+        </div>
+
+        <div class="studio-card">
+          <h2>4. Auditoria factual e legenda</h2>
+          <div id="studioAudit" class="studio-result">A análise factual aparecerá aqui.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <script>
+    const researchForm = document.getElementById("researchForm");
+    const researchInput = document.getElementById("researchQuery");
+    const researchButtons = document.querySelectorAll(".research-option");
+    let researchMode = "site";
+
+    researchButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        researchButtons.forEach(item => item.classList.remove("active"));
+        button.classList.add("active");
+        researchMode = button.dataset.mode;
+        researchInput.focus();
+      });
+    });
+
+    if (researchForm) {
+      researchForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const query = researchInput.value.trim();
+        if (!query) return;
+
+        let url = "";
+
+        if (researchMode === "site") {
+          url = "https://www.google.com/search?q=" + encodeURIComponent("site:rmcontarecantar.art.br " + query);
         }
 
-        if (mobileMenuToggle && mainNav) {
-            mobileMenuToggle.addEventListener("click", () => {
-                const isOpen = mainNav.classList.toggle("active");
-                mobileMenuToggle.classList.toggle("active", isOpen);
-                mobileMenuToggle.setAttribute("aria-expanded", String(isOpen));
-                if (mobileBackdrop) mobileBackdrop.classList.toggle("active", isOpen);
-            });
-
-            mainNav.querySelectorAll("a").forEach(link => {
-                link.addEventListener("click", () => {
-                    setTimeout(closeMobileMenu, 120);
-                });
-            });
-
-            if (mobileBackdrop) {
-                mobileBackdrop.addEventListener("click", closeMobileMenu);
-            }
-
-            document.addEventListener("keydown", event => {
-                if (event.key === "Escape") closeMobileMenu();
-            });
+        if (researchMode === "fontes") {
+          url = "https://www.google.com/search?q=" + encodeURIComponent(
+            query + " música brasileira MPB " +
+            "(site:dicionariompb.com.br OR site:enciclopedia.itaucultural.org.br OR site:ims.com.br OR site:hemerotecadigital.bn.gov.br OR site:bn.gov.br)"
+          );
         }
-    </script>
+
+        if (researchMode === "academico") {
+          url = "https://scholar.google.com/scholar?q=" + encodeURIComponent(query + " música brasileira MPB");
+        }
+
+        if (researchMode === "youtube") {
+          url = "https://www.youtube.com/results?search_query=" + encodeURIComponent(query + " música brasileira MPB entrevista documentário");
+        }
+
+        window.open(url, "_blank", "noopener");
+      });
+    }
+  </script>
+
+  <script>
+    const newsletterForm = document.getElementById("newsletterForm");
+    if (newsletterForm) {
+      newsletterForm.addEventListener("submit", function() {
+        const content = this.closest(".newsletter-content");
+        setTimeout(() => {
+          if (content) {
+            content.innerHTML = `
+              <h2>Quase lá.</h2>
+              <p>Uma nova aba foi aberta para confirmar sua assinatura. Depois, volte para continuar explorando os especiais do CONTAR e CANTAR.</p>
+            `;
+          }
+        }, 500);
+      });
+    }
+  </script>
+
+
+  <script>
+    const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+    const mainNav = document.getElementById("mainNav");
+    const mobileBackdrop = document.getElementById("mobileBackdrop");
+
+    function closeMobileMenu() {
+      if (!mobileMenuToggle || !mainNav) return;
+      mobileMenuToggle.classList.remove("active");
+      mainNav.classList.remove("active");
+      mobileMenuToggle.setAttribute("aria-expanded", "false");
+      if (mobileBackdrop) mobileBackdrop.classList.remove("active");
+    }
+
+    if (mobileMenuToggle && mainNav) {
+      mobileMenuToggle.addEventListener("click", () => {
+        const isOpen = mainNav.classList.toggle("active");
+        mobileMenuToggle.classList.toggle("active", isOpen);
+        mobileMenuToggle.setAttribute("aria-expanded", String(isOpen));
+        if (mobileBackdrop) mobileBackdrop.classList.toggle("active", isOpen);
+      });
+
+      mainNav.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", () => {
+          setTimeout(closeMobileMenu, 120);
+        });
+      });
+
+      if (mobileBackdrop) {
+        mobileBackdrop.addEventListener("click", closeMobileMenu);
+      }
+
+      document.addEventListener("keydown", event => {
+        if (event.key === "Escape") closeMobileMenu();
+      });
+    }
+  </script>
+
+
+  <script>
+    const RM_STUDIO_PASSWORD = "1234";
+
+    const studioSecretLink = document.getElementById("studioSecretLink");
+    const studioLoginModal = document.getElementById("studioLoginModal");
+    const studioPassword = document.getElementById("studioPassword");
+    const studioError = document.getElementById("studioError");
+
+    if (studioSecretLink) {
+      studioSecretLink.addEventListener("click", function(event) {
+        event.preventDefault();
+        studioOpenLogin();
+      });
+    }
+
+    function studioOpenLogin() {
+      if (sessionStorage.getItem("rm_studio_acesso") === "liberado") {
+        studioEnter();
+        return;
+      }
+
+      studioLoginModal.classList.add("active");
+      studioLoginModal.setAttribute("aria-hidden", "false");
+      studioPassword.value = "";
+      studioError.style.display = "none";
+      setTimeout(() => studioPassword.focus(), 80);
+    }
+
+    function studioCloseLogin() {
+      studioLoginModal.classList.remove("active");
+      studioLoginModal.setAttribute("aria-hidden", "true");
+    }
+
+    function studioCheckPassword() {
+      if (studioPassword.value === RM_STUDIO_PASSWORD) {
+        sessionStorage.setItem("rm_studio_acesso", "liberado");
+        studioCloseLogin();
+        studioEnter();
+      } else {
+        studioError.style.display = "block";
+        studioPassword.select();
+      }
+    }
+
+    if (studioPassword) {
+      studioPassword.addEventListener("keydown", function(event) {
+        if (event.key === "Enter") studioCheckPassword();
+        if (event.key === "Escape") studioCloseLogin();
+      });
+    }
+
+    function studioEnter() {
+      document.body.classList.add("studio-mode");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function studioBackToSite() {
+      document.body.classList.remove("studio-mode");
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    }
+
+    function studioLogout() {
+      sessionStorage.removeItem("rm_studio_acesso");
+      document.body.classList.remove("studio-mode");
+      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    }
+
+    const studioVideo = document.getElementById("studioVideo");
+    const studioVisualText = document.getElementById("studioVisualText");
+    const studioCtaBox = document.getElementById("studioCtaBox");
+    const studioVideoInput = document.getElementById("studioVideoInput");
+
+    let studioFinalNarrative = "";
+    let studioFinalCaption = "";
+    let studioTypeTimer = null;
+    let studioCtaTimer = null;
+
+    if (studioVideoInput) {
+      studioVideoInput.addEventListener("change", event => {
+        const file = event.target.files[0];
+        if (!file) return;
+        studioVideo.src = URL.createObjectURL(file);
+        studioVideo.load();
+        studioVisualText.textContent = "Vídeo carregado. Agora gere a narrativa visual.";
+        studioCtaBox.style.display = "none";
+      });
+    }
+
+    function studioAnalyzeSources() {
+      const facts = document.getElementById("studioFacts").value.trim();
+      const sources = document.getElementById("studioSources").value.trim();
+      const sourceLines = sources.split(/\n+/).map(s => s.trim()).filter(Boolean);
+      const links = sourceLines.filter(s => /https?:\/\//i.test(s));
+      const hasStrong = /cravo|ita[uú] cultural|site oficial|discogs|ims|instituto moreira|gravadora|entrevista|acervo|hemeroteca|biblioteca nacional/i.test(sources);
+
+      const factualScore = Math.min(100,
+        (facts.length > 250 ? 35 : facts.length > 80 ? 20 : 5) +
+        (sourceLines.length >= 3 ? 30 : sourceLines.length ? 15 : 0) +
+        (links.length >= 2 ? 20 : links.length ? 10 : 0) +
+        (hasStrong ? 15 : 0)
+      );
+
+      const status = factualScore >= 70 ? "Boa base factual" : factualScore >= 40 ? "Base parcial" : "Base fraca";
+      const warning = factualScore >= 70
+        ? "Pode gerar, mas revise nomes, datas e obras antes de publicar."
+        : "Evite publicar como fato definitivo. Acrescente fontes mais fortes.";
+
+      document.getElementById("studioAudit").textContent =
+`AUDITORIA FACTUAL
+
+Status: ${status}
+Pontuação editorial: ${factualScore}/100
+
+Fontes listadas: ${sourceLines.length}
+Links detectados: ${links.length}
+Fonte forte detectada: ${hasStrong ? "sim" : "não"}
+
+Regra editorial:
+• Não inventar dados ausentes.
+• Evitar superlativos sem fonte.
+• Preferir texto curto e seguro.
+• Informar lacunas quando houver pouca fonte.
+
+Alerta:
+${warning}`;
+    }
+
+    function studioGenerateNarrative() {
+      studioAnalyzeSources();
+
+      const artist = document.getElementById("studioArtist").value.trim() || "Artista escolhido";
+      const facts = document.getElementById("studioFacts").value.trim();
+      const sources = document.getElementById("studioSources").value.trim();
+      const size = document.getElementById("studioTextSize").value;
+
+      const maxChars = size === "curto" ? 260 : size === "longo" ? 560 : 420;
+      const cta = ``;
+
+      let core = "";
+
+      if (facts) {
+        core = studioBuildFromFacts(artist, facts, maxChars);
+      } else {
+        core = artist && artist !== "Artista escolhido" ? `${artist} é lembrado neste registro como parte da memória viva da música brasileira. Para uma homenagem factual, acrescente dados confirmados, fontes e referências antes da publicação.` : `Para uma homenagem factual, acrescente dados confirmados, fontes e referências antes da publicação.`;
+      }
+
+      studioFinalNarrative = studioStripSiteFromMainText((core + cta).trim());
+
+      studioFinalCaption =
+`Homenagem a ${artist}.
+
+Conteúdo preparado com base em pesquisa e revisão editorial.
+
+Mais histórias da música brasileira:
+rmcontarecantar.art.br
+
+#MPB #MusicaBrasileira #ContandoECantando #ReelsBrasil #CulturaBrasileira`;
+
+      document.getElementById("studioFinalText").textContent = studioFinalNarrative;
+
+      document.getElementById("studioAudit").textContent += `
+
+LEGENDA DO POST
+
+${studioFinalCaption}
+
+FONTES INFORMADAS
+
+${sources || "Nenhuma fonte informada."}`;
+
+      studioVisualText.textContent = studioFinalNarrative;
+      studioCtaBox.style.display = "block";
+    }
+
+
+
+    function studioStripSiteFromMainText(text) {
+      return String(text || "")
+        .replace(/\n*\s*Conheça mais histórias da música brasileira em\s*rmcontarecantar\.art\.br\s*$/i, "")
+        .replace(/\n*\s*Mais histórias da música brasileira:\s*rmcontarecantar\.art\.br\s*$/i, "")
+        .trim();
+    }
+
+
+    function studioCleanRawFacts(raw) {
+      return String(raw || "")
+        .replace(/\[[^\]]*\]/g, " ")
+        .replace(/\b\d{1,2}:\d{2}\s*[-–]\s*\d{1,2}:\d{2}\b/g, " ")
+        .replace(/\b\d{1,2}:\d{2}\b/g, " ")
+        .split(/\n+/)
+        .map(line => line.trim())
+        .filter(line => line)
+        .filter(line => !/^[.\-_\s]{3,}$/.test(line))
+        .filter(line => !/^[A-ZÁÉÍÓÚÂÊÔÃÕÇ\s]{4,}$/.test(line))
+        .join(" ")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function studioLimitTextForReel(text, maxChars) {
+      let cleaned = String(text || "").replace(/\s+/g, " ").trim();
+      if (cleaned.length <= maxChars) return cleaned;
+
+      let cut = cleaned.slice(0, maxChars);
+      if (cut.includes(".")) cut = cut.slice(0, cut.lastIndexOf(".") + 1);
+      else if (cut.includes(",")) cut = cut.slice(0, cut.lastIndexOf(","));
+      return cut.trim();
+    }
+
+
+
+    function studioBuildFromFacts(artist, facts, maxChars) {
+      const cleanFacts = studioCleanRawFacts(facts);
+
+      const sentences = cleanFacts
+        .split(/(?<=[.!?])\s+/)
+        .map(s => s.trim())
+        .filter(s => s.length > 14)
+        .map(s => studioRemoveWeakClaims(s));
+
+      let selected = [];
+
+      for (const s of sentences) {
+        const candidate = (selected.join(" ") + " " + s).trim();
+        if (candidate.length <= maxChars) {
+          selected.push(s);
+        }
+        if (selected.join(" ").length >= maxChars * .85) break;
+      }
+
+      let body = selected.join(" ");
+
+      if (!body) {
+        body = artist && artist !== "Artista escolhido"
+          ? `${artist} merece uma homenagem construída com cuidado, fonte e memória.`
+          : `Esta homenagem merece ser construída com cuidado, fonte e memória.`;
+      }
+
+      body = studioLimitTextForReel(body, maxChars);
+
+      const artistClean = String(artist || "").trim();
+      if (
+        artistClean &&
+        artistClean !== "Artista escolhido" &&
+        !body.toLowerCase().includes(artistClean.split(" ")[0].toLowerCase())
+      ) {
+        body = `${artistClean}. ${body}`;
+      }
+
+      return body;
+    }
+
+    function studioRemoveWeakClaims(s) {
+      return s
+        .replace(/\bum dos maiores\b/gi, "um nome importante")
+        .replace(/\ba maior voz\b/gi, "uma voz reconhecida")
+        .replace(/\bgênio absoluto\b/gi, "artista de grande relevância")
+        .replace(/\binesquecível\b/gi, "marcante");
+    }
+
+    function studioPlayPreview() {
+      if (!studioFinalNarrative) studioGenerateNarrative();
+
+      clearInterval(studioTypeTimer);
+      clearTimeout(studioCtaTimer);
+
+      studioCtaBox.style.display = "none";
+      studioVisualText.textContent = "";
+
+      const writeChoice = document.getElementById("studioWriteTime").value;
+      const duration = Math.floor(studioVideo.duration || 60);
+
+      let writeSeconds = writeChoice === "auto"
+        ? Math.min(60, Math.max(25, Math.floor(duration * 0.25)))
+        : Number(writeChoice);
+
+      writeSeconds = Math.min(writeSeconds, Math.max(10, duration - 3));
+
+      studioVideo.currentTime = 0;
+      studioVideo.play();
+
+      let i = 0;
+      const chars = studioFinalNarrative.length;
+      const interval = Math.max(18, Math.floor((writeSeconds * 1000) / Math.max(chars, 1)));
+
+      studioTypeTimer = setInterval(() => {
+        i++;
+        studioVisualText.textContent = studioFinalNarrative.slice(0, i);
+
+        if (i >= chars) {
+          clearInterval(studioTypeTimer);
+          studioVisualText.textContent = studioFinalNarrative;
+          studioCtaBox.style.display = "block";
+        }
+      }, interval);
+
+      studioCtaTimer = setTimeout(() => {
+        studioCtaBox.style.display = "block";
+      }, Math.max(1000, (writeSeconds - 3) * 1000));
+    }
+
+    function studioDownloadTXT() {
+      if (!studioFinalNarrative) studioGenerateNarrative();
+
+      const content =
+`RM CONTENT STUDIO - REELS MPB
+
+TEXTO DO REEL
+
+${studioFinalNarrative}
+
+LEGENDA DO POST
+
+${studioFinalCaption}
+
+AUDITORIA
+
+${document.getElementById("studioAudit").textContent}
+`;
+
+      const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+
+      a.href = url;
+      a.download = "reels-mpb-narrativa-factual.txt";
+      a.click();
+
+      URL.revokeObjectURL(url);
+    }
+
+    function studioWrapTextForCanvas(ctx, text, maxWidth) {
+      const words = String(text).split(/\s+/);
+      const lines = [];
+      let line = "";
+
+      for (const word of words) {
+        const test = line ? line + " " + word : word;
+        if (ctx.measureText(test).width > maxWidth && line) {
+          lines.push(line);
+          line = word;
+        } else {
+          line = test;
+        }
+      }
+
+      if (line) lines.push(line);
+      return lines.slice(0, 12);
+    }
+
+    function studioRoundRect(ctx, x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.arcTo(x + w, y, x + w, y + h, r);
+      ctx.arcTo(x + w, y + h, x, y + h, r);
+      ctx.arcTo(x, y + h, x, y, r);
+      ctx.arcTo(x, y, x + w, y, r);
+      ctx.closePath();
+    }
+
+    function studioDrawExportFrame(canvas, ctx, text, showCta) {
+      ctx.fillStyle = "#000";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      if (studioVideo.readyState >= 2) {
+        const vw = studioVideo.videoWidth || 1080;
+        const vh = studioVideo.videoHeight || 1920;
+        const scale = Math.max(canvas.width / vw, canvas.height / vh);
+        const sw = canvas.width / scale;
+        const sh = canvas.height / scale;
+        const sx = (vw - sw) / 2;
+        const sy = (vh - sh) / 2;
+
+        try {
+          ctx.drawImage(studioVideo, sx, sy, sw, sh, 0, 0, canvas.width, canvas.height);
+        } catch (e) {
+          ctx.fillStyle = "#111827";
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+      }
+
+      const maxWidth = canvas.width * 0.82;
+      const fontSize = 34;
+      ctx.font = `800 ${fontSize}px Arial, sans-serif`;
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+
+      const lines = studioWrapTextForCanvas(ctx, text, maxWidth);
+      const lineHeight = 43;
+      const boxH = lines.length * lineHeight + 44;
+      const boxW = maxWidth + 70;
+      const x = canvas.width / 2 - boxW / 2;
+      const y = canvas.height - 430 - boxH / 2;
+
+      ctx.fillStyle = "rgba(0,0,0,.48)";
+      studioRoundRect(ctx, x, y, boxW, boxH, 30);
+      ctx.fill();
+
+      lines.forEach((line, i) => {
+        const ty = y + 34 + i * lineHeight + lineHeight / 2;
+        ctx.lineWidth = 8;
+        ctx.strokeStyle = "rgba(0,0,0,.9)";
+        ctx.strokeText(line, canvas.width / 2, ty);
+        ctx.fillStyle = "#fff";
+        ctx.fillText(line, canvas.width / 2, ty);
+      });
+
+      if (showCta) {
+        const cta = "Mais histórias da música brasileira: rmcontarecantar.art.br";
+        ctx.font = "900 38px Arial, sans-serif";
+        const ctaW = canvas.width * 0.82;
+        const ctaH = 86;
+        const ctaX = canvas.width / 2 - ctaW / 2;
+        const ctaY = canvas.height - 210;
+
+        ctx.fillStyle = "#fbbf24";
+        studioRoundRect(ctx, ctaX, ctaY, ctaW, ctaH, 24);
+        ctx.fill();
+
+        ctx.fillStyle = "#06111f";
+        ctx.fillText(cta, canvas.width / 2, ctaY + ctaH / 2);
+      }
+    }
+
+    async function studioExportVideoWebM() {
+      if (!studioFinalNarrative) studioGenerateNarrative();
+
+      if (!studioVideo.src) {
+        alert("Carregue um vídeo primeiro.");
+        return;
+      }
+
+      const area = document.getElementById("studioDownloadArea");
+      area.innerHTML = "<div class='studio-notice'>Gerando vídeo WebM no navegador. Aguarde até o vídeo terminar...</div>";
+
+      const exportCanvas = document.createElement("canvas");
+      exportCanvas.width = 1080;
+      exportCanvas.height = 1920;
+      const ctx = exportCanvas.getContext("2d");
+
+      if (!exportCanvas.captureStream || typeof MediaRecorder === "undefined") {
+        alert("Seu navegador não suporta exportação de vídeo por canvas.");
+        return;
+      }
+
+      const writeChoice = document.getElementById("studioWriteTime").value;
+      const duration = Math.floor(studioVideo.duration || 60);
+
+      let writeSeconds = writeChoice === "auto"
+        ? Math.min(60, Math.max(25, Math.floor(duration * 0.25)))
+        : Number(writeChoice);
+
+      writeSeconds = Math.min(writeSeconds, Math.max(10, duration - 3));
+
+      const stream = exportCanvas.captureStream(30);
+
+      try {
+        if (studioVideo.captureStream) {
+          const audioTracks = studioVideo.captureStream().getAudioTracks();
+          audioTracks.forEach(track => stream.addTrack(track));
+        }
+      } catch (e) {}
+
+      let mime = "video/webm;codecs=vp9";
+      if (!MediaRecorder.isTypeSupported(mime)) mime = "video/webm;codecs=vp8";
+      if (!MediaRecorder.isTypeSupported(mime)) mime = "video/webm";
+
+      const chunks = [];
+      const recorder = new MediaRecorder(stream, { mimeType: mime });
+
+      recorder.ondataavailable = event => {
+        if (event.data && event.data.size) chunks.push(event.data);
+      };
+
+      recorder.onstop = () => {
+        const blob = new Blob(chunks, { type: "video/webm" });
+        const url = URL.createObjectURL(blob);
+        const area = document.getElementById("studioDownloadArea");
+        area.innerHTML = `<a href="${url}" download="reel-contar-e-cantar.webm">⬇ Baixar vídeo WebM com texto</a>
+        <div class="studio-notice">Arquivo gerado em WebM pelo navegador. Para Instagram, se necessário, converta para MP4 no CapCut, VLC, HandBrake ou FFmpeg.</div>`;
+      };
+
+      studioVideo.currentTime = 0;
+      await studioVideo.play();
+
+      recorder.start();
+
+      function loop() {
+        const elapsed = studioVideo.currentTime || 0;
+        const totalChars = studioFinalNarrative.length;
+        const progress = Math.min(1, elapsed / writeSeconds);
+        const charsToShow = Math.floor(totalChars * progress);
+        const text = studioFinalNarrative.slice(0, charsToShow);
+        const showCta = elapsed >= Math.max(1, writeSeconds - 3);
+
+        studioDrawExportFrame(exportCanvas, ctx, text || " ", showCta);
+
+        if (studioVideo.ended || elapsed >= duration - 0.1) {
+          try { recorder.stop(); } catch (e) {}
+          studioVideo.pause();
+          return;
+        }
+
+        requestAnimationFrame(loop);
+      }
+
+      loop();
+    }
+  </script>
 
 </body>
 </html>
