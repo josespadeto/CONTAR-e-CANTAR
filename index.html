@@ -2371,17 +2371,17 @@ ${warning}`;
       const size = document.getElementById("studioTextSize").value;
 
       const maxChars = size === "curto" ? 260 : size === "longo" ? 560 : 420;
-      const cta = `\n\nConheça mais histórias da música brasileira em rmcontarecantar.art.br`;
+      const cta = ``;
 
       let core = "";
 
       if (facts) {
         core = studioBuildFromFacts(artist, facts, maxChars);
       } else {
-        core = `${artist} é lembrado neste registro como parte da memória viva da música brasileira. Para uma homenagem factual, acrescente dados confirmados, fontes e referências antes da publicação.`;
+        core = artist && artist !== "Artista escolhido" ? `${artist} é lembrado neste registro como parte da memória viva da música brasileira. Para uma homenagem factual, acrescente dados confirmados, fontes e referências antes da publicação.` : `Para uma homenagem factual, acrescente dados confirmados, fontes e referências antes da publicação.`;
       }
 
-      studioFinalNarrative = (core + cta).trim();
+      studioFinalNarrative = studioStripSiteFromMainText((core + cta).trim());
 
       studioFinalCaption =
 `Homenagem a ${artist}.
@@ -2410,6 +2410,15 @@ ${sources || "Nenhuma fonte informada."}`;
     }
 
 
+
+    function studioStripSiteFromMainText(text) {
+      return String(text || "")
+        .replace(/\n*\s*Conheça mais histórias da música brasileira em\s*rmcontarecantar\.art\.br\s*$/i, "")
+        .replace(/\n*\s*Mais histórias da música brasileira:\s*rmcontarecantar\.art\.br\s*$/i, "")
+        .trim();
+    }
+
+
     function studioCleanRawFacts(raw) {
       return String(raw || "")
         .replace(/\[[^\]]*\]/g, " ")
@@ -2435,6 +2444,8 @@ ${sources || "Nenhuma fonte informada."}`;
       return cut.trim();
     }
 
+
+
     function studioBuildFromFacts(artist, facts, maxChars) {
       const cleanFacts = studioCleanRawFacts(facts);
 
@@ -2457,12 +2468,23 @@ ${sources || "Nenhuma fonte informada."}`;
       let body = selected.join(" ");
 
       if (!body) {
-        body = `${artist} merece uma homenagem construída com cuidado, fonte e memória.`;
+        body = artist && artist !== "Artista escolhido"
+          ? `${artist} merece uma homenagem construída com cuidado, fonte e memória.`
+          : `Esta homenagem merece ser construída com cuidado, fonte e memória.`;
       }
 
       body = studioLimitTextForReel(body, maxChars);
 
-      return `${artist}: uma história da música brasileira contada com respeito aos fatos.\n\n${body}`;
+      const artistClean = String(artist || "").trim();
+      if (
+        artistClean &&
+        artistClean !== "Artista escolhido" &&
+        !body.toLowerCase().includes(artistClean.split(" ")[0].toLowerCase())
+      ) {
+        body = `${artistClean}. ${body}`;
+      }
+
+      return body;
     }
 
     function studioRemoveWeakClaims(s) {
