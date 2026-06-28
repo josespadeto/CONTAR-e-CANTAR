@@ -49,6 +49,8 @@
   }
   </script>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fix-webm-duration/1.0.5/fix-webm-duration.js"></script>
+
   <style>
     :root {
       --preto: #0A0A0A;
@@ -177,7 +179,8 @@
       margin: 0 auto 3rem;
       font-family: 'Playfair Display', serif;
       font-size: clamp(1.25rem, 2.4vw, 1.65rem);
-      font-style: italic;      font-weight: 400;
+      font-style: italic;
+      font-weight: 400;
       color: var(--cinza-texto);
     }
     
@@ -1067,7 +1070,7 @@
     }
     
     .newsletter h2 {
-      font-size: clamp(2.3rem, 5vw, 4磨m);
+      font-size: clamp(2.3rem, 5vw, 4rem);
       margin-bottom: 1rem;
     }
     
@@ -1607,7 +1610,7 @@
     <section class="manifesto section">
       <div class="manifesto-content">
         <p>CONTAR e CANTAR é um projeto dedicado às histórias da música brasileira: artistas, canções, encontros, movimentos e memórias que atravessam gerações.</p>
-        <p>Mais do que reunir artistas, álbuns e movimentos culturais, este espaço busca reconstruir atmosferas: travessias pela história emocional da música brasileira.</p>
+        <p>Mais do que reunir artistas, álbuns e movimentos culturais, este space busca reconstruir atmosferas: travessias pela história emocional da música brasileira.</p>
         <div class="manifesto-signature">— Histórias da Música Brasileira • por Rosane Maia</div>
       </div>
     </section>
@@ -1704,7 +1707,8 @@
           <a href="cartola.html" class="article-card">
             <div class="card-cover cover-cartola">
               <span class="article-category">Biografia</span>
-              <div class="card-cover-text">                <h3>CARTOLA</h3>
+              <div class="card-cover-text">
+                <h3>CARTOLA</h3>
                 <p>O GÊNIO DO SAMBA</p>
               </div>
             </div>
@@ -1827,7 +1831,8 @@
       <div class="container">
         <div class="instagram-card">
           <div class="hero-eyebrow">Contando e Cantando</div>
-          <h2>O acervo também vive no Instagram</h2>          <p>O perfil de Rosane Maia reúne publicações, vídeos curtos, memórias, bastidores e histórias da música brasileira. O site organiza a parte permanente; o Instagram mantém o projeto em movimento diário.</p>
+          <h2>O acervo também vive no Instagram</h2>
+          <p>O perfil de Rosane Maia reúne publicações, vídeos curtos, memórias, bastidores e histórias da música brasileira. O site organiza a parte permanente; o Instagram mantém o projeto em movimento diário.</p>
           <div class="instagram-preview-grid" aria-label="Temas do acervo no Instagram">
             <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="instagram-preview-card">
               <span>MPB</span>
@@ -2263,7 +2268,7 @@
         label: "Possível contradição de idade",
         detail: uniqueAges.length > 1
           ? `Encontradas menções diferentes de idade (${uniqueAges.join(", ")}). Confirme se não há erro de digitação ou contradição entre fatos.`
-          : "Nenhuma contradição óbvia de idade detectada nesta checagem simples."
+          : "Nenhuma contraditoriedade óbvia de idade detectada nesta checagem simples."
       });
       
       checks.push({
@@ -2332,7 +2337,7 @@
       document.getElementById("studioFinalText").textContent = studioFinalNarrative;
       document.getElementById("studioAudit").textContent += `\n\n────────────────────────────\nLEGENDA DO POST\n────────────────────────────\n${studioFinalCaption}\n\n────────────────────────────\nFONTES INFORMADAS\n────────────────────────────\n${sources || "Nenhuma fonte informada."}`;
       
-      studioVisualText.textContent = studioVisualText.textContent = studioFinalNarrative;
+      studioVisualText.textContent = studioFinalNarrative;
       studioCtaBox.style.display = "block";
       
       const criticalLabels = ["Datas", "Fonte verificável (com link)"];
@@ -2543,57 +2548,6 @@
       }
     }
     
-    // === FUNÇÃO DE CORREÇÃO BINÁRIA WEBM DOS QUADROS E SEEK INDEX ===
-    function fixWebMDuration(blob, durationMs, callback) {
-      const reader = new FileReader();
-      reader.onload = function(e) {
-        const buffer = e.target.result;
-        const view = new DataView(buffer);
-        let pos = 0;
-        
-        while (pos < buffer.byteLength - 4) {
-          if (view.getUint32(pos) === 0x1549A966) {
-            pos += 4;
-            let r = readEBMLVarInt(view, pos);
-            pos += r.width;
-            let end = pos + r.value;
-            while (pos < end) {
-              if (view.getUint16(pos) === 0x4489) {
-                pos += 2;
-                let rDur = readEBMLVarInt(view, pos);
-                pos += rDur.width;
-                try {
-                  view.setFloat64(pos, durationMs);
-                  const fixedBlob = new Blob([buffer], { type: blob.type });
-                  callback(fixedBlob);
-                  return;
-                } catch(err) { break; }
-              }
-              pos++;
-            }
-            break;
-          }
-          pos++;
-        }
-        
-        const segmentDurationHeader = new Uint8Array([0x44, 0x89, 0x88]);
-        const durationBuffer = new ArrayBuffer(8);
-        new DataView(durationBuffer).setFloat64(0, durationMs);
-        const fixedBlob = new Blob([blob.slice(0, 40), segmentDurationHeader, durationBuffer, blob.slice(40)], { type: blob.type });
-        callback(fixedBlob);
-      };
-      
-      function readEBMLVarInt(view, offset) {
-        let firstByte = view.getUint8(offset);
-        let width = 1;
-        while ((firstByte & (0x80 >> (width - 1))) === 0 && width < 8) { width++; }
-        let value = firstByte & (0xFF >> width);
-        for (let i = 1; i < width; i++) { value = (value << 8) | view.getUint8(offset + i); }
-        return { width: width, value: value };
-      }
-      reader.readAsArrayBuffer(blob);
-    }
-    
     async function studioExportVideoWebM() {
       if (!studioFinalNarrative) studioGenerateNarrative();
       if (!studioVideo.src) {
@@ -2704,14 +2658,23 @@
         
         const rawBlob = new Blob(chunks, { type: "video/webm" });
         const totalDurationMs = Date.now() - recordStartTime;
-        area.innerHTML = "<div class='studio-notice'>Finalizando e indexando metadados do arquivo...</div>";
+        area.innerHTML = "<div class='studio-notice'>Finalizando e estruturando arquivo de vídeo...</div>";
         
-        fixWebMDuration(rawBlob, totalDurationMs, (fixedBlob) => {
-          const url = URL.createObjectURL(fixedBlob);
-          area.innerHTML = `<a href="${url}" download="reel-contar-e-cantar.webm" class="studio-btn studio-btn-green" style="display:inline-block; text-decoration:none; text-align:center;">⬇ Baixar vídeo WebM Corrigido</a>
-          <div class="studio-notice" style="margin-top:10px;">Arquivo WebM indexado com sucesso pelo navegador. Agora a barra de progresso funcionará sem travar o vídeo!</div>`;
-          studioShowToast("Vídeo gerado e indexado com sucesso!", "success");
-        });
+        // Uso da biblioteca oficial fixWebMDuration: Reconstrói o container sem quebrar headers binários
+        if (typeof ysFixWebMDuration !== 'undefined') {
+          ysFixWebMDuration(rawBlob, totalDurationMs, (fixedBlob) => {
+            const url = URL.createObjectURL(fixedBlob);
+            area.innerHTML = `<a href="${url}" download="reel-contar-e-cantar.webm" class="studio-btn studio-btn-green" style="display:inline-block; text-decoration:none; text-align:center;">⬇ Baixar vídeo WebM Corrigido</a>
+            <div class="studio-notice" style="margin-top:10px;">Vídeo indexado perfeitamente! Compatível com navegadores e players de desktop (MPC-HC / Windows Media Player).</div>`;
+            studioShowToast("Vídeo gerado com sucesso!", "success");
+          });
+        } else {
+          // Fallback seguro caso o CDN sofra atraso de carregamento
+          const url = URL.createObjectURL(rawBlob);
+          area.innerHTML = `<a href="${url}" download="reel-contar-e-cantar.webm" class="studio-btn studio-btn-green" style="display:inline-block; text-decoration:none; text-align:center;">⬇ Baixar vídeo WebM</a>
+          <div class="studio-notice" style="margin-top:10px;">Vídeo gerado sem indexação de tempo devido a atraso no carregamento da biblioteca estática.</div>`;
+          studioShowToast("Vídeo exportado.", "success");
+        }
       };
       
       studioVideo.currentTime = 0;
