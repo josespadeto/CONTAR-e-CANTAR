@@ -1605,14 +1605,14 @@
 
     .studio-text-box {
       color: #fff;
-      font-size: clamp(1rem, 2.1vw, 1.65rem);
-      line-height: 1.28;
+      font-size: clamp(.78rem, 1.25vw, 1.05rem);
+      line-height: 1.22;
       font-weight: 800;
-      text-shadow: 3px 3px 10px #000;
-      background: rgba(0,0,0,.42);
-      padding: 13px;
+      text-shadow: 2px 2px 8px #000;
+      background: rgba(0,0,0,.46);
+      padding: 12px;
       border-radius: 16px;
-      max-height: 47vh;
+      max-height: 62vh;
       overflow: hidden;
       white-space: pre-wrap;
     }
@@ -1621,10 +1621,11 @@
       display: none;
       color: #06111f;
       background: linear-gradient(135deg,#fbbf24,#f97316);
-      padding: 10px 12px;
-      border-radius: 14px;
+      padding: 8px 10px;
+      border-radius: 13px;
       font-weight: 900;
       text-align: center;
+      font-size: .78rem;
       box-shadow: 0 12px 25px rgba(0,0,0,.35);
     }
 
@@ -2369,7 +2370,7 @@ ${warning}`;
       const sources = document.getElementById("studioSources").value.trim();
       const size = document.getElementById("studioTextSize").value;
 
-      const maxChars = size === "curto" ? 360 : size === "longo" ? 760 : 540;
+      const maxChars = size === "curto" ? 260 : size === "longo" ? 560 : 420;
       const cta = `\n\nConheça mais histórias da música brasileira em rmcontarecantar.art.br`;
 
       let core = "";
@@ -2408,35 +2409,60 @@ ${sources || "Nenhuma fonte informada."}`;
       studioCtaBox.style.display = "block";
     }
 
-    function studioBuildFromFacts(artist, facts, maxChars) {
-      const sentences = facts
+
+    function studioCleanRawFacts(raw) {
+      return String(raw || "")
+        .replace(/\[[^\]]*\]/g, " ")
+        .replace(/\b\d{1,2}:\d{2}\s*[-–]\s*\d{1,2}:\d{2}\b/g, " ")
+        .replace(/\b\d{1,2}:\d{2}\b/g, " ")
+        .split(/\n+/)
+        .map(line => line.trim())
+        .filter(line => line)
+        .filter(line => !/^[.\-_\s]{3,}$/.test(line))
+        .filter(line => !/^[A-ZÁÉÍÓÚÂÊÔÃÕÇ\s]{4,}$/.test(line))
+        .join(" ")
         .replace(/\s+/g, " ")
+        .trim();
+    }
+
+    function studioLimitTextForReel(text, maxChars) {
+      let cleaned = String(text || "").replace(/\s+/g, " ").trim();
+      if (cleaned.length <= maxChars) return cleaned;
+
+      let cut = cleaned.slice(0, maxChars);
+      if (cut.includes(".")) cut = cut.slice(0, cut.lastIndexOf(".") + 1);
+      else if (cut.includes(",")) cut = cut.slice(0, cut.lastIndexOf(","));
+      return cut.trim();
+    }
+
+    function studioBuildFromFacts(artist, facts, maxChars) {
+      const cleanFacts = studioCleanRawFacts(facts);
+
+      const sentences = cleanFacts
         .split(/(?<=[.!?])\s+/)
         .map(s => s.trim())
-        .filter(s => s.length > 20);
+        .filter(s => s.length > 14)
+        .map(s => studioRemoveWeakClaims(s));
 
       let selected = [];
 
       for (const s of sentences) {
-        const clean = studioRemoveWeakClaims(s);
-        if ((selected.join(" ") + " " + clean).length <= maxChars) {
-          selected.push(clean);
+        const candidate = (selected.join(" ") + " " + s).trim();
+        if (candidate.length <= maxChars) {
+          selected.push(s);
         }
-        if (selected.join(" ").length >= maxChars * .78) break;
+        if (selected.join(" ").length >= maxChars * .85) break;
       }
 
-      if (!selected.length) {
-        selected = [`${artist} merece uma homenagem construída com cuidado, fonte e memória.`];
-      }
-
-      const opening = `${artist}: uma história da música brasileira contada com respeito aos fatos.`;
       let body = selected.join(" ");
 
-      if (!body.toLowerCase().includes(artist.toLowerCase().split(" ")[0])) {
-        body = `${artist} ${body}`;
+      if (!body) {
+        body = `${artist} merece uma homenagem construída com cuidado, fonte e memória.`;
       }
 
-      return `${opening}\n\n${body}`;
+      body = studioLimitTextForReel(body, maxChars);
+
+      return `${artist}: uma história da música brasileira contada com respeito aos fatos.\n\n${body}`;
     }
 
     function studioRemoveWeakClaims(s) {
@@ -2534,7 +2560,7 @@ ${document.getElementById("studioAudit").textContent}
       }
 
       if (line) lines.push(line);
-      return lines.slice(0, 8);
+      return lines.slice(0, 12);
     }
 
     function studioRoundRect(ctx, x, y, w, h, r) {
@@ -2569,13 +2595,13 @@ ${document.getElementById("studioAudit").textContent}
       }
 
       const maxWidth = canvas.width * 0.82;
-      const fontSize = 48;
+      const fontSize = 34;
       ctx.font = `800 ${fontSize}px Arial, sans-serif`;
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
 
       const lines = studioWrapTextForCanvas(ctx, text, maxWidth);
-      const lineHeight = 62;
+      const lineHeight = 43;
       const boxH = lines.length * lineHeight + 44;
       const boxW = maxWidth + 70;
       const x = canvas.width / 2 - boxW / 2;
