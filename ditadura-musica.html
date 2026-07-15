@@ -300,12 +300,15 @@
 <body>
 
     <header>
-        <div class="logo">CONTAR <span>e</span> CANTAR</div>
+        <a class="logo" href="index.html" aria-label="CONTAR e CANTAR — página inicial">CONTAR <span>e</span> CANTAR</a>
         <nav id="mainNav" aria-label="Menu principal">
             <ul>
-                <li><a href="/">Início</a></li>
-                <li><a href="/#revista">Revista</a></li>
-                <li><a href="universos.html">Universos</a></li><li><a href="/#youtube">YouTube</a></li><li><a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener">Instagram</a></li>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#instagram">Instagram</a></li>
+                <li><a href="index.html#youtube">YouTube</a></li>
+                <li><a href="index.html#revista">Artigos</a></li>
+                <li><a href="index.html#pesquisa">Pesquisa</a></li>
+                <li><a href="index.html#universos">Fontes</a></li>
             </ul>
         </nav>
         <button class="mobile-menu-toggle" type="button" aria-label="Menu" aria-controls="mainNav" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -515,8 +518,8 @@
             </div>
 
             <div class="article-navigation">
-                <a href="tropicalia.html" class="nav-prev">← Tropicália</a>
-                <a href="index.html" class="nav-next">Voltar para Início →</a>
+                <a href="index.html#revista" class="nav-prev">← Voltar aos artigos</a>
+                <a href="index.html" class="nav-next">Voltar ao início →</a>
             </div>
         </div>
     </article>
@@ -537,3 +540,4 @@ n.querySelectorAll("a").forEach(a=>a.onclick=()=>setTimeout(()=>{n.classList.rem
 
 </body>
 </html>
+
