@@ -48,10 +48,7 @@
     }
   }
   </script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fix-webm-duration/1.0.5/fix-webm-duration.js"></script>
-
-  <style>
+<style>
     :root {
       --preto: #0A0A0A;
       --branco: #FFFFFF;
@@ -1251,321 +1248,34 @@
       .newsletter-form input { border-bottom: 1px solid rgba(255,255,255,.22); }
       .newsletter-form button { padding-left: 0; text-align: left; }
     }
-    
-    /* === RM CONTENT STUDIO - INTEGRADO === */
-    .admin-secret {
-      color: inherit;
-      text-decoration: none;
-      cursor: default;
+
+    .orientation-bar {
+      background: var(--papel);
+      border-bottom: 1px solid var(--linha);
+      padding: 1rem 5%;
     }
-    
-    .studio-login-modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 99999;
-      background: rgba(0,0,0,.72);
+    .orientation-inner {
+      width: min(1180px, 100%);
+      margin: 0 auto;
+      display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1.2rem;
-    }
-    .studio-login-modal.active { display: flex; }
-    
-    .studio-login-card {
-      width: min(440px, 100%);
-      background: var(--branco);
-      border: 1px solid var(--linha);
-      box-shadow: 0 30px 90px rgba(0,0,0,.25);
-      padding: 2rem;
-      border-radius: 24px;
-      text-align: center;
-    }
-    
-    .studio-login-card h2 { font-size: 2rem; margin-bottom: .6rem; }
-    .studio-login-card p { color: #555; margin-bottom: 1.2rem; }
-    
-    .studio-login-card input {
-      width: 100%;
-      border: 1px solid var(--linha);
-      border-radius: 999px;
-      padding: 1rem 1.1rem;
-      margin-bottom: .8rem;
-      font-size: 1rem;
-      text-align: center;
-    }
-    
-    .studio-login-actions {
-      display: flex;
-      gap: .7rem;
-      justify-content: center;
+      gap: 1rem 2rem;
       flex-wrap: wrap;
+      color: var(--cinza-texto);
+      font-size: .88rem;
     }
-    
-    .studio-error {
-      display: none;
-      color: #9f1239;
-      background: #fff1f2;
-      border: 1px solid #fecdd3;
-      padding: .7rem;
-      border-radius: 14px;
-      margin: .8rem 0;
-      font-size: .9rem;
-    }
-    
-    body.studio-mode header,
-    body.studio-mode main,
-    body.studio-mode footer,
-    body.studio-mode .mobile-backdrop {
-      display: none !important;
-    }
-    
-    .rm-studio {
-      display: none;
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at top left, rgba(34,211,238,.20), transparent 34rem),
-        radial-gradient(circle at top right, rgba(168,85,247,.18), transparent 34rem),
-        linear-gradient(135deg, #020617, #0f172a 48%, #111827);
-      color: #f8fafc;
-      padding: 1.2rem;
-      font-family: 'Inter', sans-serif;
-    }
-    
-    body.studio-mode .rm-studio { display: block; }
-    
-    .studio-container { width: min(1320px, 100%); margin: 0 auto; }
-    
-    .studio-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin-bottom: 1rem;
-    }
-    
-    .studio-brand {
+    .orientation-inner strong {
       font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      text-transform: uppercase;
-      display: flex;
-      align-items: center;
-      gap: .7rem;
-    }
-    
-    .studio-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 15px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, #22d3ee, #a855f7);
-      color: #fff;
-    }
-    
-    .studio-actions { display: flex; gap: .6rem; flex-wrap: wrap; }
-    
-    .studio-btn {
-      border: 1px solid rgba(255,255,255,.16);
-      color: #fff;
-      background: rgba(255,255,255,.10);
-      border-radius: 999px;
-      padding: .75rem 1rem;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: .76rem;
-      font-weight: 700;
+      font-size: .72rem;
       letter-spacing: 1px;
       text-transform: uppercase;
-      cursor: pointer;
     }
-    
-    .studio-btn-primary { border: 0; background: linear-gradient(135deg, #22d3ee, #a855f7); }
-    .studio-btn-gold { border: 0; background: linear-gradient(135deg, #fbbf24, #f97316); color: #111827; }
-    .studio-btn-green { border: 0; background: linear-gradient(135deg, #22c55e, #14b8a6); color: #051315; }
-    
-    .studio-hero { text-align: center; padding: 2.2rem 0 2rem; }
-    .studio-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.3rem, 6vw, 4.6rem); margin-bottom: .7rem; }
-    .studio-hero p { color: #cbd5e1; max-width: 840px; margin: 0 auto; font-size: 1.03rem; line-height: 1.7; }
-    
-    .studio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start; }
-    
-    .studio-card {
-      background: rgba(255,255,255,.075);
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 24px;
-      padding: 1.1rem;
-      box-shadow: 0 24px 70px rgba(0,0,0,.35);
-    }
-    
-    .studio-card h2 { font-size: 1.65rem; margin-bottom: .8rem; color: #fff; }
-    .studio-field { margin-bottom: .8rem; }
-    .studio-field label { display: block; color: #e2e8f0; font-weight: 700; margin-bottom: .45rem; font-size: .92rem; }
-    
-    .studio-field input,
-    .studio-field textarea,
-    .studio-field select {
-      width: 100%;
-      border: 1px solid rgba(255,255,255,.14);
-      background: rgba(2,6,23,.65);
-      color: #fff;
-      border-radius: 16px;
-      padding: .9rem;
-      outline: none;
-    }
-    
-    .studio-field textarea { min-height: 120px; resize: vertical; line-height: 1.6; }
-    .studio-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: .8rem; }
-    .studio-row-2 { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
-    
-    .studio-notice {
-      margin-top: .8rem;
-      color: #fde68a;
-      background: rgba(245,158,11,.10);
-      border: 1px solid rgba(245,158,11,.25);
-      border-radius: 16px;
-      padding: .8rem;
-      line-height: 1.55;
-      font-size: .9rem;
-    }
-    
-    .studio-ok { color: #bbf7d0; background: rgba(34,197,94,.10); border-color: rgba(34,197,94,.25); }
-    
-    .studio-stage {
-      position: relative;
-      width: min(100%, 410px);
-      aspect-ratio: 9 / 16;
-      background: #000;
-      border-radius: 22px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,.14);
-      margin: 0 auto;
-    }
-    
-    .studio-stage video { width: 100%; height: 100%; object-fit: cover; background: #000; display: block; }
-    
-    .studio-overlay-panel {
-      position: absolute;
-      left: 6%;
-      right: 6%;
-      bottom: 76px;
-      z-index: 4;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    
-    .studio-text-box {
-      color: #fff;
-      font-size: clamp(.78rem, 1.25vw, 1.05rem);
-      line-height: 1.22;
-      font-weight: 800;
-      text-shadow: 2px 2px 8px #000;
-      background: rgba(0,0,0,.46);
-      padding: 12px;
-      border-radius: 16px;
-      max-height: 62vh;
-      overflow: hidden;
-      white-space: pre-wrap;
-    }
-    
-    .studio-text-box img { display: none; }
-    
-    .studio-cta-box {
-      display: none;
-      color: #06111f;
-      background: linear-gradient(135deg,#fbbf24,#f97316);
-      padding: 8px 10px;
-      border-radius: 13px;
-      font-weight: 900;
-      text-align: center;
-      font-size: .78rem;
-      box-shadow: 0 12px 25px rgba(0,0,0,.35);
-    }
-    
-    .studio-result {
-      white-space: pre-wrap;
-      line-height: 1.7;
-      background: rgba(2,6,23,.65);
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 18px;
-      padding: .9rem;
-      min-height: 120px;
-      color: #e5e7eb;
-      margin-top: .8rem;
-    }
-    
-    .studio-download-area a {
-      display: block;
-      text-align: center;
-      background: linear-gradient(135deg, #22c55e, #14b8a6);
-      color: #051315;
-      padding: .85rem 1rem;
-      border-radius: 14px;
-      font-weight: 900;
-      text-decoration: none;
-      margin-top: .8rem;
-    }
-    
-    .studio-step-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #22d3ee, #a855f7);
-      color: #fff;
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: .85rem;
-      margin-right: .6rem;
-      flex-shrink: 0;
-    }
-    
-    .studio-card h2 { display: flex; align-items: center; }
-    .studio-card-subtitle { color: #94a3b8; font-size: .85rem; margin: -.3rem 0 1rem 2.4rem; line-height: 1.5; }
-    
-    .studio-action-group { display: flex; flex-direction: column; gap: .55rem; margin-top: .9rem; }
-    .studio-action-row { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
-    
-    .studio-action-row .studio-btn,
-    .studio-action-group > .studio-btn {
-      width: 100%;
-      margin: 0;
-    }
-    
-    .studio-divider { border: 0; border-top: 1px dashed rgba(255,255,255,.14); margin: 1rem 0; }
-    
-    .studio-toast {
-      position: fixed;
-      left: 50%;
-      bottom: 24px;
-      transform: translateX(-50%) translateY(12px);
-      max-width: min(92vw, 520px);
-      padding: .85rem 1.2rem;
-      border-radius: 14px;
-      font-family: 'Inter', sans-serif;
-      font-size: .92rem;
+    .orientation-inner a {
+      border-bottom: 1px solid var(--dourado);
       font-weight: 600;
-      box-shadow: 0 18px 45px rgba(0,0,0,.35);
-      z-index: 100000;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity .25s ease, transform .25s ease;
     }
-    
-    .studio-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-    .studio-toast.success { background: linear-gradient(135deg, #22c55e, #14b8a6); color: #051315; }
-    .studio-toast.warning { background: linear-gradient(135deg, #fbbf24, #f97316); color: #1c1303; }
-    .studio-toast.error { background: #ef4444; color: #fff; }
-    .studio-result-empty { color: #64748b; font-style: italic; }
-    
-    @media (max-width: 560px) { .studio-action-row { grid-template-columns: 1fr; } }
-    @media (max-width: 980px) {
-      .studio-grid, .studio-row, .studio-row-2 { grid-template-columns: 1fr; }
-      .studio-stage { width: min(100%, 380px); }
-    }
+
   </style>
 </head>
 
@@ -1575,12 +1285,12 @@
     <nav id="mainNav" aria-label="Menu principal">
       <ul>
         <li><a href="#inicio">Início</a></li>
-        <li><a href="#pesquisa">Centro de Pesquisa</a></li>
-        <li><a href="#revista">Revista</a></li>
-        <li><a href="#universos">Universos</a></li>
+        <li><a href="#instagram">Instagram</a></li>
         <li><a href="#youtube">YouTube</a></li>
+        <li><a href="#revista">Artigos</a></li>
+        <li><a href="#pesquisa">Pesquisa</a></li>
+        <li><a href="#universos">Fontes</a></li>
         <li><a href="#newsletter">Newsletter</a></li>
-        <li><a class="nav-instagram" href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener">Instagram</a></li>
       </ul>
     </nav>
     <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu" aria-controls="mainNav" aria-expanded="false">
@@ -1599,189 +1309,21 @@
         <h1>CONTAR e CANTAR</h1>
         <p class="hero-subtitle">Histórias da Música Brasileira. Artistas, canções, discos, movimentos, entrevistas e fontes para atravessar a memória musical do Brasil com cuidado e encanto.</p>
         <div class="hero-buttons">
-          <a href="#revista" class="btn btn-primary">Explorar Acervo</a>
-          <a href="universos.html" class="btn">Universos da MPB</a>
-          <a href="https://www.youtube.com/@rosanemaia4419" target="_blank" rel="noopener" class="btn">YouTube</a>
-          <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="btn">Instagram</a>
+          <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="btn btn-primary">Acompanhar no Instagram</a>
+          <a href="https://www.youtube.com/@rosanemaia4419" target="_blank" rel="noopener" class="btn">Assistir no YouTube</a>
+          <a href="#revista" class="btn">Ler os artigos</a>
         </div>
       </div>
     </section>
 
-    <section class="manifesto section">
-      <div class="manifesto-content">
-        <p>CONTAR e CANTAR é um projeto dedicado às histórias da música brasileira: artistas, canções, encontros, movimentos e memórias que atravessam gerações.</p>
-        <p>Mais do que reunir artistas, álbuns e movimentos culturais, este space busca reconstruir atmosferas: travessias pela história emocional da música brasileira.</p>
-        <div class="manifesto-signature">— Histórias da Música Brasileira • por Rosane Maia</div>
+    <aside class="orientation-bar" aria-label="Caminhos principais do site">
+      <div class="orientation-inner">
+        <strong>Conheça o projeto</strong>
+        <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener">Mais de 2.400 Reels no Instagram ↗</a>
+        <a href="#youtube">Entrevistas e vídeos</a>
+        <a href="#revista">Histórias da MPB</a>
       </div>
-    </section>
-
-    <section id="pesquisa" class="research-panel">
-      <div class="research-box">
-        <h2>Centro de Pesquisa da Música Brasileira</h2>
-        <p>Pesquise artistas, movimentos, discos, canções e temas usando o Google com foco no CONTAR e CANTAR e em fontes culturais confiáveis.</p>
-        <form class="research-form" id="researchForm" autocomplete="off">
-          <input id="researchQuery" type="search" placeholder="Ex: Chico César, Nara Leão, Cartola, Bossa Nova, Tropicália..." required>
-          <button type="submit" class="btn btn-primary">Pesquisar</button>
-        </form>
-        <div class="research-options" aria-label="Tipos de pesquisa">
-          <button type="button" class="research-option active" data-mode="site">No CONTAR e CANTAR</button>
-          <button type="button" class="research-option" data-mode="fontes">Em fontes culturais</button>
-          <button type="button" class="research-option" data-mode="academico">No Google Acadêmico</button>
-          <button type="button" class="research-option" data-mode="youtube">No YouTube</button>
-        </div>
-        <div class="research-note">Dica: use nomes completos e palavras de contexto. Exemplo: “Chico César Mama África”, “Nara Leão Show Opinião” ou “Cartola Mangueira”.</div>
-        <div class="source-grid">
-          <a class="source-card" href="universos.html">
-            <strong>Universos da MPB</strong>
-            <span>Curadoria interna de acervos, livros, documentários e referências.</span>
-          </a>
-          <a class="source-card" href="https://dicionariompb.com.br" target="_blank" rel="noopener">
-            <strong>Cravo Albin</strong>
-            <span>Dicionário especializado em música popular brasileira.</span>
-          </a>
-          <a class="source-card" href="https://enciclopedia.itaucultural.org.br" target="_blank" rel="noopener">
-            <strong>Itaú Cultural</strong>
-            <span>Verbetes sobre artistas, movimentos e cultura brasileira.</span>
-          </a>
-          <a class="source-card" href="https://hemerotecadigital.bn.gov.br" target="_blank" rel="noopener">
-            <strong>Hemeroteca</strong>
-            <span>Jornais, revistas e registros históricos digitalizados.</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section ecosystem">
-      <div class="container">
-        <div class="section-header">
-          <h2>O projeto em quatro espaços</h2>
-          <span>Site • Universos • YouTube • Instagram</span>
-        </div>
-        <div class="eco-grid">
-          <article class="eco-card">
-            <h3>🏛️ Site</h3>
-            <p>O espaço permanente do projeto: artigos, especiais, biografias e referências que ficam acessíveis fora das redes sociais.</p>
-            <a href="#revista" class="gold-link">Ver artigos →</a>
-          </article>
-          <article class="eco-card">
-            <h3>📱 Instagram</h3>
-            <p>O canal vivo do Contando e Cantando, com publicações, vídeos, histórias, entrevistas e contato direto com o público.</p>
-            <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="gold-link">Acompanhar →</a>
-          </article>
-          <article class="eco-card">
-            <h3>🎬 YouTube</h3>
-            <p>O acervo audiovisual do projeto: entrevistas, registros, documentários e encontros com personagens da música brasileira.</p>
-            <a href="https://www.youtube.com/@rosanemaia4419" target="_blank" rel="noopener" class="gold-link">Explorar canal →</a>
-          </article>
-          <article class="eco-card">
-            <h3>✉️ Newsletter</h3>
-            <p>Uma ponte direta com os leitores, sem depender de algoritmo, bloqueios repentinos ou instabilidades das plataformas.</p>
-            <a href="#newsletter" class="gold-link">Assinar →</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="revista" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Revista Cultural</h2>
-          <span>Artigos & Especiais</span>
-        </div>
-        <div class="articles-grid">
-          <a href="tropicalia.html" class="article-card">
-            <div class="card-cover cover-tropicalia">
-              <span class="article-category">Movimento</span>
-              <div class="card-cover-text">
-                <h3>TROPICÁLIA</h3>
-                <p>1967-1968</p>
-              </div>
-            </div>
-            <div class="article-content">
-              <div class="article-meta">15 min de leitura</div>
-              <h3>A Revolução da Tropicália</h3>
-              <p>Como Caetano, Gil e uma geração mudaram a música brasileira para sempre.</p>
-              <span class="gold-link">Ler artigo →</span>
-            </div>
-          </a>
-          <a href="cartola.html" class="article-card">
-            <div class="card-cover cover-cartola">
-              <span class="article-category">Biografia</span>
-              <div class="card-cover-text">
-                <h3>CARTOLA</h3>
-                <p>O GÊNIO DO SAMBA</p>
-              </div>
-            </div>
-            <div class="article-content">
-              <div class="article-meta">18 min de leitura</div>
-              <h3>Cartola: O Gênio do Samba</h3>
-              <p>De lavador de carros a ícone nacional. A história do fundador da Mangueira.</p>
-              <span class="gold-link">Ler artigo →</span>
-            </div>
-          </a>
-          <a href="elis.html" class="article-card">
-            <div class="card-cover cover-elis">
-              <span class="article-category">Análise</span>
-              <div class="card-cover-text">
-                <h3>ELIS REGINA</h3>
-                <p>A VOZ QUE ARDIA</p>
-              </div>
-            </div>
-            <div class="article-content">
-              <div class="article-meta">20 min de leitura</div>
-              <h3>Elis Regina: A Revolução da Interpretação</h3>
-              <p>A trajetória da gaúcha que dominou o Brasil com intensidade rara.</p>
-              <span class="gold-link">Ler artigo →</span>
-            </div>
-          </a>
-          <a href="ditadura-musica.html" class="article-card">
-            <div class="card-cover cover-ditadura">
-              <span class="article-category">História</span>
-              <div class="card-cover-text">
-                <h3>DITADURA E MÚSICA</h3>
-                <p>1964-1985</p>
-              </div>
-            </div>
-            <div class="article-content">
-              <div class="article-meta">22 min de leitura</div>
-              <h3>Cale-se ou Cante: A Música Brasileira Sob a Ditadura</h3>
-              <p>Como a censura tentou calar a MPB e como compositores brasileiros responderam com metáforas, coragem e canções.</p>
-              <span class="gold-link">Ler artigo →</span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="universos" class="section universos-feature">
-      <div class="container universos-grid">
-        <div>
-          <div class="hero-eyebrow">Curadoria de fontes</div>
-          <h2>Universos da MPB</h2>
-          <p>A página de fontes reúne acervos, livros, documentários, podcasts, referências acadêmicas e instituições nacionais e internacionais para estudar a música brasileira com mais profundidade.</p>
-          <p>É o centro de pesquisa do projeto: uma porta para quem deseja ir além do artigo e encontrar caminhos confiáveis de investigação.</p>
-          <a href="universos.html" class="btn btn-primary">Explorar Universos</a>
-        </div>
-        <div class="mini-source-grid">
-          <a href="universos.html" class="mini-source">
-            <strong>Acervos</strong>
-            <span>IMS, MIS, Biblioteca Nacional e outras instituições.</span>
-          </a>
-          <a href="universos.html" class="mini-source">
-            <strong>Livros</strong>
-            <span>Biografias, estudos culturais e história da música.</span>
-          </a>
-          <a href="universos.html" class="mini-source">
-            <strong>Documentários</strong>
-            <span>Filmes, séries, entrevistas e registros audiovisuais.</span>
-          </a>
-          <a href="universos.html" class="mini-source">
-            <strong>Pesquisa</strong>
-            <span>SciELO, Google Scholar e referências acadêmicas.</span>
-          </a>
-        </div>
-      </div>
-    </section>
+    </aside>
 
     <section id="youtube" class="section youtube-section">
       <div class="container youtube-grid">
@@ -1827,12 +1369,12 @@
       </div>
     </section>
 
-    <section class="section instagram-section">
+    <section id="instagram" class="section instagram-section">
       <div class="container">
         <div class="instagram-card">
           <div class="hero-eyebrow">Contando e Cantando</div>
           <h2>O acervo também vive no Instagram</h2>
-          <p>O perfil de Rosane Maia reúne publicações, vídeos curtos, memórias, bastidores e histórias da música brasileira. O site organiza a parte permanente; o Instagram mantém o projeto em movimento diário.</p>
+          <p>Com cerca de 150 mil seguidores e mais de 2.400 Reels, o perfil de Rosane Maia reúne vídeos curtos, memórias, bastidores e histórias da música brasileira. O site organiza a parte permanente; o Instagram mantém o projeto em movimento diário.</p>
           <div class="instagram-preview-grid" aria-label="Temas do acervo no Instagram">
             <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="instagram-preview-card">
               <span>MPB</span>
@@ -1856,6 +1398,151 @@
       </div>
     </section>
 
+    <section id="revista" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Histórias em destaque</h2>
+          <span>Artigos & Especiais</span>
+        </div>
+        <div class="articles-grid">
+          <a href="tropicalia.html" class="article-card">
+            <div class="card-cover cover-tropicalia">
+              <span class="article-category">Movimento</span>
+              <div class="card-cover-text">
+                <h3>TROPICÁLIA</h3>
+                <p>1967-1968</p>
+              </div>
+            </div>
+            <div class="article-content">
+              <div class="article-meta">5 min de leitura</div>
+              <h3>A Revolução da Tropicália</h3>
+              <p>Como Caetano, Gil e uma geração mudaram a música brasileira para sempre.</p>
+              <span class="gold-link">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="cartola.html" class="article-card">
+            <div class="card-cover cover-cartola">
+              <span class="article-category">Biografia</span>
+              <div class="card-cover-text">
+                <h3>CARTOLA</h3>
+                <p>O GÊNIO DO SAMBA</p>
+              </div>
+            </div>
+            <div class="article-content">
+              <div class="article-meta">7 min de leitura</div>
+              <h3>Cartola: O Gênio do Samba</h3>
+              <p>De lavador de carros a ícone nacional. A história do fundador da Mangueira.</p>
+              <span class="gold-link">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="elis.html" class="article-card">
+            <div class="card-cover cover-elis">
+              <span class="article-category">Análise</span>
+              <div class="card-cover-text">
+                <h3>ELIS REGINA</h3>
+                <p>A VOZ QUE ARDIA</p>
+              </div>
+            </div>
+            <div class="article-content">
+              <div class="article-meta">Em revisão</div>
+              <h3>Elis Regina: A Revolução da Interpretação</h3>
+              <p>A trajetória da gaúcha que dominou o Brasil com intensidade rara.</p>
+              <span class="gold-link">Ler artigo →</span>
+            </div>
+          </a>
+          <a href="ditadura-musica.html" class="article-card">
+            <div class="card-cover cover-ditadura">
+              <span class="article-category">História</span>
+              <div class="card-cover-text">
+                <h3>DITADURA E MÚSICA</h3>
+                <p>1964-1985</p>
+              </div>
+            </div>
+            <div class="article-content">
+              <div class="article-meta">13 min de leitura</div>
+              <h3>Cale-se ou Cante: A Música Brasileira Sob a Ditadura</h3>
+              <p>Como a censura tentou calar a MPB e como compositores brasileiros responderam com metáforas, coragem e canções.</p>
+              <span class="gold-link">Ler artigo →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="manifesto section">
+      <div class="manifesto-content">
+        <p>CONTAR e CANTAR é um projeto dedicado às histórias da música brasileira: artistas, canções, encontros, movimentos e memórias que atravessam gerações.</p>
+        <p>Mais do que reunir artistas, álbuns e movimentos culturais, este espaço busca reconstruir atmosferas: travessias pela história emocional da música brasileira.</p>
+        <div class="manifesto-signature">— Histórias da Música Brasileira • por Rosane Maia</div>
+      </div>
+    </section>
+
+    <section id="pesquisa" class="research-panel">
+      <div class="research-box">
+        <h2>Centro de Pesquisa da Música Brasileira</h2>
+        <p>Pesquise artistas, movimentos, discos, canções e temas usando o Google com foco no CONTAR e CANTAR e em fontes culturais confiáveis.</p>
+        <form class="research-form" id="researchForm" autocomplete="off">
+          <input id="researchQuery" type="search" placeholder="Ex: Chico César, Nara Leão, Cartola, Bossa Nova, Tropicália..." required>
+          <button type="submit" class="btn btn-primary">Pesquisar</button>
+        </form>
+        <div class="research-options" aria-label="Tipos de pesquisa">
+          <button type="button" class="research-option active" data-mode="site">No CONTAR e CANTAR</button>
+          <button type="button" class="research-option" data-mode="fontes">Em fontes culturais</button>
+          <button type="button" class="research-option" data-mode="academico">No Google Acadêmico</button>
+          <button type="button" class="research-option" data-mode="youtube">No YouTube</button>
+        </div>
+        <div class="research-note">Dica: use nomes completos e palavras de contexto. Exemplo: “Chico César Mama África”, “Nara Leão Show Opinião” ou “Cartola Mangueira”.</div>
+        <div class="source-grid">
+          <a class="source-card" href="universos.html">
+            <strong>Universos da MPB</strong>
+            <span>Curadoria interna de acervos, livros, documentários e referências.</span>
+          </a>
+          <a class="source-card" href="https://dicionariompb.com.br" target="_blank" rel="noopener">
+            <strong>Cravo Albin</strong>
+            <span>Dicionário especializado em música popular brasileira.</span>
+          </a>
+          <a class="source-card" href="https://enciclopedia.itaucultural.org.br" target="_blank" rel="noopener">
+            <strong>Itaú Cultural</strong>
+            <span>Verbetes sobre artistas, movimentos e cultura brasileira.</span>
+          </a>
+          <a class="source-card" href="https://hemerotecadigital.bn.gov.br" target="_blank" rel="noopener">
+            <strong>Hemeroteca</strong>
+            <span>Jornais, revistas e registros históricos digitalizados.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="universos" class="section universos-feature">
+      <div class="container universos-grid">
+        <div>
+          <div class="hero-eyebrow">Curadoria de fontes</div>
+          <h2>Universos da MPB</h2>
+          <p>A página de fontes reúne acervos, livros, documentários, podcasts, referências acadêmicas e instituições nacionais e internacionais para estudar a música brasileira com mais profundidade.</p>
+          <p>É o centro de pesquisa do projeto: uma porta para quem deseja ir além do artigo e encontrar caminhos confiáveis de investigação.</p>
+          <a href="universos.html" class="btn btn-primary">Explorar Universos</a>
+        </div>
+        <div class="mini-source-grid">
+          <a href="universos.html" class="mini-source">
+            <strong>Acervos</strong>
+            <span>IMS, MIS, Biblioteca Nacional e outras instituições.</span>
+          </a>
+          <a href="universos.html" class="mini-source">
+            <strong>Livros</strong>
+            <span>Biografias, estudos culturais e história da música.</span>
+          </a>
+          <a href="universos.html" class="mini-source">
+            <strong>Documentários</strong>
+            <span>Filmes, séries, entrevistas e registros audiovisuais.</span>
+          </a>
+          <a href="universos.html" class="mini-source">
+            <strong>Pesquisa</strong>
+            <span>SciELO, Google Scholar e referências acadêmicas.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section id="newsletter" class="section newsletter">
       <div class="newsletter-content">
         <h2>Receba os especiais por e-mail</h2>
@@ -1869,155 +1556,9 @@
   </main>
 
   <footer>
-    <p>CONTAR e CANTAR © 2026 • Histórias da Música Brasileira por <a href="#" class="admin-secret" id="studioSecretLink">Rosane Maia</a></p>
+    <p>CONTAR e CANTAR © 2026 • Histórias da Música Brasileira por Rosane Maia</p>
   </footer>
 
-  <div class="studio-login-modal" id="studioLoginModal" aria-hidden="true">
-    <div class="studio-login-card">
-      <h2>RM Content Studio</h2>
-      <p>Área restrita de produção editorial do CONTAR e CANTAR.</p>
-      <input type="password" id="studioPassword" placeholder="Digite a senha" autocomplete="current-password">
-      <div class="studio-error" id="studioError">Senha incorreta.</div>
-      <div class="studio-login-actions">
-        <button class="btn btn-primary" type="button" onclick="studioCheckPassword()">Entrar</button>
-        <button class="btn" type="button" onclick="studioCloseLogin()">Cancelar</button>
-      </div>
-    </div>
-  </div>
-
-  <section class="rm-studio" id="rmStudio">
-    <div class="studio-container">
-      <div class="studio-top">
-        <div class="studio-brand"><span class="studio-mark">RM</span><span>RM Content Studio</span></div>
-        <div class="studio-actions">
-          <button class="studio-btn" type="button" onclick="studioBackToSite()">Voltar ao site</button>
-          <button class="studio-btn" type="button" onclick="studioLogout()">Sair</button>
-        </div>
-      </div>
-      
-      <div class="studio-hero">
-        <h1>Centro Editorial</h1>
-        <p>Ferramenta interna para criar Reels MPB com narrativa visual factual. O texto escreve nos primeiros segundos, permanece na tela e finaliza com chamada para o site oficial.</p>
-      </div>
-      
-      <div class="studio-grid">
-        <div class="studio-card">
-          <h2><span class="studio-step-badge">1</span>Vídeo e narrativa</h2>
-          <p class="studio-card-subtitle">Carregue o vídeo de fundo e cole os dados confirmados. Nada é inventado — a ferramenta só organiza o que você fornecer.</p>
-          
-          <div class="studio-field">
-            <label>Vídeo</label>
-            <input type="file" id="studioVideoInput" accept="video/*">
-          </div>
-          
-          <div class="studio-field">
-            <label>Artista, música ou tema</label>
-            <input id="studioArtist" placeholder="Ex: Rosane Maia, Cartola, Elis Regina">
-          </div>
-          
-          <div class="studio-row">
-            <div class="studio-field">
-              <label>Tipo</label>
-              <select id="studioType">
-                <option>Artista</option>
-                <option>Canção</option>
-                <option>Compositor</option>
-                <option>Disco</option>
-                <option>Show</option>
-              </select>
-            </div>
-            
-            <div class="studio-field">
-              <label>Texto termina em</label>
-              <select id="studioWriteTime">
-                <option value="30">30 segundos</option>
-                <option value="45">45 segundos</option>
-                <option value="60">60 segundos</option>
-                <option value="20">20 segundos</option>
-                <option value="auto">Automático</option>
-              </select>
-            </div>
-            
-            <div class="studio-field">
-              <label>Tamanho</label>
-              <select id="studioTextSize">
-                <option value="medio">Médio</option>
-                <option value="curto">Curto</option>
-                <option value="longo">Longo</option>
-              </select>
-            </div>
-          </div>
-          
-          <div class="studio-field">
-            <label>Dossiê factual / dados confirmados</label>
-            <textarea id="studioFacts" placeholder="Cole aqui apenas dados confirmados: biografia, datas, obras, fontes, entrevistas, discografia, links.Dica: inclua ao menos uma data e um fato concreto — a auditoria do passo 2 vai checar isso."></textarea>
-          </div>
-          
-          <div class="studio-field">
-            <label>Fontes consultadas</label>
-            <textarea id="studioSources" placeholder="Ex:Dicionário Cravo Albin - https://...Itaú Cultural - https://...Site oficial - https://..."></textarea>
-          </div>
-          
-          <hr class="studio-divider">
-          
-          <h2 style="font-size:1.15rem"><span class="studio-step-badge">2</span>Verificar e gerar</h2>
-          <div class="studio-action-row">
-            <button class="studio-btn studio-btn-primary" type="button" onclick="studioAnalyzeSources()">🔍 Analisar completude</button>
-            <button class="studio-btn studio-btn-gold" type="button" onclick="studioGenerateNarrative()">✎ Gerar narrativa visual</button>
-          </div>
-          
-          <hr class="studio-divider">
-          
-          <h2 style="font-size:1.15rem"><span class="studio-step-badge">3</span>Pré-visualizar e exportar</h2>
-          <div class="studio-action-group">
-            <button class="studio-btn studio-btn-primary" type="button" onclick="studioPlayPreview()">▶ Ver texto escrevendo no vídeo</button>
-            <div class="studio-action-row">
-              <button class="studio-btn studio-btn-green" type="button" onclick="studioDownloadTXT()">📄 Baixar texto e fontes</button>
-              <button class="studio-btn studio-btn-gold" type="button" onclick="studioExportVideoWebM()">⬇ Baixar vídeo com texto</button>
-            </div>
-          </div>
-          
-          <div class="studio-download-area" id="studioDownloadArea"></div>
-          
-          <div class="studio-notice">
-            Esta versão roda dentro do próprio index.html. Ela não pesquisa sozinha na web: você cola dados e fontes, e ela monta o texto sem inventar.<br><br>
-            <strong>Exportação de vídeo:</strong> funciona melhor em <strong>Chrome ou Edge</strong>. No Firefox pode travar sem concluir (limitação conhecida do navegador com essa técnica de gravação).
-          </div>
-        </div>
-        
-        <div class="studio-card">
-          <h2><span class="studio-step-badge">★</span>Prévia estilo Reels</h2>
-          <p class="studio-card-subtitle">É exatamente o que vai aparecer no vídeo exportado.</p>
-          
-          <div class="studio-stage">
-            <video id="studioVideo" controls playsinline></video>
-            <div class="studio-overlay-panel">
-              <div class="studio-text-box" id="studioVisualText">A narrativa aparecerá aqui.</div>
-              <div class="studio-cta-box" id="studioCtaBox">Mais histórias da música brasileira: rmcontarecantar.art.br</div>
-            </div>
-          </div>
-          
-          <div class="studio-notice studio-ok">
-            O vídeo continua como fundo. O texto escreve nos primeiros segundos e depois fica parado para leitura.
-          </div>
-        </div>
-      </div>
-      
-      <div class="studio-grid" style="margin-top:1rem">
-        <div class="studio-card">
-          <h2 style="font-size:1.25rem">Texto final do Reel</h2>
-          <div id="studioFinalText" class="studio-result"><span class="studio-result-empty">O texto final aparecerá aqui depois de clicar em "Gerar narrativa visual".</span></div>
-        </div>
-        
-        <div class="studio-card">
-          <h2 style="font-size:1.25rem">Auditoria de completude e legenda</h2>
-          <div id="studioAudit" class="studio-result"><span class="studio-result-empty">Clique em "Analisar completude" ou "Gerar narrativa visual" para ver aqui o que está OK e o que falta confirmar.</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="studio-toast" id="studioToast"></div>
 
   <script>
     const researchForm = document.getElementById("researchForm");
@@ -2114,632 +1655,7 @@
     }
   </script>
 
-  <script>
-    const RM_STUDIO_PASSWORD = "1234";
-    const studioSecretLink = document.getElementById("studioSecretLink");
-    const studioLoginModal = document.getElementById("studioLoginModal");
-    const studioPassword = document.getElementById("studioPassword");
-    const studioError = document.getElementById("studioError");
-    
-    if (studioSecretLink) {
-      studioSecretLink.addEventListener("click", function(event) {
-        event.preventDefault();
-        studioOpenLogin();
-      });
-    }
-    
-    function studioOpenLogin() {
-      if (sessionStorage.getItem("rm_studio_acesso") === "liberado") {
-        studioEnter();
-        return;
-      }
-      studioLoginModal.classList.add("active");
-      studioLoginModal.setAttribute("aria-hidden", "false");
-      studioPassword.value = "";
-      studioError.style.display = "none";
-      setTimeout(() => studioPassword.focus(), 80);
-    }
-    
-    function studioCloseLogin() {
-      studioLoginModal.classList.remove("active");
-      studioLoginModal.setAttribute("aria-hidden", "true");
-    }
-    
-    function studioCheckPassword() {
-      if (studioPassword.value === RM_STUDIO_PASSWORD) {
-        sessionStorage.setItem("rm_studio_acesso", "liberado");
-        studioCloseLogin();
-        studioEnter();
-      } else {
-        studioError.style.display = "block";
-        studioPassword.select();
-      }
-    }
-    
-    if (studioPassword) {
-      studioPassword.addEventListener("keydown", function(event) {
-        if (event.key === "Enter") studioCheckPassword();
-        if (event.key === "Escape") studioCloseLogin();
-      });
-    }
-    
-    function studioEnter() {
-      document.body.classList.add("studio-mode");
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    }
-    
-    function studioBackToSite() {
-      document.body.classList.remove("studio-mode");
-      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
-    }
-    
-    function studioLogout() {
-      sessionStorage.removeItem("rm_studio_acesso");
-      document.body.classList.remove("studio-mode");
-      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
-    }
-    
-    const studioVideo = document.getElementById("studioVideo");
-    const studioVisualText = document.getElementById("studioVisualText");
-    const studioCtaBox = document.getElementById("studioCtaBox");
-    const studioVideoInput = document.getElementById("studioVideoInput");
-    
-    let studioFinalNarrative = "";
-    let studioFinalCaption = "";
-    let studioTypeTimer = null;
-    let studioCtaTimer = null;
-    let studioToastTimer = null;
-    
-    function studioShowToast(message, type) {
-      const toast = document.getElementById("studioToast");
-      if (!toast) return;
-      clearTimeout(studioToastTimer);
-      toast.textContent = message;
-      toast.className = "studio-toast show " + (type || "success");
-      studioToastTimer = setTimeout(() => {
-        toast.classList.remove("show");
-      }, type === "warning" ? 5000 : 3200);
-    }
-    
-    if (studioVideoInput) {
-      studioVideoInput.addEventListener("change", event => {
-        const file = event.target.files[0];
-        if (!file) return;
-        studioVideo.src = URL.createObjectURL(file);
-        studioVideo.load();
-        studioVisualText.textContent = "Vídeo carregado. Agora gere a narrativa visual.";
-        studioCtaBox.style.display = "none";
-        studioShowToast("Vídeo carregado: " + file.name, "success");
-      });
-    }
-    
-    function studioAnalyzeSources() {
-      const facts = document.getElementById("studioFacts").value.trim();
-      const sources = document.getElementById("studioSources").value.trim();
-      const sourceLines = sources.split(/\n+/).map(s => s.trim()).filter(Boolean);
-      const links = sourceLines.filter(s => /https?:\/\//i.test(s));
-      const sourcesWithoutLink = sourceLines.filter(s => s && !/https?:\/\//i.test(s));
-      const checks = [];
-      
-      const dateMatches = facts.match(/\b(18|19|20)\d{2}\b|\b\d{1,2}\/\d{1,2}\/\d{2,4}\b/g) || [];
-      checks.push({
-        ok: dateMatches.length > 0,
-        label: "Datas",
-        detail: dateMatches.length
-          ? `${dateMatches.length} data(s) encontrada(s): ${[...new Set(dateMatches)].slice(0, 6).join(", ")}`
-          : "Nenhuma data encontrada no dossiê. Reels biográficos quase sempre precisam de ao menos um ano (nascimento, lançamento, fato marcante)."
-      });
-      
-      const artistField = document.getElementById("studioArtist").value.trim();
-      checks.push({
-        ok: !!artistField,
-        label: "Identificação do tema",
-        detail: artistField
-          ? `Campo preenchido: "${artistField}"`
-          : "O campo \"Artista, música ou tema\" está vazio. Preencha para deixar claro de quem/o que trata o Reel."
-      });
-      
-      checks.push({
-        ok: links.length > 0,
-        label: "Fonte verificável (com link)",
-        detail: links.length
-          ? `${links.length} link(s) informado(s).`
-          : sourcesWithoutLink.length
-            ? `Você citou ${sourcesWithoutLink.length} fonte(s) por nome, mas sem link. Sem link, não é possível confirmar o dado rapidamente antes de publicar.`
-            : "Nenhuma fonte foi informada."
-      });
-      
-      const vagueClaims = facts.match(/\b(um dos maiores|a maior voz|gênio absoluto|inesquecível|incrível|sensacional|o melhor de todos|revolucionou|mudou a história)\b/gi) || [];
-      const hasNumbers = /\d/.test(facts);
-      checks.push({
-        ok: hasNumbers && vagueClaims.length === 0,
-        label: "Fatos concretos vs. afirmações vagas",
-        detail: vagueClaims.length
-          ? `Encontrada(s) ${vagueClaims.length} expressão(ões) de impacto sem dado que sustente (ex.: "${vagueClaims[0]}"). Considere trocar por um fato específico (data, número, obra nomeada).`
-          : hasNumbers
-            ? "O texto contém dados numéricos (datas, idades, quantidades) que sustentam a narrativa."
-            : "O texto não tem nenhum número (data, idade, contagem). Pode estar genérico demais para um conteúdo factual."
-      });
-      
-      const ageMatches = facts.match(/\b\d{1,3}\s*anos\b/gi) || [];
-      const uniqueAges = [...new Set(ageMatches.map(s => s.toLowerCase()))];
-      checks.push({
-        ok: uniqueAges.length <= 1,
-        label: "Possível contradição de idade",
-        detail: uniqueAges.length > 1
-          ? `Encontradas menções diferentes de idade (${uniqueAges.join(", ")}). Confirme se não há erro de digitação ou contradição entre fatos.`
-          : "Nenhuma contraditoriedade óbvia de idade detectada nesta checagem simples."
-      });
-      
-      checks.push({
-        ok: facts.length >= 80,
-        label: "Volume mínimo de conteúdo",
-        detail: facts.length >= 80
-          ? `Dossiê com ${facts.length} caracteres.`
-          : `Dossiê muito curto (${facts.length} caracteres). Pode não ser suficiente para um roteiro completo.`
-      });
-      
-      const failed = checks.filter(c => !c.ok);
-      const passed = checks.filter(c => c.ok);
-      const statusLine = failed.length === 0
-        ? "✓ Nenhuma pendência encontrada nesta checagem automática."
-        : `⚠ ${failed.length} pendência(s) encontrada(s) — revise antes de publicar.`;
-        
-      const lines = [];
-      lines.push("AUDITORIA DE COMPLETUDE FACTUAL");
-      lines.push("");
-      lines.push(statusLine);
-      lines.push("");
-      lines.push("Esta checagem é automática e limitada: ela verifica presença de");
-      lines.push("elementos estruturais (datas, fontes, fatos concretos), mas não");
-      lines.push("confirma se os dados em si estão corretos. A confirmação final");
-      lines.push("do fato é sempre sua.");
-      lines.push("");
-      
-      if (failed.length) {
-        lines.push("PENDÊNCIAS:");
-        failed.forEach(c => {
-          lines.push(`✗ ${c.label}`);
-          lines.push(`  ${c.detail}`);
-        });
-        lines.push("");
-      }
-      
-      if (passed.length) {
-        lines.push("OK:");
-        passed.forEach(c => {
-          lines.push(`✓ ${c.label} — ${c.detail}`);
-        });
-      }
-      
-      document.getElementById("studioAudit").textContent = lines.join("\n");
-      return { checks, failed, passed };
-    }
-    
-    function studioGenerateNarrative() {
-      const audit = studioAnalyzeSources();
-      const artist = document.getElementById("studioArtist").value.trim() || "Artista escolhido";
-      const facts = document.getElementById("studioFacts").value.trim();
-      const sources = document.getElementById("studioSources").value.trim();
-      const size = document.getElementById("studioTextSize").value;
-      const maxChars = size === "curto" ? 260 : size === "longo" ? 560 : 420;
-      let core = "";
-      
-      if (facts) {
-        core = studioBuildFromFacts(artist, facts, maxChars);
-      } else {
-        core = `${artist} é lembrado neste registro como parte da memória viva da música brasileira. Para uma homenagem factual, acrescente dados confirmados, fontes e referências antes da publicação.`;
-      }
-      
-      studioFinalNarrative = core.trim();
-      studioFinalCaption = `Homenagem a ${artist}.\n\nConteúdo preparado com base em pesquisa e revisão editorial.\n\nMais histórias da música brasileira:\nrmcontarecantar.art.br\n\n#MPB #MusicaBrasileira #ContandoECantando #ReelsBrasil #CulturaBrasileira`;
-      
-      document.getElementById("studioFinalText").textContent = studioFinalNarrative;
-      document.getElementById("studioAudit").textContent += `\n\n────────────────────────────\nLEGENDA DO POST\n────────────────────────────\n${studioFinalCaption}\n\n────────────────────────────\nFONTES INFORMADAS\n────────────────────────────\n${sources || "Nenhuma fonte informada."}`;
-      
-      studioVisualText.textContent = studioFinalNarrative;
-      studioCtaBox.style.display = "block";
-      
-      const criticalLabels = ["Datas", "Fonte verificável (com link)"];
-      const criticalFailures = audit.failed.filter(c => criticalLabels.includes(c.label));
-      
-      if (criticalFailures.length) {
-        studioShowToast(
-          "⚠ Atenção: " + criticalFailures.map(c => c.label).join(" e ") +
-          " pendente(s). Revise a auditoria antes de publicar.",
-          "warning"
-        );
-      } else {
-        studioShowToast("Narrativa gerada. Confira a auditoria ao lado.", "success");
-      }
-    }
-    
-    function studioCleanRawFacts(raw) {
-      return String(raw || "")
-        .replace(/\[[^\]]*\]/g, " ")
-        .replace(/\b\d{1,2}:\d{2}\s*[-–]\s*\d{1,2}:\d{2}\b/g, " ")
-        .replace(/\b\d{1,2}:\d{2}\b/g, " ")
-        .split(/\n+/)
-        .map(line => line.trim())
-        .filter(line => line)
-        .filter(line => !/^[.\-_\s]{3,}$/.test(line))
-        .filter(line => !/^[A-ZÁÉÍÓÚÂÊÔÃÕÇ\s]{4,}$/.test(line))
-        .join(" ")
-        .replace(/\s+/g, " ")
-        .trim();
-    }
-    
-    function studioLimitTextForReel(text, maxChars) {
-      let cleaned = String(text || "").replace(/\s+/g, " ").trim();
-      if (cleaned.length <= maxChars) return cleaned;
-      let cut = cleaned.slice(0, maxChars);
-      if (cut.includes(".")) cut = cut.slice(0, cut.lastIndexOf(".") + 1);
-      else if (cut.includes(",")) cut = cut.slice(0, cut.lastIndexOf(","));
-      return cut.trim();
-    }
-    
-    function studioBuildFromFacts(artist, facts, maxChars) {
-      const cleanFacts = studioCleanRawFacts(facts);
-      const sentences = cleanFacts
-        .split(/(?<=[.!?])\s+/)
-        .map(s => s.trim())
-        .filter(s => s.length > 14)
-        .map(s => studioRemoveWeakClaims(s));
-      let selected = [];
-      
-      for (const s of sentences) {
-        const candidate = (selected.join(" ") + " " + s).trim();
-        if (candidate.length <= maxChars) {
-          selected.push(s);
-        }
-        if (selected.join(" ").length >= maxChars * .85) break;
-      }
-      
-      let body = selected.join(" ");
-      if (!body) {
-        body = `${artist} merece uma homenagem construída com cuidado, fonte e memória.`;
-      }
-      body = studioLimitTextForReel(body, maxChars);
-      return `${artist}: uma história da música brasileira contada com respeito aos fatos.\n\n${body}`;
-    }
-    
-    function studioRemoveWeakClaims(s) {
-      return s
-        .replace(/\bum dos maiores\b/gi, "um nome importante")
-        .replace(/\ba maior voz\b/gi, "uma voz reconhecida")
-        .replace(/\bgênio absoluto\b/gi, "artista de grande relevância")
-        .replace(/\binesquecível\b/gi, "marcante");
-    }
-    
-    function studioPlayPreview() {
-      if (!studioFinalNarrative) studioGenerateNarrative();
-      clearInterval(studioTypeTimer);
-      clearTimeout(studioCtaTimer);
-      studioCtaBox.style.display = "none";
-      studioVisualText.textContent = "";
-      
-      const writeChoice = document.getElementById("studioWriteTime").value;
-      const duration = Math.floor(studioVideo.duration || 60);
-      let writeSeconds = writeChoice === "auto"
-        ? Math.min(60, Math.max(25, Math.floor(duration * 0.25)))
-        : Number(writeChoice);
-      writeSeconds = Math.min(writeSeconds, Math.max(10, duration - 3));
-      
-      studioVideo.currentTime = 0;
-      studioVideo.play();
-      let i = 0;
-      const chars = studioFinalNarrative.length;
-      const interval = Math.max(18, Math.floor((writeSeconds * 1000) / Math.max(chars, 1)));
-      
-      studioTypeTimer = setInterval(() => {
-        i++;
-        studioVisualText.textContent = studioFinalNarrative.slice(0, i);
-        if (i >= chars) {
-          clearInterval(studioTypeTimer);
-          studioVisualText.textContent = studioFinalNarrative;
-          studioCtaBox.style.display = "block";
-        }
-      }, interval);
-      
-      studioCtaTimer = setTimeout(() => {
-        studioCtaBox.style.display = "block";
-      }, Math.max(1000, (writeSeconds - 3) * 1000));
-    }
-    
-    function studioDownloadTXT() {
-      if (!studioFinalNarrative) studioGenerateNarrative();
-      const content = `RM CONTENT STUDIO - REELS MPB\n\nTEXTO DO REEL\n${studioFinalNarrative}\n\nLEGENDA DO POST\n${studioFinalCaption}\n\nAUDITORIA\n${document.getElementById("studioAudit").textContent}`;
-      const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "reels-mpb-narrativa-factual.txt";
-      a.click();
-      URL.revokeObjectURL(url);
-      studioShowToast("Arquivo de texto baixado.", "success");
-    }
-    
-    function studioWrapTextForCanvas(ctx, text, maxWidth) {
-      const words = String(text).split(/\s+/);
-      const lines = [];
-      let line = "";
-      for (const word of words) {
-        const test = line ? line + " " + word : word;
-        if (ctx.measureText(test).width > maxWidth && line) {
-          lines.push(line);
-          line = word;
-        } else {
-          line = test;
-        }
-      }
-      if (line) lines.push(line);
-      return lines.slice(0, 12);
-    }
-    
-    function studioRoundRect(ctx, x, y, w, h, r) {
-      ctx.beginPath();
-      ctx.moveTo(x + r, y);
-      ctx.arcTo(x + w, y, x + w, y + h, r);
-      ctx.arcTo(x + w, y + h, x, y + h, r);
-      ctx.arcTo(x, y + h, x, y, r);
-      ctx.arcTo(x, y, x + w, y, r);
-      ctx.closePath();
-    }
-    
-    function studioDrawExportFrame(canvas, ctx, text, showCta) {
-      ctx.fillStyle = "#000";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      
-      if (studioVideo.readyState >= 2) {
-        const vw = studioVideo.videoWidth || 1080;
-        const vh = studioVideo.videoHeight || 1920;
-        const scale = Math.max(canvas.width / vw, canvas.height / vh);
-        const sw = canvas.width / scale;
-        const sh = canvas.height / scale;
-        const sx = (vw - sw) / 2;
-        const sy = (vh - sh) / 2;
-        try {
-          ctx.drawImage(studioVideo, sx, sy, sw, sh, 0, 0, canvas.width, canvas.height);
-        } catch (e) {
-          ctx.fillStyle = "#111827";
-          ctx.fillRect(0, 0, canvas.width, canvas.height);
-        }
-      }
-      
-      const maxWidth = canvas.width * 0.82;
-      const fontSize = 34;
-      ctx.font = `800 ${fontSize}px Arial, sans-serif`;
-      ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
-      
-      const lines = studioWrapTextForCanvas(ctx, text, maxWidth);
-      const lineHeight = 43;
-      const boxH = lines.length * lineHeight + 44;
-      const boxW = maxWidth + 70;
-      const x = canvas.width / 2 - boxW / 2;
-      const y = canvas.height - 430 - boxH / 2;
-      
-      ctx.fillStyle = "rgba(0,0,0,.48)";
-      studioRoundRect(ctx, x, y, boxW, boxH, 30);
-      ctx.fill();
-      
-      lines.forEach((line, i) => {
-        const ty = y + 34 + i * lineHeight + lineHeight / 2;
-        ctx.lineWidth = 8;
-        ctx.strokeStyle = "rgba(0,0,0,.9)";
-        ctx.strokeText(line, canvas.width / 2, ty);
-        ctx.fillStyle = "#fff";
-        ctx.fillText(line, canvas.width / 2, ty);
-      });
-      
-      if (showCta) {
-        const cta = "Mais histórias da música brasileira: rmcontarecantar.art.br";
-        ctx.font = "900 38px Arial, sans-serif";
-        const ctaW = canvas.width * 0.82;
-        const ctaH = 86;
-        const ctaX = canvas.width / 2 - ctaW / 2;
-        const ctaY = canvas.height - 210;
-        
-        ctx.fillStyle = "#fbbf24";
-        studioRoundRect(ctx, ctaX, ctaY, ctaW, ctaH, 24);
-        ctx.fill();
-        ctx.fillStyle = "#06111f";
-        ctx.fillText(cta, canvas.width / 2, ctaY + ctaH / 2);
-      }
-    }
-    
-    async function studioExportVideoWebM() {
-      if (!studioFinalNarrative) studioGenerateNarrative();
-      if (!studioVideo.src) {
-        alert("Carregue um vídeo primeiro.");
-        return;
-      }
-      
-      const exportBtn = document.querySelector('[onclick="studioExportVideoWebM()"]');
-      const area = document.getElementById("studioDownloadArea");
-      const isFirefox = navigator.userAgent.toLowerCase().includes("firefox");
-      
-      if (isFirefox) {
-        studioShowToast("Atenção: exportação de vídeo é instável no Firefox. Recomendado usar Chrome ou Edge.", "warning");
-      }
-      
-      try {
-        await studioWaitForVideoMetadata(studioVideo, 8000);
-      } catch (err) {
-        area.innerHTML = `<div class="studio-notice">Não foi possível ler os metadados do vídeo (duração/dimensões). Tente recarregar o arquivo de vídeo e clique novamente em "Baixar vídeo com texto".</div>`;
-        studioShowToast("Falha ao ler o vídeo. Tente recarregar o arquivo.", "error");
-        return;
-      }
-      
-      const rawDuration = studioVideo.duration;
-      if (!isFinite(rawDuration) || rawDuration <= 0) {
-        area.innerHTML = `<div class="studio-notice">A duração do vídeo não pôde ser determinada. Tente outro arquivo de vídeo (formato MP4/WebM padrão).</div>`;
-        studioShowToast("Duração do vídeo inválida.", "error");
-        return;
-      }
-      
-      area.innerHTML = "<div class='studio-notice' id='studioExportStatus'>Gerando vídeo WebM no navegador. Aguarde até o vídeo terminar...</div>";
-      if (exportBtn) exportBtn.disabled = true;
-      
-      const exportCanvas = document.createElement("canvas");
-      exportCanvas.width = 1080;
-      exportCanvas.height = 1920;
-      const ctx = exportCanvas.getContext("2d");
-      
-      if (!exportCanvas.captureStream || typeof MediaRecorder === "undefined") {
-        area.innerHTML = "<div class='studio-notice'>Seu navegador não suporta exportação de vídeo por canvas (captureStream/MediaRecorder ausentes). Tente em Chrome ou Edge atualizados.</div>";
-        if (exportBtn) exportBtn.disabled = false;
-        return;
-      }
-      
-      const writeChoice = document.getElementById("studioWriteTime").value;
-      const duration = Math.floor(rawDuration);
-      let writeSeconds = writeChoice === "auto"
-        ? Math.min(60, Math.max(25, Math.floor(duration * 0.25)))
-        : Number(writeChoice);
-      writeSeconds = Math.min(writeSeconds, Math.max(10, duration - 3));
-      
-      const stream = exportCanvas.captureStream(30);
-      try {
-        if (studioVideo.captureStream) {
-          const audioTracks = studioVideo.captureStream().getAudioTracks();
-          audioTracks.forEach(track => stream.addTrack(track));
-        }
-      } catch (e) {
-        console.warn("Áudio do vídeo não pôde ser incluído na exportação:", e);
-      }
-      
-      let mime = "video/webm;codecs=vp9";
-      if (!MediaRecorder.isTypeSupported(mime)) mime = "video/webm;codecs=vp8";
-      if (!MediaRecorder.isTypeSupported(mime)) mime = "video/webm";
-      
-      const chunks = [];
-      const recorder = new MediaRecorder(stream, { mimeType: mime });
-      const hardStopMs = (duration + 5) * 1000;
-      let finished = false;
-      let safetyTimer = null;
-      let rafId = null;
-      const recordStartTime = Date.now();
-      
-      function finishExport(reason) {
-        if (finished) return;
-        finished = true;
-        if (rafId) cancelAnimationFrame(rafId);
-        if (safetyTimer) clearTimeout(safetyTimer);
-        try {
-          if (recorder.state !== "inactive") recorder.stop();
-        } catch (e) {
-          console.warn("Erro ao parar o gravador:", e);
-        }
-        try { studioVideo.pause(); } catch (e) {}
-        if (exportBtn) exportBtn.disabled = false;
-        const statusEl = document.getElementById("studioExportStatus");
-        if (statusEl && reason === "timeout") {
-          statusEl.textContent = "Tempo máximo atingido. Finalizando o vídeo gerado até aqui...";
-        }
-      }
-      
-      recorder.ondataavailable = event => {
-        if (event.data && event.data.size) chunks.push(event.data);
-      };
-      
-      recorder.onerror = event => {
-        console.error("Erro no MediaRecorder:", event.error);
-        area.innerHTML = `<div class="studio-notice">Ocorreu um erro durante a gravação do vídeo: ${event.error ? event.error.message : "erro desconhecido"}. Tente novamente.</div>`;
-        finishExport("error");
-      };
-      
-      recorder.onstop = () => {
-        if (!chunks.length) {
-          area.innerHTML = "<div class='studio-notice'>Nenhum conteúdo foi gravado. Tente novamente — verifique se o vídeo carregou corretamente.</div>";
-          studioShowToast("Exportação falhou: nenhum conteúdo gravado.", "error");
-          return;
-        }
-        
-        const rawBlob = new Blob(chunks, { type: "video/webm" });
-        const totalDurationMs = Date.now() - recordStartTime;
-        area.innerHTML = "<div class='studio-notice'>Finalizando e estruturando arquivo de vídeo...</div>";
-        
-        // Uso da biblioteca oficial fixWebMDuration: Reconstrói o container sem quebrar headers binários
-        if (typeof ysFixWebMDuration !== 'undefined') {
-          ysFixWebMDuration(rawBlob, totalDurationMs, (fixedBlob) => {
-            const url = URL.createObjectURL(fixedBlob);
-            area.innerHTML = `<a href="${url}" download="reel-contar-e-cantar.webm" class="studio-btn studio-btn-green" style="display:inline-block; text-decoration:none; text-align:center;">⬇ Baixar vídeo WebM Corrigido</a>
-            <div class="studio-notice" style="margin-top:10px;">Vídeo indexado perfeitamente! Compatível com navegadores e players de desktop (MPC-HC / Windows Media Player).</div>`;
-            studioShowToast("Vídeo gerado com sucesso!", "success");
-          });
-        } else {
-          // Fallback seguro caso o CDN sofra atraso de carregamento
-          const url = URL.createObjectURL(rawBlob);
-          area.innerHTML = `<a href="${url}" download="reel-contar-e-cantar.webm" class="studio-btn studio-btn-green" style="display:inline-block; text-decoration:none; text-align:center;">⬇ Baixar vídeo WebM</a>
-          <div class="studio-notice" style="margin-top:10px;">Vídeo gerado sem indexação de tempo devido a atraso no carregamento da biblioteca estática.</div>`;
-          studioShowToast("Vídeo exportado.", "success");
-        }
-      };
-      
-      studioVideo.currentTime = 0;
-      try {
-        await studioVideo.play();
-      } catch (err) {
-        area.innerHTML = "<div class='studio-notice'>Não foi possível iniciar a reprodução do vídeo para exportação. Verifique se o vídeo carregou e tente novamente.</div>";
-        if (exportBtn) exportBtn.disabled = false;
-        return;
-      }
-      
-      recorder.start();
-      safetyTimer = setTimeout(() => finishExport("timeout"), hardStopMs);
-      
-      function loop() {
-        if (finished) return;
-        const elapsed = studioVideo.currentTime || 0;
-        const totalChars = studioFinalNarrative.length;
-        const progress = Math.min(1, elapsed / writeSeconds);
-        const charsToShow = Math.floor(totalChars * progress);
-        const text = studioFinalNarrative.slice(0, charsToShow);
-        const showCta = elapsed >= Math.max(1, writeSeconds - 3);
-        
-        studioDrawExportFrame(exportCanvas, ctx, text || " ", showCta);
-        
-        if (studioVideo.ended || elapsed >= duration - 0.1) {
-          finishExport("complete");
-          return;
-        }
-        rafId = requestAnimationFrame(loop);
-      }
-      loop();
-    }
-    
-    function studioWaitForVideoMetadata(videoEl, timeoutMs) {
-      return new Promise((resolve, reject) => {
-        if (videoEl.readyState >= 1 && isFinite(videoEl.duration) && videoEl.duration > 0) {
-          resolve();
-          return;
-        }
-        const onLoaded = () => {
-          cleanup();
-          if (isFinite(videoEl.duration) && videoEl.duration > 0) {
-            resolve();
-          } else {
-            reject(new Error("Duração inválida após loadedmetadata."));
-          }
-        };
-        const onError = () => {
-          cleanup();
-          reject(new Error("Erro ao carregar o vídeo."));
-        };
-        const timer = setTimeout(() => {
-          cleanup();
-          reject(new Error("Tempo limite esperando metadados do vídeo."));
-        }, timeoutMs);
-        function cleanup() {
-          clearTimeout(timer);
-          videoEl.removeEventListener("loadedmetadata", onLoaded);
-          videoEl.removeEventListener("error", onError);
-        }
-        videoEl.addEventListener("loadedmetadata", onLoaded);
-        videoEl.addEventListener("error", onError);
-      });
-    }
-  </script>
 </body>
 </html>
+
+
