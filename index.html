@@ -1,1688 +1,207 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LFFVYB42R1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-LFFVYB42R1');
-  </script>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="google-site-verification" content="5HOBT0HjrJKYt2TZONuto-IiiAeDpjm8k0O9fhrBskM" />
-  
-  <title>CONTAR e CANTAR | Histórias da Música Brasileira por Rosane Maia</title>
-  <meta name="description" content="CONTAR e CANTAR reúne histórias da música brasileira, MPB, Bossa Nova, artistas, canções, movimentos culturais, vídeos e fontes de pesquisa com curadoria de Rosane Maia.">
-  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Histórias da Música Brasileira. Artistas, canções, discos, movimentos, entrevistas e fontes.">
+  <meta name="theme-color" content="#0b0b09">
   <link rel="canonical" href="https://rmcontarecantar.art.br/">
-  <meta property="og:title" content="CONTAR e CANTAR | Histórias da Música Brasileira">
-  <meta property="og:description" content="Histórias da música brasileira por Rosane Maia. Revista cultural, fontes de pesquisa, vídeos, entrevistas e memória musical.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://rmcontarecantar.art.br/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="assets/images/hero.webp" type="image/webp" fetchpriority="high">
   <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CONTAR e CANTAR">
+  <meta property="og:title" content="CONTAR e CANTAR | Histórias da Música Brasileira">
+  <meta property="og:description" content="Artistas, canções, discos, movimentos e entrevistas para atravessar a memória musical do Brasil.">
+  <meta property="og:url" content="https://rmcontarecantar.art.br/">
+  <meta property="og:image" content="https://rmcontarecantar.art.br/assets/images/og-contar-cantar.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="CONTAR e CANTAR — histórias da música brasileira">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="CONTAR e CANTAR | Histórias da Música Brasileira">
-  <meta name="twitter:description" content="Histórias da música brasileira por Rosane Maia.">
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-  
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "CONTAR e CANTAR",
-    "url": "https://rmcontarecantar.art.br/",
-    "description": "Histórias da música brasileira, MPB, Bossa Nova, artigos, vídeos, entrevistas e fontes de pesquisa com curadoria de Rosane Maia.",
-    "inLanguage": "pt-BR",
-    "publisher": {
-      "@type": "Organization",
-      "name": "CONTAR e CANTAR",
-      "sameAs": [
-        "https://www.instagram.com/contandoecantandorosanemaia/",
-        "https://www.youtube.com/@rosanemaia4419"
-      ]
-    }
-  }
-  </script>
-<style>
-    :root {
-      --preto: #0A0A0A;
-      --branco: #FFFFFF;
-      --papel: #FAF8F3;
-      --cinza-claro: #F7F7F7;
-      --cinza-medio: #777777;
-      --cinza-texto: #333333;
-      --dourado: #C9A961;
-      --linha: rgba(0,0,0,0.08);
-      --sombra: 0 18px 45px rgba(0,0,0,0.08);
-    }
-    
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--branco);
-      color: var(--preto);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-    
-    h1, h2, h3, h4 {
-      font-family: 'Playfair Display', serif;
-      line-height: 1.12;
-    }
-    
-    a { text-decoration: none; color: inherit; transition: all .25s ease; }
-    button, input, select { font-family: inherit; }
-    
-    header {
-      padding: 1.35rem 5%;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(255,255,255,0.97);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--linha);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    
-    .logo {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      text-transform: uppercase;
-    }
-    
-    .logo span { color: var(--dourado); }
-    
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 1.45rem;
-      align-items: center;
-    }
-    
-    nav a {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: .76rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      position: relative;
-      padding-bottom: 4px;
-    }
-    
-    nav a::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 2px;
-      background: var(--dourado);
-      transition: width .25s ease;
-    }
-    
-    nav a:hover::after { width: 100%; }
-    
-    .nav-instagram {
-      border: 1px solid var(--preto);
-      padding: .65rem 1rem;
-      border-radius: 999px;
-    }
-    .nav-instagram::after { display: none; }
-    .nav-instagram:hover {
-      background: var(--preto);
-      color: var(--branco);
-    }
-    
-    .hero {
-      padding: 8.5rem 5% 6.5rem;
-      text-align: center;
-      background:
-        radial-gradient(circle at top center, rgba(201,169,97,.14), transparent 34rem),
-        linear-gradient(180deg, #ffffff 0%, #ffffff 72%, #faf8f3 100%);
-    }
-    
-    .hero-inner { max-width: 1120px; margin: 0 auto; }
-    
-    .hero-eyebrow {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: .78rem;
-      font-weight: 700;
-      color: var(--dourado);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      margin-bottom: 1.8rem;
-    }
-    
-    .hero h1 {
-      max-width: 980px;
-      margin: 0 auto 1.8rem;
-      font-size: clamp(3rem, 7vw, 5.8rem);
-      letter-spacing: -2px;
-    }
-    
-    .hero-subtitle {
-      max-width: 790px;
-      margin: 0 auto 3rem;
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.25rem, 2.4vw, 1.65rem);
-      font-style: italic;
-      font-weight: 400;
-      color: var(--cinza-texto);
-    }
-    
-    .hero-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem 2rem;
-      border: 1px solid var(--preto);
-      border-radius: 999px;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: .78rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      cursor: pointer;
-      background: transparent;
-    }
-    
-    .btn-primary {
-      background: var(--preto);
-      color: var(--branco);
-    }
-    
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(0,0,0,.08);
-    }
-    
-    .section { padding: 6rem 5%; }
-    .container { max-width: 1180px; margin: 0 auto; }
-    
-    .manifesto {
-      background: var(--papel);
-      text-align: center;
-    }
-    
-    .manifesto-content {
-      max-width: 920px;
-      margin: 0 auto;
-    }
-    
-    .manifesto p {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.35rem, 2.3vw, 1.95rem);
-      line-height: 1.6;
-      color: #222;
-      margin-bottom: 1.5rem;
-    }
-    
-    .manifesto-signature {
-      margin-top: 2rem;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-style: italic;
-      color: var(--dourado);
-    }
-    
-    .research-panel {
-      background: var(--branco);
-      border-bottom: 1px solid var(--linha);
-      padding: 4rem 5%;
-    }
-    
-    .research-box {
-      max-width: 1080px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    
-    .research-box h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: .8rem;
-    }
-    
-    .research-box p {
-      max-width: 780px;
-      margin: 0 auto 1.8rem;
-      color: #444;
-    }
-    
-    .research-form {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: .8rem;
-      align-items: stretch;
-      margin-bottom: 1rem;
-    }
-    
-    #researchQuery {
-      border: 1px solid var(--linha);
-      background: var(--branco);
-      padding: 1rem 1.1rem;
-      font-size: 1rem;
-      box-shadow: 0 12px 34px rgba(0,0,0,.035);
-      border-radius: 999px;
-    }
-    
-    .quick-searches {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: .55rem;
-      margin: 0 auto 1.5rem;
-    }
-    
-    .quick-searches button {
-      border: 1px solid var(--linha);
-      background: var(--cinza-claro);
-      border-radius: 999px;
-      padding: .55rem .85rem;
-      color: #333;
-      cursor: pointer;
-      font-size: .85rem;
-      transition: .2s ease;
-    }
-    
-    .quick-searches button:hover {
-      background: var(--papel);
-      border-color: rgba(201,169,97,.65);
-      transform: translateY(-1px);
-    }
-    
-    .research-results {
-      display: none;
-      margin: 1.5rem 0 2rem;
-      text-align: left;
-      border: 1px solid var(--linha);
-      border-radius: 22px;
-      background: var(--branco);
-      box-shadow: 0 18px 50px rgba(0,0,0,.06);
-      overflow: hidden;
-    }
-    
-    .research-results.active { display: block; }
-    
-    .results-hero {
-      padding: 1.6rem;
-      background:
-        radial-gradient(circle at top left, rgba(201,169,97,.16), transparent 22rem),
-        var(--papel);
-      border-bottom: 1px solid var(--linha);
-    }
-    
-    .results-hero .label {
-      font-family: 'Space Grotesk', sans-serif;
-      color: var(--dourado);
-      text-transform: uppercase;
-      letter-spacing: 1.4px;
-      font-weight: 700;
-      font-size: .72rem;
-      margin-bottom: .45rem;
-    }
-    
-    .results-hero h3 {
-      font-size: clamp(1.7rem, 4vw, 2.4rem);
-      margin-bottom: .6rem;
-    }
-    
-    .results-hero p {
-      color: #333;
-      max-width: 900px;
-      margin: 0;
-    }
-    
-    .research-columns {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-    }
-    
-    .research-column {
-      padding: 1.4rem;
-      border-right: 1px solid var(--linha);
-    }
-    
-    .research-column:last-child { border-right: 0; }
-    
-    .result-group {
-      margin-bottom: 1.5rem;
-    }
-    .result-group:last-child { margin-bottom: 0; }
-    
-    .result-group h4 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: .78rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--dourado);
-      margin-bottom: .75rem;
-    }
-    
-    .result-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    
-    .result-list li {
-      padding: .75rem 0;
-      border-top: 1px solid rgba(0,0,0,.06);
-    }
-    .result-list li:first-child { border-top: 0; }
-    
-    .result-list strong {
-      display: block;
-      font-size: 1rem;
-      color: var(--preto);
-      margin-bottom: .2rem;
-    }
-    
-    .result-list span {
-      display: block;
-      color: #555;
-      font-size: .9rem;
-    }
-    
-    .result-list a:hover strong { color: var(--dourado); }
-    
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .5rem;
-    }
-    
-    .chip {
-      display: inline-flex;
-      border: 1px solid var(--linha);
-      background: var(--cinza-claro);
-      color: #333;
-      border-radius: 999px;
-      padding: .45rem .7rem;
-      font-size: .86rem;
-    }
-    
-    .research-actions {
-      padding: 1.3rem 1.4rem;
-      background: #fff;
-      border-top: 1px solid var(--linha);
-    }
-    
-    .research-actions h4 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: .78rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--dourado);
-      margin-bottom: .8rem;
-    }
-    
-    .action-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: .8rem;
-    }
-    
-    .action-card {
-      display: block;
-      border: 1px solid var(--linha);
-      padding: 1rem;
-      background: var(--cinza-claro);
-      min-height: 108px;
-    }
-    
-    .action-card:hover {
-      background: var(--papel);
-      border-color: rgba(201,169,97,.65);
-      transform: translateY(-2px);
-    }
-    
-    .action-card strong {
-      display: block;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.08rem;
-      margin-bottom: .25rem;
-    }
-    
-    .action-card span {
-      display: block;
-      color: #555;
-      font-size: .86rem;
-    }
-    
-    .research-disclaimer {
-      padding: 1rem 1.4rem;
-      background: var(--papel);
-      border-top: 1px solid var(--linha);
-      color: #555;
-      font-size: .9rem;
-    }
-    
-    .search-shell {
-      position: relative;
-      width: 100%;
-    }
-    
-    .suggestions-panel {
-      display: none;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: calc(100% + .45rem);
-      background: var(--branco);
-      border: 1px solid var(--linha);
-      border-radius: 18px;
-      box-shadow: 0 18px 45px rgba(0,0,0,.10);
-      overflow: hidden;
-      z-index: 20;
-      text-align: left;
-    }
-    
-    .suggestions-panel.active { display: block; }
-    
-    .suggestion-item {
-      width: 100%;
-      display: block;
-      border: 0;
-      background: var(--branco);
-      text-align: left;
-      padding: .95rem 1.1rem;
-      cursor: pointer;
-      border-bottom: 1px solid rgba(0,0,0,.06);
-    }
-    .suggestion-item:last-child { border-bottom: 0; }
-    
-    .suggestion-item:hover,
-    .suggestion-item:focus {
-      background: var(--papel);
-      outline: none;
-    }
-    
-    .suggestion-item strong {
-      display: block;
-      font-size: .98rem;
-      color: var(--preto);
-      margin-bottom: .15rem;
-    }
-    
-    .suggestion-item span {
-      display: block;
-      font-size: .84rem;
-      color: #555;
-    }
-    
-    .suggestion-badge {
-      display: inline-flex;
-      margin-top: .35rem;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: .65rem;
-      text-transform: uppercase;
-      letter-spacing: .8px;
-      color: var(--dourado);
-      font-weight: 700;
-    }
-    
-    .research-stats {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .55rem;
-      justify-content: center;
-      margin: .4rem 0 1.4rem;
-      color: #555;
-      font-size: .86rem;
-    }
-    
-    .research-stats span {
-      background: var(--cinza-claro);
-      border: 1px solid var(--linha);
-      border-radius: 999px;
-      padding: .45rem .75rem;
-    }
-    
-    .research-dev-box {
-      max-width: 980px;
-      margin: 2rem auto 2rem;
-      padding: clamp(2rem, 4vw, 3rem);
-      border: 1px solid var(--linha);
-      border-radius: 24px;
-      background:
-        radial-gradient(circle at top left, rgba(201,169,97,.16), transparent 24rem),
-        var(--papel);
-      text-align: left;
-      box-shadow: 0 18px 45px rgba(0,0,0,.06);
-    }
-    
-    .research-dev-box h3 {
-      font-size: clamp(1.9rem, 4vw, 3rem);
-      margin-bottom: 1rem;
-    }
-    
-    .research-dev-box p {
-      max-width: 850px;
-      margin: 0 0 1.6rem;
-      color: #333;
-    }
-    
-    .dev-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin: 1.5rem 0 2rem;
-    }
-    
-    .dev-grid div {
-      background: var(--branco);
-      border: 1px solid var(--linha);
-      padding: 1.1rem;
-    }
-    
-    .dev-grid strong {
-      display: block;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      margin-bottom: .35rem;
-    }
-    
-    .dev-grid span {
-      display: block;
-      color: #555;
-      font-size: .9rem;
-    }
-    
-    .dev-actions {
-      display: flex;
-      gap: .8rem;
-      flex-wrap: wrap;
-    }
-    
-    .research-options {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: .6rem;
-      margin: 1rem 0 1.4rem;
-    }
-    
-    .research-option {
-      border: 1px solid var(--linha);
-      background: var(--cinza-claro);
-      color: #333;
-      border-radius: 999px;
-      padding: .65rem 1rem;
-      cursor: pointer;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: .72rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      transition: .2s ease;
-    }
-    
-    .research-option:hover,
-    .research-option.active {
-      background: var(--preto);
-      color: var(--branco);
-      border-color: var(--preto);
-    }
-    
-    .source-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: .9rem;
-      margin-top: 1.5rem;
-      text-align: left;
-    }
-    
-    .source-card {
-      display: block;
-      border: 1px solid var(--linha);
-      background: var(--cinza-claro);
-      padding: 1rem;
-      min-height: 120px;
-    }
-    
-    .source-card:hover {
-      background: var(--papel);
-      border-color: rgba(201,169,97,.55);
-      transform: translateY(-2px);
-    }
-    
-    .source-card strong {
-      display: block;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      margin-bottom: .3rem;
-    }
-    
-    .source-card span {
-      display: block;
-      color: #555;
-      font-size: .88rem;
-    }
-    
-    .research-note {
-      margin-top: 1.1rem;
-      font-size: .9rem;
-      color: var(--cinza-medio);
-    }
-    
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 2rem;
-      margin-bottom: 3rem;
-      padding-bottom: 1.2rem;
-      border-bottom: 2px solid var(--preto);
-    }
-    
-    .section-header h2 {
-      font-size: clamp(2.2rem, 4vw, 3.2rem);
-    }
-    
-    .section-header span {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: .8rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--cinza-medio);
-      font-weight: 700;
-    }
-    
-    .ecosystem { background: var(--cinza-claro); }
-    
-    .eco-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-    }
-    
-    .eco-card {
-      background: var(--branco);
-      border: 1px solid var(--linha);
-      padding: 2rem;
-      transition: .25s ease;
-    }
-    
-    .eco-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 35px rgba(0,0,0,.07);
-    }
-    
-    .eco-card h3 {
-      font-size: 1.55rem;
-      margin-bottom: .7rem;
-    }
-    
-    .eco-card p {
-      color: #444;
-      margin-bottom: 1.2rem;
-    }
-    
-    .gold-link {
-      color: var(--dourado);
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: .8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    
-    .gold-link:hover { color: var(--preto); }
-    
-    .articles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-    
-    .article-card {
-      display: block;
-      background: var(--branco);
-      transition: .25s ease;
-      border: 1px solid var(--linha);
-    }
-    
-    .article-card:hover {
-      transform: translateY(-6px);
-      box-shadow: var(--sombra);
-    }
-    
-    .card-cover {
-      height: 290px;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .cover-tropicalia { background: linear-gradient(135deg, #FF3300 0%, #C9A961 52%, #0A0A0A 100%); }
-    .cover-cartola { background: linear-gradient(135deg, #1a1a1a 0%, #4a4a4a 54%, #b89b62 100%); }
-    .cover-elis { background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 50%, #c4e0e5 100%); }
-    .cover-ditadura { background: linear-gradient(135deg, #1a1a1a 0%, #3a1f1f 52%, #0A0A0A 100%); }
-    
-    .article-category {
-      position: absolute;
-      top: 1.2rem;
-      left: 1.2rem;
-      background: var(--branco);
-      padding: .35rem .85rem;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: .68rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    
-    .card-cover-text {
-      color: var(--branco);
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-      text-shadow: 0 2px 12px rgba(0,0,0,.28);
-      padding: 2rem;
-    }
-    
-    .card-cover-text h3 {
-      font-size: 2rem;
-      margin-bottom: .3rem;
-    }
-    
-    .card-cover-text p {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: .75rem;
-      letter-spacing: 2px;
-    }
-    
-    .article-content { padding: 1.7rem; }
-    
-    .article-meta {
-      font-family: 'Space Grotesk', sans-serif;
-      color: var(--cinza-medio);
-      font-size: .72rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-weight: 700;
-      margin-bottom: .85rem;
-    }
-    
-    .article-content h3 {
-      font-size: 1.5rem;
-      margin-bottom: .8rem;
-    }
-    
-    .article-content p {
-      color: #444;
-      margin-bottom: 1.2rem;
-      font-size: .95rem;
-    }
-    
-    .universos-feature {
-      background: var(--papel);
-      border-top: 1px solid var(--linha);
-      border-bottom: 1px solid var(--linha);
-    }
-    
-    .universos-grid {
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 3rem;
-      align-items: center;
-    }
-    
-    .universos-feature h2 {
-      font-size: clamp(2.2rem, 4vw, 3.4rem);
-      margin-bottom: 1rem;
-    }
-    
-    .universos-feature p {
-      color: #333;
-      font-size: 1.05rem;
-      margin-bottom: 1.2rem;
-    }
-    
-    .mini-source-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-    
-    .mini-source {
-      background: var(--branco);
-      border: 1px solid var(--linha);
-      padding: 1.2rem;
-    }
-    
-    .mini-source strong {
-      display: block;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.2rem;
-      margin-bottom: .35rem;
-    }
-    
-    .mini-source span {
-      color: var(--cinza-medio);
-      font-size: .88rem;
-    }
-    
-    .youtube-section {
-      background: var(--preto);
-      color: var(--branco);
-    }
-    
-    .youtube-grid,
-    .instagram-preview-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
-    
-    .youtube-section .hero-eyebrow {
-      color: var(--dourado);
-    }
-    
-    .youtube-section h2 {
-      font-size: clamp(2.2rem, 4vw, 3.6rem);
-      margin-bottom: 1rem;
-    }
-    
-    .youtube-section p {
-      color: rgba(255,255,255,.74);
-      font-size: 1.08rem;
-      margin-bottom: 1.2rem;
-    }
-    
-    .youtube-stats {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-    
-    .youtube-stat {
-      border: 1px solid rgba(255,255,255,.16);
-      padding: 1.1rem;
-      background: rgba(255,255,255,.04);
-    }
-    
-    .youtube-stat strong {
-      display: block;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.55rem;
-      color: var(--branco);
-    }
-    
-    .youtube-stat span {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: .72rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: rgba(255,255,255,.55);
-    }
-    
-    .youtube-card {
-      border: 1px solid rgba(255,255,255,.16);
-      padding: 2rem;
-      background:
-        radial-gradient(circle at top left, rgba(201,169,97,.18), transparent 24rem),
-        rgba(255,255,255,.04);
-    }
-    
-    .youtube-card h3 {
-      font-size: 1.8rem;
-      margin-bottom: .8rem;
-    }
-    
-    .video-embed {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      overflow: hidden;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.06);
-      margin: 1.5rem 0;
-    }
-    
-    .video-embed iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-    
-    .youtube-card ul {
-      list-style: none;
-      margin: 1.5rem 0 0;
-      padding: 0;
-    }
-    
-    .youtube-card li {
-      border-top: 1px solid rgba(255,255,255,.12);
-      padding: .9rem 0;
-      color: rgba(255,255,255,.72);
-    }
-    .youtube-card li:first-child { border-top: 0; }
-    
-    .btn-light {
-      background: var(--branco);
-      color: var(--preto);
-      border-color: var(--branco);
-    }
-    
-    .instagram-section { background: var(--branco); }
-    
-    .instagram-card {
-      border: 1px solid var(--linha);
-      padding: clamp(2rem, 5vw, 4rem);
-      text-align: center;
-      background:
-        radial-gradient(circle at top left, rgba(201,169,97,.14), transparent 26rem),
-        var(--branco);
-    }
-    
-    .instagram-card h2 {
-      font-size: clamp(2.2rem, 4vw, 3.6rem);
-      margin-bottom: 1rem;
-    }
-    
-    .instagram-preview-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      margin: 2rem 0;
-      text-align: left;
-    }
-    
-    .instagram-preview-card {
-      min-height: 160px;
-      padding: 1.2rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      border: 1px solid var(--linha);
-      background:
-        radial-gradient(circle at top left, rgba(201,169,97,.28), transparent 12rem),
-        linear-gradient(135deg, #0A0A0A 0%, #3a3024 55%, #C9A961 100%);
-      color: var(--branco);
-      overflow: hidden;
-    }
-    
-    .instagram-preview-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--sombra);
-    }
-    
-    .instagram-preview-card span {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: .7rem;
-      text-transform: uppercase;
-      letter-spacing: 1.4px;
-      color: rgba(255,255,255,.72);
-      margin-bottom: .5rem;
-    }
-    
-    .instagram-preview-card strong {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
-      line-height: 1.2;
-    }
-    
-    .instagram-card p {
-      max-width: 760px;
-      margin: 0 auto 2rem;
-      color: #333;
-      font-size: 1.08rem;
-    }
-    
-    .newsletter {
-      background: var(--preto);
-      color: var(--branco);
-      text-align: center;
-    }
-    
-    .newsletter-content {
-      max-width: 720px;
-      margin: 0 auto;
-    }
-    
-    .newsletter h2 {
-      font-size: clamp(2.3rem, 5vw, 4rem);
-      margin-bottom: 1rem;
-    }
-    
-    .newsletter p {
-      color: rgba(255,255,255,.72);
-      font-size: 1.1rem;
-      margin-bottom: 2.2rem;
-    }
-    
-    .newsletter-form {
-      max-width: 540px;
-      margin: 0 auto;
-      display: flex;
-      border-bottom: 2px solid rgba(255,255,255,.22);
-    }
-    
-    .newsletter-form input {
-      flex: 1;
-      padding: 1.1rem 0;
-      border: none;
-      background: transparent;
-      color: var(--branco);
-      font-size: 1rem;
-      font-family: 'Inter', sans-serif;
-    }
-    
-    .newsletter-form input::placeholder { color: rgba(255,255,255,.45); }
-    .newsletter-form input:focus { outline: none; }
-    
-    .newsletter-form button {
-      padding: 1.1rem 0 1.1rem 1.5rem;
-      border: none;
-      background: transparent;
-      color: var(--branco);
-      cursor: pointer;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: .8rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    
-    .newsletter-form button:hover { color: var(--dourado); }
-    
-    footer {
-      padding: 3rem 5%;
-      background: var(--cinza-claro);
-      text-align: center;
-    }
-    
-    footer p {
-      font-family: 'Space Grotesk', sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--cinza-medio);
-      font-size: .75rem;
-      font-weight: 700;
-    }
-    
-    .mobile-menu-toggle {
-      display: none;
-      width: 44px;
-      height: 44px;
-      border: 1px solid var(--linha);
-      border-radius: 999px;
-      background: var(--branco);
-      cursor: pointer;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap: 5px;
-      z-index: 80;
-    }
-    
-    .mobile-menu-toggle span {
-      display: block;
-      width: 18px;
-      height: 2px;
-      background: var(--preto);
-      border-radius: 999px;
-      transition: .2s ease;
-    }
-    
-    .mobile-menu-toggle.active span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-    .mobile-menu-toggle.active span:nth-child(2) {
-      opacity: 0;
-    }
-    .mobile-menu-toggle.active span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-    
-    .mobile-backdrop {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.28);
-      z-index: 900;
-    }
-    .mobile-backdrop.active { display: block; }
-    
-    @media (max-width: 980px) {
-      .eco-grid,
-      .articles-grid,
-      .universos-grid,
-      .source-grid,
-      .youtube-grid {
-        grid-template-columns: 1fr;
-      }
-      .youtube-stats {
-        grid-template-columns: 1fr;
-      }
-      .research-form,
-      .research-columns,
-      .action-grid,
-      .dev-grid {
-        grid-template-columns: 1fr;
-      }
-      .research-column {
-        border-right: 0;
-        border-bottom: 1px solid var(--linha);
-      }
-      .research-column:last-child { border-bottom: 0; }
-    }
-    
-    @media (max-width: 760px) {
-      header { padding: 1.1rem 5%; }
-      .mobile-menu-toggle { display: inline-flex; }
-      
-      nav {
-        position: fixed;
-        top: 76px;
-        left: 5%;
-        right: 5%;
-        z-index: 1100;
-        display: none;
-        background: var(--branco);
-        border: 1px solid var(--linha);
-        border-radius: 22px;
-        box-shadow: 0 22px 60px rgba(0,0,0,.14);
-        padding: .8rem;
-      }
-      
-      nav.active { display: block; pointer-events: auto; }
-      
-      nav ul {
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-        align-items: stretch;
-      }
-      
-      nav li { width: 100%; }
-      
-      nav a {
-        display: block;
-        width: 100%;
-        padding: 1rem;
-        border-radius: 14px;
-        font-size: .82rem;
-      }
-      nav a::after { display: none; }
-      nav a:hover { background: var(--papel); }
-      
-      .nav-instagram {
-        border-radius: 14px;
-        text-align: center;
-        margin-top: .3rem;
-      }
-      
-      .hero { padding: 6rem 5% 5rem; }
-      .section { padding: 4.5rem 5%; }
-      .section-header { flex-direction: column; align-items: flex-start; }
-      .mini-source-grid { grid-template-columns: 1fr; }
-      
-      .newsletter-form { flex-direction: column; border-bottom: none; }
-      .newsletter-form input { border-bottom: 1px solid rgba(255,255,255,.22); }
-      .newsletter-form button { padding-left: 0; text-align: left; }
-
-      .instagram-card {
-        padding: 2rem 1rem;
-      }
-
-      .instagram-card p {
-        font-size: 1rem;
-        line-height: 1.65;
-        margin-bottom: 1.5rem;
-      }
-
-      .instagram-preview-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: .75rem;
-        margin: 1.5rem 0 2rem;
-      }
-
-      .instagram-preview-card {
-        min-width: 0;
-        min-height: 145px;
-        padding: 1rem;
-      }
-
-      .instagram-preview-card strong {
-        font-size: 1.08rem;
-        line-height: 1.22;
-        overflow-wrap: normal;
-        word-break: normal;
-      }
-    }
-
-    .orientation-bar {
-      background: var(--papel);
-      border-bottom: 1px solid var(--linha);
-      padding: 1rem 5%;
-    }
-    .orientation-inner {
-      width: min(1180px, 100%);
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem 2rem;
-      flex-wrap: wrap;
-      color: var(--cinza-texto);
-      font-size: .88rem;
-    }
-    .orientation-inner strong {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: .72rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    .orientation-inner a {
-      border-bottom: 1px solid var(--dourado);
-      font-weight: 600;
-    }
-
+  <meta name="twitter:description" content="Artistas, canções, discos, movimentos e entrevistas para atravessar a memória musical do Brasil.">
+  <meta name="twitter:image" content="https://rmcontarecantar.art.br/assets/images/og-contar-cantar.jpg">
+  <title>CONTAR e CANTAR | Histórias da Música Brasileira</title>
+  <style>
+    :root{--ink:#090907;--paper:#eee8dc;--gold:#c69a50;--wine:#611e2d;--petrol:#163c41;--mx:0;--my:0;--px:50vw;--py:50vh}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--ink)}
+    body{margin:0;overflow-x:hidden;background:var(--ink);color:var(--paper);font-family:Arial,Helvetica,sans-serif}
+    a{color:inherit;text-decoration:none}
+    button,input{font:inherit}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .grain{position:fixed;inset:0;z-index:100;pointer-events:none;opacity:.07;mix-blend-mode:screen;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E")}
+    .aura{position:fixed;z-index:99;left:var(--px);top:var(--py);width:210px;height:210px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(214,170,89,.14),transparent 68%);mix-blend-mode:screen;transform:translate(-50%,-50%)}
+    header{position:fixed;inset:0 0 auto;z-index:90;min-height:74px;display:flex;align-items:center;justify-content:space-between;padding:18px 36px;background:#0b0b09;border-bottom:1px solid rgba(255,255,255,.14);box-shadow:0 8px 30px rgba(0,0,0,.18)}
+    .brand{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:800;letter-spacing:-.04em}
+    .brand i{font:400 23px Georgia,serif}
+    nav{display:flex;gap:clamp(12px,1.6vw,28px);font-size:9px;text-transform:uppercase;letter-spacing:.18em}
+    nav a{position:relative;opacity:.78}
+    nav a:hover{opacity:1}
+    nav a:after{content:"";position:absolute;left:0;bottom:-6px;width:100%;height:1px;background:currentColor;transform:scaleX(0);transition:.3s}
+    nav a:hover:after{transform:scaleX(1)}
+    .menu{display:none;border:0;background:none;color:var(--paper);width:42px;height:42px}
+    .menu span{display:block;width:24px;height:1px;margin:6px auto;background:currentColor}
+    .hero{position:relative;min-height:100svh;overflow:hidden;display:flex;align-items:center;padding:150px 7vw 80px;isolation:isolate}
+    .hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(5,5,3,.94),rgba(5,5,3,.58) 45%,rgba(5,5,3,.16) 76%),linear-gradient(0deg,var(--ink),transparent 18%)}
+    .hero-image{position:absolute;inset:-5%;z-index:-2;background-image:linear-gradient(130deg,rgba(15,45,48,.26),rgba(75,18,32,.18)),image-set(url("assets/images/hero.webp") type("image/webp"),url("assets/images/hero.jpg") type("image/jpeg"));background-position:center;background-size:cover;background-repeat:no-repeat;transform:translate(calc(var(--mx) * -18px),calc(var(--my) * -18px)) scale(1.04);transition:transform .2s ease-out;filter:saturate(.84) contrast(1.08)}
+    .glow{position:absolute;z-index:-1;width:60vw;height:60vw;right:-10vw;top:-12vw;border-radius:50%;background:radial-gradient(circle,rgba(133,46,36,.55),transparent 67%);filter:blur(20px);animation:breathe 6s ease-in-out infinite alternate}
+    @keyframes breathe{to{transform:scale(1.18) translate(-3vw,2vw);opacity:.72}}
+    .orbit{position:absolute;z-index:-1;border:1px solid rgba(239,229,211,.24);border-radius:50%;transform:rotate(-18deg);animation:orbit 16s ease-in-out infinite alternate}
+    .orbit.one{width:35vw;height:15vw;right:7vw;top:23vh}.orbit.two{width:22vw;height:46vw;right:18vw;top:4vh;animation-duration:22s}
+    @keyframes orbit{to{transform:rotate(12deg) translate3d(15px,-8px,0)}}
+    .hero-copy{position:relative;z-index:2;max-width:980px}
+    .kicker,.mark{margin:0 0 25px;font-size:10px;letter-spacing:.35em;text-transform:uppercase}.kicker{color:var(--gold)}
+    h1{margin:0;font:400 clamp(68px,9.5vw,154px)/.78 Georgia,serif;letter-spacing:-.075em}
+    h1 span{display:block;animation:rise 1.1s cubic-bezier(.2,.7,.2,1) both}h1 span:nth-child(2){margin-left:8vw;animation-delay:.12s}h1 span:nth-child(3){animation-delay:.24s}
+    @keyframes rise{from{opacity:0;transform:translateY(70px) skewY(4deg)}to{opacity:1;transform:none}}
+    .outline{color:transparent;-webkit-text-stroke:1px rgba(242,234,219,.84);font-style:italic}
+    .hero-intro{max-width:430px;margin:38px 0 0 32vw;color:rgba(242,234,219,.72);font:17px/1.6 Georgia,serif}
+    .explore{position:absolute;left:7vw;bottom:46px;display:flex;align-items:center;gap:20px;font-size:10px;text-transform:uppercase;letter-spacing:.25em}.explore:after{content:"";width:80px;height:1px;background:var(--paper);transition:.3s}.explore:hover:after{width:130px}
+    .index{position:absolute;right:4vw;bottom:42px;margin:0;font-size:9px;text-transform:uppercase;letter-spacing:.25em;opacity:.58}
+    .intro{display:grid;grid-template-columns:minmax(230px,.8fr) 2fr;gap:5vw;align-items:center;padding:70px 7vw;background:#15140f;border-top:1px solid rgba(255,255,255,.12)}
+    .intro strong{font:400 clamp(28px,3.5vw,55px) Georgia,serif;letter-spacing:-.045em}.intro p{max-width:880px;margin:0;color:rgba(242,234,219,.82);font:clamp(19px,2vw,30px)/1.45 Georgia,serif}
+    .marquee{overflow:hidden;padding:22px 0;border-block:1px solid rgba(255,255,255,.12)}.marquee div{width:max-content;display:flex;align-items:center;gap:35px;animation:marquee 25s linear infinite}.marquee span{font:clamp(24px,3vw,48px) Georgia,serif}.marquee i{color:var(--gold)}
+    @keyframes marquee{to{transform:translateX(-50%)}}
+    .reveal{opacity:0;transform:translateY(48px);transition:opacity .9s,transform .9s}.reveal.visible{opacity:1;transform:none}
+    .instagram{min-height:85vh;display:grid;grid-template-columns:1fr 3fr;gap:40px;padding:17vh 7vw;background:var(--paper);color:var(--ink)}
+    .mark{padding-top:12px;opacity:.62}
+    .instagram h2{max-width:1000px;margin:0;font:400 clamp(42px,5vw,78px)/1.02 Georgia,serif;letter-spacing:-.055em}.instagram h2 em{color:var(--wine);font-weight:400}
+    .instagram .support{display:block;max-width:480px;margin:55px 0 0 auto;font-size:18px;line-height:1.8}
+    .cta{display:inline-flex;align-items:center;justify-content:space-between;gap:35px;min-width:240px;margin-top:34px;padding:17px 21px;border:1px solid;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;transition:.25s}.cta:hover{transform:translateY(-4px);background:var(--wine);color:var(--paper)}
+    .stories{padding:14vh 7vw;background:#bba772;color:var(--ink)}
+    .stories-head{display:grid;grid-template-columns:1fr 2fr;gap:5vw;align-items:end;margin-bottom:9vh}.stories-head h2{margin:0;font:400 clamp(52px,7vw,108px)/.85 Georgia,serif;letter-spacing:-.065em}.stories-head em{color:var(--wine);font-weight:400}
+    .description{max-width:290px;font-size:15px;line-height:1.65}
+    .story-stage{display:grid;grid-template-columns:1.25fr 1fr;min-height:610px;border:1px solid rgba(0,0,0,.42)}
+    .story-visual{position:relative;overflow:hidden;min-height:520px;background:radial-gradient(circle at 65% 40%,#e7b23f 0 12%,transparent 12.5%),linear-gradient(130deg,#d45a40 0 48%,#1c413a 48%)}.story-visual:after{content:"";position:absolute;width:380px;height:380px;left:16%;top:18%;border:1px solid rgba(255,255,255,.55);border-radius:50%}
+    .story-number{position:absolute;left:25px;top:20px;color:var(--paper);font:80px Georgia,serif}
+    .record{position:absolute;left:24%;top:20%;width:370px;aspect-ratio:1;border-radius:50%;background:repeating-radial-gradient(circle,#111 0 3px,#27251f 4px 6px);box-shadow:20px 25px 45px rgba(0,0,0,.28);animation:spin 16s linear infinite}.record:after{content:"C&C";position:absolute;inset:35%;display:grid;place-items:center;border-radius:50%;background:var(--gold);font-weight:800}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .story-poster{position:absolute;right:7%;bottom:7%;width:35%;min-height:245px;padding:20px;background:var(--paper);transform:rotate(4deg);box-shadow:15px 18px 35px rgba(0,0,0,.25)}.story-poster span{font-size:8px;letter-spacing:.3em}.story-poster strong{display:block;margin-top:55px;font:400 28px/.95 Georgia,serif}
+    .story-copy{display:flex;flex-direction:column;justify-content:center;padding:5vw;background:#d6cebF}.story-copy>p{font-size:9px;letter-spacing:.25em;text-transform:uppercase}.story-copy h3{margin:25px 0;font:400 clamp(42px,5vw,74px)/.9 Georgia,serif;letter-spacing:-.055em}.story-copy>span{font:18px/1.6 Georgia,serif}.story-copy>a{align-self:flex-start;margin-top:50px;padding-bottom:8px;border-bottom:1px solid;font-size:9px;letter-spacing:.2em;text-transform:uppercase}
+    .tabs{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid rgba(0,0,0,.42);border-top:0}.tabs button{min-height:92px;padding:18px;text-align:left;border:0;border-right:1px solid rgba(0,0,0,.3);background:transparent;cursor:pointer}.tabs button:last-child{border-right:0}.tabs button.active{background:var(--ink);color:var(--paper)}.tabs span{display:block;margin-bottom:8px;font-size:9px;opacity:.65}.tabs .tab-title{font-weight:400}
+    .youtube{padding:8vh 5vw;background:var(--ink)}
+    .screen{position:relative;min-height:82vh;display:flex;align-items:flex-end;overflow:hidden;padding:5vw;background:radial-gradient(circle at 68% 26%,rgba(187,79,91,.85),transparent 20%),linear-gradient(130deg,#102d30,#080807 72%);border:1px solid rgba(255,255,255,.2)}
+    .screen:before{content:"";position:absolute;inset:-25%;background:repeating-radial-gradient(ellipse at center,transparent 0 45px,rgba(255,255,255,.09) 46px 47px);animation:orbit 20s infinite alternate}
+    .play{position:absolute;z-index:2;left:50%;top:46%;width:104px;height:104px;transform:translate(-50%,-50%);border:1px solid var(--paper);border-radius:50%;background:rgba(0,0,0,.28);color:var(--paper);font-size:25px}
+    .caption{position:relative;z-index:2;max-width:720px}.caption>p{font-size:9px;letter-spacing:.25em;text-transform:uppercase}.caption h2{margin:20px 0;font:400 clamp(48px,6vw,92px)/.9 Georgia,serif;letter-spacing:-.06em}.caption>span{display:block;max-width:520px;font:17px/1.6 Georgia,serif}.caption .cta:hover{background:var(--gold);color:var(--ink)}
+    .research{display:grid;grid-template-columns:1fr 1.2fr;gap:7vw;padding:14vh 7vw;background:var(--petrol)}.research h2{margin:0;font:400 clamp(50px,6vw,90px)/.9 Georgia,serif;letter-spacing:-.06em}.research h2 em{color:var(--gold);font-weight:400}
+    .research-links a{display:grid;grid-template-columns:50px 1fr 25px;align-items:center;padding:25px 0;border-top:1px solid rgba(255,255,255,.35)}.research-links a:last-child{border-bottom:1px solid rgba(255,255,255,.35)}.research-links span{font-size:9px}.research-links strong{font:400 clamp(22px,2.5vw,38px) Georgia,serif}.research-links b{text-align:right}
+    .newsletter{display:grid;grid-template-columns:1fr 3fr;gap:40px;padding:14vh 7vw;background:var(--paper);color:var(--ink)}.newsletter h2{margin:0;font:400 clamp(48px,6.5vw,98px)/.9 Georgia,serif;letter-spacing:-.06em}.newsletter h2 em{color:var(--wine);font-weight:400}.newsletter p{font:17px/1.6 Georgia,serif}.newsletter form{display:flex;margin-top:45px;border-bottom:1px solid}.newsletter input{flex:1;padding:18px 0;border:0;background:transparent;font:19px Georgia,serif;outline:0}.newsletter button{border:0;background:transparent;font-size:10px;font-weight:700;text-transform:uppercase;cursor:pointer}.form-note{min-height:20px;font:13px Arial!important;color:var(--wine)}
+    footer{padding:10vh 7vw 40px;background:var(--ink);text-align:center}.footer-title{display:flex;justify-content:center;align-items:center;gap:2vw;font:400 clamp(60px,12vw,185px)/.8 Georgia,serif;letter-spacing:-.08em}.footer-title i{color:var(--gold);font-weight:400}.footer-bottom{display:flex;justify-content:space-between;margin-top:80px;padding-top:25px;border-top:1px solid rgba(255,255,255,.2);font-size:9px;letter-spacing:.15em;text-transform:uppercase}
+    @media(max-width:800px){
+      .aura{display:none}header{padding:16px 20px}.menu{display:block}nav{position:absolute;top:74px;left:0;right:0;display:none;flex-direction:column;gap:0;padding:15px 20px 22px;background:#0b0b09;border-top:1px solid rgba(255,255,255,.12)}nav.open{display:flex}nav a{padding:14px 0;font-size:11px}
+      .hero{min-height:94svh;padding:130px 22px 90px}.hero-image{inset:0;background-position:62% center}.orbit{display:none}h1{font-size:18vw}.hero h1 span:nth-child(2){margin-left:6vw}.hero-intro{max-width:78%;margin:30px 0 0 15vw;font-size:15px}.explore{left:22px;bottom:32px}.index{display:none}
+      .intro,.instagram,.stories-head,.research,.newsletter{grid-template-columns:1fr}.intro{padding:55px 22px}.marquee{padding:16px 0}.instagram,.stories,.research,.newsletter{padding:11vh 22px}.instagram{gap:30px}.instagram h2{font-size:12vw}.instagram .support{margin:42px 0 0;font-size:16px}
+      .stories-head h2{font-size:14vw}.story-stage{grid-template-columns:1fr}.story-visual{min-height:430px}.record{width:72vw;left:-8%;top:12%}.story-poster{width:45%;min-height:215px}.story-copy{padding:42px 24px}.story-copy h3{font-size:12vw}.tabs{grid-template-columns:1fr}.tabs button{border-right:0;border-bottom:1px solid rgba(0,0,0,.3)}.tabs button:last-child{border-bottom:0}
+      .youtube{padding:5vh 0}.screen{min-height:74vh;padding:35px 22px}.play{width:82px;height:82px}.caption h2{font-size:13vw}.research h2,.newsletter h2{font-size:14vw}.research-links strong{font-size:7vw}.newsletter form{display:block}.newsletter input{width:100%}.newsletter button{padding:18px 0}.footer-title{flex-wrap:wrap;font-size:19vw}.footer-bottom{flex-direction:column;gap:18px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
   </style>
 </head>
-
 <body>
+  <div class="grain" aria-hidden="true"></div><div class="aura" aria-hidden="true"></div>
   <header>
-    <span class="logo">CONTAR <span>e</span> CANTAR</span>
-    <nav id="mainNav" aria-label="Menu principal">
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#instagram">Instagram</a></li>
-        <li><a href="#youtube">YouTube</a></li>
-        <li><a href="#revista">Artigos</a></li>
-        <li><a href="#pesquisa">Pesquisa</a></li>
-        <li><a href="#universos">Fontes</a></li>
-        <li><a href="#newsletter">Newsletter</a></li>
-      </ul>
+    <a class="brand" href="#inicio" aria-label="CONTAR e CANTAR — início"><span>CONTAR</span><i>&amp;</i><span>CANTAR</span></a>
+    <nav id="nav" aria-label="Principal">
+      <a href="#inicio">Início</a><a href="#instagram">Instagram</a><a href="#youtube">YouTube</a><a href="#artigos">Artigos</a><a href="#pesquisa">Pesquisa</a><a href="#newsletter">Newsletter</a>
     </nav>
-    <button class="mobile-menu-toggle" type="button" aria-label="Abrir menu" aria-controls="mainNav" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
+    <button class="menu" id="menu" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
   </header>
 
-  <div class="mobile-backdrop" id="mobileBackdrop"></div>
-
   <main>
-    <section id="inicio" class="hero">
-      <div class="hero-inner">
-        <div class="hero-eyebrow">Por Rosane Maia</div>
-        <h1>CONTAR e CANTAR</h1>
-        <p class="hero-subtitle">Histórias da Música Brasileira. Artistas, canções, discos, movimentos, entrevistas e fontes para atravessar a memória musical do Brasil com cuidado e encanto.</p>
-        <div class="hero-buttons">
-          <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="btn btn-primary">Acompanhar no Instagram</a>
-          <a href="https://www.youtube.com/@rosanemaia4419" target="_blank" rel="noopener" class="btn">Assistir no YouTube</a>
-          <a href="#revista" class="btn">Ler os artigos</a>
-        </div>
+    <section class="hero" id="inicio">
+      <div class="hero-image" aria-hidden="true"></div><div class="glow" aria-hidden="true"></div><div class="orbit one" aria-hidden="true"></div><div class="orbit two" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="kicker">Histórias da música brasileira</p>
+        <h1><span>O Brasil</span><span class="outline">que canta</span><span>não esquece.</span></h1>
+        <p class="hero-intro">Artistas, canções, encontros e movimentos que continuam ecoando através do tempo.</p>
+      </div>
+      <a class="explore" href="#instagram">Explore o acervo</a><p class="index">Arquivo vivo · Brasília · 2026</p>
+    </section>
+
+    <section class="intro">
+      <strong>CONTAR e CANTAR</strong>
+      <p>Histórias da Música Brasileira. Artistas, canções, discos, movimentos, entrevistas e fontes para atravessar a memória musical do Brasil com cuidado e encanto.</p>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div><span>MEMÓRIA</span><i>✦</i><span>CANÇÃO</span><i>✦</i><span>ENCONTROS</span><i>✦</i><span>BRASIL</span><i>✦</i><span>MEMÓRIA</span><i>✦</i><span>CANÇÃO</span><i>✦</i><span>ENCONTROS</span><i>✦</i><span>BRASIL</span><i>✦</i></div></div>
+
+    <section class="instagram reveal" id="instagram">
+      <p class="mark">Instagram · Acervo diário</p>
+      <div>
+        <h2>Mais de 2.400 histórias.<br><em>A memória em movimento.</em></h2>
+        <span class="support">Vídeos curtos, homenagens, bastidores e encontros mantêm o acervo vivo todos os dias — uma porta aberta para descobrir e redescobrir a música brasileira.</span>
+        <a class="cta" href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener">Acessar o Instagram <b>↗</b></a>
       </div>
     </section>
 
-    <aside class="orientation-bar" aria-label="Caminhos principais do site">
-      <div class="orientation-inner">
-        <strong>Conheça o projeto</strong>
-        <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener">Mais de 2.400 Reels no Instagram ↗</a>
-        <a href="#youtube">Entrevistas e vídeos</a>
-        <a href="#revista">Histórias da MPB</a>
+    <section class="stories reveal" id="artigos">
+      <div class="stories-head">
+        <div><p class="mark">Artigos · Revista Cultural</p><p class="description">Biografias, movimentos e histórias para conhecer a música brasileira além da superfície.</p></div>
+        <h2>Artigos para ler<br><em>e atravessar o tempo</em></h2>
       </div>
-    </aside>
-
-    <section id="youtube" class="section youtube-section">
-      <div class="container youtube-grid">
-        <div>
-          <div class="hero-eyebrow">Acervo audiovisual</div>
-          <h2>CONTAR e CANTAR no YouTube</h2>
-          <p>O canal reúne entrevistas, registros, documentários e histórias da música brasileira em formato audiovisual. É o espaço de profundidade do projeto, onde a memória ganha voz, presença e tempo.</p>
-          <p>Enquanto o site organiza a parte permanente e editorial, o YouTube amplia a experiência com encontros, depoimentos e conteúdos em vídeo conduzidos por Rosane Maia.</p>
-          <a href="https://www.youtube.com/@rosanemaia4419" target="_blank" rel="noopener" class="btn btn-light">Visitar canal no YouTube</a>
-          <div class="youtube-stats">
-            <div class="youtube-stat">
-              <strong>13,6 mil</strong>
-              <span>inscritos</span>
-            </div>
-            <div class="youtube-stat">
-              <strong>125</strong>
-              <span>vídeos</span>
-            </div>
-            <div class="youtube-stat">
-              <strong>MPB</strong>
-              <span>memória audiovisual</span>
-            </div>
-          </div>
+      <div class="story-stage">
+        <div class="story-visual" aria-hidden="true"><span class="story-number" id="story-number">01</span><div class="record"></div><div class="story-poster"><span>ARQUIVO</span><strong id="poster-title">A Revolução da Tropicália</strong></div></div>
+        <div class="story-copy">
+          <p id="story-eyebrow">Movimento · 1967–1968</p><h3 id="story-title">A Revolução da Tropicália</h3><span id="story-description">Quando canção, cinema, teatro e artes visuais romperam as fronteiras da música brasileira.</span>
+          <a id="story-link" href="tropicalia.html">Ler artigo <b>↗</b></a>
         </div>
-        <div class="youtube-card">
-          <h3>Vídeo em destaque</h3>
-          <p>Uma amostra do acervo audiovisual do CONTAR e CANTAR, mantendo o visitante dentro do site antes de seguir para o canal.</p>
-          <div class="video-embed">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/-ZOQ3Rm_PDc"
-              title="30 anos sem Tom Jobim - Rosane Maia"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen>
-            </iframe>
-          </div>
-          <ul>
-            <li>Entrevistas com artistas, pesquisadores e personagens da música brasileira.</li>
-            <li>Especiais sobre MPB, Bossa Nova, samba, compositores e intérpretes.</li>
-            <li>Registros que ajudam a preservar a memória oral e afetiva da música brasileira.</li>
-          </ul>
-        </div>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Escolher história">
+        <button class="active" type="button" role="tab" aria-selected="true" data-eyebrow="Movimento · 1967–1968" data-description="Quando canção, cinema, teatro e artes visuais romperam as fronteiras da música brasileira." data-href="tropicalia.html"><span>01</span><b class="tab-title">A Revolução da Tropicália</b></button>
+        <button type="button" role="tab" aria-selected="false" data-eyebrow="Biografia · Cartola" data-description="Uma trajetória marcada por silêncio, retorno e canções que atravessaram gerações." data-href="cartola.html"><span>02</span><b class="tab-title">O gênio que vestiu o samba de poesia</b></button>
+        <button type="button" role="tab" aria-selected="false" data-eyebrow="Análise · Elis Regina" data-description="Intensidade, precisão e presença: a intérprete que transformou cada palco em acontecimento." data-href="elis.html"><span>03</span><b class="tab-title">A voz que ardia</b></button>
+        <button type="button" role="tab" aria-selected="false" data-eyebrow="Pesquisa · Memória" data-description="Canções, censura e resistência durante os anos de silêncio — a música brasileira como documento e enfrentamento." data-href="ditadura-musica.html"><span>04</span><b class="tab-title">Ditadura e Música</b></button>
       </div>
     </section>
 
-    <section id="instagram" class="section instagram-section">
-      <div class="container">
-        <div class="instagram-card">
-          <div class="hero-eyebrow">Contando e Cantando</div>
-          <h2>O acervo também vive no Instagram</h2>
-          <p>Com cerca de 150 mil seguidores e mais de 2.400 Reels, o Instagram é o espaço diário do projeto: reúne vídeos curtos, memórias, bastidores e histórias da música brasileira.</p>
-          <div class="instagram-preview-grid" aria-label="Temas do acervo no Instagram">
-            <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="instagram-preview-card">
-              <span>MPB</span>
-              <strong>Histórias de artistas</strong>
-            </a>
-            <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="instagram-preview-card">
-              <span>Bossa Nova</span>
-              <strong>Memória e bastidores</strong>
-            </a>
-            <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="instagram-preview-card">
-              <span>Acervo</span>
-              <strong>Vídeos e registros</strong>
-            </a>
-            <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="instagram-preview-card">
-              <span>Reels</span>
-              <strong>Canções e encontros</strong>
-            </a>
-          </div>
-          <a href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener" class="btn btn-primary">Acompanhar no Instagram</a>
-        </div>
+    <section class="youtube reveal" id="youtube">
+      <div class="screen">
+        <button class="play" type="button" aria-label="Acessar o canal no YouTube" onclick="window.open('https://www.youtube.com/@rosanemaia4419','_blank','noopener')">▶</button>
+        <div class="caption"><p>YouTube · Acervo audiovisual</p><h2>Quando a memória ganha voz e presença.</h2><span>Entrevistas, registros, documentários e histórias da música brasileira em formato audiovisual.</span><a class="cta" href="https://www.youtube.com/@rosanemaia4419" target="_blank" rel="noopener">Assistir no YouTube <b>↗</b></a></div>
       </div>
     </section>
 
-    <section id="revista" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Histórias em destaque</h2>
-          <span>Artigos & Especiais</span>
-        </div>
-        <div class="articles-grid">
-          <a href="tropicalia.html" class="article-card">
-            <div class="card-cover cover-tropicalia">
-              <span class="article-category">Movimento</span>
-              <div class="card-cover-text">
-                <h3>TROPICÁLIA</h3>
-                <p>1967-1968</p>
-              </div>
-            </div>
-            <div class="article-content">
-              <div class="article-meta">5 min de leitura</div>
-              <h3>A Revolução da Tropicália</h3>
-              <p>Como Caetano, Gil e uma geração mudaram a música brasileira para sempre.</p>
-              <span class="gold-link">Ler artigo →</span>
-            </div>
-          </a>
-          <a href="cartola.html" class="article-card">
-            <div class="card-cover cover-cartola">
-              <span class="article-category">Biografia</span>
-              <div class="card-cover-text">
-                <h3>CARTOLA</h3>
-                <p>O GÊNIO DO SAMBA</p>
-              </div>
-            </div>
-            <div class="article-content">
-              <div class="article-meta">7 min de leitura</div>
-              <h3>Cartola: O Gênio do Samba</h3>
-              <p>De lavador de carros a ícone nacional. A história do fundador da Mangueira.</p>
-              <span class="gold-link">Ler artigo →</span>
-            </div>
-          </a>
-          <a href="elis.html" class="article-card">
-            <div class="card-cover cover-elis">
-              <span class="article-category">Análise</span>
-              <div class="card-cover-text">
-                <h3>ELIS REGINA</h3>
-                <p>A VOZ QUE ARDIA</p>
-              </div>
-            </div>
-            <div class="article-content">
-              <div class="article-meta">Em revisão</div>
-              <h3>Elis Regina: A Revolução da Interpretação</h3>
-              <p>A trajetória da gaúcha que dominou o Brasil com intensidade rara.</p>
-              <span class="gold-link">Ler artigo →</span>
-            </div>
-          </a>
-          <a href="ditadura-musica.html" class="article-card">
-            <div class="card-cover cover-ditadura">
-              <span class="article-category">História</span>
-              <div class="card-cover-text">
-                <h3>DITADURA E MÚSICA</h3>
-                <p>1964-1985</p>
-              </div>
-            </div>
-            <div class="article-content">
-              <div class="article-meta">13 min de leitura</div>
-              <h3>Cale-se ou Cante: A Música Brasileira Sob a Ditadura</h3>
-              <p>Como a censura tentou calar a MPB e como compositores brasileiros responderam com metáforas, coragem e canções.</p>
-              <span class="gold-link">Ler artigo →</span>
-            </div>
-          </a>
-        </div>
+    <section class="research reveal" id="pesquisa">
+      <div><p class="mark">Centro de pesquisa</p><h2>Uma pergunta.<br>Muitos caminhos<br><em>para descobrir.</em></h2></div>
+      <div class="research-links">
+        <a href="universos.html"><span>01</span><strong>No CONTAR e CANTAR</strong><b>↗</b></a>
+        <a href="https://dicionariompb.com.br/" target="_blank" rel="noopener"><span>02</span><strong>Em fontes culturais</strong><b>↗</b></a>
+        <a href="https://scholar.google.com.br/" target="_blank" rel="noopener"><span>03</span><strong>Google Acadêmico</strong><b>↗</b></a>
+        <a href="https://www.youtube.com/@rosanemaia4419" target="_blank" rel="noopener"><span>04</span><strong>YouTube</strong><b>↗</b></a>
       </div>
     </section>
 
-    <section class="manifesto section">
-      <div class="manifesto-content">
-        <p>CONTAR e CANTAR é um projeto dedicado às histórias da música brasileira: artistas, canções, encontros, movimentos e memórias que atravessam gerações.</p>
-        <p>Mais do que reunir artistas, álbuns e movimentos culturais, este espaço busca reconstruir atmosferas: travessias pela história emocional da música brasileira.</p>
-        <div class="manifesto-signature">— Histórias da Música Brasileira • por Rosane Maia</div>
-      </div>
-    </section>
-
-    <section id="pesquisa" class="research-panel">
-      <div class="research-box">
-        <h2>Centro de Pesquisa da Música Brasileira</h2>
-        <p>Pesquise artistas, movimentos, discos, canções e temas usando o Google com foco no CONTAR e CANTAR e em fontes culturais confiáveis.</p>
-        <form class="research-form" id="researchForm" autocomplete="off">
-          <input id="researchQuery" type="search" placeholder="Ex: Chico César, Nara Leão, Cartola, Bossa Nova, Tropicália..." required>
-          <button type="submit" class="btn btn-primary">Pesquisar</button>
-        </form>
-        <div class="research-options" aria-label="Tipos de pesquisa">
-          <button type="button" class="research-option active" data-mode="site">No CONTAR e CANTAR</button>
-          <button type="button" class="research-option" data-mode="fontes">Em fontes culturais</button>
-          <button type="button" class="research-option" data-mode="academico">No Google Acadêmico</button>
-          <button type="button" class="research-option" data-mode="youtube">No YouTube</button>
-        </div>
-        <div class="research-note">Dica: use nomes completos e palavras de contexto. Exemplo: “Chico César Mama África”, “Nara Leão Show Opinião” ou “Cartola Mangueira”.</div>
-        <div class="source-grid">
-          <a class="source-card" href="universos.html">
-            <strong>Universos da MPB</strong>
-            <span>Curadoria interna de acervos, livros, documentários e referências.</span>
-          </a>
-          <a class="source-card" href="https://dicionariompb.com.br" target="_blank" rel="noopener">
-            <strong>Cravo Albin</strong>
-            <span>Dicionário especializado em música popular brasileira.</span>
-          </a>
-          <a class="source-card" href="https://enciclopedia.itaucultural.org.br" target="_blank" rel="noopener">
-            <strong>Itaú Cultural</strong>
-            <span>Verbetes sobre artistas, movimentos e cultura brasileira.</span>
-          </a>
-          <a class="source-card" href="https://hemerotecadigital.bn.gov.br" target="_blank" rel="noopener">
-            <strong>Hemeroteca</strong>
-            <span>Jornais, revistas e registros históricos digitalizados.</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="universos" class="section universos-feature">
-      <div class="container universos-grid">
-        <div>
-          <div class="hero-eyebrow">Curadoria de fontes</div>
-          <h2>Universos da MPB</h2>
-          <p>A página de fontes reúne acervos, livros, documentários, podcasts, referências acadêmicas e instituições nacionais e internacionais para estudar a música brasileira com mais profundidade.</p>
-          <p>É o centro de pesquisa do projeto: uma porta para quem deseja ir além do artigo e encontrar caminhos confiáveis de investigação.</p>
-          <a href="universos.html" class="btn btn-primary">Explorar Universos</a>
-        </div>
-        <div class="mini-source-grid">
-          <a href="universos.html" class="mini-source">
-            <strong>Acervos</strong>
-            <span>IMS, MIS, Biblioteca Nacional e outras instituições.</span>
-          </a>
-          <a href="universos.html" class="mini-source">
-            <strong>Livros</strong>
-            <span>Biografias, estudos culturais e história da música.</span>
-          </a>
-          <a href="universos.html" class="mini-source">
-            <strong>Documentários</strong>
-            <span>Filmes, séries, entrevistas e registros audiovisuais.</span>
-          </a>
-          <a href="universos.html" class="mini-source">
-            <strong>Pesquisa</strong>
-            <span>SciELO, Google Scholar e referências acadêmicas.</span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section id="newsletter" class="section newsletter">
-      <div class="newsletter-content">
-        <h2>Receba os especiais por e-mail</h2>
-        <p>Artigos, histórias e curadoria da MPB diretamente no seu e-mail. Sem algoritmos, sem pressa.</p>
-        <form action="https://buttondown.com/api/emails/embed-subscribe/spadeto" method="post" class="newsletter-form" id="newsletterForm" target="_blank">
-          <input type="email" name="email" id="bd-email" placeholder="seu@email.com" required>
-          <button type="submit">Assinar →</button>
-        </form>
+    <section class="newsletter reveal" id="newsletter">
+      <p class="mark">Newsletter</p>
+      <div><h2>Histórias que chegam<br><em>sem algoritmos, sem pressa.</em></h2><p>Artigos, especiais e curadoria da música brasileira diretamente no seu e-mail.</p>
+        <form id="newsletter-form"><label class="sr-only" for="email">Seu melhor e-mail</label><input id="email" type="email" required placeholder="Seu melhor e-mail"><button type="submit">Assinar ↗</button></form>
+        <p class="form-note" id="form-note" aria-live="polite"></p>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>CONTAR e CANTAR © 2026 • Histórias da Música Brasileira por Rosane Maia</p>
+    <div class="footer-title"><span>CONTAR</span><i>&amp;</i><span>CANTAR</span></div>
+    <div class="footer-bottom"><span>Histórias da Música Brasileira</span><span>Rosane Maia · Brasília</span><a href="#inicio">Voltar ao início ↑</a></div>
   </footer>
 
-
   <script>
-    const researchForm = document.getElementById("researchForm");
-    const researchInput = document.getElementById("researchQuery");
-    const researchButtons = document.querySelectorAll(".research-option");
-    let researchMode = "site";
-    
-    researchButtons.forEach(button => {
-      button.addEventListener("click", () => {
-        researchButtons.forEach(item => item.classList.remove("active"));
-        button.classList.add("active");
-        researchMode = button.dataset.mode;
-        researchInput.focus();
-      });
-    });
-    
-    if (researchForm) {
-      researchForm.addEventListener("submit", function(event) {
-        event.preventDefault();
-        const query = researchInput.value.trim();
-        if (!query) return;
-        let url = "";
-        
-        if (researchMode === "site") {
-          url = "https://www.google.com/search?q=" + encodeURIComponent("site:rmcontarecantar.art.br " + query);
-        }
-        if (researchMode === "fontes") {
-          url = "https://www.google.com/search?q=" + encodeURIComponent(
-            query + " música brasileira MPB " +
-            "(site:dicionariompb.com.br OR site:enciclopedia.itaucultural.org.br OR site:ims.com.br OR site:hemerotecadigital.bn.gov.br OR site:bn.gov.br)"
-          );
-        }
-        if (researchMode === "academico") {
-          url = "https://scholar.google.com/scholar?q=" + encodeURIComponent(query + " música brasileira MPB");
-        }
-        if (researchMode === "youtube") {
-          url = "https://www.youtube.com/results?search_query=" + encodeURIComponent(query + " música brasileira MPB entrevista documentário");
-        }
-        window.open(url, "_blank", "noopener");
-      });
-    }
+    const menu=document.getElementById("menu"),nav=document.getElementById("nav");
+    menu.addEventListener("click",()=>{const open=nav.classList.toggle("open");menu.setAttribute("aria-expanded",String(open))});
+    nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");menu.setAttribute("aria-expanded","false")}));
+    document.querySelectorAll(".tabs [role=tab]").forEach(button=>button.addEventListener("click",()=>{
+      const title=button.querySelector(".tab-title").textContent;
+      document.getElementById("story-number").textContent=button.querySelector("span").textContent;document.getElementById("story-eyebrow").textContent=button.dataset.eyebrow;document.getElementById("story-title").textContent=title;document.getElementById("poster-title").textContent=title;document.getElementById("story-description").textContent=button.dataset.description;document.getElementById("story-link").href=button.dataset.href;
+      document.querySelectorAll(".tabs [role=tab]").forEach(b=>{const active=b===button;b.classList.toggle("active",active);b.setAttribute("aria-selected",String(active))});
+    }));
+    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add("visible")}),{threshold:.12});document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+    let pointerFrame=0,pointerX=0,pointerY=0;
+    window.addEventListener("pointermove",e=>{pointerX=e.clientX;pointerY=e.clientY;if(pointerFrame)return;pointerFrame=requestAnimationFrame(()=>{document.documentElement.style.setProperty("--mx",pointerX/window.innerWidth-.5);document.documentElement.style.setProperty("--my",pointerY/window.innerHeight-.5);document.documentElement.style.setProperty("--px",pointerX+"px");document.documentElement.style.setProperty("--py",pointerY+"px");pointerFrame=0})},{passive:true});
+    document.getElementById("newsletter-form").addEventListener("submit",e=>{e.preventDefault();document.getElementById("form-note").textContent="Cadastro demonstrativo: conectaremos o formulário ao serviço de newsletter na versão definitiva."});
   </script>
-
-  <script>
-    const newsletterForm = document.getElementById("newsletterForm");
-    if (newsletterForm) {
-      newsletterForm.addEventListener("submit", function() {
-        const content = this.closest(".newsletter-content");
-        setTimeout(() => {
-          if (content) {
-            content.innerHTML = `
-              <h2>Quase lá.</h2>
-              <p>Uma nova aba foi aberta para confirmar sua assinatura. Depois, volte para continuar explorando os especiais do CONTAR e CANTAR.</p>
-            `;
-          }
-        }, 500);
-      });
-    }
-  </script>
-
-  <script>
-    const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
-    const mainNav = document.getElementById("mainNav");
-    const mobileBackdrop = document.getElementById("mobileBackdrop");
-    
-    function closeMobileMenu() {
-      if (!mobileMenuToggle || !mainNav) return;
-      mobileMenuToggle.classList.remove("active");
-      mainNav.classList.remove("active");
-      mobileMenuToggle.setAttribute("aria-expanded", "false");
-      if (mobileBackdrop) mobileBackdrop.classList.remove("active");
-    }
-    
-    if (mobileMenuToggle && mainNav) {
-      mobileMenuToggle.addEventListener("click", () => {
-        const isOpen = mainNav.classList.toggle("active");
-        mobileMenuToggle.classList.toggle("active", isOpen);
-        mobileMenuToggle.setAttribute("aria-expanded", String(isOpen));
-        if (mobileBackdrop) mobileBackdrop.classList.toggle("active", isOpen);
-      });
-      
-      mainNav.querySelectorAll("a").forEach(link => {
-        link.addEventListener("click", () => {
-          setTimeout(closeMobileMenu, 120);
-        });
-      });
-      
-      if (mobileBackdrop) {
-        mobileBackdrop.addEventListener("click", closeMobileMenu);
-      }
-      document.addEventListener("keydown", event => {
-        if (event.key === "Escape") closeMobileMenu();
-      });
-    }
-  </script>
-
 </body>
 </html>
