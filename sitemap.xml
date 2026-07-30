@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://rmcontarecantar.art.br/</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-07-30</lastmod>
   </url>
   <url>
     <loc>https://rmcontarecantar.art.br/tropicalia.html</loc>
@@ -10,10 +10,22 @@
   </url>
   <url>
     <loc>https://rmcontarecantar.art.br/cartola.html</loc>
+    <lastmod>2026-07-30</lastmod>
+  </url>
+  <url>
+    <loc>https://rmcontarecantar.art.br/elis.html</loc>
     <lastmod>2026-07-15</lastmod>
   </url>
   <url>
     <loc>https://rmcontarecantar.art.br/ditadura-musica.html</loc>
     <lastmod>2026-07-15</lastmod>
+  </url>
+  <url>
+    <loc>https://rmcontarecantar.art.br/universos.html</loc>
+    <lastmod>2026-07-15</lastmod>
+  </url>
+  <url>
+    <loc>https://rmcontarecantar.art.br/zicartola.html</loc>
+    <lastmod>2026-07-30</lastmod>
   </url>
 </urlset>
