@@ -29,11 +29,14 @@
 
   <link rel="preload" as="image" href="assets/images/cartola-editorial.webp" type="image/webp">
 
-  <!-- GOOGLE ANALYTICS
-    A página inicial publicada em 29/07/2026 não apresentou um código do
-    Google Analytics no HTML. Insira aqui o código oficial do projeto quando
-    o ID de medição (G-XXXXXXXXXX) for confirmado.
-  -->
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LFFVYB42R1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-LFFVYB42R1");
+  </script>
 
   <style>
     :root{
@@ -85,6 +88,15 @@
     .share{display:flex;flex-direction:column;gap:.5rem}
     .share a,.back-link{font-size:.8rem;font-weight:750;text-decoration:none}
     .share a:hover,.back-link:hover{color:var(--rose)}
+    .mobile-toc{display:none;margin:0 0 2rem;border-top:4px solid var(--green);border-bottom:1px solid var(--line);font-family:var(--sans)}
+    .mobile-toc summary{cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 0;font-size:.78rem;font-weight:850;letter-spacing:.14em;text-transform:uppercase}
+    .mobile-toc summary::-webkit-details-marker{display:none}
+    .mobile-toc summary::after{content:"+";font-size:1.35rem;line-height:1;color:var(--rose)}
+    .mobile-toc[open] summary::after{content:"–"}
+    .mobile-toc-title{font-family:var(--serif);font-size:1.2rem;line-height:1.2;margin:.2rem 0 1rem}
+    .mobile-toc nav{display:flex;position:static;background:transparent;border:0;padding:0 0 1.2rem;flex-direction:column;align-items:flex-start;gap:.7rem}
+    .mobile-toc nav a{font-size:.9rem;text-decoration:none}
+    .mobile-toc nav a::before{content:"→";margin-right:.5rem;color:var(--rose)}
     .article-body{font-family:var(--serif);font-size:clamp(1.12rem,2vw,1.27rem);line-height:1.78}
     .article-body p{margin:0 0 1.45em}
     .article-body .lead{font-size:clamp(1.42rem,2.4vw,1.82rem);line-height:1.45}
@@ -132,6 +144,7 @@
       .image-credit{display:none}
       .article-shell{grid-template-columns:1fr;padding-top:3.2rem}
       .article-aside{display:none}
+      .mobile-toc{display:block}
       .timeline ol{grid-template-columns:1fr}
       .related-grid{grid-template-columns:1fr}
       .related-card{min-height:220px}
@@ -231,15 +244,26 @@
       </aside>
 
       <article class="article-body">
+        <details class="mobile-toc">
+          <summary>Neste artigo</summary>
+          <p class="mobile-toc-title">Um compositor ouvido antes de ser visto</p>
+          <nav aria-label="Índice do artigo no celular">
+            <a href="#mangueira">A Mangueira</a>
+            <a href="#reencontro">O reencontro</a>
+            <a href="#discos">Os discos</a>
+            <a href="#fontes">Fontes consultadas</a>
+          </nav>
+        </details>
+
         <p class="lead">Durante muitos anos, o Brasil conheceu as canções de Cartola sem conhecer, de fato, Cartola. Seus sambas circulavam nas vozes de outros intérpretes, enquanto ele permanecia longe dos estúdios e fora do campo de visão da indústria fonográfica. Quando o primeiro disco solo finalmente apareceu, em 1974, o compositor tinha 65 anos. Não era uma estreia no samba: era a chegada tardia ao centro de uma história que ele ajudara a construir.</p>
 
-        <p>Angenor de Oliveira nasceu no Rio de Janeiro em 11 de outubro de 1908. O nome, registrado assim por um engano do escrivão, era pronunciado por ele como Agenor. Ainda menino, viveu no Catete e em Laranjeiras; em 1919, a família mudou-se para o Morro da Mangueira. Ali, entre ranchos carnavalescos, blocos e rodas de samba, começou a formar o ouvido e a linguagem que levaria para suas composições.</p>
+        <p>Angenor de Oliveira nasceu no Rio de Janeiro em 11 de outubro de 1908. Registrado como Angenor, embora o nome pretendido pela família fosse Agenor, ele só tomou conhecimento da diferença muitos anos depois, quando reuniu os documentos para se casar com Dona Zica. Ainda menino, viveu no Catete e em Laranjeiras; em 1919, a família mudou-se para o Morro da Mangueira. Ali, entre ranchos carnavalescos, blocos e rodas de samba, começou a formar o ouvido e a linguagem que levaria para suas composições.</p>
 
         <p>Aprendeu com o pai os primeiros acordes no cavaquinho e no violão. Mais tarde, trabalhando como pedreiro, passou a usar um pequeno chapéu para proteger o cabelo do cimento. Os colegas começaram a chamá-lo de Cartolinha. O apelido ficou; o diminutivo, não.</p>
 
         <h2 id="mangueira">Antes da escola, um bloco de amigos</h2>
 
-        <p>Em 1925, Cartola participou da criação do Bloco dos Arengueiros. Três anos depois, em 28 de abril de 1928, o grupo ajudou a formar a Estação Primeira de Mangueira. Entre os fundadores estavam Cartola, Carlos Cachaça, Saturnino Gonçalves, Pedro Caymmi e outros nomes ligados à vida musical do morro. A Cartola são atribuídos o nome da escola e a escolha do verde e rosa.</p>
+        <p>Em 1925, Cartola participou da criação do Bloco dos Arengueiros. Três anos depois, em 28 de abril de 1928, o grupo ajudou a formar a Estação Primeira de Mangueira. Entre os fundadores estavam Cartola, Carlos Cachaça, Saturnino Gonçalves, Pedro Caim — conhecido como Pedro Paquetá — e outros nomes ligados à vida musical do morro. A Cartola são atribuídos o nome da escola e a escolha do verde e rosa.</p>
 
         <p>“Chega de demanda”, seu primeiro samba para o desfile da Mangueira, já aponta para uma característica que o acompanharia: a melodia nunca aparece como simples apoio da letra. Uma parece pensar junto com a outra. Mesmo quando trata de perda, ciúme ou despedida, a canção não se entrega ao excesso. Há espaço para a dúvida, para a pausa e para aquilo que não se resolve.</p>
 
@@ -251,7 +275,7 @@
 
         <p>A partir dos anos 1940, a trajetória sofreu uma interrupção longa. Cartola teve meningite em 1946, afastou-se da Mangueira e perdeu Deolinda, sua primeira companheira. Durante cerca de uma década, pouco se soube dele nos círculos musicais. Trabalhou em atividades diversas, entre elas a lavagem de automóveis e a função de vigia.</p>
 
-        <p>É tentador transformar esse período numa lenda de desaparecimento absoluto. A realidade é menos confortável e mais reveladora: compositores negros e populares podiam ser centrais para a cultura do país e, ao mesmo tempo, viver sem proteção material ou continuidade profissional. A obra permanecia; o trabalhador da música precisava encontrar outros meios para sobreviver.</p>
+        <p>É tentador transformar esse período numa lenda de desaparecimento absoluto. A realidade é menos confortável: as canções continuavam circulando na voz de outros artistas, enquanto Cartola precisava trabalhar em outros ofícios para sobreviver. Sua história expõe uma contradição antiga da música brasileira — uma obra pode tornar-se parte da cultura do país sem garantir proteção material a quem a criou.</p>
 
         <h2 id="reencontro">Um reencontro e uma casa chamada Zicartola</h2>
 
@@ -259,7 +283,7 @@
 
         <p>Ao lado de Dona Zica, Cartola abriu no início dos anos 1960 o restaurante Zicartola, no centro do Rio. O endereço teve vida curta, mas importância duradoura. A comida de Zica e a música da casa reuniam sambistas experientes, jornalistas, artistas e uma geração mais jovem interessada em ouvir de perto mestres que nem sempre encontravam espaço nos grandes palcos.</p>
 
-        <p>O Zicartola não foi apenas um cenário pitoresco da boemia carioca. Funcionou como lugar de circulação: entre o morro e o centro, entre compositores mais velhos e músicos que começavam, entre uma tradição viva e um público que precisava aprender a reconhecê-la. Paulinho da Viola esteve entre os jovens que passaram pela casa.</p>
+        <p>Mais do que um cenário pitoresco da boemia carioca, o Zicartola funcionou como lugar de circulação: entre o morro e o centro, entre compositores mais velhos e músicos que começavam, entre uma tradição viva e um público que precisava aprender a reconhecê-la. Paulinho da Viola esteve entre os jovens que passaram pela casa.</p>
 
         <div class="note"><strong>Sobre Dona Zica:</strong> sua participação não se resume ao nome do restaurante. Cozinheira, liderança da Mangueira e guardiã de uma memória compartilhada, ela foi decisiva na vida de Cartola e na história cultural formada ao redor do casal.</div>
 
@@ -273,7 +297,7 @@
 
         <h2>Canções que não encerram o sentimento</h2>
 
-        <p>Nas canções de Cartola, a linguagem pode parecer direta, mas raramente é simples. Uma rosa ganha voz sem falar; um moinho aparece como imagem para o desgaste do mundo; o violão torna-se interlocutor. Essas figuras não estão ali para ornamentar o samba. Elas organizam sentimentos difíceis de nomear.</p>
+        <p>Nas canções de Cartola, a linguagem pode parecer direta, mas raramente é simples. Uma rosa ganha voz sem falar. Um moinho vira imagem para o desgaste do mundo. O violão se transforma em interlocutor. Essas figuras não estão ali para ornamentar o samba — elas organizam sentimentos difíceis de nomear.</p>
 
         <p>Há também uma disciplina de compositor. Cartola revia melodias e palavras, cuidava da prosódia e sabia que uma frase cantada precisa respirar. O refinamento de seus sambas não veio de afastamento da cultura popular, mas de atenção profunda a ela. Mangueira, relações amorosas, perdas e esperança entram nas músicas como experiência vivida, transformada pelo trabalho artístico.</p>
 
