@@ -88,7 +88,7 @@
     @keyframes spin{to{transform:rotate(360deg)}}
     .story-poster{position:absolute;right:7%;bottom:7%;width:35%;min-height:205px;padding:20px;background:var(--paper);transform:rotate(4deg);box-shadow:15px 18px 35px rgba(0,0,0,.25)}.story-poster span{font-size:8px;letter-spacing:.3em}.story-poster strong{display:block;margin-top:42px;font:400 24px/.95 Georgia,serif}
     .story-copy{display:flex;flex-direction:column;justify-content:center;padding:4vw;background:#d6cebF}.story-copy>p{font-size:9px;letter-spacing:.25em;text-transform:uppercase}.story-copy h3{margin:20px 0;font:400 clamp(38px,4vw,62px)/.92 Georgia,serif;letter-spacing:-.05em}.story-copy>span{font:17px/1.55 Georgia,serif}.story-copy>a{align-self:flex-start;margin-top:34px;padding:14px 19px;background:var(--wine);color:var(--paper);border:1px solid var(--wine);font-size:11px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;transition:.25s}.story-copy>a:hover{transform:translateY(-3px);background:var(--ink);border-color:var(--ink)}
-    .tabs{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid rgba(0,0,0,.42);border-top:0}.tabs a{min-height:92px;padding:18px;border-right:1px solid rgba(0,0,0,.3);background:transparent;cursor:pointer}.tabs a:last-child{border-right:0}.tabs a.active,.tabs a:hover,.tabs a:focus-visible{background:var(--ink);color:var(--paper)}.tabs span{display:block;margin-bottom:8px;font-size:9px;opacity:.65}
+    .tabs{display:grid;grid-template-columns:repeat(6,1fr);border:1px solid rgba(0,0,0,.42);border-top:0}.tabs a{min-height:92px;padding:18px;border-right:1px solid rgba(0,0,0,.3);background:transparent;cursor:pointer}.tabs a:last-child{border-right:0}.tabs a.active,.tabs a:hover,.tabs a:focus-visible{background:var(--ink);color:var(--paper)}.tabs span{display:block;margin-bottom:8px;font-size:9px;opacity:.65}
     .youtube{padding:8vh 5vw;background:var(--ink)}
     .screen{position:relative;min-height:82vh;display:flex;align-items:flex-end;overflow:hidden;padding:5vw;background:radial-gradient(circle at 68% 26%,rgba(187,79,91,.85),transparent 20%),linear-gradient(130deg,#102d30,#080807 72%);border:1px solid rgba(255,255,255,.2)}
     .screen:before{content:"";position:absolute;inset:-25%;background:repeating-radial-gradient(ellipse at center,transparent 0 45px,rgba(255,255,255,.09) 46px 47px);animation:orbit 20s infinite alternate}
@@ -163,6 +163,7 @@
         <a href="elis.html" data-story="2"><span>03</span>A voz que ardia</a>
         <a href="ditadura-musica.html" data-story="3"><span>04</span>Ditadura e Música</a>
         <a href="zicartola.html" data-story="4"><span>05</span>Zicartola: vinte meses que mudaram o samba</a>
+        <a href="africa-brasil.html" data-story="5"><span>06</span>África Brasil: quando a guitarra passou para a frente</a>
       </div>
     </section>
 
@@ -203,7 +204,8 @@
       {n:"02",eyebrow:"Biografia · Cartola",title:"O gênio que vestiu o samba de poesia",description:"Uma trajetória marcada por silêncio, retorno e canções que atravessaram gerações.",href:"cartola.html"},
       {n:"03",eyebrow:"Análise · Elis Regina",title:"A voz que ardia",description:"Intensidade, precisão e presença: a intérprete que transformou cada palco em acontecimento.",href:"elis.html"},
       {n:"04",eyebrow:"Pesquisa · Memória",title:"Ditadura e Música",description:"Canções, censura e resistência durante os anos de silêncio — a música brasileira como documento e enfrentamento.",href:"ditadura-musica.html"},
-      {n:"05",eyebrow:"História · Rio de Janeiro · 1964–1965",title:"Zicartola: vinte meses que mudaram o mapa do samba",description:"A cozinha de Dona Zica e a música de Cartola fizeram de um sobrado no Centro do Rio um encontro decisivo para o samba brasileiro.",href:"zicartola.html"}
+      {n:"05",eyebrow:"História · Rio de Janeiro · 1964–1965",title:"Zicartola: vinte meses que mudaram o mapa do samba",description:"A cozinha de Dona Zica e a música de Cartola fizeram de um sobrado no Centro do Rio um encontro decisivo para o samba brasileiro.",href:"zicartola.html"},
+      {n:"06",eyebrow:"Discos da música brasileira · 1976",title:"África Brasil: quando a guitarra passou para a frente",description:"O álbum em que Jorge Ben colocou a guitarra elétrica no centro de uma mistura de samba, funk, percussão, futebol, alquimia e afirmação negra.",href:"africa-brasil.html"}
     ];
     const menu=document.getElementById("menu"),nav=document.getElementById("nav");
     menu.addEventListener("click",()=>{const open=nav.classList.toggle("open");menu.setAttribute("aria-expanded",String(open))});
