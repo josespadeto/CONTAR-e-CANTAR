@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Histórias da Música Brasileira. Artistas, canções, discos, movimentos, entrevistas e fontes.">
+  <meta name="theme-color" content="#0b0b09">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <title>CONTAR e CANTAR | Histórias da Música Brasileira</title>
+  <link rel="canonical" href="https://rmcontarecantar.art.br/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="assets/images/hero.webp" type="image/webp" fetchpriority="high">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="RM ContaReCantar">
+  <meta property="og:title" content="CONTAR e CANTAR | Histórias da Música Brasileira">
+  <meta property="og:description" content="Artistas, canções, discos, movimentos, entrevistas e fontes para atravessar a memória musical do Brasil.">
+  <meta property="og:url" content="https://rmcontarecantar.art.br/">
+  <meta property="og:image" content="https://rmcontarecantar.art.br/assets/images/og-contar-cantar.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="CONTAR e CANTAR — Histórias da Música Brasileira">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CONTAR e CANTAR | Histórias da Música Brasileira">
+  <meta name="twitter:description" content="Um arquivo vivo de artistas, canções, encontros e movimentos da música brasileira.">
+  <meta name="twitter:image" content="https://rmcontarecantar.art.br/assets/images/og-contar-cantar.jpg">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LFFVYB42R1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LFFVYB42R1');
+  </script>
+  <style>
+    :root{--ink:#090907;--paper:#eee8dc;--gold:#c69a50;--wine:#611e2d;--petrol:#163c41;--mx:0;--my:0;--px:50vw;--py:50vh}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--ink)}
+    body{margin:0;overflow-x:hidden;background:var(--ink);color:var(--paper);font-family:Arial,Helvetica,sans-serif}
+    a{color:inherit;text-decoration:none}
+    button,input{font:inherit}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .grain{position:fixed;inset:0;z-index:100;pointer-events:none;opacity:.07;mix-blend-mode:screen;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E")}
+    .aura{position:fixed;z-index:99;left:var(--px);top:var(--py);width:210px;height:210px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(214,170,89,.14),transparent 68%);mix-blend-mode:screen;transform:translate(-50%,-50%)}
+    header{position:fixed;inset:0 0 auto;z-index:90;min-height:74px;display:flex;align-items:center;justify-content:space-between;padding:18px 36px;background:#0b0b09;border-bottom:1px solid rgba(255,255,255,.14);box-shadow:0 8px 30px rgba(0,0,0,.18)}
+    .brand{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:800;letter-spacing:-.04em}
+    .brand i{font:400 23px Georgia,serif}
+    nav{display:flex;gap:clamp(12px,1.6vw,28px);font-size:9px;text-transform:uppercase;letter-spacing:.18em}
+    nav a{position:relative;opacity:.78}
+    nav a:hover{opacity:1}
+    nav a:after{content:"";position:absolute;left:0;bottom:-6px;width:100%;height:1px;background:currentColor;transform:scaleX(0);transition:.3s}
+    nav a:hover:after{transform:scaleX(1)}
+    .menu{display:none;border:0;background:none;color:var(--paper);width:42px;height:42px}
+    .menu span{display:block;width:24px;height:1px;margin:6px auto;background:currentColor}
+    .hero{position:relative;min-height:100svh;overflow:hidden;display:flex;align-items:center;padding:150px 7vw 80px;isolation:isolate}
+    .hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(5,5,3,.94),rgba(5,5,3,.58) 45%,rgba(5,5,3,.16) 76%),linear-gradient(0deg,var(--ink),transparent 18%)}
+    .hero-image{position:absolute;inset:-5%;z-index:-2;background:linear-gradient(130deg,rgba(15,45,48,.26),rgba(75,18,32,.18)),url("https://rmcontarecantar.art.br/assets/images/hero.webp") center/cover no-repeat;transform:translate(calc(var(--mx) * -18px),calc(var(--my) * -18px)) scale(1.04);transition:transform .2s ease-out;filter:saturate(.84) contrast(1.08)}
+    .glow{position:absolute;z-index:-1;width:60vw;height:60vw;right:-10vw;top:-12vw;border-radius:50%;background:radial-gradient(circle,rgba(133,46,36,.55),transparent 67%);filter:blur(20px);animation:breathe 6s ease-in-out infinite alternate}
+    @keyframes breathe{to{transform:scale(1.18) translate(-3vw,2vw);opacity:.72}}
+    .orbit{position:absolute;z-index:-1;border:1px solid rgba(239,229,211,.24);border-radius:50%;transform:rotate(-18deg);animation:orbit 16s ease-in-out infinite alternate}
+    .orbit.one{width:35vw;height:15vw;right:7vw;top:23vh}.orbit.two{width:22vw;height:46vw;right:18vw;top:4vh;animation-duration:22s}
+    @keyframes orbit{to{transform:rotate(12deg) translate3d(15px,-8px,0)}}
+    .hero-copy{position:relative;z-index:2;max-width:980px}
+    .kicker,.mark{margin:0 0 25px;font-size:10px;letter-spacing:.35em;text-transform:uppercase}.kicker{color:var(--gold)}
+    h1{margin:0;font:400 clamp(68px,9.5vw,154px)/.78 Georgia,serif;letter-spacing:-.075em}
+    h1 span{display:block;animation:rise 1.1s cubic-bezier(.2,.7,.2,1) both}h1 span:nth-child(2){margin-left:8vw;animation-delay:.12s}h1 span:nth-child(3){animation-delay:.24s}
+    @keyframes rise{from{opacity:0;transform:translateY(70px) skewY(4deg)}to{opacity:1;transform:none}}
+    .outline{color:transparent;-webkit-text-stroke:1px rgba(242,234,219,.84);font-style:italic}
+    .hero-intro{max-width:430px;margin:38px 0 0 32vw;color:rgba(242,234,219,.72);font:17px/1.6 Georgia,serif}
+    .explore{position:absolute;left:7vw;bottom:46px;display:flex;align-items:center;gap:20px;font-size:10px;text-transform:uppercase;letter-spacing:.25em}.explore:after{content:"";width:80px;height:1px;background:var(--paper);transition:.3s}.explore:hover:after{width:130px}
+    .index{position:absolute;right:4vw;bottom:42px;margin:0;font-size:9px;text-transform:uppercase;letter-spacing:.25em;opacity:.58}
+    .intro{display:grid;grid-template-columns:minmax(230px,.8fr) 2fr;gap:5vw;align-items:center;padding:70px 7vw;background:#15140f;border-top:1px solid rgba(255,255,255,.12)}
+    .intro strong{font:400 clamp(28px,3.5vw,55px) Georgia,serif;letter-spacing:-.045em}.intro p{max-width:880px;margin:0;color:rgba(242,234,219,.82);font:clamp(19px,2vw,30px)/1.45 Georgia,serif}
+    .marquee{overflow:hidden;padding:22px 0;border-block:1px solid rgba(255,255,255,.12)}.marquee div{width:max-content;display:flex;align-items:center;gap:35px;animation:marquee 25s linear infinite}.marquee span{font:clamp(24px,3vw,48px) Georgia,serif}.marquee i{color:var(--gold)}
+    @keyframes marquee{to{transform:translateX(-50%)}}
+    .reveal{opacity:0;transform:translateY(48px);transition:opacity .9s,transform .9s}.reveal.visible{opacity:1;transform:none}
+    .instagram{min-height:85vh;display:grid;grid-template-columns:1fr 3fr;gap:40px;padding:17vh 7vw;background:var(--paper);color:var(--ink)}
+    .mark{padding-top:12px;opacity:.62}
+    .instagram h2{max-width:1000px;margin:0;font:400 clamp(42px,5vw,78px)/1.02 Georgia,serif;letter-spacing:-.055em}.instagram h2 em{color:var(--wine);font-weight:400}
+    .instagram .support{display:block;max-width:480px;margin:55px 0 0 auto;font-size:18px;line-height:1.8}
+    .cta{display:inline-flex;align-items:center;justify-content:space-between;gap:35px;min-width:240px;margin-top:34px;padding:17px 21px;border:1px solid;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;transition:.25s}.cta:hover{transform:translateY(-4px);background:var(--wine);color:var(--paper)}
+    .stories{padding:10vh 7vw;background:#bba772;color:var(--ink)}
+    .stories-head{display:grid;grid-template-columns:1fr 2fr;gap:5vw;align-items:end;margin-bottom:6vh}.stories-head h2{margin:0;font:400 clamp(48px,6vw,88px)/.88 Georgia,serif;letter-spacing:-.06em}.stories-head em{color:var(--wine);font-weight:400}
+    .description{max-width:290px;font-size:15px;line-height:1.65}
+    .story-stage{display:grid;grid-template-columns:1.08fr 1fr;min-height:310px;border:1px solid rgba(0,0,0,.42)}
+    .story-visual{position:relative;overflow:hidden;min-height:310px;background:radial-gradient(circle at 65% 40%,#e7b23f 0 12%,transparent 12.5%),linear-gradient(130deg,#d45a40 0 48%,#1c413a 48%)}.story-visual:after{content:"";position:absolute;width:225px;height:225px;left:16%;top:14%;border:1px solid rgba(255,255,255,.55);border-radius:50%}
+    .story-number{position:absolute;left:22px;top:14px;color:var(--paper);font:56px Georgia,serif}
+    .record{position:absolute;left:24%;top:13%;width:220px;aspect-ratio:1;border-radius:50%;background:repeating-radial-gradient(circle,#111 0 3px,#27251f 4px 6px);box-shadow:20px 25px 45px rgba(0,0,0,.28);animation:spin 16s linear infinite}.record:after{content:"C&C";position:absolute;inset:35%;display:grid;place-items:center;border-radius:50%;background:var(--gold);font-weight:800}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .story-poster{position:absolute;right:7%;bottom:7%;width:32%;min-height:135px;padding:15px;background:var(--paper);transform:rotate(4deg);box-shadow:15px 18px 35px rgba(0,0,0,.25)}.story-poster span{font-size:7px;letter-spacing:.3em}.story-poster strong{display:block;margin-top:22px;font:400 18px/.98 Georgia,serif}
+    .story-copy{display:flex;flex-direction:column;justify-content:center;padding:2.8vw;background:#d6cebF}.story-copy>p{font-size:8px;letter-spacing:.25em;text-transform:uppercase}.story-copy h3{margin:12px 0;font:400 clamp(31px,3vw,46px)/.94 Georgia,serif;letter-spacing:-.05em}.story-copy>span{font:15px/1.48 Georgia,serif}.story-copy>a{align-self:flex-start;margin-top:20px;padding:12px 17px;background:var(--wine);color:var(--paper);border:1px solid var(--wine);font-size:10px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;transition:.25s}.story-copy>a:hover{transform:translateY(-3px);background:var(--ink);border-color:var(--ink)}
+    .article-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px 20px;margin-top:36px}.article-card{display:flex;flex-direction:column;min-width:0;border-top:1px solid rgba(0,0,0,.45);padding-top:11px;text-decoration:none;transition:transform .25s}.article-card:hover,.article-card:focus-visible{transform:translateY(-4px)}.article-card:hover .card-title,.article-card:focus-visible .card-title{color:var(--wine)}.card-visual{position:relative;overflow:hidden;width:100%;aspect-ratio:1.78/1;margin-bottom:13px;background:#1c413a center/cover no-repeat}.card-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.24),transparent 55%);transition:opacity .25s}.article-card:hover .card-visual:after{opacity:.35}.card-tag{position:absolute;z-index:2;left:8px;top:8px;padding:4px 7px;background:var(--ink);color:var(--paper);font-size:7px;letter-spacing:.14em;text-transform:uppercase}.visual-tropicalia{background:radial-gradient(circle at 68% 32%,#e8b83f 0 13%,transparent 13.5%),linear-gradient(132deg,#d75a40 0 49%,#16443b 49%)}.visual-tropicalia:before{content:"";position:absolute;width:42%;aspect-ratio:1;border-radius:50%;left:18%;top:18%;background:repeating-radial-gradient(circle,#111 0 2px,#2b2823 3px 5px);box-shadow:13px 16px 24px rgba(0,0,0,.25)}.visual-cartola{background-image:linear-gradient(0deg,rgba(21,17,12,.12),rgba(21,17,12,.12)),url("https://rmcontarecantar.art.br/assets/images/cartola-editorial.webp")}.visual-elis{background:radial-gradient(circle at 48% 42%,#dd9d57 0 6%,transparent 6.5%),radial-gradient(ellipse at 50% 115%,#15140f 0 49%,transparent 49.5%),linear-gradient(135deg,#792d35,#d1a05e)}.visual-elis:before{content:"";position:absolute;width:22%;height:54%;left:39%;top:20%;border-radius:48% 48% 28% 28%;background:#17130f;box-shadow:0 0 0 1px rgba(255,255,255,.25)}.visual-ditadura{background:linear-gradient(90deg,transparent 0 43%,rgba(255,255,255,.82) 43% 46%,transparent 46% 54%,rgba(255,255,255,.82) 54% 57%,transparent 57%),linear-gradient(25deg,#15140f 0 48%,#85352f 48%)}.visual-ditadura:before{content:"1968";position:absolute;right:8%;bottom:5%;color:rgba(255,255,255,.8);font:italic 42px Georgia,serif}.visual-zicartola{background-image:linear-gradient(0deg,rgba(21,17,12,.16),rgba(21,17,12,.16)),url("https://rmcontarecantar.art.br/assets/images/zicartola-editorial.webp")}.visual-africa{background-image:linear-gradient(0deg,rgba(21,17,12,.12),rgba(21,17,12,.12)),url("https://rmcontarecantar.art.br/assets/images/africa-brasil-editorial.webp")}.card-meta{margin:0 0 6px;font-size:8px;letter-spacing:.16em;text-transform:uppercase;opacity:.66}.card-title{margin:0;font:700 clamp(18px,1.45vw,23px)/1.15 Arial,sans-serif;letter-spacing:-.02em;transition:color .2s}.card-description{display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;margin:9px 0 12px;font:13px/1.48 Arial,sans-serif;opacity:.72}.card-action{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:10px;border-top:1px solid rgba(0,0,0,.25);font-size:8px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.article-card.active .card-visual{box-shadow:0 0 0 2px var(--wine)}
+    .youtube{padding:8vh 5vw;background:var(--ink)}
+    .screen{position:relative;min-height:82vh;display:flex;align-items:flex-end;overflow:hidden;padding:5vw;background:radial-gradient(circle at 68% 26%,rgba(187,79,91,.85),transparent 20%),linear-gradient(130deg,#102d30,#080807 72%);border:1px solid rgba(255,255,255,.2)}
+    .screen:before{content:"";position:absolute;inset:-25%;background:repeating-radial-gradient(ellipse at center,transparent 0 45px,rgba(255,255,255,.09) 46px 47px);animation:orbit 20s infinite alternate}
+    .play{position:absolute;z-index:2;left:50%;top:46%;width:104px;height:104px;transform:translate(-50%,-50%);border:1px solid var(--paper);border-radius:50%;background:rgba(0,0,0,.28);color:var(--paper);font-size:25px}
+    .caption{position:relative;z-index:2;max-width:720px}.caption>p{font-size:9px;letter-spacing:.25em;text-transform:uppercase}.caption h2{margin:20px 0;font:400 clamp(48px,6vw,92px)/.9 Georgia,serif;letter-spacing:-.06em}.caption>span{display:block;max-width:520px;font:17px/1.6 Georgia,serif}.caption .cta:hover{background:var(--gold);color:var(--ink)}
+    .research{display:grid;grid-template-columns:1fr 1.2fr;gap:7vw;padding:14vh 7vw;background:var(--petrol)}.research h2{margin:0;font:400 clamp(50px,6vw,90px)/.9 Georgia,serif;letter-spacing:-.06em}.research h2 em{color:var(--gold);font-weight:400}
+    .research-links a{display:grid;grid-template-columns:50px 1fr 25px;align-items:center;padding:25px 0;border-top:1px solid rgba(255,255,255,.35)}.research-links a:last-child{border-bottom:1px solid rgba(255,255,255,.35)}.research-links span{font-size:9px}.research-links strong{font:400 clamp(22px,2.5vw,38px) Georgia,serif}.research-links b{text-align:right}
+    .newsletter{display:grid;grid-template-columns:1fr 3fr;gap:40px;padding:14vh 7vw;background:var(--paper);color:var(--ink)}.newsletter h2{margin:0;font:400 clamp(48px,6.5vw,98px)/.9 Georgia,serif;letter-spacing:-.06em}.newsletter h2 em{color:var(--wine);font-weight:400}.newsletter p{font:17px/1.6 Georgia,serif}.newsletter form{display:flex;margin-top:45px;border-bottom:1px solid}.newsletter input{flex:1;padding:18px 0;border:0;background:transparent;font:19px Georgia,serif;outline:0}.newsletter button{border:0;background:transparent;font-size:10px;font-weight:700;text-transform:uppercase;cursor:pointer}.form-note{min-height:20px;font:13px Arial!important;color:var(--wine)}
+    footer{padding:10vh 7vw 40px;background:var(--ink);text-align:center}.footer-title{display:flex;justify-content:center;align-items:center;gap:2vw;font:400 clamp(60px,12vw,185px)/.8 Georgia,serif;letter-spacing:-.08em}.footer-title i{color:var(--gold);font-weight:400}.footer-bottom{display:flex;justify-content:space-between;margin-top:80px;padding-top:25px;border-top:1px solid rgba(255,255,255,.2);font-size:9px;letter-spacing:.15em;text-transform:uppercase}
+    @media(max-width:800px){
+      .aura{display:none}header{padding:16px 20px}.menu{display:block}nav{position:absolute;top:74px;left:0;right:0;display:none;flex-direction:column;gap:0;padding:15px 20px 22px;background:#0b0b09;border-top:1px solid rgba(255,255,255,.12)}nav.open{display:flex}nav a{padding:14px 0;font-size:11px}
+      .hero{min-height:94svh;padding:130px 22px 90px}.hero-image{inset:0;background-position:62% center}.orbit{display:none}h1{font-size:18vw}.hero h1 span:nth-child(2){margin-left:6vw}.hero-intro{max-width:78%;margin:30px 0 0 15vw;font-size:15px}.explore{left:22px;bottom:32px}.index{display:none}
+      .intro,.instagram,.stories-head,.research,.newsletter{grid-template-columns:1fr}.intro{padding:55px 22px}.marquee{padding:16px 0}.instagram,.stories,.research,.newsletter{padding:11vh 22px}.instagram{gap:30px}.instagram h2{font-size:12vw}.instagram .support{margin:42px 0 0;font-size:16px}
+      .stories-head h2{font-size:14vw}.story-stage{grid-template-columns:1fr}.story-visual{min-height:290px}.record{width:58vw;left:-2%;top:10%}.story-poster{width:43%;min-height:145px}.story-copy{padding:30px 22px}.story-copy h3{font-size:9vw}.article-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 16px;margin-top:34px}.card-title{font-size:20px}.card-description{font-size:13px}
+      .youtube{padding:5vh 0}.screen{min-height:74vh;padding:35px 22px}.play{width:82px;height:82px}.caption h2{font-size:13vw}.research h2,.newsletter h2{font-size:14vw}.research-links strong{font-size:7vw}.newsletter form{display:block}.newsletter input{width:100%}.newsletter button{padding:18px 0}.footer-title{flex-wrap:wrap;font-size:19vw}.footer-bottom{flex-direction:column;gap:18px}
+    }
+    @media(max-width:560px){.article-grid{grid-template-columns:1fr}.card-title{font-size:22px}.card-description{font-size:14px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div><div class="aura" aria-hidden="true"></div>
+  <header>
+    <a class="brand" href="#inicio" aria-label="CONTAR e CANTAR — início"><span>CONTAR</span><i>&amp;</i><span>CANTAR</span></a>
+    <nav id="nav" aria-label="Principal">
+      <a href="#inicio">Início</a><a href="#instagram">Instagram</a><a href="#youtube">YouTube</a><a href="#artigos">Artigos</a><a href="#pesquisa">Pesquisa</a><a href="#newsletter">Newsletter</a>
+    </nav>
+    <button class="menu" id="menu" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-image" aria-hidden="true"></div><div class="glow" aria-hidden="true"></div><div class="orbit one" aria-hidden="true"></div><div class="orbit two" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <p class="kicker">Histórias da música brasileira</p>
+        <h1><span>O Brasil</span><span class="outline">que canta</span><span>não esquece.</span></h1>
+        <p class="hero-intro">Artistas, canções, encontros e movimentos que continuam ecoando através do tempo.</p>
+      </div>
+      <a class="explore" href="#instagram">Explore o acervo</a><p class="index">Arquivo vivo · Brasília · 2026</p>
+    </section>
+
+    <section class="intro">
+      <strong>CONTAR e CANTAR</strong>
+      <p>Histórias da Música Brasileira. Artistas, canções, discos, movimentos, entrevistas e fontes para atravessar a memória musical do Brasil com cuidado e encanto.</p>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div><span>MEMÓRIA</span><i>✦</i><span>CANÇÃO</span><i>✦</i><span>ENCONTROS</span><i>✦</i><span>BRASIL</span><i>✦</i><span>MEMÓRIA</span><i>✦</i><span>CANÇÃO</span><i>✦</i><span>ENCONTROS</span><i>✦</i><span>BRASIL</span><i>✦</i></div></div>
+
+    <section class="instagram reveal" id="instagram">
+      <p class="mark">Instagram · Acervo diário</p>
+      <div>
+        <h2>Mais de 2.400 histórias.<br><em>A memória em movimento.</em></h2>
+        <span class="support">Vídeos curtos, homenagens, bastidores e encontros mantêm o acervo vivo todos os dias — uma porta aberta para descobrir e redescobrir a música brasileira.</span>
+        <a class="cta" href="https://www.instagram.com/contandoecantandorosanemaia/" target="_blank" rel="noopener">Acessar o Instagram <b>↗</b></a>
+      </div>
+    </section>
+
+    <section class="stories reveal" id="artigos">
+      <div class="stories-head">
+        <div><p class="mark">Artigos · Revista Cultural</p><p class="description">Biografias, movimentos e histórias para conhecer a música brasileira além da superfície.</p></div>
+        <h2>Artigos para ler<br><em>e atravessar o tempo</em></h2>
+      </div>
+      <div class="story-stage">
+        <div class="story-visual" aria-hidden="true"><span class="story-number" id="story-number">01</span><div class="record"></div><div class="story-poster"><span>ARQUIVO</span><strong id="poster-title">A Revolução da Tropicália</strong></div></div>
+        <div class="story-copy">
+          <p id="story-eyebrow">Movimento · 1967–1968</p><h3 id="story-title">A Revolução da Tropicália</h3><span id="story-description">Quando canção, cinema, teatro e artes visuais romperam as fronteiras da música brasileira.</span>
+          <a id="story-link" href="tropicalia.html">Abrir artigo <b>↗</b></a>
+        </div>
+      </div>
+      <div class="article-grid" aria-label="Artigos para leitura">
+        <a class="article-card active" href="tropicalia.html" data-story="0">
+          <div class="card-visual visual-tropicalia"><span class="card-tag">Movimento</span></div><p class="card-meta">1967–1968 · Tropicália</p><h3 class="card-title">A Revolução da Tropicália</h3><p class="card-description">Quando canção, cinema, teatro e artes visuais romperam as fronteiras da música brasileira.</p><span class="card-action">Ler artigo <b>↗</b></span>
+        </a>
+        <a class="article-card" href="cartola.html" data-story="1">
+          <div class="card-visual visual-cartola"><span class="card-tag">Biografia</span></div><p class="card-meta">Cartola · Samba</p><h3 class="card-title">O gênio que vestiu o samba de poesia</h3><p class="card-description">Uma trajetória marcada por silêncio, retorno e canções que atravessaram gerações.</p><span class="card-action">Ler artigo <b>↗</b></span>
+        </a>
+        <a class="article-card" href="elis.html" data-story="2">
+          <div class="card-visual visual-elis"><span class="card-tag">Intérpretes</span></div><p class="card-meta">Elis Regina · Voz</p><h3 class="card-title">A voz que ardia</h3><p class="card-description">Intensidade, precisão e presença: a intérprete que transformou cada palco em acontecimento.</p><span class="card-action">Ler artigo <b>↗</b></span>
+        </a>
+        <a class="article-card" href="ditadura-musica.html" data-story="3">
+          <div class="card-visual visual-ditadura"><span class="card-tag">História</span></div><p class="card-meta">Música · Política</p><h3 class="card-title">Ditadura e Música</h3><p class="card-description">Canções, censura e resistência durante os anos de silêncio.</p><span class="card-action">Ler artigo <b>↗</b></span>
+        </a>
+        <a class="article-card" href="zicartola.html" data-story="4">
+          <div class="card-visual visual-zicartola"><span class="card-tag">Memória</span></div><p class="card-meta">Rio de Janeiro · 1964–1965</p><h3 class="card-title">Zicartola: vinte meses que mudaram o samba</h3><p class="card-description">O sobrado onde a cozinha de Dona Zica e a música de Cartola reuniram diferentes gerações do samba.</p><span class="card-action">Ler artigo <b>↗</b></span>
+        </a>
+        <a class="article-card" href="africa-brasil.html" data-story="5">
+          <div class="card-visual visual-africa"><span class="card-tag">Discos</span></div><p class="card-meta">Jorge Ben · 1976</p><h3 class="card-title">África Brasil: quando a guitarra passou para a frente</h3><p class="card-description">O álbum que colocou a guitarra elétrica no centro de uma mistura de samba, funk e percussão.</p><span class="card-action">Ler artigo <b>↗</b></span>
+        </a>
+      </div>
+    </section>
+
+    <section class="youtube reveal" id="youtube">
+      <div class="screen">
+        <button class="play" type="button" aria-label="Acessar o canal no YouTube" onclick="window.open('https://www.youtube.com/@rosanemaia4419','_blank','noopener')">▶</button>
+        <div class="caption"><p>YouTube · Acervo audiovisual</p><h2>Quando a memória ganha voz e presença.</h2><span>Entrevistas, registros, documentários e histórias da música brasileira em formato audiovisual.</span><a class="cta" href="https://www.youtube.com/@rosanemaia4419" target="_blank" rel="noopener">Assistir no YouTube <b>↗</b></a></div>
+      </div>
+    </section>
+
+    <section class="research reveal" id="pesquisa">
+      <div><p class="mark">Centro de pesquisa</p><h2>Uma pergunta.<br>Muitos caminhos<br><em>para descobrir.</em></h2></div>
+      <div class="research-links">
+        <a href="universos.html"><span>01</span><strong>No CONTAR e CANTAR</strong><b>↗</b></a>
+        <a href="https://dicionariompb.com.br/" target="_blank" rel="noopener"><span>02</span><strong>Em fontes culturais</strong><b>↗</b></a>
+        <a href="https://scholar.google.com.br/" target="_blank" rel="noopener"><span>03</span><strong>Google Acadêmico</strong><b>↗</b></a>
+        <a href="https://www.youtube.com/@rosanemaia4419" target="_blank" rel="noopener"><span>04</span><strong>YouTube</strong><b>↗</b></a>
+      </div>
+    </section>
+
+    <section class="newsletter reveal" id="newsletter">
+      <p class="mark">Newsletter</p>
+      <div><h2>Histórias que chegam<br><em>sem algoritmos, sem pressa.</em></h2><p>Artigos, especiais e curadoria da música brasileira diretamente no seu e-mail.</p>
+        <form id="newsletter-form"><label class="sr-only" for="email">Seu melhor e-mail</label><input id="email" type="email" required placeholder="Seu melhor e-mail"><button type="submit">Assinar ↗</button></form>
+        <p class="form-note" id="form-note" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-title"><span>CONTAR</span><i>&amp;</i><span>CANTAR</span></div>
+    <div class="footer-bottom"><span>Histórias da Música Brasileira</span><span>Rosane Maia · Brasília</span><a href="#inicio">Voltar ao início ↑</a></div>
+  </footer>
+
+  <script>
+    const stories=[
+      {n:"01",eyebrow:"Movimento · 1967–1968",title:"A Revolução da Tropicália",description:"Quando canção, cinema, teatro e artes visuais romperam as fronteiras da música brasileira.",href:"tropicalia.html"},
+      {n:"02",eyebrow:"Biografia · Cartola",title:"O gênio que vestiu o samba de poesia",description:"Uma trajetória marcada por silêncio, retorno e canções que atravessaram gerações.",href:"cartola.html"},
+      {n:"03",eyebrow:"Análise · Elis Regina",title:"A voz que ardia",description:"Intensidade, precisão e presença: a intérprete que transformou cada palco em acontecimento.",href:"elis.html"},
+      {n:"04",eyebrow:"Pesquisa · Memória",title:"Ditadura e Música",description:"Canções, censura e resistência durante os anos de silêncio — a música brasileira como documento e enfrentamento.",href:"ditadura-musica.html"},
+      {n:"05",eyebrow:"História · Rio de Janeiro · 1964–1965",title:"Zicartola: vinte meses que mudaram o mapa do samba",description:"A cozinha de Dona Zica e a música de Cartola fizeram de um sobrado no Centro do Rio um encontro decisivo para o samba brasileiro.",href:"zicartola.html"},
+      {n:"06",eyebrow:"Discos da música brasileira · 1976",title:"África Brasil: quando a guitarra passou para a frente",description:"O álbum em que Jorge Ben colocou a guitarra elétrica no centro de uma mistura de samba, funk, percussão, futebol, alquimia e afirmação negra.",href:"africa-brasil.html"}
+    ];
+    const menu=document.getElementById("menu"),nav=document.getElementById("nav");
+    menu.addEventListener("click",()=>{const open=nav.classList.toggle("open");menu.setAttribute("aria-expanded",String(open))});
+    nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open");menu.setAttribute("aria-expanded","false")}));
+    const showStory=link=>{
+      const s=stories[Number(link.dataset.story)];
+      document.getElementById("story-number").textContent=s.n;document.getElementById("story-eyebrow").textContent=s.eyebrow;document.getElementById("story-title").textContent=s.title;document.getElementById("poster-title").textContent=s.title;document.getElementById("story-description").textContent=s.description;document.getElementById("story-link").href=s.href;
+      document.querySelectorAll(".article-card").forEach(item=>item.classList.toggle("active",item===link));
+    };
+    document.querySelectorAll(".article-card").forEach(link=>{
+      link.addEventListener("mouseenter",()=>showStory(link));
+      link.addEventListener("focus",()=>showStory(link));
+    });
+    const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add("visible")}),{threshold:.12});document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+    window.addEventListener("pointermove",e=>{document.documentElement.style.setProperty("--mx",e.clientX/window.innerWidth-.5);document.documentElement.style.setProperty("--my",e.clientY/window.innerHeight-.5);document.documentElement.style.setProperty("--px",e.clientX+"px");document.documentElement.style.setProperty("--py",e.clientY+"px")},{passive:true});
+    document.getElementById("newsletter-form").addEventListener("submit",e=>{e.preventDefault();document.getElementById("form-note").textContent="Cadastro demonstrativo: conectaremos o formulário ao serviço de newsletter na versão definitiva."});
+  </script>
+</body>
+</html>
