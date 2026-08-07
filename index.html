@@ -53,7 +53,7 @@
     .menu span{display:block;width:24px;height:1px;margin:6px auto;background:currentColor}
     .hero{position:relative;min-height:100svh;overflow:hidden;display:flex;align-items:center;padding:150px 7vw 80px;isolation:isolate}
     .hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(5,5,3,.94),rgba(5,5,3,.58) 45%,rgba(5,5,3,.16) 76%),linear-gradient(0deg,var(--ink),transparent 18%)}
-    .hero-image{position:absolute;inset:-5%;z-index:-2;background:linear-gradient(130deg,rgba(15,45,48,.26),rgba(75,18,32,.18)),url("assets/images/hero.webp") center/cover no-repeat;transform:translate(calc(var(--mx) * -18px),calc(var(--my) * -18px)) scale(1.04);transition:transform .2s ease-out;filter:saturate(.84) contrast(1.08)}
+    .hero-image{position:absolute;inset:-5%;z-index:-2;background:linear-gradient(130deg,rgba(15,45,48,.26),rgba(75,18,32,.18)),url("https://rmcontarecantar.art.br/assets/images/hero.webp") center/cover no-repeat;transform:translate(calc(var(--mx) * -18px),calc(var(--my) * -18px)) scale(1.04);transition:transform .2s ease-out;filter:saturate(.84) contrast(1.08)}
     .glow{position:absolute;z-index:-1;width:60vw;height:60vw;right:-10vw;top:-12vw;border-radius:50%;background:radial-gradient(circle,rgba(133,46,36,.55),transparent 67%);filter:blur(20px);animation:breathe 6s ease-in-out infinite alternate}
     @keyframes breathe{to{transform:scale(1.18) translate(-3vw,2vw);opacity:.72}}
     .orbit{position:absolute;z-index:-1;border:1px solid rgba(239,229,211,.24);border-radius:50%;transform:rotate(-18deg);animation:orbit 16s ease-in-out infinite alternate}
@@ -81,14 +81,14 @@
     .stories{padding:10vh 7vw;background:#bba772;color:var(--ink)}
     .stories-head{display:grid;grid-template-columns:1fr 2fr;gap:5vw;align-items:end;margin-bottom:6vh}.stories-head h2{margin:0;font:400 clamp(48px,6vw,88px)/.88 Georgia,serif;letter-spacing:-.06em}.stories-head em{color:var(--wine);font-weight:400}
     .description{max-width:290px;font-size:15px;line-height:1.65}
-    .story-stage{display:grid;grid-template-columns:1.15fr 1fr;min-height:460px;border:1px solid rgba(0,0,0,.42)}
-    .story-visual{position:relative;overflow:hidden;min-height:430px;background:radial-gradient(circle at 65% 40%,#e7b23f 0 12%,transparent 12.5%),linear-gradient(130deg,#d45a40 0 48%,#1c413a 48%)}.story-visual:after{content:"";position:absolute;width:320px;height:320px;left:16%;top:16%;border:1px solid rgba(255,255,255,.55);border-radius:50%}
-    .story-number{position:absolute;left:25px;top:20px;color:var(--paper);font:80px Georgia,serif}
-    .record{position:absolute;left:24%;top:15%;width:310px;aspect-ratio:1;border-radius:50%;background:repeating-radial-gradient(circle,#111 0 3px,#27251f 4px 6px);box-shadow:20px 25px 45px rgba(0,0,0,.28);animation:spin 16s linear infinite}.record:after{content:"C&C";position:absolute;inset:35%;display:grid;place-items:center;border-radius:50%;background:var(--gold);font-weight:800}
+    .story-stage{display:grid;grid-template-columns:1.08fr 1fr;min-height:350px;border:1px solid rgba(0,0,0,.42)}
+    .story-visual{position:relative;overflow:hidden;min-height:350px;background:radial-gradient(circle at 65% 40%,#e7b23f 0 12%,transparent 12.5%),linear-gradient(130deg,#d45a40 0 48%,#1c413a 48%)}.story-visual:after{content:"";position:absolute;width:250px;height:250px;left:16%;top:14%;border:1px solid rgba(255,255,255,.55);border-radius:50%}
+    .story-number{position:absolute;left:22px;top:14px;color:var(--paper);font:56px Georgia,serif}
+    .record{position:absolute;left:24%;top:13%;width:245px;aspect-ratio:1;border-radius:50%;background:repeating-radial-gradient(circle,#111 0 3px,#27251f 4px 6px);box-shadow:20px 25px 45px rgba(0,0,0,.28);animation:spin 16s linear infinite}.record:after{content:"C&C";position:absolute;inset:35%;display:grid;place-items:center;border-radius:50%;background:var(--gold);font-weight:800}
     @keyframes spin{to{transform:rotate(360deg)}}
-    .story-poster{position:absolute;right:7%;bottom:7%;width:35%;min-height:205px;padding:20px;background:var(--paper);transform:rotate(4deg);box-shadow:15px 18px 35px rgba(0,0,0,.25)}.story-poster span{font-size:8px;letter-spacing:.3em}.story-poster strong{display:block;margin-top:42px;font:400 24px/.95 Georgia,serif}
-    .story-copy{display:flex;flex-direction:column;justify-content:center;padding:4vw;background:#d6cebF}.story-copy>p{font-size:9px;letter-spacing:.25em;text-transform:uppercase}.story-copy h3{margin:20px 0;font:400 clamp(38px,4vw,62px)/.92 Georgia,serif;letter-spacing:-.05em}.story-copy>span{font:17px/1.55 Georgia,serif}.story-copy>a{align-self:flex-start;margin-top:34px;padding:14px 19px;background:var(--wine);color:var(--paper);border:1px solid var(--wine);font-size:11px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;transition:.25s}.story-copy>a:hover{transform:translateY(-3px);background:var(--ink);border-color:var(--ink)}
-    .tabs{display:grid;grid-template-columns:repeat(6,1fr);border:1px solid rgba(0,0,0,.42);border-top:0}.tabs a{min-height:92px;padding:18px;border-right:1px solid rgba(0,0,0,.3);background:transparent;cursor:pointer}.tabs a:last-child{border-right:0}.tabs a.active,.tabs a:hover,.tabs a:focus-visible{background:var(--ink);color:var(--paper)}.tabs span{display:block;margin-bottom:8px;font-size:9px;opacity:.65}
+    .story-poster{position:absolute;right:7%;bottom:7%;width:34%;min-height:155px;padding:17px;background:var(--paper);transform:rotate(4deg);box-shadow:15px 18px 35px rgba(0,0,0,.25)}.story-poster span{font-size:8px;letter-spacing:.3em}.story-poster strong{display:block;margin-top:28px;font:400 20px/.98 Georgia,serif}
+    .story-copy{display:flex;flex-direction:column;justify-content:center;padding:3.2vw;background:#d6cebF}.story-copy>p{font-size:9px;letter-spacing:.25em;text-transform:uppercase}.story-copy h3{margin:15px 0;font:400 clamp(34px,3.4vw,52px)/.94 Georgia,serif;letter-spacing:-.05em}.story-copy>span{font:16px/1.5 Georgia,serif}.story-copy>a{align-self:flex-start;margin-top:24px;padding:14px 19px;background:var(--wine);color:var(--paper);border:1px solid var(--wine);font-size:11px;font-weight:800;letter-spacing:.15em;text-transform:uppercase;transition:.25s}.story-copy>a:hover{transform:translateY(-3px);background:var(--ink);border-color:var(--ink)}
+    .article-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 22px;margin-top:42px}.article-card{display:flex;flex-direction:column;min-width:0;border-top:1px solid rgba(0,0,0,.45);padding-top:14px;text-decoration:none;transition:transform .25s}.article-card:hover,.article-card:focus-visible{transform:translateY(-6px)}.article-card:hover .card-title,.article-card:focus-visible .card-title{color:var(--wine)}.card-visual{position:relative;overflow:hidden;width:100%;aspect-ratio:16/9;margin-bottom:18px;background:#1c413a center/cover no-repeat}.card-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.24),transparent 55%);transition:opacity .25s}.article-card:hover .card-visual:after{opacity:.35}.card-tag{position:absolute;z-index:2;left:10px;top:10px;padding:5px 8px;background:var(--ink);color:var(--paper);font-size:8px;letter-spacing:.16em;text-transform:uppercase}.visual-tropicalia{background:radial-gradient(circle at 68% 32%,#e8b83f 0 13%,transparent 13.5%),linear-gradient(132deg,#d75a40 0 49%,#16443b 49%)}.visual-tropicalia:before{content:"";position:absolute;width:42%;aspect-ratio:1;border-radius:50%;left:18%;top:18%;background:repeating-radial-gradient(circle,#111 0 2px,#2b2823 3px 5px);box-shadow:13px 16px 24px rgba(0,0,0,.25)}.visual-cartola{background-image:linear-gradient(0deg,rgba(21,17,12,.12),rgba(21,17,12,.12)),url("https://rmcontarecantar.art.br/assets/images/cartola-editorial.webp")}.visual-elis{background:radial-gradient(circle at 48% 42%,#dd9d57 0 6%,transparent 6.5%),radial-gradient(ellipse at 50% 115%,#15140f 0 49%,transparent 49.5%),linear-gradient(135deg,#792d35,#d1a05e)}.visual-elis:before{content:"";position:absolute;width:22%;height:54%;left:39%;top:20%;border-radius:48% 48% 28% 28%;background:#17130f;box-shadow:0 0 0 1px rgba(255,255,255,.25)}.visual-ditadura{background:linear-gradient(90deg,transparent 0 43%,rgba(255,255,255,.82) 43% 46%,transparent 46% 54%,rgba(255,255,255,.82) 54% 57%,transparent 57%),linear-gradient(25deg,#15140f 0 48%,#85352f 48%)}.visual-ditadura:before{content:"1968";position:absolute;right:8%;bottom:5%;color:rgba(255,255,255,.8);font:italic 52px Georgia,serif}.visual-zicartola{background-image:linear-gradient(0deg,rgba(21,17,12,.16),rgba(21,17,12,.16)),url("https://rmcontarecantar.art.br/assets/images/zicartola-editorial.webp")}.visual-africa{background-image:linear-gradient(0deg,rgba(21,17,12,.12),rgba(21,17,12,.12)),url("https://rmcontarecantar.art.br/assets/images/africa-brasil-editorial.webp")}.card-meta{margin:0 0 8px;font-size:9px;letter-spacing:.18em;text-transform:uppercase;opacity:.66}.card-title{margin:0;font:400 clamp(25px,2.2vw,35px)/1.05 Georgia,serif;letter-spacing:-.035em;transition:color .2s}.card-description{margin:13px 0 16px;font:15px/1.55 Georgia,serif;opacity:.78}.card-action{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:13px;border-top:1px solid rgba(0,0,0,.25);font-size:9px;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.article-card.active .card-visual{box-shadow:0 0 0 3px var(--wine)}
     .youtube{padding:8vh 5vw;background:var(--ink)}
     .screen{position:relative;min-height:82vh;display:flex;align-items:flex-end;overflow:hidden;padding:5vw;background:radial-gradient(circle at 68% 26%,rgba(187,79,91,.85),transparent 20%),linear-gradient(130deg,#102d30,#080807 72%);border:1px solid rgba(255,255,255,.2)}
     .screen:before{content:"";position:absolute;inset:-25%;background:repeating-radial-gradient(ellipse at center,transparent 0 45px,rgba(255,255,255,.09) 46px 47px);animation:orbit 20s infinite alternate}
@@ -102,7 +102,7 @@
       .aura{display:none}header{padding:16px 20px}.menu{display:block}nav{position:absolute;top:74px;left:0;right:0;display:none;flex-direction:column;gap:0;padding:15px 20px 22px;background:#0b0b09;border-top:1px solid rgba(255,255,255,.12)}nav.open{display:flex}nav a{padding:14px 0;font-size:11px}
       .hero{min-height:94svh;padding:130px 22px 90px}.hero-image{inset:0;background-position:62% center}.orbit{display:none}h1{font-size:18vw}.hero h1 span:nth-child(2){margin-left:6vw}.hero-intro{max-width:78%;margin:30px 0 0 15vw;font-size:15px}.explore{left:22px;bottom:32px}.index{display:none}
       .intro,.instagram,.stories-head,.research,.newsletter{grid-template-columns:1fr}.intro{padding:55px 22px}.marquee{padding:16px 0}.instagram,.stories,.research,.newsletter{padding:11vh 22px}.instagram{gap:30px}.instagram h2{font-size:12vw}.instagram .support{margin:42px 0 0;font-size:16px}
-      .stories-head h2{font-size:14vw}.story-stage{grid-template-columns:1fr}.story-visual{min-height:350px}.record{width:68vw;left:-8%;top:10%}.story-poster{width:45%;min-height:185px}.story-copy{padding:38px 24px}.story-copy h3{font-size:11vw}.tabs{grid-template-columns:1fr}.tabs a{border-right:0;border-bottom:1px solid rgba(0,0,0,.3)}.tabs a:last-child{border-bottom:0}
+      .stories-head h2{font-size:14vw}.story-stage{grid-template-columns:1fr}.story-visual{min-height:315px}.record{width:62vw;left:-4%;top:10%}.story-poster{width:45%;min-height:160px}.story-copy{padding:34px 24px}.story-copy h3{font-size:10vw}.article-grid{grid-template-columns:1fr;gap:34px;margin-top:38px}.card-title{font-size:9vw}.card-description{font-size:16px}
       .youtube{padding:5vh 0}.screen{min-height:74vh;padding:35px 22px}.play{width:82px;height:82px}.caption h2{font-size:13vw}.research h2,.newsletter h2{font-size:14vw}.research-links strong{font-size:7vw}.newsletter form{display:block}.newsletter input{width:100%}.newsletter button{padding:18px 0}.footer-title{flex-wrap:wrap;font-size:19vw}.footer-bottom{flex-direction:column;gap:18px}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
@@ -157,13 +157,25 @@
           <a id="story-link" href="tropicalia.html">Abrir artigo <b>↗</b></a>
         </div>
       </div>
-      <div class="tabs" aria-label="Abrir um artigo">
-        <a class="active" href="tropicalia.html" data-story="0"><span>01</span>A Revolução da Tropicália</a>
-        <a href="cartola.html" data-story="1"><span>02</span>O gênio que vestiu o samba de poesia</a>
-        <a href="elis.html" data-story="2"><span>03</span>A voz que ardia</a>
-        <a href="ditadura-musica.html" data-story="3"><span>04</span>Ditadura e Música</a>
-        <a href="zicartola.html" data-story="4"><span>05</span>Zicartola: vinte meses que mudaram o samba</a>
-        <a href="africa-brasil.html" data-story="5"><span>06</span>África Brasil: quando a guitarra passou para a frente</a>
+      <div class="article-grid" aria-label="Artigos para leitura">
+        <a class="article-card active" href="tropicalia.html" data-story="0">
+          <div class="card-visual visual-tropicalia"><span class="card-tag">Movimento</span></div><p class="card-meta">1967–1968 · Tropicália</p><h3 class="card-title">A Revolução da Tropicália</h3><p class="card-description">Quando canção, cinema, teatro e artes visuais romperam as fronteiras da música brasileira.</p><span class="card-action">Ler artigo <b>↗</b></span>
+        </a>
+        <a class="article-card" href="cartola.html" data-story="1">
+          <div class="card-visual visual-cartola"><span class="card-tag">Biografia</span></div><p class="card-meta">Cartola · Samba</p><h3 class="card-title">O gênio que vestiu o samba de poesia</h3><p class="card-description">Uma trajetória marcada por silêncio, retorno e canções que atravessaram gerações.</p><span class="card-action">Ler artigo <b>↗</b></span>
+        </a>
+        <a class="article-card" href="elis.html" data-story="2">
+          <div class="card-visual visual-elis"><span class="card-tag">Intérpretes</span></div><p class="card-meta">Elis Regina · Voz</p><h3 class="card-title">A voz que ardia</h3><p class="card-description">Intensidade, precisão e presença: a intérprete que transformou cada palco em acontecimento.</p><span class="card-action">Ler artigo <b>↗</b></span>
+        </a>
+        <a class="article-card" href="ditadura-musica.html" data-story="3">
+          <div class="card-visual visual-ditadura"><span class="card-tag">História</span></div><p class="card-meta">Música · Política</p><h3 class="card-title">Ditadura e Música</h3><p class="card-description">Canções, censura e resistência durante os anos de silêncio.</p><span class="card-action">Ler artigo <b>↗</b></span>
+        </a>
+        <a class="article-card" href="zicartola.html" data-story="4">
+          <div class="card-visual visual-zicartola"><span class="card-tag">Memória</span></div><p class="card-meta">Rio de Janeiro · 1964–1965</p><h3 class="card-title">Zicartola: vinte meses que mudaram o samba</h3><p class="card-description">O sobrado onde a cozinha de Dona Zica e a música de Cartola reuniram diferentes gerações do samba.</p><span class="card-action">Ler artigo <b>↗</b></span>
+        </a>
+        <a class="article-card" href="africa-brasil.html" data-story="5">
+          <div class="card-visual visual-africa"><span class="card-tag">Discos</span></div><p class="card-meta">Jorge Ben · 1976</p><h3 class="card-title">África Brasil: quando a guitarra passou para a frente</h3><p class="card-description">O álbum que colocou a guitarra elétrica no centro de uma mistura de samba, funk e percussão.</p><span class="card-action">Ler artigo <b>↗</b></span>
+        </a>
       </div>
     </section>
 
@@ -213,9 +225,9 @@
     const showStory=link=>{
       const s=stories[Number(link.dataset.story)];
       document.getElementById("story-number").textContent=s.n;document.getElementById("story-eyebrow").textContent=s.eyebrow;document.getElementById("story-title").textContent=s.title;document.getElementById("poster-title").textContent=s.title;document.getElementById("story-description").textContent=s.description;document.getElementById("story-link").href=s.href;
-      document.querySelectorAll("[data-story]").forEach(item=>item.classList.toggle("active",item===link));
+      document.querySelectorAll(".article-card").forEach(item=>item.classList.toggle("active",item===link));
     };
-    document.querySelectorAll("[data-story]").forEach(link=>{
+    document.querySelectorAll(".article-card").forEach(link=>{
       link.addEventListener("mouseenter",()=>showStory(link));
       link.addEventListener("focus",()=>showStory(link));
     });
