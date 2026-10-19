@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Contato - Contar e Cantar</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #eee8dc; color: #2a2a28; line-height: 1.6; margin: 0; }
+    main { max-width: 600px; margin: 80px auto; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+    h1 { color: #090907; margin-top: 0; }
+    input, textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px; font-family: inherit; }
+    button { background: #611e2d; color: #fff; border: none; padding: 15px 30px; font-weight: bold; cursor: pointer; text-transform: uppercase; letter-spacing: 0.1em; }
+    .back { display: block; margin-top: 20px; color: #611e2d; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Fale Conosco</h1>
+    <p>Tem alguma dúvida sobre nossos artigos, encontrou algum ponto a ser corrigido ou deseja sugerir uma pauta? Mande uma mensagem.</p>
+    <p><strong>Atendimento Direto:</strong> <a href="mailto:contato@rmcontarecantar.art.br">contato@rmcontarecantar.art.br</a></p>
+    
+    <!-- O formulário mailto é aceitável para o AdSense -->
+    <form action="mailto:contato@rmcontarecantar.art.br" method="post" enctype="text/plain">
+      <label>Seu Nome:</label>
+      <input type="text" name="nome" required>
+      <label>Seu E-mail:</label>
+      <input type="email" name="email" required>
+      <label>Mensagem:</label>
+      <textarea name="mensagem" rows="5" required></textarea>
+      <button type="submit">Enviar Mensagem</button>
+    </form>
+    <a href="index.html" class="back">← Voltar para o início</a>
+  </main>
+</body>
+</html>
