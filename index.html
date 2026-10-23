@@ -10,6 +10,8 @@
   <link rel="canonical" href="https://rmcontarecantar.art.br/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" as="image" href="assets/images/hero.webp" type="image/webp" fetchpriority="high">
+  
+  <!-- Open Graph -->
   <meta property="og:locale" content="pt_BR">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="RM ContaReCantar">
@@ -24,6 +26,8 @@
   <meta name="twitter:title" content="CONTAR e CANTAR | Histórias da Música Brasileira">
   <meta name="twitter:description" content="Um arquivo vivo de artistas, canções, encontros e movimentos da música brasileira.">
   <meta name="twitter:image" content="https://rmcontarecantar.art.br/assets/images/og-contar-cantar.jpg">
+
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LFFVYB42R1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -31,6 +35,7 @@
     gtag('js', new Date());
     gtag('config', 'G-LFFVYB42R1');
   </script>
+
   <style>
     :root{--ink:#090907;--paper:#eee8dc;--gold:#c69a50;--wine:#611e2d;--petrol:#163c41;--mx:0;--my:0;--px:50vw;--py:50vh}
     *{box-sizing:border-box}
@@ -108,8 +113,6 @@
     @media(max-width:560px){.article-grid{grid-template-columns:1fr}.card-title{font-size:22px}.card-description{font-size:14px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
   </style>
-  <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9264164526699747" crossorigin="anonymous"></script>
 </head>
 <body>
   <div class="grain" aria-hidden="true"></div><div class="aura" aria-hidden="true"></div>
@@ -243,5 +246,8 @@
     window.addEventListener("pointermove",e=>{document.documentElement.style.setProperty("--mx",e.clientX/window.innerWidth-.5);document.documentElement.style.setProperty("--my",e.clientY/window.innerHeight-.5);document.documentElement.style.setProperty("--px",e.clientX+"px");document.documentElement.style.setProperty("--py",e.clientY+"px")},{passive:true});
     document.getElementById("newsletter-form").addEventListener("submit",e=>{e.preventDefault();document.getElementById("form-note").textContent="Cadastro demonstrativo: conectaremos o formulário ao serviço de newsletter na versão definitiva."});
   </script>
+
+  <!-- Google AdSense (movido para o final para não bloquear a renderização) -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9264164526699747" crossorigin="anonymous"></script>
 </body>
 </html>
