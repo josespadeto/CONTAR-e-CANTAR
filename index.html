@@ -10,8 +10,6 @@
   <link rel="canonical" href="https://rmcontarecantar.art.br/">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" as="image" href="assets/images/hero.webp" type="image/webp" fetchpriority="high">
-  
-  <!-- Open Graph -->
   <meta property="og:locale" content="pt_BR">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="RM ContaReCantar">
@@ -26,8 +24,6 @@
   <meta name="twitter:title" content="CONTAR e CANTAR | Histórias da Música Brasileira">
   <meta name="twitter:description" content="Um arquivo vivo de artistas, canções, encontros e movimentos da música brasileira.">
   <meta name="twitter:image" content="https://rmcontarecantar.art.br/assets/images/og-contar-cantar.jpg">
-
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-LFFVYB42R1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -35,7 +31,6 @@
     gtag('js', new Date());
     gtag('config', 'G-LFFVYB42R1');
   </script>
-
   <style>
     :root{--ink:#090907;--paper:#eee8dc;--gold:#c69a50;--wine:#611e2d;--petrol:#163c41;--mx:0;--my:0;--px:50vw;--py:50vh}
     *{box-sizing:border-box}
@@ -103,6 +98,8 @@
     .research-links a{display:grid;grid-template-columns:50px 1fr 25px;align-items:center;padding:25px 0;border-top:1px solid rgba(255,255,255,.35)}.research-links a:last-child{border-bottom:1px solid rgba(255,255,255,.35)}.research-links span{font-size:9px}.research-links strong{font:400 clamp(22px,2.5vw,38px) Georgia,serif}.research-links b{text-align:right}
     .newsletter{display:grid;grid-template-columns:1fr 3fr;gap:40px;padding:14vh 7vw;background:var(--paper);color:var(--ink)}.newsletter h2{margin:0;font:400 clamp(48px,6.5vw,98px)/.9 Georgia,serif;letter-spacing:-.06em}.newsletter h2 em{color:var(--wine);font-weight:400}.newsletter p{font:17px/1.6 Georgia,serif}.newsletter form{display:flex;margin-top:45px;border-bottom:1px solid}.newsletter input{flex:1;padding:18px 0;border:0;background:transparent;font:19px Georgia,serif;outline:0}.newsletter button{border:0;background:transparent;font-size:10px;font-weight:700;text-transform:uppercase;cursor:pointer}.form-note{min-height:20px;font:13px Arial!important;color:var(--wine)}
     footer{padding:10vh 7vw 40px;background:var(--ink);text-align:center}.footer-title{display:flex;justify-content:center;align-items:center;gap:2vw;font:400 clamp(60px,12vw,185px)/.8 Georgia,serif;letter-spacing:-.08em}.footer-title i{color:var(--gold);font-weight:400}.footer-bottom{display:flex;justify-content:space-between;margin-top:80px;padding-top:25px;border-top:1px solid rgba(255,255,255,.2);font-size:9px;letter-spacing:.15em;text-transform:uppercase}
+    .footer-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin:30px 0;font-size:11px;text-transform:uppercase;letter-spacing:.1em}
+    .footer-links a{color:var(--paper);opacity:.8;transition:.2s}.footer-links a:hover{opacity:1;color:var(--gold)}
     @media(max-width:800px){
       .aura{display:none}header{padding:16px 20px}.menu{display:block}nav{position:absolute;top:74px;left:0;right:0;display:none;flex-direction:column;gap:0;padding:15px 20px 22px;background:#0b0b09;border-top:1px solid rgba(255,255,255,.12)}nav.open{display:flex}nav a{padding:14px 0;font-size:11px}
       .hero{min-height:94svh;padding:130px 22px 90px}.hero-image{inset:0;background-position:62% center}.orbit{display:none}h1{font-size:18vw}.hero h1 span:nth-child(2){margin-left:6vw}.hero-intro{max-width:78%;margin:30px 0 0 15vw;font-size:15px}.explore{left:22px;bottom:32px}.index{display:none}
@@ -119,7 +116,13 @@
   <header>
     <a class="brand" href="#inicio" aria-label="CONTAR e CANTAR — início"><span>CONTAR</span><i>&amp;</i><span>CANTAR</span></a>
     <nav id="nav" aria-label="Principal">
-      <a href="#inicio">Início</a><a href="#instagram">Instagram</a><a href="#youtube">YouTube</a><a href="#artigos">Artigos</a><a href="#pesquisa">Pesquisa</a><a href="#newsletter">Newsletter</a>
+      <a href="#inicio">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="#instagram">Instagram</a>
+      <a href="#youtube">YouTube</a>
+      <a href="#artigos">Artigos</a>
+      <a href="#pesquisa">Pesquisa</a>
+      <a href="#newsletter">Newsletter</a>
     </nav>
     <button class="menu" id="menu" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
   </header>
@@ -216,8 +219,15 @@
 
   <footer>
     <div class="footer-title"><span>CONTAR</span><i>&amp;</i><span>CANTAR</span></div>
+    
+    <div class="footer-links">
+      <a href="sobre.html">Sobre</a>
+      <a href="contato.html">Contato</a>
+      <a href="politica-de-privacidade.html">Política de Privacidade</a>
+      <a href="termos-de-uso.html">Termos de Uso</a>
+    </div>
+
     <div class="footer-bottom"><span>Histórias da Música Brasileira</span><span>Rosane Maia · Brasília</span><a href="#inicio">Voltar ao início ↑</a></div>
-    <p style="margin:.8rem 0 0;font-size:.78rem"><a href="politica-de-privacidade.html">Política de Privacidade</a></p>
   </footer>
 
   <script>
@@ -247,7 +257,7 @@
     document.getElementById("newsletter-form").addEventListener("submit",e=>{e.preventDefault();document.getElementById("form-note").textContent="Cadastro demonstrativo: conectaremos o formulário ao serviço de newsletter na versão definitiva."});
   </script>
 
-  <!-- Google AdSense (movido para o final para não bloquear a renderização) -->
+  <!-- Google AdSense - Movido para o final do body para otimizar carregamento (QA) -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9264164526699747" crossorigin="anonymous"></script>
 </body>
 </html>
